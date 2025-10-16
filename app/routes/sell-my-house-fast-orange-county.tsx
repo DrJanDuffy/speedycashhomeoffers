@@ -3,7 +3,7 @@ import type { Route } from "./+types/sell-my-house-fast-orange-county";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Orange County | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!" },
+    { name: "description", content: "Sell house fast Orange County! Dr. Janet Duffy pays cash for homes in Anaheim, Irvine, Santa Ana. No fees, no repairs, fast closing. Get offer today!" },
     { name: "keywords", content: "sell house fast Orange County, cash home buyers Orange County, Dr. Janet Duffy Orange County, sell house as is Orange County, cash offer Orange County California, we buy houses Orange County" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

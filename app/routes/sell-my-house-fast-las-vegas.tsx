@@ -1,9 +1,10 @@
 import type { Route } from "./+types/sell-my-house-fast-las-vegas";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Las Vegas | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). We pay cash fast for $300-450K homes. Find out how much money you can get today!" },
+    { name: "description", content: "Sell house fast Las Vegas! Dr. Janet Duffy pays cash for North/East Vegas homes (89031, 89032, 89110, 89142). $300-450K range. No fees, 24hr offer!" },
     { name: "keywords", content: "sell house fast Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, cash home buyers Las Vegas, Dr. Janet Duffy Las Vegas, sell house as is Las Vegas, cash offer Las Vegas Nevada, we buy houses Las Vegas, $300-450K homes Las Vegas" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
@@ -85,6 +86,7 @@ export default function SellMyHouseFastLasVegas() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

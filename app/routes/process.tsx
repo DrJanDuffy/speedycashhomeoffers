@@ -3,7 +3,7 @@ import type { Route } from "./+types/process";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Our 5-Step Home Buying Process | Speedy Cash Home Offers" },
-    { name: "description", content: "Learn about our simple 5-step process to sell your Las Vegas and Southern California home fast for cash. No repairs, no fees, no hassle with Dr. Janet Duffy." },
+    { name: "description", content: "5-step process to sell house fast for cash! Dr. Janet Duffy's proven method: no repairs, no fees, no hassle. Get cash offer in 24hrs. Learn more!" },
     { name: "keywords", content: "home buying process, sell house fast Las Vegas, cash home buying process, sell house as is, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

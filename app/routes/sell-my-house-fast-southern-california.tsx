@@ -3,7 +3,7 @@ import type { Route } from "./+types/sell-my-house-fast-southern-california";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
+    { name: "description", content: "Sell house fast Southern California! Dr. Janet Duffy helps CA sellers relocate to Vegas. Riverside/San Bernardino bridge market. Cash offers, no fees!" },
     { name: "keywords", content: "sell house fast Southern California, California to Las Vegas relocation, Riverside San Bernardino cash buyers, Dr. Janet Duffy California, bridge market California, relocate to Vegas, cash offer Southern California, we buy houses Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

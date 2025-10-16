@@ -3,7 +3,7 @@ import type { Route } from "./+types/sell-my-house-fast-san-diego";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast San Diego | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in San Diego California and we pay cash fast. Find out how much money you can get today!" },
+    { name: "description", content: "Sell house fast San Diego! Dr. Janet Duffy pays cash for homes in San Diego, Chula Vista, Oceanside. No fees, no repairs, fast closing. Get offer today!" },
     { name: "keywords", content: "sell house fast San Diego, cash home buyers San Diego, Dr. Janet Duffy San Diego, sell house as is San Diego, cash offer San Diego California, we buy houses San Diego" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

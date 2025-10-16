@@ -3,7 +3,7 @@ import type { Route } from "./+types/sell-my-house-fast-inland-empire";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Inland Empire | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in Inland Empire California and we pay cash fast. Find out how much money you can get today!" },
+    { name: "description", content: "Sell house fast Inland Empire! Dr. Janet Duffy pays cash for homes in San Bernardino, Riverside, Fontana. No fees, no repairs, fast closing. Get offer today!" },
     { name: "keywords", content: "sell house fast Inland Empire, cash home buyers Inland Empire, Dr. Janet Duffy Inland Empire, sell house as is Inland Empire, cash offer Inland Empire California, we buy houses Inland Empire" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

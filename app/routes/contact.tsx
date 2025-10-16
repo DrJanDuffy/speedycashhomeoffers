@@ -3,7 +3,7 @@ import type { Route } from "./+types/contact";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Contact Us Today | Speedy Cash Home Offers" },
-    { name: "description", content: "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California. Call (702) 555-0123 or fill out our form for a quote within 24 hours." },
+    { name: "description", content: "Contact Dr. Janet Duffy for FREE cash offer! We buy houses fast in Las Vegas & Southern California. Call (702) 555-0123 or get quote in 24hrs!" },
     { name: "keywords", content: "contact Speedy Cash Home Offers, sell house fast Las Vegas, cash offer Las Vegas, Dr Janet Duffy contact, real estate inquiry Las Vegas, sell house Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

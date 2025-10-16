@@ -3,7 +3,7 @@ import type { Route } from "./+types/sell-my-house-fast-riverside";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Riverside | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in Riverside California and we pay cash fast. Find out how much money you can get today!" },
+    { name: "description", content: "Sell house fast Riverside! Dr. Janet Duffy pays cash for homes in Riverside, Moreno Valley, Corona. No fees, no repairs, fast closing. Get offer today!" },
     { name: "keywords", content: "sell house fast Riverside, cash home buyers Riverside, Dr. Janet Duffy Riverside, sell house as is Riverside, cash offer Riverside California, we buy houses Riverside" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

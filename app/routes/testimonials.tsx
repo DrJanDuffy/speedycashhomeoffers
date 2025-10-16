@@ -3,7 +3,7 @@ import type { Route } from "./+types/testimonials";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Customer Reviews and Testimonials | Speedy Cash Home Offers" },
-    { name: "description", content: "Read real customer reviews and testimonials from homeowners who sold their houses fast with Dr. Janet Duffy. 4.9 star rating from 500+ happy customers in Las Vegas and Southern California." },
+    { name: "description", content: "4.9★ rating from 500+ happy customers! Read real testimonials from Las Vegas homeowners who sold fast with Dr. Janet Duffy. See success stories!" },
     { name: "keywords", content: "customer reviews, testimonials, sell house fast Las Vegas, cash home buyers reviews, Dr Janet Duffy reviews, Speedy Cash Home Offers testimonials" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },

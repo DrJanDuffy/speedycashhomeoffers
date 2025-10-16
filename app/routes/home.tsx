@@ -1,9 +1,10 @@
 import type { Route } from "./+types/home";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
-    { name: "description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours with Dr. Janet Duffy." },
+    { name: "description", content: "Las Vegas's #1 cash home buyers! We specialize in North/East Vegas distressed properties ($300-450K). No fees, no repairs, no agents. Get cash offer in 24hrs!" },
     { name: "keywords", content: "we buy houses cash Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, sell house fast Las Vegas, cash home buyers Nevada, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
@@ -24,7 +25,51 @@ export const meta: Route.MetaFunction = () => {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Structured Data */}
+      <Breadcrumbs />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How quickly can you close on my Las Vegas home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you buy houses in any condition?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What areas of Las Vegas do you focus on?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are there any hidden fees or commissions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent."
+                }
+              }
+            ]
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -145,7 +190,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Warning icon for distressed property challenges">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
@@ -154,7 +199,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Chart icon showing market analysis challenges">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
@@ -163,7 +208,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Chat bubble icon representing communication challenges">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </div>
@@ -172,7 +217,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Briefcase icon representing business transaction delays">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
                 </svg>
@@ -199,7 +244,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Checkmark circle icon showing guaranteed benefits">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -208,7 +253,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Dollar sign icon representing cash offers">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
@@ -217,7 +262,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Clock icon representing fast closing times">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -226,7 +271,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Arrow icon representing quick transaction process">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               </div>
@@ -248,31 +293,31 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Las Vegas Distressed Property Advantages</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>No fees for selling your Las Vegas home</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Fair cash offers for North/East Vegas distressed properties</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>No out-of-pocket expenses or fees</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>7-day closings, or move within 60 days on your schedule</div>
@@ -283,31 +328,31 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4 text-gray-600">Traditional Real Estate Challenges for Distressed Properties</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for traditional selling challenges">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Up to 6% commission plus repairs for distressed Las Vegas homes</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for traditional selling challenges">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Low offers and extended negotiations for distressed properties</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for traditional selling challenges">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Expensive repairs required before listing in Las Vegas market</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for traditional selling challenges">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Multiple showings and inspections for distressed properties</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for traditional selling challenges">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>2-3 month sales process with uncertain closing dates</div>
@@ -335,25 +380,25 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Primary Market: Las Vegas</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Focus ZIP codes: 89031, 89032, 89110, 89142</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Target price: $300-450K distressed properties</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Most distressed inventory, best margins</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Existing presence and local expertise</div>
@@ -365,30 +410,85 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Secondary Market: California Bridge</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Riverside/San Bernardino focus</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Help California sellers relocate to Vegas</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Quick cash for relocation needs</div>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-label="Checkmark icon for no fees benefit">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Double-end deals when possible</div>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Frequently Asked Questions About Selling Your House Fast
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">How quickly can you close on my Las Vegas home?</h3>
+                <p className="text-gray-600">We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do you buy houses in any condition?</h3>
+                <p className="text-gray-600">Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What areas of Las Vegas do you focus on?</h3>
+                <p className="text-gray-600">We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">How do you determine the cash offer amount?</h3>
+                <p className="text-gray-600">Our offers are based on current market values, comparable sales, property condition, and repair costs. We factor in the convenience of a quick, hassle-free sale. While we can't match retail prices, our offers reflect fair market value minus typical selling costs and time.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Are there any hidden fees or commissions?</h3>
+                <p className="text-gray-600">No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent.</p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What if I'm behind on mortgage payments?</h3>
+                <p className="text-gray-600">We can help! Many homeowners facing foreclosure choose our cash offer to avoid the lengthy foreclosure process and protect their credit. We can close quickly to prevent foreclosure and provide immediate financial relief.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do I need to clean or stage my home?</h3>
+                <p className="text-gray-600">No preparation needed! We buy houses in their current condition. You don't need to clean, repair, stage, or even remove personal belongings. We'll handle everything, making the process as stress-free as possible.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Can you help with inherited properties?</h3>
+                <p className="text-gray-600">Absolutely! Inherited properties often come with complex situations - multiple heirs, probate issues, or properties in disrepair. We specialize in helping families quickly resolve inherited property matters and distribute proceeds fairly among beneficiaries.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What makes Dr. Janet Duffy different?</h3>
+                <p className="text-gray-600">Dr. Janet Duffy brings 25+ years of real estate experience and a personal touch to every transaction. As a local Las Vegas expert, she understands market nuances and provides honest, transparent communication throughout the entire process.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Is there any obligation after getting an offer?</h3>
+                <p className="text-gray-600">No obligation whatsoever! Our initial consultation and cash offer are completely free. You can review our offer, compare it to other options, and decide what's best for your situation. We're here to help, not pressure.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -410,7 +510,7 @@ export default function Home() {
                   <h3 className="font-semibold">Melanie Nolan</h3>
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-label="Five star rating">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
@@ -430,7 +530,7 @@ export default function Home() {
                   <h3 className="font-semibold">Sherman Simon</h3>
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-label="Five star rating">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
@@ -450,7 +550,7 @@ export default function Home() {
                   <h3 className="font-semibold">Debra Franco</h3>
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-label="Five star rating">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
