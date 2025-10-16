@@ -1,9 +1,14 @@
 import { Link, useLocation } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navigation() {
   const location = useLocation();
   const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   const navItems = [
     { path: "/", label: "Home" },
@@ -65,7 +70,7 @@ export default function Navigation() {
                 </svg>
               </button>
               
-              {isLocationDropdownOpen && (
+              {isClient && isLocationDropdownOpen && (
                 <div 
                   className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
                   onMouseEnter={() => setIsLocationDropdownOpen(true)}
