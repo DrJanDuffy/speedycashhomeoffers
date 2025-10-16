@@ -241,29 +241,29 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Speedy Cash Home Offers vs Traditional Real Estate Sales
+            Why Las Vegas Distressed Property Sellers Choose Us
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Why Choose Speedy Cash Home Offers</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Las Vegas Distressed Property Advantages</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>No fees for selling your home</span>
+                  <span>No fees for selling your Las Vegas home</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Highest price for off-market sale</span>
+                  <span>Fair cash offers for North/East Vegas distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>We buy houses as-is. Zero cleanup, showings or repairs</span>
+                  <span>We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -280,37 +280,37 @@ export default function Home() {
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-600">Traditional Real Estate Sales Process</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-600">Traditional Real Estate Challenges for Distressed Properties</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Up to 6% of home sale price and additional fees</span>
+                  <span>Up to 6% commission plus repairs for distressed Las Vegas homes</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Unpredictable haggling and low offers</span>
+                  <span>Low offers and extended negotiations for distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Hassles of repairs and cleaning up the property</span>
+                  <span>Expensive repairs required before listing in Las Vegas market</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Open houses and unscheduled visits</span>
+                  <span>Multiple showings and inspections for distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>2 to 3 month long sales process</span>
+                  <span>2-3 month sales process with uncertain closing dates</span>
                 </li>
               </ul>
             </div>
