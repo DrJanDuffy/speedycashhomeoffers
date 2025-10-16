@@ -247,70 +247,70 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Las Vegas Distressed Property Advantages</h3>
               <ul className="space-y-3">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">No fees for selling your Las Vegas home</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>No fees for selling your Las Vegas home</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Fair cash offers for North/East Vegas distressed properties</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Fair cash offers for North/East Vegas distressed properties</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">No out-of-pocket expenses or fees</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>No out-of-pocket expenses or fees</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">7-day closings, or move within 60 days on your schedule</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>7-day closings, or move within 60 days on your schedule</div>
                 </li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-gray-600">Traditional Real Estate Challenges for Distressed Properties</h3>
               <ul className="space-y-3">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Up to 6% commission plus repairs for distressed Las Vegas homes</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Up to 6% commission plus repairs for distressed Las Vegas homes</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Low offers and extended negotiations for distressed properties</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Low offers and extended negotiations for distressed properties</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Expensive repairs required before listing in Las Vegas market</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Expensive repairs required before listing in Las Vegas market</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Multiple showings and inspections for distressed properties</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Multiple showings and inspections for distressed properties</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">2-3 month sales process with uncertain closing dates</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>2-3 month sales process with uncertain closing dates</div>
                 </li>
               </ul>
             </div>
