@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
 import Navigation from "./components/Navigation";
+import MobileCTA from "./components/MobileCTA";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -17,6 +18,11 @@ export const links: Route.LinksFunction = () => [
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
+  },
+  {
+    rel: "preload",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    as: "style",
   },
   {
     rel: "stylesheet",
@@ -44,6 +50,35 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
                 ga('create', 'G-G0GB8N5PZR', 'auto');
                 ga('send', 'pageview');
+                
+                // Enhanced event tracking functions
+                window.trackPhoneClick = function(label) {
+                  ga('event', 'phone_click', {
+                    'event_category': 'engagement',
+                    'event_label': label || 'phone_link',
+                    'value': 1
+                  });
+                };
+                
+                window.trackFormSubmit = function(formType) {
+                  ga('event', 'form_submit', {
+                    'event_category': 'conversion',
+                    'event_label': formType || 'contact_form',
+                    'value': 1
+                  });
+                };
+                
+                window.trackCTAClick = function(buttonText, pageLocation) {
+                  ga('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': buttonText || 'cta_button',
+                    'page_location': pageLocation || window.location.href
+                  });
+                };
+                
+                window.trackPageView = function(page) {
+                  ga('send', 'pageview', page);
+                };
               }
             `,
           }}
@@ -52,6 +87,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Navigation />
         <main>{children}</main>
+        <MobileCTA />
         <ScrollRestoration />
         <Scripts />
       </body>

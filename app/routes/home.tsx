@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import AuthorBio from "~/components/AuthorBio";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
+import TrustBadges from "~/components/TrustBadges";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -238,16 +239,19 @@ export default function Home() {
               Las Vegas's Most Trusted Cash Home Buyers! We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold text-center">
+              <a href="/contact" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold text-center" onClick={() => { if (typeof window !== 'undefined' && window.trackCTAClick) window.trackCTAClick('Get My Free Quote', window.location.href); }}>
                 Get My Free Quote
               </a>
-              <a href="tel:(702) 500-1981" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-lg font-semibold text-center">
+              <a href="tel:(702) 500-1981" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-lg font-semibold text-center" onClick={() => { if (typeof window !== 'undefined' && window.trackPhoneClick) window.trackPhoneClick('hero_phone'); }}>
                 Call (702) 500-1981
               </a>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges />
 
       {/* Stats Section */}
       <section className="py-16 bg-white">

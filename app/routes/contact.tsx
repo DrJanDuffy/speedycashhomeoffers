@@ -1,5 +1,6 @@
 import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import TrustBadges from "~/components/TrustBadges";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -141,6 +142,9 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <TrustBadges />
+
       {/* Contact Form Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +167,7 @@ export default function Contact() {
                 Call us today at (702) 500-1981. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
               </p>
             </div>
-            <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form'); }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name *</label>
