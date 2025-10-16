@@ -26,7 +26,102 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
-      {/* FAQ Schema */}
+      {/* Offer Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Offer",
+            "name": "Cash Home Buying Offer",
+            "description": "We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days",
+            "offeredBy": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "300000-450000",
+              "priceCurrency": "USD",
+              "description": "Cash offers for distressed properties in Las Vegas North/East neighborhoods"
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-10-15",
+            "validThrough": "2025-12-31",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cash Home Buying Service",
+              "description": "We buy houses for cash in Las Vegas and Southern California"
+            },
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Closing Time",
+                "value": "7 days"
+              },
+              {
+                "@type": "PropertyValue", 
+                "name": "Cash Advance",
+                "value": "$20,000"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Commission Fee",
+                "value": "0%"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Cash Home Buying Service",
+            "description": "We buy houses for cash in Las Vegas and Southern California. Specializing in distressed properties, foreclosures, and inherited homes.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "telephone": "(702) 555-0123",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com"
+            },
+            "serviceType": "Cash Home Buying",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Las Vegas",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Nevada"
+                }
+              },
+              {
+                "@type": "City", 
+                "name": "Los Angeles",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "California"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "San Diego", 
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "California"
+                }
+              }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "priceRange": "$300000-$450000",
+              "description": "Cash offers for distressed properties in Las Vegas North/East neighborhoods"
+            }
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -578,12 +673,12 @@ export default function Home() {
                 As Las Vegas's most trusted home buyers, we understand the unique real estate market in Nevada's largest city. Whether you're selling a property in Summerlin, Henderson, North Las Vegas, or any other Las Vegas neighborhood, we provide fair cash offers for homes in any condition.
               </p>
               <ul className="text-gray-600 space-y-2">
-                <li>• Summerlin</li>
-                <li>• Henderson</li>
-                <li>• North Las Vegas</li>
-                <li>• Spring Valley</li>
-                <li>• Paradise</li>
-                <li>• Enterprise</li>
+                <li>• <a href="/sell-my-house-fast-las-vegas" className="text-blue-600 hover:underline">North Las Vegas cash buyers</a> (89031, 89032)</li>
+                <li>• <a href="/sell-my-house-fast-las-vegas" className="text-blue-600 hover:underline">East Las Vegas distressed properties</a> (89110, 89142)</li>
+                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Summerlin neighborhoods</a></li>
+                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Henderson real estate</a></li>
+                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Spring Valley homes</a></li>
+                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Paradise area properties</a></li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
@@ -592,13 +687,64 @@ export default function Home() {
                 Our Southern California operations cover Los Angeles, Orange County, Riverside, San Bernardino, and San Diego counties. We've helped thousands of homeowners across California sell their properties quickly and efficiently.
               </p>
               <ul className="text-gray-600 space-y-2">
-                <li>• Los Angeles County</li>
-                <li>• Orange County</li>
-                <li>• Riverside County</li>
-                <li>• San Bernardino County</li>
-                <li>• San Diego County</li>
-                <li>• Ventura County</li>
+                <li>• <a href="/sell-my-house-fast-southern-california" className="text-blue-600 hover:underline">Los Angeles County cash buyers</a></li>
+                <li>• <a href="/sell-my-house-fast-orange-county" className="text-blue-600 hover:underline">Orange County real estate</a></li>
+                <li>• <a href="/sell-my-house-fast-riverside" className="text-blue-600 hover:underline">Riverside County homes</a></li>
+                <li>• <a href="/sell-my-house-fast-inland-empire" className="text-blue-600 hover:underline">San Bernardino County</a></li>
+                <li>• <a href="/sell-my-house-fast-san-diego" className="text-blue-600 hover:underline">San Diego County properties</a></li>
+                <li>• <a href="/process" className="text-blue-600 hover:underline">California to Las Vegas relocation</a></li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Explore Our Services
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+                <a href="/process" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Our 5-Step Process
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Learn how we make selling your house fast and simple with our proven 5-step process.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+                <a href="/testimonials" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Customer Reviews
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Read real testimonials from homeowners who sold their houses fast with Dr. Janet Duffy.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+                <a href="/meet-the-team" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Meet Our Team
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Get to know Dr. Janet Duffy and our experienced team of real estate professionals.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center">
+              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+                <a href="/contact" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Get Free Quote
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Contact us today for a free, no-obligation cash offer on your Las Vegas home.
+              </p>
             </div>
           </div>
         </div>

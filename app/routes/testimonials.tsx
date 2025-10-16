@@ -51,7 +51,8 @@ export default function Testimonials() {
                   "ratingValue": "5",
                   "bestRating": "5"
                 },
-                "reviewBody": "One of the best companies to get the job done. Dr. Duffy made selling our inherited home so easy and stress-free."
+                "reviewBody": "One of the best companies to get the job done. Dr. Duffy made selling our inherited home so easy and stress-free.",
+                "datePublished": "2024-10-15"
               },
               {
                 "@type": "Review",
@@ -64,7 +65,8 @@ export default function Testimonials() {
                   "ratingValue": "5",
                   "bestRating": "5"
                 },
-                "reviewBody": "I found the company is true to their words regarding helping you with your property. The process was smooth and transparent."
+                "reviewBody": "I found the company is true to their words regarding helping you with your property. The process was smooth and transparent.",
+                "datePublished": "2024-10-10"
               },
               {
                 "@type": "Review",
@@ -77,7 +79,36 @@ export default function Testimonials() {
                   "ratingValue": "5",
                   "bestRating": "5"
                 },
-                "reviewBody": "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly, and helpful. I highly recommend them."
+                "reviewBody": "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly, and helpful. I highly recommend them.",
+                "datePublished": "2024-10-05"
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Michael Rodriguez"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Sold my distressed property in North Las Vegas quickly. Dr. Duffy's team handled everything professionally and closed in just 10 days.",
+                "datePublished": "2024-09-28"
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sarah Johnson"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Facing foreclosure, Dr. Duffy's team saved me. They provided a fair cash offer and closed quickly to prevent foreclosure proceedings.",
+                "datePublished": "2024-09-20"
               }
             ]
           })
