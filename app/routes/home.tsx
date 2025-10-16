@@ -251,31 +251,31 @@ export default function Home() {
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>No fees for selling your Las Vegas home</span>
+                  <span className="text-gray-700">No fees for selling your Las Vegas home</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Fair cash offers for North/East Vegas distressed properties</span>
+                  <span className="text-gray-700">Fair cash offers for North/East Vegas distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</span>
+                  <span className="text-gray-700">We buy houses as-is in ZIP codes 89031, 89032, 89110, 89142</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>No out-of-pocket expenses or fees</span>
+                  <span className="text-gray-700">No out-of-pocket expenses or fees</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>7-day closings, or move within 60 days on your schedule</span>
+                  <span className="text-gray-700">7-day closings, or move within 60 days on your schedule</span>
                 </li>
               </ul>
             </div>
@@ -286,31 +286,31 @@ export default function Home() {
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Up to 6% commission plus repairs for distressed Las Vegas homes</span>
+                  <span className="text-gray-700">Up to 6% commission plus repairs for distressed Las Vegas homes</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Low offers and extended negotiations for distressed properties</span>
+                  <span className="text-gray-700">Low offers and extended negotiations for distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Expensive repairs required before listing in Las Vegas market</span>
+                  <span className="text-gray-700">Expensive repairs required before listing in Las Vegas market</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Multiple showings and inspections for distressed properties</span>
+                  <span className="text-gray-700">Multiple showings and inspections for distressed properties</span>
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>2-3 month sales process with uncertain closing dates</span>
+                  <span className="text-gray-700">2-3 month sales process with uncertain closing dates</span>
                 </li>
               </ul>
             </div>
