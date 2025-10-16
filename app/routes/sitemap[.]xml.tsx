@@ -1,6 +1,6 @@
 import type { Route } from "./+types/sitemap[.]xml";
 
-export const loader: Route.LoaderFunction = async () => {
+export const loader: Route.LoaderFunction = async ({ request }) => {
   const baseUrl = "https://www.speedycashhomeoffers.com";
   const currentDate = new Date().toISOString().split('T')[0];
 
@@ -122,8 +122,8 @@ ${routes
   return new Response(sitemap, {
     status: 200,
     headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600", // Cache for 1 hour
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 };
