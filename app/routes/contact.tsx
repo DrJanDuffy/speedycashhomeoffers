@@ -217,7 +217,10 @@ export default function Contact() {
                   placeholder="City"
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
-                <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                <select 
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  aria-label="Select your state"
+                >
                   <option value="">State</option>
                   <option value="NV">Nevada</option>
                   <option value="CA">California</option>
@@ -279,10 +282,11 @@ export default function Contact() {
                       type="checkbox"
                       className="mt-1 mr-3"
                       required
+                      aria-label="Agree to receive text messages"
                     />
                     <span className="text-sm text-gray-600">
                       By submitting your phone number, you agree to receive text messages from Speedy Cash Home Offers regarding the sell of your home. You can opt-out anytime. Message and data rates may apply. 
-                      <a href="#" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</a>.
+                      <a href="/about" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</a>.
                     </span>
                   </Label>
                 </div>

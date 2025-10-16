@@ -172,7 +172,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Learn how Dr. Janet Duffy helps homeowners sell properties that traditional real estate agents won't touch. From hoarder homes to properties with major damage, we buy houses in any condition throughout Las Vegas and Southern California.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -189,7 +189,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Discover the hidden costs of selling a house traditionally versus selling to a cash buyer. Dr. Duffy breaks down all the fees and expenses you can avoid when working with Speedy Cash Home Offers.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -206,7 +206,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Deployment? Sell Your Las Vegas House for Cash Before Relocating For Military Active Duty. Learn how we help military families sell quickly and stress-free, understanding the unique challenges of military relocations.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -223,7 +223,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Why choose Dr. Janet Duffy and Speedy Cash Home Offers? Learn about our proven track record and commitment to fair, fast transactions in Las Vegas and Southern California markets.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -240,7 +240,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Skip the traditional MLS listing process. Learn how to sell your house directly to cash buyers without the hassle of showings, open houses, or waiting for the right buyer in Las Vegas or Southern California.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -257,7 +257,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Inheriting a home can be overwhelming. Dr. Duffy shares how we help families navigate the emotional and practical aspects of selling inherited properties, providing compassionate support during difficult times.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -274,7 +274,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Learn from Dr. Duffy's 25+ years of experience. Discover the most common mistakes homeowners make when selling and how to avoid them, ensuring a smooth transaction process.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -291,7 +291,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   What to look for when choosing a cash home buyer. Learn how to identify legitimate companies and avoid scams in the real estate industry, ensuring you work with trusted professionals.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
 
@@ -308,7 +308,7 @@ export default function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   Don't let the condition of your home stop you from selling. We buy houses in any condition, including those that need extensive cleaning or repairs, throughout Las Vegas and Southern California.
                 </p>
-                <a href="#" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
+                <a href="/market-insights" className="text-pink-600 font-medium hover:text-pink-700">Read More →</a>
               </div>
             </article>
           </div>

@@ -69,10 +69,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? "404 - Page Not Found" : "Error";
     details =
       error.status === 404
-        ? "The requested page could not be found."
+        ? "The requested page could not be found. Please check the URL or return to our home page."
         : error.statusText || details;
   } else if (error && error instanceof Error) {
     details = error.message;
@@ -82,14 +82,40 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
+      <div className="max-w-2xl mx-auto text-center">
+        <div className="text-6xl font-bold text-blue-600 mb-4">
+          {isRouteErrorResponse(error) && error.status === 404 ? "404" : "⚠️"}
+        </div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">{message}</h1>
+        <p className="text-lg text-gray-600 mb-8">{details}</p>
+        
+        <div className="space-y-4">
+          <a 
+            href="/" 
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Go Home
+          </a>
+          <a 
+            href="/contact" 
+            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors ml-4"
+          >
+            Contact Us
+          </a>
+        </div>
+        
+        {stack && (
+          <details className="mt-8 text-left">
+            <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700">
+              Technical Details (Development Only)
+            </summary>
+            <pre className="w-full p-4 overflow-x-auto bg-gray-100 rounded-lg mt-2 text-xs">
+              <code>{stack}</code>
+            </pre>
+          </details>
+        )}
+      </div>
+    </div>
   );
 }

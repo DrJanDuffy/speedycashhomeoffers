@@ -29,7 +29,8 @@
       "routes/investors": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/neighborhoods": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+      "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/404": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -217,6 +218,15 @@
         "config": {
           "runtime": "nodejs"
         }
+      },
+      "routes/404": {
+        "id": "routes/404",
+        "parentId": "root",
+        "file": "app/routes/404.tsx",
+        "path": "*",
+        "config": {
+          "runtime": "nodejs"
+        }
       }
     }
   },
@@ -356,6 +366,12 @@
         "parentId": "root",
         "file": "routes/contact.tsx",
         "path": "contact"
+      },
+      "routes/404": {
+        "id": "routes/404",
+        "parentId": "root",
+        "file": "routes/404.tsx",
+        "path": "*"
       }
     },
     "routeDiscovery": {
@@ -450,6 +466,10 @@
           {
             "file": "routes/contact.tsx",
             "path": "contact"
+          },
+          {
+            "file": "routes/404.tsx",
+            "path": "*"
           }
         ]
       }
