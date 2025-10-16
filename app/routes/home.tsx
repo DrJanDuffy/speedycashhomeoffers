@@ -31,17 +31,17 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Speedy Cash Home Offers",
+            "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
             "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). We buy houses for cash, as-is, with no repairs needed.",
             "url": "https://speedycashhomeoffers.com",
             "telephone": "(702) 555-0123",
             "email": "DrDuffy@SpeedyCashHomeOffers.com",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "1234 Main Street",
+              "streetAddress": "2775 Ariel Ocean St",
               "addressLocality": "Las Vegas",
               "addressRegion": "NV",
-              "postalCode": "89101",
+              "postalCode": "89156",
               "addressCountry": "US"
             },
             "geo": {

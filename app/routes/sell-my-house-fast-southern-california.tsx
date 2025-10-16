@@ -25,14 +25,14 @@ export const meta: Route.MetaFunction = () => {
 
 export const loader: Route.LoaderFunction = async () => {
   return {
-    businessName: "Speedy Cash Home Offers",
+    businessName: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
     phoneNumber: "(702) 555-0123",
     email: "DrDuffy@SpeedyCashHomeOffers.com",
     address: {
-      streetAddress: "1234 Las Vegas Blvd",
+      streetAddress: "2775 Ariel Ocean St",
       addressLocality: "Las Vegas",
       addressRegion: "NV",
-      postalCode: "89101",
+      postalCode: "89156",
       addressCountry: "US",
     },
     rating: {

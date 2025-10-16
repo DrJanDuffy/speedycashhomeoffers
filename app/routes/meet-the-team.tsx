@@ -31,7 +31,7 @@ export default function MeetTheTeam() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Speedy Cash Home Offers",
+            "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
             "description": "Las Vegas and Southern California's most trusted home buyers, led by Dr. Janet Duffy",
             "url": "https://speedycashhomeoffers.com",
             "founder": {
@@ -54,10 +54,10 @@ export default function MeetTheTeam() {
             ],
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "1234 Main Street",
+              "streetAddress": "2775 Ariel Ocean St",
               "addressLocality": "Las Vegas",
               "addressRegion": "NV",
-              "postalCode": "89101",
+              "postalCode": "89156",
               "addressCountry": "US"
             },
             "areaServed": [

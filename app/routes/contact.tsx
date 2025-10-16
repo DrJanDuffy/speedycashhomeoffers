@@ -52,15 +52,15 @@ export default function Contact() {
             },
             "mainEntity": {
               "@type": "LocalBusiness",
-              "name": "Speedy Cash Home Offers",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
               "telephone": "(702) 555-0123",
               "email": "DrDuffy@SpeedyCashHomeOffers.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "1234 Main Street",
+                "streetAddress": "2775 Ariel Ocean St",
                 "addressLocality": "Las Vegas",
                 "addressRegion": "NV",
-                "postalCode": "89101",
+                "postalCode": "89156",
                 "addressCountry": "US"
               },
               "openingHoursSpecification": [
@@ -109,7 +109,7 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>1234 Main Street, Las Vegas, NV 89101</span>
+                <span>2775 Ariel Ocean St, Las Vegas, NV 89156</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,7 +234,7 @@ export default function Contact() {
                 id="zip"
                 name="zip"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="89101"
+                placeholder="89156"
               />
             </div>
 
@@ -368,7 +368,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-gray-900">Address</h4>
-                    <p className="text-gray-600">1234 Main Street<br />Las Vegas, NV 89101</p>
+                    <p className="text-gray-600">2775 Ariel Ocean St<br />Las Vegas, NV 89156</p>
                   </div>
                 </div>
                 <div className="flex items-start">
