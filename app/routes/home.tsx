@@ -35,7 +35,7 @@ export default function Home() {
             "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). We buy houses for cash, as-is, with no repairs needed.",
             "url": "https://speedycashhomeoffers.com",
             "telephone": "(702) 555-0123",
-            "email": "info@speedycashhomeoffers.com",
+            "email": "DrDuffy@SpeedyCashHomeOffers.com",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "1234 Main Street",

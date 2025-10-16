@@ -27,7 +27,7 @@ export const loader: Route.LoaderFunction = async () => {
   return {
     businessName: "Speedy Cash Home Offers",
     phoneNumber: "(702) 555-0123",
-    email: "info@speedycashhomeoffers.com",
+    email: "DrDuffy@SpeedyCashHomeOffers.com",
     address: {
       streetAddress: "1234 Las Vegas Blvd",
       addressLocality: "Las Vegas",

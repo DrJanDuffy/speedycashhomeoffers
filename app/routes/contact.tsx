@@ -54,7 +54,7 @@ export default function Contact() {
               "@type": "LocalBusiness",
               "name": "Speedy Cash Home Offers",
               "telephone": "(702) 555-0123",
-              "email": "info@speedycashhomeoffers.com",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "1234 Main Street",
@@ -386,7 +386,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">info@speedycashhomeoffers.com</p>
+                    <p className="text-gray-600">DrDuffy@SpeedyCashHomeOffers.com</p>
                   </div>
                 </div>
               </div>
