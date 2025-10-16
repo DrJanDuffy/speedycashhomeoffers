@@ -1,5 +1,9 @@
 import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -8,7 +12,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "contact Speedy Cash Home Offers, sell house fast Las Vegas, cash offer Las Vegas, Dr Janet Duffy contact, real estate inquiry Las Vegas, sell house Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/contact" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/contact" },
     { property: "og:title", content: "Contact Us Today | Speedy Cash Home Offers" },
     { property: "og:description", content: "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California." },
     { property: "og:type", content: "website" },
@@ -156,50 +160,49 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="bg-white rounded-lg shadow-lg p-8">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  placeholder="First Last"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  placeholder="(702) 500-1981"
-                />
-              </div>
-            </div>
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center">Get My Free, No-Obligation Quote</CardTitle>
+              <CardDescription className="text-center">
+                Call us today at (702) 500-1981. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name *</Label>
+                    <Input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="First Last"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone *</Label>
+                    <Input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder="(702) 500-1981"
+                    />
+                  </div>
+                </div>
 
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="your@email.com"
-              />
-              <p className="text-sm text-gray-500 mt-1">Please check your email address. Email addresses cannot end in a period.</p>
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="your@email.com"
+                  />
+                  <p className="text-sm text-gray-500">Please check your email address. Email addresses cannot end in a period.</p>
+                </div>
 
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">

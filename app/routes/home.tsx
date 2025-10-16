@@ -2,6 +2,9 @@ import type { Route } from "./+types/home";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import AuthorBio from "~/components/AuthorBio";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -10,17 +13,17 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "we buy houses cash Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, sell house fast Las Vegas, cash home buyers Nevada, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/" },
     { property: "og:title", content: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
     { property: "og:description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/twitter-image.jpg" },
   ];
 };
 
@@ -238,12 +241,12 @@ export default function Home() {
               Las Vegas's Most Trusted Cash Home Buyers! We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
                 Get My Free Quote
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+              </Button>
+              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
                 Call (702) 500-1981
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -252,22 +255,34 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">4.9</div>
-              <p className="text-gray-600">Star Rating</p>
-              <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
-              <p className="text-gray-600">Years of Experience</p>
-              <p className="text-sm text-gray-500">We have helped 1,000s of home sellers</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">$20K</div>
-              <p className="text-gray-600">Cash Advance</p>
-              <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-4xl font-bold text-blue-600">4.9</CardTitle>
+                <CardDescription className="text-gray-600 text-lg">Star Rating</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-4xl font-bold text-blue-600">25+</CardTitle>
+                <CardDescription className="text-gray-600 text-lg">Years of Experience</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">We have helped 1,000s of home sellers</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-4xl font-bold text-blue-600">$20K</CardTitle>
+                <CardDescription className="text-gray-600 text-lg">Cash Advance</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -542,51 +557,57 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Frequently Asked Questions About Selling Your House Fast
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">How quickly can you close on my Las Vegas home?</h3>
-                <p className="text-gray-600">We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do you buy houses in any condition?</h3>
-                <p className="text-gray-600">Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">What areas of Las Vegas do you focus on?</h3>
-                <p className="text-gray-600">We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">How do you determine the cash offer amount?</h3>
-                <p className="text-gray-600">Our offers are based on current market values, comparable sales, property condition, and repair costs. We factor in the convenience of a quick, hassle-free sale. While we can't match retail prices, our offers reflect fair market value minus typical selling costs and time.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Are there any hidden fees or commissions?</h3>
-                <p className="text-gray-600">No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent.</p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">What if I'm behind on mortgage payments?</h3>
-                <p className="text-gray-600">We can help! Many homeowners facing foreclosure choose our cash offer to avoid the lengthy foreclosure process and protect their credit. We can close quickly to prevent foreclosure and provide immediate financial relief.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do I need to clean or stage my home?</h3>
-                <p className="text-gray-600">No preparation needed! We buy houses in their current condition. You don't need to clean, repair, stage, or even remove personal belongings. We'll handle everything, making the process as stress-free as possible.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Can you help with inherited properties?</h3>
-                <p className="text-gray-600">Absolutely! Inherited properties often come with complex situations - multiple heirs, probate issues, or properties in disrepair. We specialize in helping families quickly resolve inherited property matters and distribute proceeds fairly among beneficiaries.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">What makes Dr. Janet Duffy different?</h3>
-                <p className="text-gray-600">Dr. Janet Duffy brings 25+ years of real estate experience and a personal touch to every transaction. As a local Las Vegas expert, she understands market nuances and provides honest, transparent communication throughout the entire process.</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Is there any obligation after getting an offer?</h3>
-                <p className="text-gray-600">No obligation whatsoever! Our initial consultation and cash offer are completely free. You can review our offer, compare it to other options, and decide what's best for your situation. We're here to help, not pressure.</p>
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">How quickly can you close on my Las Vegas home?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">Do you buy houses in any condition?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">What areas of Las Vegas do you focus on?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">Are there any hidden fees or commissions?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">What if I'm behind on mortgage payments?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">We can help! Many homeowners facing foreclosure choose our cash offer to avoid the lengthy foreclosure process and protect their credit. We can close quickly to prevent foreclosure and provide immediate financial relief.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6" className="border rounded-lg px-6">
+                <AccordionTrigger className="text-left">
+                  <h3 className="text-lg font-semibold text-gray-900">What makes Dr. Janet Duffy different?</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-gray-600">Dr. Janet Duffy brings 25+ years of real estate experience and a personal touch to every transaction. As a local Las Vegas expert, she understands market nuances and provides honest, transparent communication throughout the entire process.</p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
