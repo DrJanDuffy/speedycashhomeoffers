@@ -16,8 +16,17 @@ export default function MarketInsightsSection({
   const [articles, setArticles] = useState<RSSArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure this only runs on the client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
+    // Only fetch RSS feed on client side
+    if (!isClient) return;
+
     const loadArticles = async () => {
       try {
         setLoading(true);
@@ -41,9 +50,10 @@ export default function MarketInsightsSection({
     };
 
     loadArticles();
-  }, [maxArticles]);
+  }, [maxArticles, isClient]);
 
-  if (loading) {
+  // Show loading state during SSR and initial client render
+  if (!isClient || loading) {
     return (
       <section className={`py-16 bg-gray-50 ${className}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,17 +94,15 @@ export default function MarketInsightsSection({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Unable to Load Market Insights
+                Market Insights Coming Soon
               </h3>
               <p className="text-gray-600 mb-4">
-                We're having trouble loading the latest market updates. Please check back later.
+                We're updating our market insights. Check back soon for the latest real estate trends and analysis from Dr. Janet Duffy.
               </p>
-              <button 
-                onClick={() => window.location.reload()}
-                className="text-blue-600 hover:text-blue-800 font-medium"
-              >
-                Try Again
-              </button>
+              <div className="text-sm text-gray-500">
+                <p>In the meantime, contact us for personalized market analysis:</p>
+                <p className="font-semibold text-blue-600 mt-2">(702) 500-1981</p>
+              </div>
             </div>
           </div>
         </div>
