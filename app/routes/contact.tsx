@@ -1,6 +1,7 @@
 import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
+import { Label } from "~/components/ui/label";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -167,7 +168,17 @@ export default function Contact() {
                 Call us today at (702) 500-1981. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
               </p>
             </div>
-                    <form className="space-y-6" onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form'); }}>
+                    <form 
+                      className="space-y-6" 
+                      action="https://formspree.io/f/YOUR_FORM_ID" 
+                      method="POST"
+                      onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form'); }}
+                    >
+              {/* Hidden field for form service */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission - Speedy Cash Home Offers" />
+              <input type="hidden" name="_replyto" value="" />
+              <input type="hidden" name="_next" value="https://www.speedycashhomeoffers.com/thank-you" />
+              
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name *</label>
@@ -213,15 +224,21 @@ export default function Contact() {
               <div className="grid md:grid-cols-3 gap-4">
                 <input
                   type="text"
+                  name="street"
                   placeholder="Street"
+                  required
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
                 <input
                   type="text"
+                  name="city"
                   placeholder="City"
+                  required
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
                 <select 
+                  name="state"
+                  required
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   aria-label="Select your state"
                 >
@@ -284,6 +301,7 @@ export default function Contact() {
                   <Label className="flex items-start">
                     <input
                       type="checkbox"
+                      name="agree_to_texts"
                       className="mt-1 mr-3"
                       required
                       aria-label="Agree to receive text messages"

@@ -21,6 +21,7 @@ export default [
   route("neighborhoods", "routes/neighborhoods.tsx"),
   route("about", "routes/about.tsx"),
   route("contact", "routes/contact.tsx"),
+  route("thank-you", "routes/thank-you.tsx"),
   // Catch-all route for 404 errors
   route("*", "routes/404.tsx"),
 ] satisfies RouteConfig;
