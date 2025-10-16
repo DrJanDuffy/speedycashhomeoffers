@@ -1,4 +1,5 @@
 import type { Route } from "./+types/process";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -24,7 +25,59 @@ export const meta: Route.MetaFunction = () => {
 export default function Process() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Structured Data */}
+      <Breadcrumbs />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long does the entire process take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "From initial contact to closing, our process typically takes 7-21 days. We can expedite to 7 days for urgent situations like foreclosure prevention, but most sellers prefer 2-3 weeks to handle their affairs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to clean or repair my home before inspection?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No preparation needed! We buy houses as-is in any condition. You don't need to clean, repair, stage, or even remove personal belongings. We'll evaluate the property in its current state."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if I don't accept your offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No obligation! If you don't accept our offer, there are no fees or penalties. We encourage you to explore all your options and make the best decision for your situation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you determine the cash offer amount?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our offers are based on current market values, comparable sales, property condition, repair costs, and the convenience of a quick sale. We factor in all costs to provide a fair, transparent offer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if I'm behind on mortgage payments?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We can help prevent foreclosure! Our quick closing process can resolve mortgage issues before foreclosure proceedings begin. We'll work with your lender and provide immediate financial relief."
+                }
+              }
+            ]
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -377,6 +430,61 @@ export default function Process() {
                 (if you own the land). We also purchase commercial properties and land. Our team has experience with properties in various conditions, 
                 from move-in ready homes to properties requiring extensive repairs.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Frequently Asked Questions About Our Process
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">How long does the entire process take?</h3>
+                <p className="text-gray-600">From initial contact to closing, our process typically takes 7-21 days. We can expedite to 7 days for urgent situations like foreclosure prevention, but most sellers prefer 2-3 weeks to handle their affairs.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What information do you need for the initial consultation?</h3>
+                <p className="text-gray-600">We need basic property details: address, square footage, number of bedrooms/bathrooms, property condition, and your reason for selling. We'll gather more detailed information during the on-site inspection.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do I need to clean or repair my home before inspection?</h3>
+                <p className="text-gray-600">No preparation needed! We buy houses as-is in any condition. You don't need to clean, repair, stage, or even remove personal belongings. We'll evaluate the property in its current state.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What happens if I don't accept your offer?</h3>
+                <p className="text-gray-600">No obligation! If you don't accept our offer, there are no fees or penalties. We encourage you to explore all your options and make the best decision for your situation.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Can I change my mind after accepting the offer?</h3>
+                <p className="text-gray-600">Yes, you can withdraw from the transaction before closing. However, once we've invested in inspections, appraisals, and legal work, there may be costs to cover. We'll discuss this upfront.</p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What documents do I need to provide?</h3>
+                <p className="text-gray-600">We'll need property ownership documents, mortgage statements (if applicable), property tax information, and any relevant legal documents. We'll guide you through exactly what's needed.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">How do you determine the cash offer amount?</h3>
+                <p className="text-gray-600">Our offers are based on current market values, comparable sales, property condition, repair costs, and the convenience of a quick sale. We factor in all costs to provide a fair, transparent offer.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What if I have tenants in the property?</h3>
+                <p className="text-gray-600">We can work with occupied properties. We'll coordinate with tenants for inspections and handle the transition. We may adjust our timeline to accommodate tenant notice periods.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Do you handle probate or inherited properties?</h3>
+                <p className="text-gray-600">Yes! We specialize in inherited properties and probate situations. We understand the complexities and can work with executors, beneficiaries, and probate courts to facilitate smooth transactions.</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">What if I'm behind on mortgage payments?</h3>
+                <p className="text-gray-600">We can help prevent foreclosure! Our quick closing process can resolve mortgage issues before foreclosure proceedings begin. We'll work with your lender and provide immediate financial relief.</p>
+              </div>
             </div>
           </div>
         </div>

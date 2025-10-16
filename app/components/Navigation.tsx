@@ -1,7 +1,9 @@
 import { Link, useLocation } from "react-router";
+import { useState } from "react";
 
 export default function Navigation() {
   const location = useLocation();
+  const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
   
   const navItems = [
     { path: "/", label: "Home" },
@@ -12,6 +14,15 @@ export default function Navigation() {
     { path: "/neighborhoods", label: "Neighborhoods" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
+  ];
+
+  const locationPages = [
+    { path: "/sell-my-house-fast-las-vegas", label: "Las Vegas", description: "North/East Vegas (89031, 89032, 89110, 89142)" },
+    { path: "/sell-my-house-fast-southern-california", label: "Southern California", description: "Los Angeles, Orange County, Riverside" },
+    { path: "/sell-my-house-fast-orange-county", label: "Orange County", description: "Anaheim, Irvine, Santa Ana" },
+    { path: "/sell-my-house-fast-san-diego", label: "San Diego", description: "San Diego, Chula Vista, Oceanside" },
+    { path: "/sell-my-house-fast-riverside", label: "Riverside", description: "Riverside, Moreno Valley, Corona" },
+    { path: "/sell-my-house-fast-inland-empire", label: "Inland Empire", description: "San Bernardino, Riverside, Fontana" },
   ];
 
   return (
@@ -40,6 +51,44 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+            
+            {/* Location Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setIsLocationDropdownOpen(true)}
+                onMouseLeave={() => setIsLocationDropdownOpen(false)}
+                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+              >
+                Areas We Serve
+                <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {isLocationDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                  onMouseEnter={() => setIsLocationDropdownOpen(true)}
+                  onMouseLeave={() => setIsLocationDropdownOpen(false)}
+                >
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Sell Your House Fast</h3>
+                    <div className="grid grid-cols-1 gap-2">
+                      {locationPages.map((page) => (
+                        <Link
+                          key={page.path}
+                          to={page.path}
+                          className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
+                        >
+                          <div className="font-medium text-gray-900">{page.label}</div>
+                          <div className="text-sm text-gray-600">{page.description}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
           
           {/* Mobile menu button */}
