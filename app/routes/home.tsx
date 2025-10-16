@@ -2,9 +2,6 @@ import type { Route } from "./+types/home";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import AuthorBio from "~/components/AuthorBio";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -241,12 +238,12 @@ export default function Home() {
               Las Vegas's Most Trusted Cash Home Buyers! We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
+              <a href="/contact" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold text-center">
                 Get My Free Quote
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
+              </a>
+              <a href="tel:(702) 500-1981" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-lg font-semibold text-center">
                 Call (702) 500-1981
-              </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -256,33 +253,21 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-4xl font-bold text-blue-600">4.9</CardTitle>
-                <CardDescription className="text-gray-600 text-lg">Star Rating</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-4xl font-bold text-blue-600">25+</CardTitle>
-                <CardDescription className="text-gray-600 text-lg">Years of Experience</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">We have helped 1,000s of home sellers</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-4xl font-bold text-blue-600">$20K</CardTitle>
-                <CardDescription className="text-gray-600 text-lg">Cash Advance</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">4.9</div>
+              <div className="text-gray-600 text-lg mb-2">Star Rating</div>
+              <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
+              <div className="text-gray-600 text-lg mb-2">Years of Experience</div>
+              <p className="text-sm text-gray-500">We have helped 1,000s of home sellers</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">$20K</div>
+              <div className="text-gray-600 text-lg mb-2">Cash Advance</div>
+              <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
+            </div>
           </div>
         </div>
       </section>
@@ -558,56 +543,44 @@ export default function Home() {
             Frequently Asked Questions About Selling Your House Fast
           </h2>
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">How quickly can you close on my Las Vegas home?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations.</p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">Do you buy houses in any condition?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer.</p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">What areas of Las Vegas do you focus on?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods.</p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">Are there any hidden fees or commissions?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent.</p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">What if I'm behind on mortgage payments?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">We can help! Many homeowners facing foreclosure choose our cash offer to avoid the lengthy foreclosure process and protect their credit. We can close quickly to prevent foreclosure and provide immediate financial relief.</p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left">
-                  <h3 className="text-lg font-semibold text-gray-900">What makes Dr. Janet Duffy different?</h3>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-gray-600">Dr. Janet Duffy brings 25+ years of real estate experience and a personal touch to every transaction. As a local Las Vegas expert, she understands market nuances and provides honest, transparent communication throughout the entire process.</p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="space-y-4">
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">How quickly can you close on my Las Vegas home?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">We can close in as little as 7 days! Our streamlined process eliminates the delays of traditional real estate transactions. Most closings happen within 2-3 weeks, but we can expedite when needed for urgent situations like foreclosure prevention or job relocations.</p>
+              </details>
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">Do you buy houses in any condition?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">Yes! We specialize in buying houses as-is, including distressed properties, foreclosures, inherited homes, and properties needing major repairs. Whether your home needs a new roof, has foundation issues, or requires complete renovation, we'll make a fair cash offer.</p>
+              </details>
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">What areas of Las Vegas do you focus on?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">We specialize in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) where distressed inventory is highest. These areas offer the best opportunities for both sellers needing quick cash and investors seeking value. We also serve all Las Vegas neighborhoods.</p>
+              </details>
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">Are there any hidden fees or commissions?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">No! We don't charge any fees, commissions, or closing costs. What we offer is what you receive. Unlike traditional real estate sales that involve 6% agent commissions, inspection fees, repair costs, and marketing expenses, our process is completely transparent.</p>
+              </details>
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">What if I'm behind on mortgage payments?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">We can help! Many homeowners facing foreclosure choose our cash offer to avoid the lengthy foreclosure process and protect their credit. We can close quickly to prevent foreclosure and provide immediate financial relief.</p>
+              </details>
+              <details className="border rounded-lg px-6 py-4">
+                <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none">
+                  <h3 className="inline">What makes Dr. Janet Duffy different?</h3>
+                </summary>
+                <p className="text-gray-600 mt-3">Dr. Janet Duffy brings 25+ years of real estate experience and a personal touch to every transaction. As a local Las Vegas expert, she understands market nuances and provides honest, transparent communication throughout the entire process.</p>
+              </details>
+            </div>
           </div>
         </div>
       </section>
