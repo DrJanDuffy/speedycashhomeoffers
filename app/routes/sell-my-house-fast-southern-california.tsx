@@ -1,4 +1,5 @@
 import type { Route } from "./+types/sell-my-house-fast-southern-california";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -81,6 +82,7 @@ export default function SellMyHouseFastSouthernCalifornia() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

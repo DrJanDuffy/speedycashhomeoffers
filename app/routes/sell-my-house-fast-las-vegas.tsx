@@ -209,6 +209,117 @@ export default function SellMyHouseFastLasVegas() {
         </div>
       </section>
 
+      {/* Detailed Neighborhood Information */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">
+              Las Vegas Neighborhoods We Serve
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Dr. Janet Duffy specializes in North Las Vegas and East Las Vegas neighborhoods where distressed property inventory is highest and investment opportunities are most abundant. Our local expertise in these areas allows us to provide the most accurate valuations and fastest closings.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-600">North Las Vegas Market Overview</h3>
+              <p className="text-gray-600 mb-4">
+                North Las Vegas represents one of the most dynamic real estate markets in the Las Vegas Valley. With rapid population growth and development, this area offers unique opportunities for both distressed property sellers and cash buyers.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Population Growth:</strong> North Las Vegas has experienced 15% population growth over the past 5 years, creating strong demand for housing
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Distressed Inventory:</strong> Approximately 200+ properties enter default monthly in North Las Vegas ZIP codes 89031 and 89032
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Price Range:</strong> Our target $300-450K range represents 65% of distressed properties in this area
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Competition:</strong> Manageable competition compared to premium areas like Summerlin or Henderson
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-600">East Las Vegas Market Overview</h3>
+              <p className="text-gray-600 mb-4">
+                East Las Vegas offers excellent accessibility to the Las Vegas Strip, downtown, and major employment centers while maintaining more affordable property values. This strategic location makes it ideal for both residential and investment purposes.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Strategic Location:</strong> 15-20 minutes from Las Vegas Strip and downtown, providing excellent rental potential
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Distressed Properties:</strong> ZIP codes 89110 and 89142 consistently show high foreclosure rates and distressed inventory
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Investment Potential:</strong> Strong rental demand from Strip workers and downtown employees
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-gray-900">Market Stability:</strong> Consistent property values with less volatility than premium areas
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-blue-50 rounded-lg p-8">
+            <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Common Property Issues in Las Vegas</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="text-lg font-semibold mb-3 text-blue-600">Structural Issues</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Foundation settling due to clay soil conditions</li>
+                  <li>• Roof damage from intense sun exposure and occasional storms</li>
+                  <li>• HVAC system failures from extreme temperature fluctuations</li>
+                  <li>• Plumbing issues from hard water and mineral buildup</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-3 text-blue-600">Market-Specific Challenges</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• High foreclosure rates in target ZIP codes</li>
+                  <li>• Inherited properties requiring probate resolution</li>
+                  <li>• Investment properties with tenant issues</li>
+                  <li>• Properties damaged by deferred maintenance</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-white rounded-lg">
+              <p className="text-gray-700 text-center">
+                <strong>Why We Excel:</strong> Dr. Janet Duffy's 25+ years of Las Vegas real estate experience means we understand these common issues and can provide fair valuations that account for repair costs while still offering competitive cash offers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Focus ZIP Codes Section */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
