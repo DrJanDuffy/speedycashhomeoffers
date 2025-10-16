@@ -2,6 +2,19 @@ import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
 import { Label } from "~/components/ui/label";
+import { submitContactForm } from "~/lib/actions";
+import { redirect } from "react-router";
+
+export const action: Route.ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+  const result = await submitContactForm(formData);
+  
+  if (result.success) {
+    return redirect('/thank-you');
+  }
+  
+  return { error: result.message };
+};
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -170,14 +183,10 @@ export default function Contact() {
             </div>
                     <form 
                       className="space-y-6" 
-                      action="https://formspree.io/f/YOUR_FORM_ID" 
                       method="POST"
                       onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form'); }}
                     >
-              {/* Hidden field for form service */}
-              <input type="hidden" name="_subject" value="New Contact Form Submission - Speedy Cash Home Offers" />
-              <input type="hidden" name="_replyto" value="" />
-              <input type="hidden" name="_next" value="https://www.speedycashhomeoffers.com/thank-you" />
+              {/* Form data will be sent to Follow Up Boss via server action */}
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
