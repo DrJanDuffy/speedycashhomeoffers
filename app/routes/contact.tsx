@@ -1,6 +1,7 @@
 import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
+import RelatedPages from "~/components/RelatedPages";
 import { Label } from "~/components/ui/label";
 import { submitContactForm } from "~/lib/actions";
 import { redirect } from "react-router";
@@ -506,6 +507,9 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="contact" />
     </div>
   );
 }

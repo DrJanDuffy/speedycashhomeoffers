@@ -1,6 +1,7 @@
 import type { Route } from "./+types/sell-my-house-fast-las-vegas";
 import { useLoaderData } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -663,6 +664,9 @@ export default function SellMyHouseFastLasVegas() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="sellers" />
     </div>
   );
 }

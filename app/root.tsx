@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import MobileCTA from "./components/MobileCTA";
 
 export const links: Route.LinksFunction = () => [
@@ -87,6 +88,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Navigation />
         <main>{children}</main>
+        <Footer />
         <MobileCTA />
         <ScrollRestoration />
         <Scripts />

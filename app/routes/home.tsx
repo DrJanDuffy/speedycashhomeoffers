@@ -3,6 +3,7 @@ import Breadcrumbs from "~/components/Breadcrumbs";
 import AuthorBio from "~/components/AuthorBio";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
 import TrustBadges from "~/components/TrustBadges";
+import RelatedPages from "~/components/RelatedPages";
 import { CloudinarySample } from "~/components/CloudinaryImage";
 
 export const meta: Route.MetaFunction = () => {
@@ -688,55 +689,7 @@ export default function Home() {
       </section>
 
       {/* Related Pages */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Explore Our Services
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg p-6 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                <a href="/process" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  Our 5-Step Process
-                </a>
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Learn how we make selling your house fast and simple with our proven 5-step process.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                <a href="/testimonials" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  Customer Reviews
-                </a>
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Read real testimonials from homeowners who sold their houses fast with Dr. Janet Duffy.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                <a href="/meet-the-team" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  Meet Our Team
-                </a>
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Get to know Dr. Janet Duffy and our experienced team of real estate professionals.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                <a href="/contact" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  Get Free Quote
-                </a>
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Contact us today for a free, no-obligation cash offer on your Las Vegas home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedPages currentPage="home" />
 
       {/* Final CTA */}
       <section className="py-16 bg-blue-600 text-white">

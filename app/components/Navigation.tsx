@@ -10,15 +10,22 @@ export default function Navigation() {
     setIsClient(true);
   }, []);
   
-  const navItems = [
+  // Main navigation grouped by user intent and journey
+  const primaryNavItems = [
     { path: "/", label: "Home" },
-    { path: "/process", label: "The Process" },
-    { path: "/sellers", label: "Sellers" },
+    { path: "/sellers", label: "Sell Your House" },
+    { path: "/process", label: "How It Works" },
+    { path: "/about", label: "About Us" },
+    { path: "/contact", label: "Get Quote" },
+  ];
+
+  // Secondary navigation for additional services
+  const secondaryNavItems = [
     { path: "/buyers", label: "Buyers" },
     { path: "/investors", label: "Investors" },
-    { path: "/neighborhoods", label: "Neighborhoods" },
-    { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
+    { path: "/neighborhoods", label: "Areas" },
+    { path: "/testimonials", label: "Reviews" },
+    { path: "/faqs", label: "FAQs" },
   ];
 
   const locationPages = [
@@ -43,7 +50,8 @@ export default function Navigation() {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {/* Primary Navigation - Core User Journey */}
+            {primaryNavItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -57,14 +65,14 @@ export default function Navigation() {
               </Link>
             ))}
             
-            {/* Location Dropdown */}
+            {/* Secondary Navigation Dropdown */}
             <div className="relative">
               <button
                 onMouseEnter={() => setIsLocationDropdownOpen(true)}
                 onMouseLeave={() => setIsLocationDropdownOpen(false)}
                 className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
               >
-                Areas We Serve
+                More
                 <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -77,18 +85,33 @@ export default function Navigation() {
                   onMouseLeave={() => setIsLocationDropdownOpen(false)}
                 >
                   <div className="p-4">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Sell Your House Fast</h3>
-                    <div className="grid grid-cols-1 gap-2">
-                      {locationPages.map((page) => (
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Additional Services</h3>
+                    <div className="grid grid-cols-1 gap-2 mb-4">
+                      {secondaryNavItems.map((page) => (
                         <Link
                           key={page.path}
                           to={page.path}
                           className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
                         >
                           <div className="font-medium text-gray-900">{page.label}</div>
-                          <div className="text-sm text-gray-600">{page.description}</div>
                         </Link>
                       ))}
+                    </div>
+                    
+                    <div className="border-t pt-4">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-3">Areas We Serve</h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {locationPages.slice(0, 3).map((page) => (
+                          <Link
+                            key={page.path}
+                            to={page.path}
+                            className="block p-2 rounded-md hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="font-medium text-gray-900 text-sm">{page.label}</div>
+                            <div className="text-xs text-gray-600">{page.description}</div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

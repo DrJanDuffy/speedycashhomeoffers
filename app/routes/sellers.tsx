@@ -1,4 +1,6 @@
 import type { Route } from "./+types/sellers";
+import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -10,6 +12,7 @@ export const meta: Route.MetaFunction = () => {
 export default function Sellers() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,6 +125,9 @@ export default function Sellers() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="sellers" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Route } from "./+types/thank-you";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -149,6 +150,9 @@ export default function ThankYou() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="contact" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Route } from "./+types/process";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -511,6 +512,9 @@ export default function Process() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="process" />
     </div>
   );
 }
