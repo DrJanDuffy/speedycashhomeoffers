@@ -1,5 +1,6 @@
 import type { Route } from "./+types/blog";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import MarketInsightsSection from "~/components/MarketInsightsSection";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -97,6 +98,13 @@ export default function Blog() {
           </div>
         </div>
       </section>
+
+      {/* Latest Market Updates */}
+      <MarketInsightsSection 
+        maxArticles={6} 
+        title="Latest Market Updates"
+        className="bg-gray-50"
+      />
 
       {/* Blog Introduction */}
       <section className="py-16 bg-white">

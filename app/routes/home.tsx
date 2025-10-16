@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import AuthorBio from "~/components/AuthorBio";
+import MarketInsightsSection from "~/components/MarketInsightsSection";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -661,44 +662,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            We Serve Las Vegas and Southern California Markets
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Las Vegas, Nevada</h3>
-              <p className="text-gray-600 mb-4">
-                As Las Vegas's most trusted home buyers, we understand the unique real estate market in Nevada's largest city. Whether you're selling a property in Summerlin, Henderson, North Las Vegas, or any other Las Vegas neighborhood, we provide fair cash offers for homes in any condition.
-              </p>
-              <ul className="text-gray-600 space-y-2">
-                <li>• <a href="/sell-my-house-fast-las-vegas" className="text-blue-600 hover:underline">North Las Vegas cash buyers</a> (89031, 89032)</li>
-                <li>• <a href="/sell-my-house-fast-las-vegas" className="text-blue-600 hover:underline">East Las Vegas distressed properties</a> (89110, 89142)</li>
-                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Summerlin neighborhoods</a></li>
-                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Henderson real estate</a></li>
-                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Spring Valley homes</a></li>
-                <li>• <a href="/neighborhoods" className="text-blue-600 hover:underline">Paradise area properties</a></li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Southern California</h3>
-              <p className="text-gray-600 mb-4">
-                Our Southern California operations cover Los Angeles, Orange County, Riverside, San Bernardino, and San Diego counties. We've helped thousands of homeowners across California sell their properties quickly and efficiently.
-              </p>
-              <ul className="text-gray-600 space-y-2">
-                <li>• <a href="/sell-my-house-fast-southern-california" className="text-blue-600 hover:underline">Los Angeles County cash buyers</a></li>
-                <li>• <a href="/sell-my-house-fast-orange-county" className="text-blue-600 hover:underline">Orange County real estate</a></li>
-                <li>• <a href="/sell-my-house-fast-riverside" className="text-blue-600 hover:underline">Riverside County homes</a></li>
-                <li>• <a href="/sell-my-house-fast-inland-empire" className="text-blue-600 hover:underline">San Bernardino County</a></li>
-                <li>• <a href="/sell-my-house-fast-san-diego" className="text-blue-600 hover:underline">San Diego County properties</a></li>
-                <li>• <a href="/process" className="text-blue-600 hover:underline">California to Las Vegas relocation</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Latest Market Insights */}
+      <MarketInsightsSection 
+        maxArticles={3} 
+        title="Latest Real Estate Market Insights"
+        className="bg-gray-50"
+      />
 
       {/* Why Trust Us - E-E-A-T Section */}
       <section className="py-16 bg-white">
