@@ -3,8 +3,8 @@ import type { Route } from "./+types/sell-my-house-fast-las-vegas";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Las Vegas | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in Las Vegas Nevada and we pay cash fast. Find out how much money you can get today!" },
-    { name: "keywords", content: "sell house fast Las Vegas, cash home buyers Las Vegas, Dr. Janet Duffy Las Vegas, sell house as is Las Vegas, cash offer Las Vegas Nevada, we buy houses Las Vegas" },
+    { name: "description", content: "Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). We pay cash fast for $300-450K homes. Find out how much money you can get today!" },
+    { name: "keywords", content: "sell house fast Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, cash home buyers Las Vegas, Dr. Janet Duffy Las Vegas, sell house as is Las Vegas, cash offer Las Vegas Nevada, we buy houses Las Vegas, $300-450K homes Las Vegas" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas" },
@@ -12,13 +12,13 @@ export const meta: Route.MetaFunction = () => {
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas" },
     { property: "og:title", content: "Sell My House Fast Las Vegas | Speedy Cash Home Offers" },
-    { property: "og:description", content: "Dr. Janet Duffy has purchased thousands of homes in Las Vegas Nevada and we pay cash fast. Find out how much money you can get today!" },
+    { property: "og:description", content: "Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). We pay cash fast for $300-450K homes. Find out how much money you can get today!" },
     { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/las-vegas-og.jpg" }, // Placeholder image
     // Twitter
     { property: "twitter:card", content: "summary_large_image" },
     { property: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas" },
     { property: "twitter:title", content: "Sell My House Fast Las Vegas | Speedy Cash Home Offers" },
-    { property: "twitter:description", content: "Dr. Janet Duffy has purchased thousands of homes in Las Vegas Nevada and we pay cash fast. Find out how much money you can get today!" },
+    { property: "twitter:description", content: "Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). We pay cash fast for $300-450K homes. Find out how much money you can get today!" },
     { property: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/las-vegas-twitter.jpg" }, // Placeholder image
   ];
 };
@@ -97,8 +97,8 @@ export default function SellMyHouseFastLasVegas() {
               Sell My House Fast Las Vegas
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Dr. Janet Duffy has purchased thousands of homes in Las Vegas Nevada and we pay cash fast. 
-              Find out how much money you can get today!
+              Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). 
+              We pay cash fast for $300-450K homes. Find out how much money you can get today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -140,10 +140,10 @@ export default function SellMyHouseFastLasVegas() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">
-              We Buy Houses As-Is in Las Vegas NV
+              We Buy Houses As-Is in North/East Las Vegas NV
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              We buy houses in Las Vegas Nevada in Any Condition As-Is and fast for cash! Some of the ways we help you are:
+              We specialize in North/East Las Vegas distressed properties in ZIP codes 89031, 89032, 89110, and 89142. We buy houses in these areas in Any Condition As-Is and fast for cash! Our target price range is $300-450K where we find the best opportunities:
             </p>
           </div>
           
@@ -202,6 +202,57 @@ export default function SellMyHouseFastLasVegas() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Choose Your Timeline</h3>
               <p className="text-gray-600">Choose a closing date that fits your timeline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Focus ZIP Codes Section */}
+      <section className="py-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">
+              Our Focus ZIP Codes: North/East Las Vegas
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              We specialize in these specific Las Vegas ZIP codes where we find the highest concentration of distressed properties and best investment opportunities in the $300-450K price range.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-yellow-600">North Las Vegas (89031, 89032)</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>• <strong>89031:</strong> North Las Vegas - High distressed inventory, excellent margins</li>
+                <li>• <strong>89032:</strong> North Las Vegas - Growing area with investment potential</li>
+                <li>• Both areas offer the most distressed inventory in Las Vegas</li>
+                <li>• Best margins for cash buyers in this price range</li>
+                <li>• Existing presence and local expertise in these neighborhoods</li>
+                <li>• Target 200+ properties available monthly in default</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-yellow-600">East Las Vegas (89110, 89142)</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>• <strong>89110:</strong> East Las Vegas - Prime distressed property area</li>
+                <li>• <strong>89142:</strong> East Las Vegas - Strong investment opportunities</li>
+                <li>• High concentration of distressed properties</li>
+                <li>• Manageable competition for cash buyers</li>
+                <li>• Excellent location for Las Vegas market entry</li>
+                <li>• Consistent inventory of $300-450K properties</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <div className="bg-yellow-100 rounded-lg p-6 max-w-4xl mx-auto">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Why These ZIP Codes?</h3>
+              <p className="text-gray-700">
+                After extensive market analysis, these four ZIP codes represent Las Vegas's best opportunities for cash home buyers. 
+                They offer the highest concentration of distressed properties, manageable competition, and excellent margins in our target $300-450K price range. 
+                Dr. Janet Duffy has established a strong presence in these areas, making us the trusted choice for homeowners looking to sell fast.
+              </p>
             </div>
           </div>
         </div>

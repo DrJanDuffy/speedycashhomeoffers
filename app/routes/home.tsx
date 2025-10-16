@@ -3,20 +3,20 @@ import type { Route } from "./+types/home";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
-    { name: "description", content: "Las Vegas and Southern California's most trusted home buyers. No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours with Dr. Janet Duffy." },
-    { name: "keywords", content: "we buy houses cash, sell house fast Las Vegas, cash home buyers Nevada, sell house as is, no repairs needed, Dr Janet Duffy, Speedy Cash Home Offers" },
+    { name: "description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours with Dr. Janet Duffy." },
+    { name: "keywords", content: "we buy houses cash Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, sell house fast Las Vegas, cash home buyers Nevada, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { name: "canonical", content: "https://speedycashhomeoffers.com/" },
     { property: "og:title", content: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
-    { property: "og:description", content: "Las Vegas and Southern California's most trusted home buyers. No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
+    { property: "og:description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://speedycashhomeoffers.com/" },
     { property: "og:image", content: "https://speedycashhomeoffers.com/images/og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
-    { name: "twitter:description", content: "Las Vegas and Southern California's most trusted home buyers. No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
+    { name: "twitter:description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
     { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/twitter-image.jpg" },
   ];
 };
@@ -32,7 +32,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Speedy Cash Home Offers",
-            "description": "Las Vegas and Southern California's most trusted home buyers. We buy houses for cash, as-is, with no repairs needed.",
+            "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). We buy houses for cash, as-is, with no repairs needed.",
             "url": "https://speedycashhomeoffers.com",
             "telephone": "(702) 555-0123",
             "email": "info@speedycashhomeoffers.com",
@@ -93,7 +93,7 @@ export default function Home() {
               We Buy Houses For Cash, As-Is & Now
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Las Vegas and Southern California's Most Trusted Home Buyers! No showings. No agents. No repairs. No fees.
+              Las Vegas's Most Trusted Cash Home Buyers! We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -138,7 +138,7 @@ export default function Home() {
               Why Choose Speedy Cash Home Offers?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              When you need to sell your house fast in Las Vegas or Southern California, Dr. Janet Duffy and her team at Speedy Cash Home Offers provide the most reliable and efficient solution. Our cash home buying service eliminates the traditional hassles of selling real estate, offering homeowners a stress-free alternative to the conventional market.
+              When you need to sell your house fast in Las Vegas, Dr. Janet Duffy and her team at Speedy Cash Home Offers provide the most reliable and efficient solution. We specialize in North/East Vegas distressed properties ($300-450K) and offer California sellers a bridge to relocate to Vegas. Our cash home buying service eliminates the traditional hassles of selling real estate, offering homeowners a stress-free alternative to the conventional market.
             </p>
           </div>
           
@@ -192,7 +192,7 @@ export default function Home() {
               How Our Cash Home Buying Process Works
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our streamlined home-selling solution eliminates common challenges that homeowners face when selling through traditional methods. At Speedy Cash Home Offers, we've perfected a process that saves you time, money, and stress.
+              Our streamlined home-selling solution eliminates common challenges that homeowners face when selling through traditional methods. At Speedy Cash Home Offers, we've perfected a process that saves you time, money, and stress. We focus on Las Vegas distressed properties and help California sellers relocate to Vegas.
             </p>
           </div>
           
@@ -311,6 +311,82 @@ export default function Home() {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>2 to 3 month long sales process</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Las Vegas Market Focus */}
+      <section className="py-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">
+              Las Vegas Market Focus: North/East Neighborhoods
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              We specialize in Las Vegas distressed properties, particularly in North Las Vegas (89031, 89032) and East Vegas (89110, 89142) where we find the best opportunities for both sellers and investors. Our target price range of $300-450K provides excellent margins while helping homeowners get fair cash offers quickly.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Primary Market: Las Vegas</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Focus ZIP codes: 89031, 89032, 89110, 89142</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Target price: $300-450K distressed properties</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Most distressed inventory, best margins</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Existing presence and local expertise</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Secondary Market: California Bridge</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Riverside/San Bernardino focus</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Help California sellers relocate to Vegas</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Quick cash for relocation needs</span>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Double-end deals when possible</span>
                 </li>
               </ul>
             </div>

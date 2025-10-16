@@ -3,8 +3,8 @@ import type { Route } from "./+types/sell-my-house-fast-southern-california";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { name: "description", content: "Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. Find out how much money you can get today!" },
-    { name: "keywords", content: "sell house fast Southern California, cash home buyers Southern California, Dr. Janet Duffy Southern California, sell house as is Southern California, cash offer Southern California, we buy houses Southern California" },
+    { name: "description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
+    { name: "keywords", content: "sell house fast Southern California, California to Las Vegas relocation, Riverside San Bernardino cash buyers, Dr. Janet Duffy California, bridge market California, relocate to Vegas, cash offer Southern California, we buy houses Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
@@ -12,13 +12,13 @@ export const meta: Route.MetaFunction = () => {
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
     { property: "og:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { property: "og:description", content: "Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. Find out how much money you can get today!" },
+    { property: "og:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
     { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-og.jpg" }, // Placeholder image
     // Twitter
     { property: "twitter:card", content: "summary_large_image" },
     { property: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
     { property: "twitter:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { property: "twitter:description", content: "Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. Find out how much money you can get today!" },
+    { property: "twitter:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
     { property: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-twitter.jpg" }, // Placeholder image
   ];
 };
@@ -93,8 +93,8 @@ export default function SellMyHouseFastSouthernCalifornia() {
               Sell My House Fast Southern California
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. 
-              Find out how much money you can get today!
+              Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. 
+              We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -126,6 +126,59 @@ export default function SellMyHouseFastSouthernCalifornia() {
               <div className="text-4xl font-bold text-orange-600 mb-2">$20K</div>
               <p className="text-gray-600">Cash Advance</p>
               <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bridge Market Strategy */}
+      <section className="py-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">
+              California to Las Vegas Bridge Market
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              We specialize in helping California sellers relocate to Las Vegas by providing quick cash offers for their California homes. 
+              Our bridge market strategy focuses on Riverside/San Bernardino areas where we can help you liquidate your California property 
+              and transition smoothly to Las Vegas living.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">Why California Sellers Choose Us</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>• <strong>Quick Cash:</strong> Get cash fast for your California home to fund your Vegas move</li>
+                <li>• <strong>No Repairs:</strong> We buy your house as-is, no matter the condition</li>
+                <li>• <strong>Relocation Support:</strong> We understand the challenges of moving from California to Vegas</li>
+                <li>• <strong>Bridge Market:</strong> We help you transition from California to Las Vegas seamlessly</li>
+                <li>• <strong>Double-End Deals:</strong> We can help you buy in Vegas while selling in California</li>
+                <li>• <strong>Local Expertise:</strong> Dr. Janet Duffy knows both California and Vegas markets</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">Riverside/San Bernardino Focus</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>• <strong>Riverside County:</strong> Prime area for California sellers relocating to Vegas</li>
+                <li>• <strong>San Bernardino County:</strong> Strong bridge market for Vegas relocation</li>
+                <li>• <strong>Quick Liquidation:</strong> Fast cash offers for California properties</li>
+                <li>• <strong>Relocation Assistance:</strong> Help with the transition to Las Vegas</li>
+                <li>• <strong>Market Knowledge:</strong> Understanding of both California and Vegas markets</li>
+                <li>• <strong>Seamless Process:</strong> Streamlined selling process for California homeowners</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <div className="bg-orange-100 rounded-lg p-6 max-w-4xl mx-auto">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Ready to Relocate to Las Vegas?</h3>
+              <p className="text-gray-700">
+                If you're a California homeowner looking to relocate to Las Vegas, we can help you sell your California home fast 
+                and get the cash you need for your Vegas move. Our bridge market strategy is designed specifically for California 
+                sellers who want to transition to Las Vegas living. Contact us today to get started!
+              </p>
             </div>
           </div>
         </div>
