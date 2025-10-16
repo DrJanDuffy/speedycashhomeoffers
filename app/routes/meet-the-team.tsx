@@ -1,4 +1,5 @@
 import type { Route } from "./+types/meet-the-team";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -24,6 +25,7 @@ export const meta: Route.MetaFunction = () => {
 export default function MeetTheTeam() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       {/* Structured Data */}
       <script
         type="application/ld+json"
