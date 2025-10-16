@@ -1,0 +1,443 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/process": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/testimonials": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/meet-the-team": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/faqs": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/blog": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/market-insights": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-las-vegas": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-southern-california": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-orange-county": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-san-diego": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-riverside": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sell-my-house-fast-inland-empire": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sellers": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/buyers": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/investors": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/neighborhoods": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/process": {
+        "id": "routes/process",
+        "parentId": "root",
+        "file": "app/routes/process.tsx",
+        "path": "process",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/testimonials": {
+        "id": "routes/testimonials",
+        "parentId": "root",
+        "file": "app/routes/testimonials.tsx",
+        "path": "testimonials",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/meet-the-team": {
+        "id": "routes/meet-the-team",
+        "parentId": "root",
+        "file": "app/routes/meet-the-team.tsx",
+        "path": "meet-the-team",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/faqs": {
+        "id": "routes/faqs",
+        "parentId": "root",
+        "file": "app/routes/faqs.tsx",
+        "path": "faqs",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/blog": {
+        "id": "routes/blog",
+        "parentId": "root",
+        "file": "app/routes/blog.tsx",
+        "path": "blog",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/market-insights": {
+        "id": "routes/market-insights",
+        "parentId": "root",
+        "file": "app/routes/market-insights.tsx",
+        "path": "market-insights",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-las-vegas": {
+        "id": "routes/sell-my-house-fast-las-vegas",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-las-vegas.tsx",
+        "path": "sell-my-house-fast-las-vegas",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-southern-california": {
+        "id": "routes/sell-my-house-fast-southern-california",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-southern-california.tsx",
+        "path": "sell-my-house-fast-southern-california",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-orange-county": {
+        "id": "routes/sell-my-house-fast-orange-county",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-orange-county.tsx",
+        "path": "sell-my-house-fast-orange-county",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-san-diego": {
+        "id": "routes/sell-my-house-fast-san-diego",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-san-diego.tsx",
+        "path": "sell-my-house-fast-san-diego",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-riverside": {
+        "id": "routes/sell-my-house-fast-riverside",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-riverside.tsx",
+        "path": "sell-my-house-fast-riverside",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sell-my-house-fast-inland-empire": {
+        "id": "routes/sell-my-house-fast-inland-empire",
+        "parentId": "root",
+        "file": "app/routes/sell-my-house-fast-inland-empire.tsx",
+        "path": "sell-my-house-fast-inland-empire",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sellers": {
+        "id": "routes/sellers",
+        "parentId": "root",
+        "file": "app/routes/sellers.tsx",
+        "path": "sellers",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/buyers": {
+        "id": "routes/buyers",
+        "parentId": "root",
+        "file": "app/routes/buyers.tsx",
+        "path": "buyers",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/investors": {
+        "id": "routes/investors",
+        "parentId": "root",
+        "file": "app/routes/investors.tsx",
+        "path": "investors",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/neighborhoods": {
+        "id": "routes/neighborhoods",
+        "parentId": "root",
+        "file": "app/routes/neighborhoods.tsx",
+        "path": "neighborhoods",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "app/routes/about.tsx",
+        "path": "about",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "app/routes/contact.tsx",
+        "path": "contact",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "C:/Users/geneb/speedycashhomeoffers/app",
+    "basename": "/",
+    "buildDirectory": "C:/Users/geneb/speedycashhomeoffers/build",
+    "future": {
+      "v8_middleware": false,
+      "unstable_optimizeDeps": false,
+      "unstable_splitRouteModules": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/process": {
+        "id": "routes/process",
+        "parentId": "root",
+        "file": "routes/process.tsx",
+        "path": "process"
+      },
+      "routes/testimonials": {
+        "id": "routes/testimonials",
+        "parentId": "root",
+        "file": "routes/testimonials.tsx",
+        "path": "testimonials"
+      },
+      "routes/meet-the-team": {
+        "id": "routes/meet-the-team",
+        "parentId": "root",
+        "file": "routes/meet-the-team.tsx",
+        "path": "meet-the-team"
+      },
+      "routes/faqs": {
+        "id": "routes/faqs",
+        "parentId": "root",
+        "file": "routes/faqs.tsx",
+        "path": "faqs"
+      },
+      "routes/blog": {
+        "id": "routes/blog",
+        "parentId": "root",
+        "file": "routes/blog.tsx",
+        "path": "blog"
+      },
+      "routes/market-insights": {
+        "id": "routes/market-insights",
+        "parentId": "root",
+        "file": "routes/market-insights.tsx",
+        "path": "market-insights"
+      },
+      "routes/sell-my-house-fast-las-vegas": {
+        "id": "routes/sell-my-house-fast-las-vegas",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-las-vegas.tsx",
+        "path": "sell-my-house-fast-las-vegas"
+      },
+      "routes/sell-my-house-fast-southern-california": {
+        "id": "routes/sell-my-house-fast-southern-california",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-southern-california.tsx",
+        "path": "sell-my-house-fast-southern-california"
+      },
+      "routes/sell-my-house-fast-orange-county": {
+        "id": "routes/sell-my-house-fast-orange-county",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-orange-county.tsx",
+        "path": "sell-my-house-fast-orange-county"
+      },
+      "routes/sell-my-house-fast-san-diego": {
+        "id": "routes/sell-my-house-fast-san-diego",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-san-diego.tsx",
+        "path": "sell-my-house-fast-san-diego"
+      },
+      "routes/sell-my-house-fast-riverside": {
+        "id": "routes/sell-my-house-fast-riverside",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-riverside.tsx",
+        "path": "sell-my-house-fast-riverside"
+      },
+      "routes/sell-my-house-fast-inland-empire": {
+        "id": "routes/sell-my-house-fast-inland-empire",
+        "parentId": "root",
+        "file": "routes/sell-my-house-fast-inland-empire.tsx",
+        "path": "sell-my-house-fast-inland-empire"
+      },
+      "routes/sellers": {
+        "id": "routes/sellers",
+        "parentId": "root",
+        "file": "routes/sellers.tsx",
+        "path": "sellers"
+      },
+      "routes/buyers": {
+        "id": "routes/buyers",
+        "parentId": "root",
+        "file": "routes/buyers.tsx",
+        "path": "buyers"
+      },
+      "routes/investors": {
+        "id": "routes/investors",
+        "parentId": "root",
+        "file": "routes/investors.tsx",
+        "path": "investors"
+      },
+      "routes/neighborhoods": {
+        "id": "routes/neighborhoods",
+        "parentId": "root",
+        "file": "routes/neighborhoods.tsx",
+        "path": "neighborhoods"
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "routes/about.tsx",
+        "path": "about"
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "routes/contact.tsx",
+        "path": "contact"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/process.tsx",
+            "path": "process"
+          },
+          {
+            "file": "routes/testimonials.tsx",
+            "path": "testimonials"
+          },
+          {
+            "file": "routes/meet-the-team.tsx",
+            "path": "meet-the-team"
+          },
+          {
+            "file": "routes/faqs.tsx",
+            "path": "faqs"
+          },
+          {
+            "file": "routes/blog.tsx",
+            "path": "blog"
+          },
+          {
+            "file": "routes/market-insights.tsx",
+            "path": "market-insights"
+          },
+          {
+            "file": "routes/sell-my-house-fast-las-vegas.tsx",
+            "path": "sell-my-house-fast-las-vegas"
+          },
+          {
+            "file": "routes/sell-my-house-fast-southern-california.tsx",
+            "path": "sell-my-house-fast-southern-california"
+          },
+          {
+            "file": "routes/sell-my-house-fast-orange-county.tsx",
+            "path": "sell-my-house-fast-orange-county"
+          },
+          {
+            "file": "routes/sell-my-house-fast-san-diego.tsx",
+            "path": "sell-my-house-fast-san-diego"
+          },
+          {
+            "file": "routes/sell-my-house-fast-riverside.tsx",
+            "path": "sell-my-house-fast-riverside"
+          },
+          {
+            "file": "routes/sell-my-house-fast-inland-empire.tsx",
+            "path": "sell-my-house-fast-inland-empire"
+          },
+          {
+            "file": "routes/sellers.tsx",
+            "path": "sellers"
+          },
+          {
+            "file": "routes/buyers.tsx",
+            "path": "buyers"
+          },
+          {
+            "file": "routes/investors.tsx",
+            "path": "investors"
+          },
+          {
+            "file": "routes/neighborhoods.tsx",
+            "path": "neighborhoods"
+          },
+          {
+            "file": "routes/about.tsx",
+            "path": "about"
+          },
+          {
+            "file": "routes/contact.tsx",
+            "path": "contact"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
