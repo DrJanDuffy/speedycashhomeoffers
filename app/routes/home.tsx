@@ -334,29 +334,29 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Primary Market: Las Vegas</h3>
               <ul className="space-y-3">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Focus ZIP codes: 89031, 89032, 89110, 89142</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Focus ZIP codes: 89031, 89032, 89110, 89142</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Target price: $300-450K distressed properties</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Target price: $300-450K distressed properties</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Most distressed inventory, best margins</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Most distressed inventory, best margins</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Existing presence and local expertise</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Existing presence and local expertise</div>
                 </li>
               </ul>
             </div>
@@ -364,29 +364,29 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Secondary Market: California Bridge</h3>
               <ul className="space-y-3">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Riverside/San Bernardino focus</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Riverside/San Bernardino focus</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Help California sellers relocate to Vegas</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Help California sellers relocate to Vegas</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Quick cash for relocation needs</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Quick cash for relocation needs</div>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Double-end deals when possible</span>
+                  <div className="text-gray-700 text-base leading-relaxed" style={{color: '#374151'}}>Double-end deals when possible</div>
                 </li>
               </ul>
             </div>
