@@ -1,9 +1,5 @@
 import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -160,49 +156,51 @@ export default function Contact() {
             </p>
           </div>
 
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">Get My Free, No-Obligation Quote</CardTitle>
-              <CardDescription className="text-center">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold mb-2">Get My Free, No-Obligation Quote</h2>
+              <p className="text-gray-600">
                 Call us today at (702) 500-1981. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
-                    <Input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      placeholder="First Last"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone *</Label>
-                    <Input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      placeholder="(702) 500-1981"
-                    />
-                  </div>
-                </div>
-
+              </p>
+            </div>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
                     required
-                    placeholder="your@email.com"
+                    placeholder="First Last"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <p className="text-sm text-gray-500">Please check your email address. Email addresses cannot end in a period.</p>
                 </div>
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="(702) 500-1981"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <p className="text-sm text-gray-500">Please check your email address. Email addresses cannot end in a period.</p>
+              </div>
 
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -290,17 +288,15 @@ export default function Contact() {
                 </div>
 
                 <div className="text-center">
-                  <Button
+                  <button
                     type="submit"
-                    size="lg"
-                    className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-4"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white text-lg px-8 py-4 rounded-lg font-semibold w-full"
                   >
                     Get My Free Quote
-                  </Button>
+                  </button>
                 </div>
               </form>
-            </CardContent>
-          </Card>
+          </div>
         </div>
       </section>
 
