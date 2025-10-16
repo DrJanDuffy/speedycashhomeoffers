@@ -1,9 +1,0 @@
-{
-  "functions": {
-    "**/*.func.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
-  "buildCommand": "yarn build"
-}
