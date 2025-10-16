@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import Breadcrumbs from "~/components/Breadcrumbs";
+import AuthorBio from "~/components/AuthorBio";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -695,6 +696,18 @@ export default function Home() {
                 <li>• <a href="/process" className="text-blue-600 hover:underline">California to Las Vegas relocation</a></li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Trust Us - E-E-A-T Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Why Trust Dr. Janet Duffy?
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <AuthorBio showFullBio={true} />
           </div>
         </div>
       </section>
