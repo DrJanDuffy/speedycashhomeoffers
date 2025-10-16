@@ -1,4 +1,3 @@
-import React from 'react';
 import type { RSSArticle } from '~/utils/rssParser';
 
 interface ArticleCardProps {

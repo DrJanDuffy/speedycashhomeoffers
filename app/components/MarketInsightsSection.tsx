@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchRSSFeed, type RSSArticle } from '~/utils/rssParser';
 import ArticleCard from './ArticleCard';
 
