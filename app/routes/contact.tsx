@@ -264,42 +264,43 @@ export default function Contact() {
               </select>
             </div>
 
-            <div className="mb-6">
-              <label htmlFor="home-details" className="block text-sm font-medium text-gray-700 mb-2">
-                Tell us about your home (optional)
-              </label>
-              <textarea
-                id="home-details"
-                name="home-details"
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="Tell us about your property, its condition, and any specific needs you have..."
-              ></textarea>
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="home-details">Tell us about your home (optional)</Label>
+                  <textarea
+                    id="home-details"
+                    name="home-details"
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    placeholder="Tell us about your property, its condition, and any specific needs you have..."
+                  />
+                </div>
 
-            <div className="mb-6">
-              <label className="flex items-start">
-                <input
-                  type="checkbox"
-                  className="mt-1 mr-3"
-                  required
-                />
-                <span className="text-sm text-gray-600">
-                  By submitting your phone number, you agree to receive text messages from Speedy Cash Home Offers regarding the sell of your home. You can opt-out anytime. Message and data rates may apply. 
-                  <a href="#" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</a>.
-                </span>
-              </label>
-            </div>
+                <div className="space-y-2">
+                  <Label className="flex items-start">
+                    <input
+                      type="checkbox"
+                      className="mt-1 mr-3"
+                      required
+                    />
+                    <span className="text-sm text-gray-600">
+                      By submitting your phone number, you agree to receive text messages from Speedy Cash Home Offers regarding the sell of your home. You can opt-out anytime. Message and data rates may apply. 
+                      <a href="#" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</a>.
+                    </span>
+                  </Label>
+                </div>
 
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-colors"
-              >
-                Get My Free Quote
-              </button>
-            </div>
-          </form>
+                <div className="text-center">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-4"
+                  >
+                    Get My Free Quote
+                  </Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
