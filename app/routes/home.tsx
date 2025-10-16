@@ -86,7 +86,7 @@ export default function Home() {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
-              "telephone": "(702) 555-0123",
+              "telephone": "(702) 500-1981",
               "email": "DrDuffy@SpeedyCashHomeOffers.com"
             },
             "serviceType": "Cash Home Buying",
@@ -176,7 +176,7 @@ export default function Home() {
             "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
             "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). We buy houses for cash, as-is, with no repairs needed.",
             "url": "https://speedycashhomeoffers.com",
-            "telephone": "(702) 555-0123",
+            "telephone": "(702) 500-1981",
             "email": "DrDuffy@SpeedyCashHomeOffers.com",
             "address": {
               "@type": "PostalAddress",
@@ -242,7 +242,7 @@ export default function Home() {
                 Get My Free Quote
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                Call (702) 555-0123
+                Call (702) 500-1981
               </button>
             </div>
           </div>
@@ -746,7 +746,7 @@ export default function Home() {
               Get My Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>

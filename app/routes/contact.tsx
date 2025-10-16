@@ -4,7 +4,7 @@ import Breadcrumbs from "~/components/Breadcrumbs";
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Contact Us Today | Speedy Cash Home Offers" },
-    { name: "description", content: "Contact Dr. Janet Duffy for FREE cash offer! We buy houses fast in Las Vegas & Southern California. Call (702) 555-0123 or get quote in 24hrs!" },
+    { name: "description", content: "Contact Dr. Janet Duffy for FREE cash offer! We buy houses fast in Las Vegas & Southern California. Call (702) 500-1981 or get quote in 24hrs!" },
     { name: "keywords", content: "contact Speedy Cash Home Offers, sell house fast Las Vegas, cash offer Las Vegas, Dr Janet Duffy contact, real estate inquiry Las Vegas, sell house Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
@@ -55,7 +55,7 @@ export default function Contact() {
             "mainEntity": {
               "@type": "LocalBusiness",
               "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
-              "telephone": "(702) 555-0123",
+              "telephone": "(702) 500-1981",
               "email": "DrDuffy@SpeedyCashHomeOffers.com",
               "address": {
                 "@type": "PostalAddress",
@@ -117,7 +117,7 @@ export default function Contact() {
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>(702) 555-0123</span>
+                <span>(702) 500-1981</span>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function Contact() {
               Get My Free, No-Obligation Quote
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Call us today at (702) 555-0123. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
+              Call us today at (702) 500-1981. Get a cash offer to sell your house fast in as little as 24 hours. It's Quick and Easy!
             </p>
             <p className="text-sm text-gray-500">
               "*" indicates required fields
@@ -181,7 +181,7 @@ export default function Contact() {
                   name="phone"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  placeholder="(702) 555-0123"
+                  placeholder="(702) 500-1981"
                 />
               </div>
             </div>
@@ -379,7 +379,7 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">(702) 555-0123</p>
+                    <p className="text-gray-600">(702) 500-1981</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -466,7 +466,7 @@ export default function Contact() {
               Get My Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>

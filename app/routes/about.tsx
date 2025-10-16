@@ -27,7 +27,7 @@ export default function About() {
                 Get Free Quote
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
-                Call (702) 555-0123
+                Call (702) 500-1981
               </button>
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function About() {
               Get Your Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>

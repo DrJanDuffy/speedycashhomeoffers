@@ -52,7 +52,7 @@ export default function AuthorBio({ showFullBio = false, className = "" }: Autho
           
           <div className="mt-4 pt-4 border-t border-gray-200">
             <div className="flex items-center space-x-4 text-sm text-gray-500">
-              <span>📞 (702) 555-0123</span>
+              <span>📞 (702) 500-1981</span>
               <span>✉️ DrDuffy@SpeedyCashHomeOffers.com</span>
               <span>📍 Las Vegas, NV</span>
             </div>
@@ -75,7 +75,7 @@ export default function AuthorBio({ showFullBio = false, className = "" }: Autho
             },
             "description": "Las Vegas real estate expert with 25+ years experience specializing in distressed properties and foreclosure prevention",
             "url": "https://www.speedycashhomeoffers.com/meet-the-team",
-            "telephone": "(702) 555-0123",
+            "telephone": "(702) 500-1981",
             "email": "DrDuffy@SpeedyCashHomeOffers.com",
             "address": {
               "@type": "PostalAddress",

@@ -127,7 +127,7 @@ export default function FAQs() {
                 Get My Free Quote
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
-                Call (702) 555-0123
+                Call (702) 500-1981
               </button>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function FAQs() {
                 Our home buying process consists of five simple steps:
               </p>
               <ul className="text-gray-600 space-y-2 ml-4">
-                <li><strong>Contact:</strong> Complete the online form to let us know that you are interested in help to "sell my house fast for cash", or call us directly at (702) 555-0123.</li>
+                <li><strong>Contact:</strong> Complete the online form to let us know that you are interested in help to "sell my house fast for cash", or call us directly at (702) 500-1981.</li>
                 <li><strong>Phone Call:</strong> During the initial phone call we will collect your property details and learn more about your unique situation and closing requirements.</li>
                 <li><strong>On Location Meeting/Proposal:</strong> After we collect the details of your property and situation, we will then schedule an on-location inspection of your home and provide you with a firm offer at that time. There is no obligation to accept our offer.</li>
                 <li><strong>Review of Offer:</strong> The ball is in your court. You decide what is in your best interest. We encourage you to take as much time as you need to look over our offer. We understand this is a significant decision and will work with you on your timeline.</li>
@@ -295,7 +295,7 @@ export default function FAQs() {
               </h3>
               <p className="text-gray-600">
                 Getting a quote is simple and free. You can fill out the "Get My Free No-Obligation Quote" form under the contact tab on our website, 
-                or give us a call at (702) 555-0123. Our team will gather some basic information about your property and provide you with a 
+                or give us a call at (702) 500-1981. Our team will gather some basic information about your property and provide you with a 
                 preliminary assessment. We'll then schedule a convenient time to visit your property and provide you with a firm cash offer.
               </p>
             </div>
@@ -337,7 +337,7 @@ export default function FAQs() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Call Us Directly</h3>
-              <p className="text-gray-600">Speak with our team at (702) 555-0123 for immediate assistance</p>
+              <p className="text-gray-600">Speak with our team at (702) 500-1981 for immediate assistance</p>
             </div>
             <div className="bg-gray-50 rounded-lg shadow-lg p-6 text-center">
               <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -377,7 +377,7 @@ export default function FAQs() {
               Get My Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>

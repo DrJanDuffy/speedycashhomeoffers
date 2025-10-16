@@ -522,7 +522,7 @@ export default function MarketInsights() {
               Get My Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-cyan-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>

@@ -27,7 +27,7 @@ export const meta: Route.MetaFunction = () => {
 export const loader: Route.LoaderFunction = async () => {
   return {
     businessName: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
-    phoneNumber: "(702) 555-0123",
+    phoneNumber: "(702) 500-1981",
     email: "DrDuffy@SpeedyCashHomeOffers.com",
     address: {
       streetAddress: "2775 Ariel Ocean St",

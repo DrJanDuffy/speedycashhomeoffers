@@ -108,7 +108,7 @@ export default function Process() {
                 "@type": "HowToStep",
                 "position": 1,
                 "name": "Contact",
-                "text": "Complete the online form or call us directly at (702) 555-0123"
+                "text": "Complete the online form or call us directly at (702) 500-1981"
               },
               {
                 "@type": "HowToStep",
@@ -160,7 +160,7 @@ export default function Process() {
                 Get My Free Quote
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
-                Call (702) 555-0123
+                Call (702) 500-1981
               </button>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function Process() {
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">Initial Contact</h3>
                   <p className="text-lg text-gray-600 mb-4">
                     Complete the online form to let us know that you are interested in selling your home fast for cash, 
-                    or call us directly at <strong>(702) 555-0123</strong>. Our team is available seven days a week to answer your questions 
+                    or call us directly at <strong>(702) 500-1981</strong>. Our team is available seven days a week to answer your questions 
                     and provide immediate assistance. Whether you're facing foreclosure, dealing with an inherited property, 
                     or simply need to relocate quickly, we're here to help.
                   </p>
@@ -497,7 +497,7 @@ export default function Process() {
             Ready to Start Our Simple 5-Step Process?
           </h2>
           <p className="text-xl mb-8">
-            Call us today at (702) 555-0123 for an offer in as little as 24 hours. It's Quick and Easy! 
+            Call us today at (702) 500-1981 for an offer in as little as 24 hours. It's Quick and Easy! 
             Dr. Janet Duffy and her experienced team are ready to help you sell your house fast for cash, 
             regardless of its condition or your circumstances.
           </p>
@@ -506,7 +506,7 @@ export default function Process() {
               Get My Free Quote
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
-              Call (702) 555-0123
+              Call (702) 500-1981
             </button>
           </div>
         </div>
