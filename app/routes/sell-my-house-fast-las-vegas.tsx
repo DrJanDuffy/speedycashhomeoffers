@@ -1,4 +1,5 @@
 import type { Route } from "./+types/sell-my-house-fast-las-vegas";
+import { useLoaderData } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
@@ -44,7 +45,7 @@ export const loader: Route.LoaderFunction = async () => {
 };
 
 export default function SellMyHouseFastLasVegas() {
-  const { businessName, phoneNumber, email, address, rating } = Route.useLoaderData<typeof loader>();
+  const { businessName, phoneNumber, email, address, rating } = useLoaderData<typeof loader>();
 
   const jsonLd = {
     "@context": "https://schema.org",
