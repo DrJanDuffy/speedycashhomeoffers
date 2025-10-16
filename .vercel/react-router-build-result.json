@@ -11,6 +11,7 @@
     },
     "routeIdToServerBundleId": {
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/test": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/process": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/testimonials": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/meet-the-team": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -42,6 +43,15 @@
         "parentId": "root",
         "file": "app/routes/home.tsx",
         "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/test": {
+        "id": "routes/test",
+        "parentId": "root",
+        "file": "app/routes/test.tsx",
+        "path": "test",
         "config": {
           "runtime": "nodejs"
         }
@@ -233,6 +243,12 @@
         "file": "routes/home.tsx",
         "index": true
       },
+      "routes/test": {
+        "id": "routes/test",
+        "parentId": "root",
+        "file": "routes/test.tsx",
+        "path": "test"
+      },
       "routes/process": {
         "id": "routes/process",
         "parentId": "root",
@@ -358,6 +374,10 @@
           {
             "file": "routes/home.tsx",
             "index": true
+          },
+          {
+            "file": "routes/test.tsx",
+            "path": "test"
           },
           {
             "file": "routes/process.tsx",
