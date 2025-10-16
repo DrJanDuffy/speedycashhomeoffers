@@ -1,3 +1,5 @@
+import { XMLParser } from 'fast-xml-parser';
+
 export interface RSSArticle {
   title: string;
   link: string;
@@ -19,13 +21,20 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
   const RSS_URL = 'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
   
   try {
-    // Fetch the RSS feed
+    // Fetch the RSS feed with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
     const response = await fetch(RSS_URL, {
       method: 'GET',
       headers: {
         'Accept': 'application/rss+xml, application/xml, text/xml',
+        'User-Agent': 'SpeedyCashHomeOffers/1.0',
       },
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch RSS feed: ${response.status} ${response.statusText}`);
@@ -33,35 +42,49 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
 
     const xmlText = await response.text();
     
-    // Parse XML using DOMParser
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+    // Parse XML using fast-xml-parser (works in both browser and Node.js)
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_",
+      textNodeName: "#text",
+      parseAttributeValue: true,
+      parseTagValue: true,
+      parseTrueNumberOnly: false,
+      arrayMode: false,
+      stopNodes: ["*.pre", "*.script"],
+      processEntities: true,
+      htmlEntities: true
+    });
     
-    // Check for parsing errors
-    const parseError = xmlDoc.querySelector('parsererror');
-    if (parseError) {
-      throw new Error('Failed to parse RSS XML');
+    const jsonObj = parser.parse(xmlText);
+    
+    // Extract RSS feed data
+    const channel = jsonObj?.rss?.channel;
+    if (!channel || !channel.item) {
+      throw new Error('Invalid RSS feed structure');
     }
-
-    // Extract articles from RSS feed
-    const items = xmlDoc.querySelectorAll('item');
+    
+    const items = Array.isArray(channel.item) ? channel.item : [channel.item];
     const articles: RSSArticle[] = [];
 
-    items.forEach((item) => {
-      const title = item.querySelector('title')?.textContent?.trim() || '';
-      const link = item.querySelector('link')?.textContent?.trim() || '';
-      const description = item.querySelector('description')?.textContent?.trim() || '';
-      const pubDate = item.querySelector('pubDate')?.textContent?.trim() || '';
+    items.forEach((item: any) => {
+      const title = item.title || '';
+      const link = item.link || '';
+      const description = item.description || '';
+      const pubDate = item.pubDate || '';
       
       // Extract categories
-      const categoryElements = item.querySelectorAll('category');
       const categories: string[] = [];
-      categoryElements.forEach((cat) => {
-        const category = cat.textContent?.trim();
-        if (category) {
-          categories.push(category);
-        }
-      });
+      if (item.category) {
+        const categoryArray = Array.isArray(item.category) ? item.category : [item.category];
+        categoryArray.forEach((cat: any) => {
+          if (typeof cat === 'string') {
+            categories.push(cat);
+          } else if (cat['#text']) {
+            categories.push(cat['#text']);
+          }
+        });
+      }
 
       // Ensure link has agent ID parameter
       let finalLink = link;
@@ -97,15 +120,15 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
 function cleanDescription(description: string): string {
   if (!description) return '';
   
-  // Remove HTML tags
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = description;
-  const textContent = tempDiv.textContent || tempDiv.innerText || '';
+  // Remove HTML tags using regex (server-safe)
+  const textContent = description
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/&[a-zA-Z0-9#]+;/g, ' ') // Remove HTML entities
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
   
   // Clean up whitespace and limit length
   return textContent
-    .replace(/\s+/g, ' ')
-    .trim()
     .substring(0, 200)
     .replace(/\s+\S*$/, '') + '...';
 }
