@@ -1,6 +1,7 @@
 import type { Route } from "./+types/sellers";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import RelatedPages from "~/components/RelatedPages";
+import RealScoutHomeValue from "~/components/RealScoutHomeValue";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -25,14 +26,34 @@ export default function Sellers() {
               Dr. Janet Duffy makes selling your Las Vegas home simple and stress-free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="http://drjanduffy.realscout.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Get Free Valuation
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                Call (702) 500-1981
-              </button>
+              </a>
+              <a 
+                href="http://drjanduffy.realscout.com/onboarding" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
+              >
+                Schedule a Call
+              </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Home Value Widget */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Get Your Instant Home Value
+          </h2>
+          <RealScoutHomeValue />
         </div>
       </section>
 

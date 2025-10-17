@@ -1,4 +1,8 @@
 import type { Route } from "./+types/buyers";
+import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
+import RealScoutSearch from "~/components/RealScoutSearch";
+import RealScoutListings from "~/components/RealScoutListings";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -10,6 +14,7 @@ export const meta: Route.MetaFunction = () => {
 export default function Buyers() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,62 +44,8 @@ export default function Buyers() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Find Your Perfect Home
           </h2>
-          <div className="bg-gray-100 rounded-lg p-8 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
-                <input 
-                  type="text" 
-                  placeholder="Enter city, neighborhood, or ZIP"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                  <option>Any Price</option>
-                  <option>$200,000 - $300,000</option>
-                  <option>$300,000 - $400,000</option>
-                  <option>$400,000 - $500,000</option>
-                  <option>$500,000+</option>
-                </select>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                  <option>Any</option>
-                  <option>1+</option>
-                  <option>2+</option>
-                  <option>3+</option>
-                  <option>4+</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Bathrooms</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                  <option>Any</option>
-                  <option>1+</option>
-                  <option>2+</option>
-                  <option>3+</option>
-                  <option>4+</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                  <option>Any Type</option>
-                  <option>Single Family</option>
-                  <option>Condo</option>
-                  <option>Townhouse</option>
-                  <option>Multi-Family</option>
-                </select>
-              </div>
-            </div>
-            <button className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors">
-              Search Properties
-            </button>
+          <div className="max-w-4xl mx-auto">
+            <RealScoutSearch />
           </div>
         </div>
       </section>
@@ -153,21 +104,7 @@ export default function Buyers() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Featured Properties
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="h-48 bg-gray-200"></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Beautiful Family Home</h3>
-                  <p className="text-gray-600 mb-4">4 bed • 3 bath • 2,400 sq ft</p>
-                  <p className="text-2xl font-bold text-green-600 mb-4">$425,000</p>
-                  <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
-                    View Details
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <RealScoutListings />
         </div>
       </section>
 
@@ -190,6 +127,9 @@ export default function Buyers() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="buyers" />
     </div>
   );
 }

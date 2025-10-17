@@ -1,6 +1,7 @@
 import type { Route } from "./+types/faqs";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import RelatedPages from "~/components/RelatedPages";
+import RealScoutSimpleSearch from "~/components/RealScoutSimpleSearch";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -381,6 +382,16 @@ export default function FAQs() {
               Call (702) 500-1981
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Property Search */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Search Properties
+          </h2>
+          <RealScoutSimpleSearch />
         </div>
       </section>
 

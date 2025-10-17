@@ -1,4 +1,8 @@
 import type { Route } from "./+types/investors";
+import Breadcrumbs from "~/components/Breadcrumbs";
+import RelatedPages from "~/components/RelatedPages";
+import RealScoutSearch from "~/components/RealScoutSearch";
+import RealScoutListings from "~/components/RealScoutListings";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -10,6 +14,7 @@ export const meta: Route.MetaFunction = () => {
 export default function Investors() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,6 +115,28 @@ export default function Investors() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Property Search */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Find Investment Properties
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <RealScoutSearch />
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Properties */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Current Investment Opportunities
+          </h2>
+          <RealScoutListings />
         </div>
       </section>
 
@@ -254,6 +281,9 @@ export default function Investors() {
           </div>
         </div>
       </section>
+
+      {/* Related Pages */}
+      <RelatedPages currentPage="investors" />
     </div>
   );
 }

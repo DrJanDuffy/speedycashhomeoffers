@@ -1,6 +1,7 @@
 import type { Route } from "./+types/about";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import RelatedPages from "~/components/RelatedPages";
+import RealScoutListings from "~/components/RealScoutListings";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -250,6 +251,16 @@ export default function About() {
               Call (702) 500-1981
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Featured Properties
+          </h2>
+          <RealScoutListings />
         </div>
       </section>
 

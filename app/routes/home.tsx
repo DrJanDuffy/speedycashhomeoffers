@@ -4,6 +4,7 @@ import AuthorBio from "~/components/AuthorBio";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
 import TrustBadges from "~/components/TrustBadges";
 import RelatedPages from "~/components/RelatedPages";
+import RealScoutListings from "~/components/RealScoutListings";
 import { CloudinarySample } from "~/components/CloudinaryImage";
 
 export const meta: Route.MetaFunction = () => {
@@ -668,6 +669,16 @@ export default function Home() {
         title="Latest Real Estate Market Insights"
         className="bg-gray-50"
       />
+
+      {/* Featured Properties */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Featured Properties
+          </h2>
+          <RealScoutListings />
+        </div>
+      </section>
 
       {/* Cloudinary Integration Demo */}
       <section className="py-16 bg-white">

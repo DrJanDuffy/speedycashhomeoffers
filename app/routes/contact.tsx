@@ -2,6 +2,7 @@ import type { Route } from "./+types/contact";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
 import RelatedPages from "~/components/RelatedPages";
+import RealScoutHomeValue from "~/components/RealScoutHomeValue";
 import { Label } from "~/components/ui/label";
 import { submitContactForm } from "~/lib/actions";
 import { redirect } from "react-router";
@@ -159,6 +160,16 @@ export default function Contact() {
 
       {/* Trust Badges */}
       <TrustBadges />
+
+      {/* Home Value Widget */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Get Your Instant Home Value
+          </h2>
+          <RealScoutHomeValue />
+        </div>
+      </section>
 
       {/* Contact Form Section */}
       <section className="py-16 bg-gray-50">
