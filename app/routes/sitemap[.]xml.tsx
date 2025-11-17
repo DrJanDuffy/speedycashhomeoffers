@@ -103,6 +103,21 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
       priority: "0.7",
       changefreq: "monthly",
     },
+    {
+      url: "/privacy-policy",
+      priority: "0.5",
+      changefreq: "yearly",
+    },
+    {
+      url: "/terms-of-service",
+      priority: "0.5",
+      changefreq: "yearly",
+    },
+    {
+      url: "/company-history",
+      priority: "0.6",
+      changefreq: "monthly",
+    },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

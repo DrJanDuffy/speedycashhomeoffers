@@ -1,4 +1,5 @@
 import type { Route } from "./+types/contact";
+import { Link } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
 import RelatedPages from "~/components/RelatedPages";
@@ -329,7 +330,7 @@ export default function Contact() {
                     />
                     <span className="text-sm text-gray-600">
                       By submitting your phone number, you agree to receive text messages from Speedy Cash Home Offers regarding the sell of your home. You can opt-out anytime. Message and data rates may apply. 
-                      <a href="/about" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</a>.
+                      <Link to="/privacy-policy" className="text-emerald-600 hover:text-emerald-700">View Privacy Policy</Link>.
                     </span>
                   </Label>
                 </div>

@@ -136,11 +136,14 @@ export default function Footer() {
               © {currentYear} Speedy Cash Home Offers | Homes by Dr. Jan Duffy. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Terms of Service
+              </Link>
+              <Link to="/company-history" className="text-gray-400 hover:text-blue-400 transition-colors">
+                Our Story
               </Link>
               <a href="tel:(702) 500-1981" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Contact Speedy Cash Home Offers by phone at (702) 500-1981">
                 Contact Us
