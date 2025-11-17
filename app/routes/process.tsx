@@ -217,12 +217,19 @@ export default function Process() {
                     or simply need to relocate quickly, we're here to help.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
+                    <a 
+                      href="/contact"
+                      className="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors text-center"
+                    >
                       Fill Out Form
-                    </button>
-                    <button className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-colors">
+                    </a>
+                    <a 
+                      href="tel:(702) 500-1981"
+                      className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-colors text-center"
+                      aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+                    >
                       Call Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -524,6 +531,177 @@ export default function Process() {
             >
               Call (702) 500-1981
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            What to Expect During Each Step
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Initial Contact: Your First Step to a Quick Sale</h3>
+              <p className="text-gray-600 mb-4">
+                When you first reach out to Speedy Cash Home Offers, you're taking the first step toward a stress-free home sale. 
+                Our initial contact process is designed to be as simple and convenient as possible. You can reach us through our 
+                online form, which takes just a few minutes to complete, or call us directly at (702) 500-1981. Our team is available 
+                seven days a week, including evenings and weekends, because we understand that selling your home isn't always 
+                convenient during regular business hours.
+              </p>
+              <p className="text-gray-600">
+                During this initial contact, we'll gather basic information about your property and your situation. We understand 
+                that every homeowner's circumstances are unique - whether you're facing foreclosure, dealing with an inherited 
+                property, going through a divorce, relocating for work, or simply want to sell quickly without the hassle of 
+                traditional real estate. Our team is trained to listen with empathy and provide solutions tailored to your specific 
+                needs. There's absolutely no pressure, and you're under no obligation to proceed if our process isn't right for you.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Property Assessment: Understanding Your Unique Situation</h3>
+              <p className="text-gray-600 mb-4">
+                The property assessment call is where we dive deeper into your specific situation. Our experienced team members 
+                have handled thousands of home purchases across Las Vegas and Southern California, so we're well-equipped to 
+                understand even the most complex circumstances. During this conversation, we'll ask about your property's condition, 
+                location, size, and any unique features or challenges it might have.
+              </p>
+              <p className="text-gray-600">
+                We'll also discuss your timeline and any specific requirements you have for the sale. Perhaps you need to close 
+                quickly to prevent foreclosure, or maybe you need extra time to handle probate or other legal matters. We'll work 
+                with your schedule, not against it. This conversation helps us prepare for the on-site inspection and ensures we 
+                can provide you with the most accurate timeline and offer possible. Our goal is to make this process as transparent 
+                and stress-free as possible from the very beginning.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">On-Site Inspection: Transparent Evaluation</h3>
+              <p className="text-gray-600 mb-4">
+                The on-site inspection is where we get to see your property in person and provide you with a firm cash offer. 
+                Unlike traditional home sales where you might wait weeks for an offer after multiple showings, we provide our 
+                offer during this visit. Our team member will conduct a thorough but respectful evaluation of your property, 
+                considering factors like location, condition, needed repairs, and current market values in your neighborhood.
+              </p>
+              <p className="text-gray-600">
+                We understand that having someone evaluate your home can feel invasive, especially if you're still living there. 
+                That's why our team is trained to be respectful, professional, and efficient. We'll explain what we're looking 
+                at and why, so you understand how we're determining the offer. There's no need to clean, repair, or stage your 
+                home - we evaluate properties in their current condition. After the inspection, we'll sit down with you and 
+                present our cash offer, explaining how we arrived at that number. You'll have all the information you need to 
+                make an informed decision.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Offer Review: Take Your Time, No Pressure</h3>
+              <p className="text-gray-600 mb-4">
+                Once you receive our cash offer, the decision is entirely yours. We believe in transparency and honesty, which 
+                means we'll never pressure you to accept an offer or rush your decision. We understand that selling your home 
+                is a significant financial decision, and you deserve time to consider all your options. Our offers are presented 
+                clearly with no hidden fees, surprise costs, or confusing terms.
+              </p>
+              <p className="text-gray-600">
+                During the review period, you're welcome to ask any questions you have about the offer, our process, or what 
+                happens next. We encourage you to compare our offer to other options you might be considering, whether that's 
+                a traditional real estate sale, another cash buyer, or any other alternative. Our goal isn't to pressure you 
+                into accepting - it's to provide you with a fair, transparent option that works for your situation. If our 
+                offer isn't right for you, there are no hard feelings and no obligations.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Closing: Fast, Simple, and Stress-Free</h3>
+              <p className="text-gray-600 mb-4">
+                If you accept our offer, we handle all the complex paperwork and legal requirements. We work with trusted 
+                escrow and title companies to ensure everything is handled correctly and legally. You won't need to worry about 
+                coordinating with multiple parties or understanding complex real estate contracts - we take care of all of that 
+                for you. We pay all closing costs, so the amount we offer is the amount you receive, with no surprise deductions.
+              </p>
+              <p className="text-gray-600">
+                We can close in as little as 7 days, but we'll work with your preferred timeline. Whether you need to close quickly 
+                to resolve an urgent situation or need extra time to handle your move, we'll accommodate your schedule. On closing 
+                day, you'll receive your cash payment, and the property will be officially transferred to us. It's that simple - 
+                no waiting for buyer financing to be approved, no last-minute deal-breakers, no stress. We've completed thousands 
+                of transactions, and our streamlined process ensures yours goes smoothly from start to finish.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Our Process vs. Traditional Home Sales
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              Understanding the differences between our cash home buying process and traditional real estate sales can help you 
+              make the best decision for your situation. While traditional sales work well for some homeowners, our process offers 
+              significant advantages for those who need speed, convenience, and certainty.
+            </p>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Traditional Home Sales</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>60-90 days average closing time</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>6-10% in commissions and fees</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>Requires repairs and staging</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>Multiple showings and open houses</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>Buyer financing can fall through</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-500 mr-2">×</span>
+                      <span>Uncertain closing dates</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Speedy Cash Home Offers</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>7-21 days average closing time</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>No commissions or fees - keep 100%</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>Sell as-is, no repairs needed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>One quick inspection, no showings</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>Guaranteed cash closing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span>You choose the closing date</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
