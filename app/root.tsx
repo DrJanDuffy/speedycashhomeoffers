@@ -33,6 +33,8 @@ export const links: Route.LinksFunction = () => [
     href: stylesheet,
     as: "style",
   },
+  // Load main stylesheet (preloaded above for faster loading)
+  { rel: "stylesheet", href: stylesheet },
   // Load Google Fonts asynchronously to prevent render blocking
   // Using media="print" trick: browser loads it with low priority, then switches to "all"
   {
@@ -40,7 +42,6 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
     media: "print",
   } as any,
-  // Note: Main stylesheet will be loaded asynchronously via script below
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -72,18 +73,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             `,
           }}
         />
-        {/* Load CSS asynchronously to prevent render blocking */}
+        {/* Make Google Fonts non-blocking: switch from print to all after load */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                // Load main CSS asynchronously
-                var cssLink = document.createElement('link');
-                cssLink.rel = 'stylesheet';
-                cssLink.href = '${stylesheet}';
-                cssLink.media = 'all';
-                document.head.appendChild(cssLink);
-                
                 // Make Google Fonts non-blocking: switch from print to all after load
                 var fontLink = document.querySelector('link[href*="fonts.googleapis.com"][media="print"]');
                 if (fontLink) {
@@ -92,7 +86,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   };
                   // Fallback: switch after a short delay if onload doesn't fire
                   setTimeout(function() {
-                    if (fontLink.media === 'print') {
+                    if (fontLink && fontLink.media === 'print') {
                       fontLink.media = 'all';
                     }
                   }, 100);
