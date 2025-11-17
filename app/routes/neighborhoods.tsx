@@ -4,6 +4,8 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Las Vegas Neighborhoods | Speedy Cash Home Offers" },
     { name: "description", content: "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features in Henderson, Summerlin, and more." },
+    { name: "robots", content: "index, follow" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/neighborhoods" },
   ];
 };
 

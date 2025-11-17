@@ -9,6 +9,33 @@ export function meta({ params }: Route.MetaArgs) {
   ];
 }
 
+export const loader: Route.LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+  const pathname = url.pathname.toLowerCase();
+  
+  // Check for WordPress cron query parameters or old paths - return 410 Gone
+  const isWordPressCron = searchParams.has('doing_wp_cron') || searchParams.has('amp');
+  const oldWordPressPaths = ['/buyer-investor', '/map', '/home', '/for-buyers'];
+  const isOldPath = oldWordPressPaths.some(path => pathname.startsWith(path));
+  
+  if (isWordPressCron || isOldPath) {
+    // Throw 410 Gone for permanently removed content
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+      },
+    });
+  }
+  
+  // Return data for regular 404 - component will render
+  return {
+    status: 404,
+  };
+};
+
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">

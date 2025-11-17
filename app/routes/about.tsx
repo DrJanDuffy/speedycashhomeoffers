@@ -7,6 +7,8 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "About Dr. Janet Duffy | Speedy Cash Home Offers" },
     { name: "description", content: "Meet Dr. Janet Duffy, Las Vegas's most trusted real estate professional. 25+ years of experience helping homeowners sell fast and get fair cash offers." },
+    { name: "robots", content: "index, follow" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/about" },
   ];
 };
 

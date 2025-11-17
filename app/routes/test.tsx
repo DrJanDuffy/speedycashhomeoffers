@@ -1,7 +1,10 @@
 import type { Route } from "./+types/test";
 
 export const meta: Route.MetaFunction = () => {
-  return [{ title: "Test Page" }];
+  return [
+    { title: "Test Page" },
+    { name: "robots", content: "noindex, nofollow" },
+  ];
 };
 
 export default function Test() {

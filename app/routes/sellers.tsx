@@ -7,6 +7,8 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell Your Home Fast | Speedy Cash Home Offers" },
     { name: "description", content: "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Dr. Janet Duffy helps homeowners sell quickly." },
+    { name: "robots", content: "index, follow" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/sellers" },
   ];
 };
 

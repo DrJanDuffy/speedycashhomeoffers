@@ -8,6 +8,8 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Find Your Dream Home | Speedy Cash Home Offers" },
     { name: "description", content: "Discover your perfect Las Vegas home with Dr. Janet Duffy. Expert guidance, personalized service, and access to exclusive listings." },
+    { name: "robots", content: "index, follow" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/buyers" },
   ];
 };
 

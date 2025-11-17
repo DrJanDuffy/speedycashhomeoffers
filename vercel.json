@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/buyer-investor/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/map/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/home/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-buyers/:path*",
+      "destination": "/buyers",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
+

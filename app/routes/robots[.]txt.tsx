@@ -6,15 +6,24 @@ export const loader: Route.LoaderFunction = async () => {
   const robotsTxt = `User-agent: *
 Allow: /
 
+# Disallow old WordPress paths and non-existent routes
+Disallow: /buyer-investor/
+Disallow: /map/
+Disallow: /home/
+Disallow: /for-buyers/
+Disallow: /wp-*
+Disallow: /*/feed/
+Disallow: /*/feed
+
+# Disallow admin or sensitive areas (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
 # Sitemap
 Sitemap: ${baseUrl}/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
-
-# Disallow admin or sensitive areas (if any exist in the future)
-# Disallow: /admin/
-# Disallow: /private/
 
 # Allow all major search engines
 User-agent: Googlebot

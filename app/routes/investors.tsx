@@ -8,6 +8,8 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Real Estate Investment Opportunities | Speedy Cash Home Offers" },
     { name: "description", content: "Maximize your ROI with Las Vegas real estate investments. Dr. Janet Duffy provides expert guidance on cap rates, cash flow, and market analysis." },
+    { name: "robots", content: "index, follow" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/investors" },
   ];
 };
 

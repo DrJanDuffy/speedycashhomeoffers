@@ -9,19 +9,21 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "real estate blog, home selling tips, sell house fast Las Vegas, cash home buyers blog, Dr Janet Duffy blog, real estate advice" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/blog" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/blog" },
     { property: "og:title", content: "Real Estate Blog | Speedy Cash Home Offers" },
     { property: "og:description", content: "Read our blog for home selling tips and real estate insights. Learn how to sell your house fast for cash with Dr. Janet Duffy's expert advice." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/blog" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/blog-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/blog" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/blog-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Real Estate Blog | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Read our blog for home selling tips and real estate insights. Learn how to sell your house fast for cash with Dr. Janet Duffy's expert advice." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/blog-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/blog-twitter-image.jpg" },
   ];
 };
+
+// Loader removed - handled globally in root.tsx
 
 export default function Blog() {
   return (
@@ -36,13 +38,13 @@ export default function Blog() {
             "@type": "Blog",
             "name": "Speedy Cash Home Offers Blog",
             "description": "Real estate blog featuring home selling tips and market insights from Dr. Janet Duffy",
-            "url": "https://speedycashhomeoffers.com/blog",
+            "url": "https://www.speedycashhomeoffers.com/blog",
             "publisher": {
               "@type": "Organization",
               "name": "Speedy Cash Home Offers",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://speedycashhomeoffers.com/images/logo.png"
+                "url": "https://www.speedycashhomeoffers.com/images/logo.png"
               }
             },
             "author": {

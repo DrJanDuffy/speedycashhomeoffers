@@ -97,6 +97,61 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export const loader: Route.LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+  
+  // Handle WordPress cron URLs globally - return 410 Gone
+  if (searchParams.has('doing_wp_cron') || searchParams.has('amp')) {
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+      },
+    });
+  }
+  
+  // Redirect HTTP to HTTPS
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Redirect non-www to www
+  if (url.hostname === 'speedycashhomeoffers.com') {
+    url.hostname = 'www.speedycashhomeoffers.com';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
+  const pathname = url.pathname;
+  
+  // Redirect trailing slash to non-trailing slash (except for root)
+  if (pathname.endsWith('/') && pathname !== '/') {
+    const newPath = pathname.slice(0, -1);
+    const newUrl = new URL(newPath + url.search, url.origin);
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: newUrl.toString(),
+      },
+    });
+  }
+  
+  return {};
+};
+
 export default function App() {
   return <Outlet />;
 }
