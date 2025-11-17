@@ -469,6 +469,66 @@ export default function Testimonials() {
         </div>
       </section>
 
+      {/* What Makes Our Reviews Authentic */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Authentic Reviews from Real Customers
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              All of our reviews come from real customers who have actually worked with us to sell their properties. 
+              We don't pay for reviews, and we don't filter out negative feedback. Our commitment to transparency means 
+              you can trust that the reviews you read reflect genuine experiences from homeowners who have sold their 
+              properties to Speedy Cash Home Offers.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Verified Customer Experiences</h3>
+                <p className="text-gray-600 mb-4">
+                  Every review we display comes from a verified customer who has completed a transaction with us. We verify 
+                  customer identities and transaction details to ensure authenticity. This means when you read a review, you 
+                  can trust that it's from someone who has actually sold their property to us and experienced our process firsthand.
+                </p>
+                <p className="text-gray-600">
+                  Our reviews are published on multiple platforms including the Better Business Bureau, Google, and Yelp, 
+                  where they're subject to platform verification processes. This multi-platform approach ensures that reviews 
+                  are authentic and provides you with a comprehensive view of customer experiences across different review sites.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Diverse Customer Situations</h3>
+                <p className="text-gray-600 mb-4">
+                  Our reviews come from customers in a wide variety of situations - from those facing foreclosure to those 
+                  dealing with inherited properties, from divorce situations to simple relocations. This diversity means you 
+                  can find reviews from people in situations similar to yours, helping you understand how we might handle 
+                  your specific circumstances.
+                </p>
+                <p className="text-gray-600">
+                  We're proud that our reviews consistently highlight our ability to handle complex situations with professionalism, 
+                  compassion, and efficiency. Whether customers were dealing with urgent timelines, difficult circumstances, or 
+                  simply wanted a hassle-free sale, our reviews reflect our commitment to providing exceptional service regardless 
+                  of the situation.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Continuous Improvement Based on Feedback</h3>
+                <p className="text-gray-600 mb-4">
+                  We take all feedback seriously, whether positive or negative. Customer reviews help us identify areas where 
+                  we excel and areas where we can improve. This commitment to continuous improvement based on customer feedback 
+                  ensures that we're always working to provide better service and better outcomes for our clients.
+                </p>
+                <p className="text-gray-600">
+                  When customers provide feedback, we listen and respond. We've made process improvements, enhanced communication 
+                  protocols, and refined our service offerings based on customer input. This feedback loop ensures that every 
+                  customer benefits from the experiences of those who came before, creating an ever-improving service experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-16 bg-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

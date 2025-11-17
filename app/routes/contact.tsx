@@ -482,8 +482,80 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Why Contact Us Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Why Contact Speedy Cash Home Offers?
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              When you contact Speedy Cash Home Offers, you're taking the first step toward a stress-free home sale. 
+              Our team, led by Dr. Janet Duffy, has helped thousands of homeowners across Las Vegas and Southern California 
+              sell their properties quickly and hassle-free. Here's what makes us different and why you should reach out today.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">No-Obligation Consultation</h3>
+                <p className="text-gray-600 mb-4">
+                  When you contact us, there's absolutely no obligation to proceed with a sale. We provide free consultations 
+                  to help you understand your options, whether you're facing foreclosure, dealing with an inherited property, 
+                  going through a divorce, or simply want to sell quickly. Our goal is to provide you with information and 
+                  options so you can make the best decision for your situation.
+                </p>
+                <p className="text-gray-600">
+                  During your consultation, we'll discuss your property, your situation, and your timeline. We'll explain 
+                  our process, answer your questions, and provide you with a preliminary assessment. You're under no pressure 
+                  to accept any offer, and we encourage you to explore all your options before making a decision.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Expert Market Knowledge</h3>
+                <p className="text-gray-600 mb-4">
+                  Dr. Duffy's 25+ years of experience in Las Vegas and Southern California real estate markets means we have 
+                  deep knowledge of local property values, market trends, and neighborhood characteristics. This expertise 
+                  allows us to provide accurate valuations and competitive cash offers based on current market conditions.
+                </p>
+                <p className="text-gray-600">
+                  Our market knowledge extends beyond simple property values. We understand which neighborhoods are appreciating, 
+                  which areas have strong rental demand, and which properties have the best investment potential. This knowledge 
+                  helps us provide fair offers that reflect true market value while accounting for property condition and 
+                  needed repairs.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Fast Response Times</h3>
+                <p className="text-gray-600 mb-4">
+                  We understand that when you need to sell your home, time is often of the essence. That's why we respond 
+                  quickly to all inquiries, typically within hours of your initial contact. Our team is available seven days 
+                  a week to answer your questions and provide immediate assistance.
+                </p>
+                <p className="text-gray-600">
+                  Whether you contact us through our online form, by phone, or by email, you can expect a prompt response. 
+                  We know that selling your home can be stressful, and we're committed to making the process as smooth and 
+                  efficient as possible from the very first contact.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Transparent and Honest Communication</h3>
+                <p className="text-gray-600 mb-4">
+                  From your first contact with us, you'll experience transparent, honest communication. We believe in providing 
+                  clear information about our process, our offers, and what you can expect throughout the transaction. There 
+                  are no hidden fees, no surprise costs, and no pressure tactics - just honest, straightforward communication.
+                </p>
+                <p className="text-gray-600">
+                  Our commitment to transparency means you'll always know where you stand. We'll explain how we arrive at our 
+                  offers, what costs are involved (there are none for you), and what the timeline looks like. This open 
+                  communication builds trust and ensures you can make informed decisions with confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             We Serve Homeowners Across Multiple Markets
