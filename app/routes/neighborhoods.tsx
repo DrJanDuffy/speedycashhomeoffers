@@ -36,12 +36,19 @@ export default function Neighborhoods() {
               Find the perfect community that matches your lifestyle and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="/contact" 
+                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Explore Neighborhoods
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors">
+              </a>
+              <a 
+                href="tel:(702) 500-1981" 
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
+                aria-label="Call Dr. Janet Duffy at (702) 500-1981"
+              >
                 Schedule Tour
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -73,9 +80,12 @@ export default function Neighborhoods() {
                     <span className="font-semibold">A+</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                <a 
+                  href="/contact" 
+                  className="block w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-center"
+                >
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -97,9 +107,12 @@ export default function Neighborhoods() {
                     <span className="font-semibold">A</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                <a 
+                  href="/contact" 
+                  className="block w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-center"
+                >
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -121,9 +134,12 @@ export default function Neighborhoods() {
                     <span className="font-semibold">A-</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                <a 
+                  href="/contact" 
+                  className="block w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-center"
+                >
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -250,6 +266,145 @@ export default function Neighborhoods() {
         </div>
       </section>
 
+      {/* Detailed Neighborhood Information */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            In-Depth Neighborhood Profiles
+          </h2>
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Summerlin: Master-Planned Excellence</h3>
+              <p className="text-gray-600 mb-4">
+                Summerlin stands as one of the most prestigious and well-planned communities in Las Vegas. Developed by 
+                The Howard Hughes Corporation, this 22,500-acre master-planned community has been carefully designed to 
+                offer residents an exceptional quality of life. Summerlin is divided into villages, each with its own 
+                character and amenities, creating a sense of community while offering variety.
+              </p>
+              <p className="text-gray-600 mb-4">
+                The community features over 150 parks, more than 150 miles of trails, and numerous golf courses including 
+                TPC Summerlin, home of the PGA Tour's Shriners Hospitals for Children Open. Shopping options are abundant, 
+                with Downtown Summerlin offering a vibrant retail and dining experience, plus the Red Rock Casino Resort 
+                and Spa for entertainment and gaming.
+              </p>
+              <p className="text-gray-600">
+                Education is a priority in Summerlin, with access to some of the highest-rated schools in Nevada. The area 
+                is served by the Clark County School District, with many schools earning top ratings. Private school options 
+                are also available. For families, Summerlin offers numerous youth sports programs, community centers, and 
+                family-friendly events throughout the year.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Henderson: Family-Friendly Living</h3>
+              <p className="text-gray-600 mb-4">
+                Henderson, Nevada's second-largest city, offers a perfect blend of suburban comfort and urban convenience. 
+                Located just southeast of Las Vegas, Henderson has consistently been ranked among the safest cities in America, 
+                making it an ideal choice for families. The city has invested heavily in parks, recreation facilities, and 
+                community programs, creating an environment where families can thrive.
+              </p>
+              <p className="text-gray-600 mb-4">
+                The city features over 60 parks, including the beautiful Lake Las Vegas area, which offers resort-style 
+                living with a man-made lake, golf courses, and luxury amenities. Henderson's Green Valley area is particularly 
+                popular, offering established neighborhoods with mature landscaping, excellent schools, and convenient access 
+                to shopping and dining.
+              </p>
+              <p className="text-gray-600">
+                Henderson's economy is diverse, with strong employment opportunities in healthcare, technology, and 
+                manufacturing. The city is home to several major employers and has a lower unemployment rate than the 
+                national average. For recreation, residents enjoy easy access to Lake Mead, the Hoover Dam, and numerous 
+                hiking trails in the surrounding desert landscape.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Green Valley: Established Excellence</h3>
+              <p className="text-gray-600 mb-4">
+                Green Valley, located within Henderson, represents one of the most established and desirable communities in 
+                the Las Vegas area. Developed primarily in the 1980s and 1990s, Green Valley features mature neighborhoods 
+                with tree-lined streets, well-maintained homes, and a strong sense of community. The area has aged gracefully, 
+                with property values that have consistently appreciated over the decades.
+              </p>
+              <p className="text-gray-600 mb-4">
+                The Green Valley Ranch area, developed more recently, offers newer homes and modern amenities while maintaining 
+                the established character of the broader Green Valley community. The area features the Green Valley Ranch 
+                Resort Spa and Casino, providing entertainment and dining options, plus the District at Green Valley Ranch, 
+                a popular shopping and dining destination.
+              </p>
+              <p className="text-gray-600">
+                Green Valley's schools are highly rated, with many earning A and A+ ratings. The area is particularly 
+                attractive to families seeking established neighborhoods with proven track records for property values and 
+                quality of life. The mature landscaping and community amenities create an environment that feels settled and 
+                permanent, rather than newly developed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Choosing the Right Neighborhood */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            How to Choose the Right Las Vegas Neighborhood
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              Choosing the right neighborhood is just as important as choosing the right home. Dr. Janet Duffy's 25+ years 
+              of Las Vegas real estate experience means she understands the nuances of each area and can help you find the 
+              neighborhood that best matches your lifestyle, budget, and long-term goals.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Consider Your Lifestyle and Priorities</h3>
+                <p className="text-gray-600">
+                  Different neighborhoods cater to different lifestyles. If you're a family with children, you'll prioritize 
+                  schools, parks, and safety. If you're a young professional, you might value proximity to employment 
+                  centers, nightlife, and urban amenities. Retirees often seek quiet, low-maintenance communities with 
+                  access to healthcare and recreational facilities. Dr. Duffy will help you identify neighborhoods that 
+                  align with your specific lifestyle needs and priorities.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Evaluate School Quality and Options</h3>
+                <p className="text-gray-600">
+                  For families, school quality is often the most important factor in neighborhood selection. Las Vegas area 
+                  schools vary significantly in ratings and performance. Dr. Duffy can help you understand school ratings, 
+                  test scores, and educational options in different neighborhoods. She'll also help you understand school 
+                  boundaries and how they might affect your home purchase decision.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Assess Commute Times and Transportation</h3>
+                <p className="text-gray-600">
+                  Las Vegas traffic can be challenging, especially during rush hours. Consider your commute to work, 
+                  proximity to major employment centers, and access to transportation options. Some neighborhoods offer 
+                  better access to freeways, while others might require longer commutes. Dr. Duffy understands traffic 
+                  patterns and can help you evaluate commute times from different neighborhoods to your workplace or 
+                  other important destinations.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Research Property Values and Appreciation Potential</h3>
+                <p className="text-gray-600">
+                  Different neighborhoods have different appreciation rates and property value trends. Some areas have 
+                  consistently appreciated over time, while others might be more volatile. Dr. Duffy's market expertise 
+                  allows her to help you understand historical trends and future potential in different neighborhoods, 
+                  ensuring you make an informed investment decision.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Explore Amenities and Services</h3>
+                <p className="text-gray-600">
+                  Consider what amenities are important to you: shopping centers, restaurants, parks, recreational facilities, 
+                  healthcare providers, and entertainment options. Different neighborhoods offer different levels of amenities 
+                  and convenience. Dr. Duffy can help you identify neighborhoods that offer the amenities you value most, 
+                  whether that's walkability, access to nature, or proximity to entertainment and dining.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-orange-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -257,15 +412,24 @@ export default function Neighborhoods() {
             Ready to Find Your Perfect Neighborhood?
           </h2>
           <p className="text-xl mb-8">
-            Let Dr. Janet Duffy help you discover the Las Vegas neighborhood that's right for you.
+            Let Dr. Janet Duffy help you discover the Las Vegas neighborhood that's right for you. With her extensive 
+            knowledge of local communities, market trends, and neighborhood characteristics, she'll guide you to the area 
+            that best matches your lifestyle, budget, and long-term goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact" 
+              className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Schedule Neighborhood Tour
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981" 
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
+              aria-label="Call Dr. Janet Duffy at (702) 500-1981"
+            >
               Get Market Report
-            </button>
+            </a>
           </div>
         </div>
       </section>
