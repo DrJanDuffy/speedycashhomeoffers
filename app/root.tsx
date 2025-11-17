@@ -197,11 +197,16 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   });
   
   if (isInvalidPath) {
+    // Double-check for WordPress query params as additional confirmation
+    const hasWordPressParams = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
+    
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
       headers: {
         "X-Robots-Tag": "noindex, nofollow",
+        // Add additional header to confirm this is old WordPress content
+        ...(hasWordPressParams && { "X-WordPress-Content": "removed" }),
       },
     });
   }
