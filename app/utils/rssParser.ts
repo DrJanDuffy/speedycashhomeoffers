@@ -53,42 +53,88 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
       throw new Error(`Failed to fetch RSS feed: ${response.status} ${response.statusText}`);
     }
 
+    // Check Content-Type header and get response text
+    const contentType = response.headers.get('content-type') || '';
     const xmlText = await response.text();
     
+    // If content type suggests it's not XML, check the actual content
+    if (!contentType.includes('xml') && !contentType.includes('rss') && !contentType.includes('text/plain')) {
+      if (xmlText.trim().startsWith('<!DOCTYPE') || xmlText.trim().startsWith('<html')) {
+        throw new Error('Received HTML instead of XML - likely an error page');
+      }
+    }
+    
     // Check if we got HTML instead of XML (common when getting error pages)
-    if (xmlText.trim().startsWith('<!DOCTYPE') || xmlText.trim().startsWith('<html')) {
+    if (xmlText.trim().startsWith('<!DOCTYPE') || xmlText.trim().startsWith('<html') || xmlText.trim().startsWith('<!doctype')) {
       throw new Error('Received HTML instead of XML - likely an error page');
     }
     
-    // Parse XML using fast-xml-parser (works in both browser and Node.js)
-    const parser = new XMLParser({
-      ignoreAttributes: false,
-      attributeNamePrefix: "@_",
-      textNodeName: "#text",
-      parseAttributeValue: true,
-      parseTagValue: true,
-      arrayMode: false,
-      stopNodes: ["*.pre", "*.script"],
-      processEntities: true,
-      htmlEntities: true
-    });
-    
-    const jsonObj = parser.parse(xmlText);
-    
-    // Extract RSS feed data
-    const channel = jsonObj?.rss?.channel;
-    if (!channel || !channel.item) {
-      throw new Error('Invalid RSS feed structure');
+    // Validate XML structure before parsing
+    if (!xmlText.trim().startsWith('<?xml') && !xmlText.trim().startsWith('<rss') && !xmlText.trim().startsWith('<feed')) {
+      throw new Error('Invalid XML format - expected RSS or Atom feed');
     }
     
-    const items = Array.isArray(channel.item) ? channel.item : [channel.item];
+    // Parse XML using fast-xml-parser (works in both browser and Node.js)
+    let jsonObj: any;
+    try {
+      const parser = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: "@_",
+        textNodeName: "#text",
+        parseAttributeValue: true,
+        parseTagValue: true,
+        arrayMode: false,
+        stopNodes: ["*.pre", "*.script"],
+        processEntities: true,
+        htmlEntities: true
+      });
+      
+      jsonObj = parser.parse(xmlText);
+      
+      // Validate parsed structure is an object (not HTML that got parsed)
+      if (!jsonObj || typeof jsonObj !== 'object' || Array.isArray(jsonObj)) {
+        throw new Error('Invalid RSS feed structure after parsing');
+      }
+      
+      // Additional check: if parsed object has HTML-like properties, it's likely HTML
+      if (jsonObj.html || jsonObj.body || jsonObj.head || jsonObj.doctype) {
+        throw new Error('Parsed content appears to be HTML, not RSS feed');
+      }
+    } catch (parseError) {
+      // If parsing fails, check if it's because we got HTML
+      if (parseError instanceof Error && parseError.message.includes('JSON')) {
+        throw new Error('RSS feed parsing failed - received invalid format (possibly HTML)');
+      }
+      throw parseError;
+    }
+    
+    // Extract RSS feed data - handle both RSS and Atom formats
+    let channel: any = null;
+    let items: any[] = [];
+    
+    // Check for RSS format
+    if (jsonObj?.rss?.channel) {
+      channel = jsonObj.rss.channel;
+      items = Array.isArray(channel.item) ? channel.item : (channel.item ? [channel.item] : []);
+    }
+    // Check for Atom format
+    else if (jsonObj?.feed) {
+      channel = jsonObj.feed;
+      items = Array.isArray(channel.entry) ? channel.entry : (channel.entry ? [channel.entry] : []);
+    }
+    
+    if (!channel || items.length === 0) {
+      throw new Error('Invalid RSS feed structure - no items found');
+    }
+    
     const articles: RSSArticle[] = [];
 
     items.forEach((item: any) => {
-      const title = item.title || '';
-      const link = item.link || '';
-      const description = item.description || '';
-      const pubDate = item.pubDate || '';
+      // Handle both RSS and Atom formats
+      const title = item.title?.['#text'] || item.title || '';
+      const link = item.link?.['@_href'] || item.link?.['#text'] || item.link || '';
+      const description = item.description?.['#text'] || item.description || item.summary?.['#text'] || item.summary || '';
+      const pubDate = item.pubDate || item.published || item.updated || '';
       
       // Extract categories
       const categories: string[] = [];

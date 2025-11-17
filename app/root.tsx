@@ -609,7 +609,15 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       details = error.statusText || details;
     }
   } else if (error && error instanceof Error) {
-    details = error.message;
+    // Check for JSON parsing errors specifically
+    const errorMessage = error.message || '';
+    if (errorMessage.includes('Unexpected token') && errorMessage.includes('DOCTYPE') || 
+        errorMessage.includes('JSON') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE'))) {
+      message = "Content Loading Error";
+      details = "We encountered an issue loading content from an external source. Please try refreshing the page or contact us if the problem persists.";
+    } else {
+      details = error.message;
+    }
     if (import.meta.env.DEV) {
       stack = error.stack;
     }
