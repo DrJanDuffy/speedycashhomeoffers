@@ -10,13 +10,11 @@ export function meta({ params, data }: Route.MetaArgs) {
   ];
 }
 
-export const loader: Route.LoaderFunction = async ({ request }) => {
+export const loader = async ({ request }: { request: Request }) => {
   const url = new URL(request.url);
-  const searchParams = url.searchParams;
   const pathname = url.pathname.toLowerCase();
   
-  // Check for WordPress cron query parameters or old paths - return 410 Gone
-  const isWordPressCron = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
+  // Check for old WordPress paths - return 410 Gone for permanently removed content
   const oldWordPressPaths = [
     '/buyer-investor',
     '/map',
@@ -30,7 +28,7 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   ];
   const isOldPath = oldWordPressPaths.some(path => pathname.startsWith(path));
   
-  if (isWordPressCron || isOldPath) {
+  if (isOldPath) {
     // Throw 410 Gone for permanently removed content
     throw new Response(null, {
       status: 410,

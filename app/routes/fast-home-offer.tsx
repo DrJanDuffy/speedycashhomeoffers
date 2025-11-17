@@ -39,10 +39,15 @@ export default function FastHomeOffer() {
             "description": "Get a fast home offer in 24 hours. Quick cash offers for houses with no fees and fast closing",
             "url": "https://www.speedycashhomeoffers.com/fast-home-offer",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             }
           })
         }}
@@ -83,7 +88,7 @@ export default function FastHomeOffer() {
               The appeal of a fast home offer lies in its speed and simplicity. Unlike traditional sales that require listing, staging, showings, and lengthy negotiations, a fast home offer can be obtained quickly and closes rapidly. This speed makes a fast home offer ideal for homeowners facing time-sensitive situations like foreclosure, job relocations, or inherited properties.
             </p>
             <p className="text-gray-700 mb-6">
-              At Speedy Cash Home Offers, we specialize in providing fast home offer services. Our goal is to provide you with a fast home offer within 24 hours of your initial contact, allowing you to make quick decisions about selling your property. This rapid response time is what makes our fast home offer service stand out.
+              At Speedy Cash Home Offers, we specialize in providing fast home offer services. Our goal is to provide you with a fast home offer within 24 hours of your initial contact, allowing you to make quick decisions about selling your property. This rapid response time is what makes our fast home offer service stand out. Learn about <a href="/process" className="text-emerald-600 hover:text-emerald-800 underline">our 5-step process</a> and why <a href="/sellers" className="text-emerald-600 hover:text-emerald-800 underline">homeowners choose us</a>.
             </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">What Makes a Fast Home Offer Fast</h3>
@@ -107,7 +112,7 @@ export default function FastHomeOffer() {
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">Who Needs a Fast Home Offer</h3>
             <p className="text-gray-700 mb-4">
-              Many homeowners benefit from a fast home offer. Those facing foreclosure often turn to a fast home offer as a way to avoid the devastating consequences of foreclosure. A fast home offer allows them to sell quickly, pay off their mortgage, and move forward with their lives.
+              Many homeowners benefit from a fast home offer. Those facing foreclosure often turn to a fast home offer as a way to avoid the devastating consequences of foreclosure. A fast home offer allows them to sell quickly, pay off their mortgage, and move forward with their lives. <a href="/contact" className="text-emerald-600 hover:text-emerald-800 underline">Contact us today</a> to get your fast home offer.
             </p>
             <p className="text-gray-700 mb-4">
               Homeowners who have inherited properties also frequently use a fast home offer. Inherited homes often come with emotional attachments and practical challenges, and a fast home offer provides a quick, straightforward solution. A fast home offer allows families to liquidate inherited properties without the complications of traditional sales.

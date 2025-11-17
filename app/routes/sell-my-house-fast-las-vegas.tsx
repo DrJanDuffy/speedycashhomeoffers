@@ -16,7 +16,7 @@ export const meta: Route.MetaFunction = () => {
     { property: "og:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas" },
     { property: "og:title", content: "Sell My House Fast Las Vegas | Speedy Cash Home Offers" },
     { property: "og:description", content: "Dr. Janet Duffy specializes in North/East Las Vegas distressed properties (89031, 89032, 89110, 89142). We pay cash fast for $300-450K homes. Find out how much money you can get today!" },
-    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/las-vegas-og.jpg" }, // Placeholder image
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/og/las-vegas-og-image.jpg" },
     // Twitter
     { property: "twitter:card", content: "summary_large_image" },
     { property: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas" },
@@ -26,7 +26,7 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-export const loader: Route.LoaderFunction = async () => {
+export const loader = async () => {
   return {
     businessName: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
     phoneNumber: "(702) 500-1981",
@@ -89,6 +89,38 @@ export default function SellMyHouseFastLasVegas() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Sell My House Fast Las Vegas | Speedy Cash Home Offers",
+            "description": "Sell house fast Las Vegas! Dr. Janet Duffy pays cash for North/East Vegas homes (89031, 89032, 89110, 89142). $300-450K range. No fees, 24hr offer!",
+            "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-las-vegas",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "LocalBusiness",
+              "name": businessName
+            },
+            "spatialCoverage": {
+              "@type": "City",
+              "name": "Las Vegas",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Nevada"
+              }
+            }
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -662,10 +694,17 @@ export default function SellMyHouseFastLasVegas() {
             Find out how much money you can get today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <a href={`tel:${phoneNumber}`} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-yellow-600 transition-colors">
+            </a>
+            <a 
+              href={`tel:${phoneNumber}`} 
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-yellow-600 transition-colors text-center"
+              aria-label={`Call ${businessName} at ${phoneNumber}`}
+            >
               Call {phoneNumber}
             </a>
           </div>

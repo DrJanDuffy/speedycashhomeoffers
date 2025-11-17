@@ -27,7 +27,7 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-export const loader: Route.LoaderFunction = async () => {
+export const loader = async () => {
   return {
     businessName: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
     phoneNumber: "(702) 500-1981",
@@ -90,6 +90,38 @@ export default function SellMyHouseFastRiverside() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Sell My House Fast Riverside | Speedy Cash Home Offers",
+            "description": "Sell house fast Riverside! Dr. Janet Duffy pays cash for homes in Riverside, Moreno Valley, Corona. No fees, no repairs, fast closing. Get offer today!",
+            "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-riverside",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "LocalBusiness",
+              "name": businessName
+            },
+            "spatialCoverage": {
+              "@type": "City",
+              "name": "Riverside",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "California"
+              }
+            }
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

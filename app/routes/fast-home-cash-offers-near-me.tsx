@@ -39,10 +39,15 @@ export default function FastHomeCashOffersNearMe() {
             "description": "Find fast home cash offers near me. Local cash buyers in Las Vegas and Southern California",
             "url": "https://www.speedycashhomeoffers.com/fast-home-cash-offers-near-me",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             }
           })
         }}
@@ -77,7 +82,7 @@ export default function FastHomeCashOffersNearMe() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Finding Fast Home Cash Offers Near Me</h2>
             <p className="text-gray-700 mb-6">
-              When you search for "fast home cash offers near me," you're looking for local cash buyers who understand your market and can provide quick, fair offers for your property. Finding the right local cash buyer is crucial because local expertise translates to more accurate property valuations and better service. At Speedy Cash Home Offers, we specialize in providing fast home cash offers near me for homeowners in Las Vegas, Nevada, and throughout Southern California.
+              When you search for "fast home cash offers near me," you're looking for local cash buyers who understand your market and can provide quick, fair offers for your property. Finding the right local cash buyer is crucial because local expertise translates to more accurate property valuations and better service. At Speedy Cash Home Offers, we specialize in providing fast home cash offers near me for homeowners in <a href="/sell-my-house-fast-las-vegas" className="text-teal-600 hover:text-teal-800 underline">Las Vegas, Nevada</a>, and throughout <a href="/sell-my-house-fast-southern-california" className="text-teal-600 hover:text-teal-800 underline">Southern California</a>. Learn about <a href="/process" className="text-teal-600 hover:text-teal-800 underline">our simple process</a>.
             </p>
             <p className="text-gray-700 mb-6">
               The advantage of working with local cash buyers when seeking fast home cash offers near me is their deep understanding of local market conditions, property values, and neighborhood dynamics. Local cash buyers can provide more accurate offers because they know the area, understand local trends, and have experience with similar properties in your neighborhood. This local knowledge is invaluable when you need fast home cash offers near me.
@@ -102,7 +107,7 @@ export default function FastHomeCashOffersNearMe() {
               Speedy Cash Home Offers provides fast home cash offers near me for homeowners in Las Vegas, Nevada, and throughout Southern California. Our primary service areas include Las Vegas and surrounding Nevada communities, as well as Los Angeles, Orange County, San Diego, Riverside, and the Inland Empire in California. If you're in these areas searching for fast home cash offers near me, we're here to help.
             </p>
             <p className="text-gray-700 mb-4">
-              In Las Vegas, we specialize in providing fast home cash offers near me for properties in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142), though we serve all Las Vegas neighborhoods. Our deep knowledge of the Las Vegas market allows us to provide accurate, fair fast home cash offers near me for properties throughout the area.
+              In Las Vegas, we specialize in providing fast home cash offers near me for properties in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142), though we serve all <a href="/neighborhoods" className="text-teal-600 hover:text-teal-800 underline">Las Vegas neighborhoods</a>. Our deep knowledge of the Las Vegas market allows us to provide accurate, fair fast home cash offers near me for properties throughout the area. <a href="/contact" className="text-teal-600 hover:text-teal-800 underline">Contact us today</a> for your free cash offer.
             </p>
             <p className="text-gray-700 mb-4">
               In Southern California, we provide fast home cash offers near me for properties throughout Los Angeles County, Orange County, San Diego County, Riverside County, and San Bernardino County. Our experience with Southern California markets enables us to provide excellent fast home cash offers near me for homeowners throughout the region.

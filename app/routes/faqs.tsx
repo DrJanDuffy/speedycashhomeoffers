@@ -28,6 +28,30 @@ export default function FAQs() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Frequently Asked Questions | Speedy Cash Home Offers",
+            "description": "Get answers to common questions about selling your house fast for cash in Las Vegas and Southern California. Dr. Janet Duffy and her team are here to help you understand our process.",
+            "url": "https://www.speedycashhomeoffers.com/faqs",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
+            }
+          })
+        }}
+      />
       {/* Structured Data */}
       <script
         type="application/ld+json"

@@ -39,10 +39,15 @@ export default function FastHomeCashOffersReviews() {
             "description": "Read real fast home cash offers reviews from satisfied customers",
             "url": "https://www.speedycashhomeoffers.com/fast-home-cash-offers-reviews",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -84,7 +89,7 @@ export default function FastHomeCashOffersReviews() {
               When you're considering selling your home for cash, reading fast home cash offers reviews is one of the most important steps in your research process. These reviews provide real insights from homeowners who have actually worked with cash buyers, giving you a clear picture of what to expect. Fast home cash offers reviews help you understand the experience, the process, and the results you can anticipate.
             </p>
             <p className="text-gray-700 mb-6">
-              At Speedy Cash Home Offers, we're proud of our fast home cash offers reviews. With a 4.9-star rating from over 500 satisfied customers, our reviews consistently highlight our commitment to fair offers, transparent processes, and exceptional customer service. These fast home cash offers reviews reflect real experiences from real homeowners who trusted us with one of their most important financial decisions.
+              At Speedy Cash Home Offers, we're proud of our fast home cash offers reviews. With a 4.9-star rating from over 500 satisfied customers, our reviews consistently highlight our commitment to fair offers, transparent processes, and exceptional customer service. These fast home cash offers reviews reflect real experiences from real homeowners who trusted us with one of their most important financial decisions. Read more <a href="/testimonials" className="text-indigo-600 hover:text-indigo-800 underline">customer testimonials</a> and learn about <a href="/sellers" className="text-indigo-600 hover:text-indigo-800 underline">our services</a>.
             </p>
             <p className="text-gray-700 mb-6">
               Reading fast home cash offers reviews helps you identify reputable companies, understand what makes a good cash buyer, and set realistic expectations for your own transaction. The best fast home cash offers reviews come from verified customers who share both the positives and any challenges they encountered, providing a balanced perspective that helps you make informed decisions.

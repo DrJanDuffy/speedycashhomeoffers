@@ -27,8 +27,14 @@ export default function EnhancedCTA({
   textColor = "text-white",
   className = "",
 }: EnhancedCTAProps) {
-  const PrimaryButton = primaryAction.isExternal ? 'a' : Link;
-  const SecondaryButton = secondaryAction?.isExternal ? 'a' : Link;
+  const handleCTAClick = (text: string) => {
+    if (typeof window !== 'undefined' && window.trackCTAClick) {
+      window.trackCTAClick(text, window.location.href);
+    }
+  };
+
+  const primaryButtonClass = "bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors";
+  const secondaryButtonClass = "border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors";
 
   return (
     <section className={`py-16 ${backgroundColor} ${textColor} ${className}`}>
@@ -40,36 +46,42 @@ export default function EnhancedCTA({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <PrimaryButton
-            {...(primaryAction.isExternal 
-              ? { href: primaryAction.href }
-              : { to: primaryAction.href }
-            )}
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-            onClick={() => {
-              if (typeof window !== 'undefined' && window.trackCTAClick) {
-                window.trackCTAClick(primaryAction.text, window.location.href);
-              }
-            }}
-          >
-            {primaryAction.text}
-          </PrimaryButton>
+          {primaryAction.isExternal ? (
+            <a
+              href={primaryAction.href}
+              className={primaryButtonClass}
+              onClick={() => handleCTAClick(primaryAction.text)}
+            >
+              {primaryAction.text}
+            </a>
+          ) : (
+            <Link
+              to={primaryAction.href}
+              className={primaryButtonClass}
+              onClick={() => handleCTAClick(primaryAction.text)}
+            >
+              {primaryAction.text}
+            </Link>
+          )}
           
           {secondaryAction && (
-            <SecondaryButton
-              {...(secondaryAction.isExternal 
-                ? { href: secondaryAction.href }
-                : { to: secondaryAction.href }
-              )}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.trackCTAClick) {
-                  window.trackCTAClick(secondaryAction.text, window.location.href);
-                }
-              }}
-            >
-              {secondaryAction.text}
-            </SecondaryButton>
+            secondaryAction.isExternal ? (
+              <a
+                href={secondaryAction.href}
+                className={secondaryButtonClass}
+                onClick={() => handleCTAClick(secondaryAction.text)}
+              >
+                {secondaryAction.text}
+              </a>
+            ) : (
+              <Link
+                to={secondaryAction.href}
+                className={secondaryButtonClass}
+                onClick={() => handleCTAClick(secondaryAction.text)}
+              >
+                {secondaryAction.text}
+              </Link>
+            )
           )}
         </div>
       </div>

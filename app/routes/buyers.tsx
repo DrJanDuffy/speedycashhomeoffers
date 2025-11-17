@@ -29,6 +29,30 @@ export default function Buyers() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Find Your Dream Home | Speedy Cash Home Offers",
+            "description": "Let Dr. Janet Duffy guide you to your perfect Las Vegas home. Expert market knowledge, personalized service, and exclusive access to the best properties.",
+            "url": "https://www.speedycashhomeoffers.com/buyers",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "name": "Real Estate Buyer Services"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,7 +128,7 @@ export default function Buyers() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Neighborhood Tours</h3>
-              <p className="text-gray-600">Personalized tours of Las Vegas neighborhoods and communities.</p>
+              <p className="text-gray-600">Personalized tours of <a href="/neighborhoods" className="text-green-600 hover:text-green-800 underline">Las Vegas neighborhoods</a> and communities.</p>
             </div>
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -139,15 +163,15 @@ export default function Buyers() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-gray-900">25+ Years of Las Vegas Market Expertise</h3>
               <p className="text-gray-600 mb-4">
-                Dr. Janet Duffy brings over 25 years of real estate experience to every home search. Her deep understanding 
-                of Las Vegas neighborhoods, market trends, and property values means you'll get expert guidance throughout 
+                <a href="/about" className="text-green-600 hover:text-green-800 underline">Dr. Janet Duffy</a> brings over 25 years of real estate experience to every home search. Her deep understanding 
+                of <a href="/neighborhoods" className="text-green-600 hover:text-green-800 underline">Las Vegas neighborhoods</a>, market trends, and property values means you'll get expert guidance throughout 
                 your home buying journey. She knows which neighborhoods are appreciating, which areas offer the best value, 
                 and what to look for in a property that will serve you well long-term.
               </p>
               <p className="text-gray-600">
                 With a Ph.D. in Real Estate Economics, Dr. Duffy combines academic knowledge with practical experience to 
                 help you make informed decisions. She understands market dynamics, pricing strategies, and negotiation 
-                tactics that can save you money and help you find the perfect home.
+                tactics that can save you money and help you find the perfect home. Learn more about <a href="/about" className="text-green-600 hover:text-green-800 underline">her background and expertise</a>.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">

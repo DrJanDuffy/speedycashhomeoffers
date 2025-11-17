@@ -22,6 +22,17 @@ export default [
   route("about", "routes/about.tsx"),
   route("contact", "routes/contact.tsx"),
   route("thank-you", "routes/thank-you.tsx"),
+  route("privacy-policy", "routes/privacy-policy.tsx"),
+  route("terms-of-service", "routes/terms-of-service.tsx"),
+  route("company-history", "routes/company-history.tsx"),
+  route("fast-home-cash-offers-usa", "routes/fast-home-cash-offers-usa.tsx"),
+  route("fast-home-cash-offers-reviews", "routes/fast-home-cash-offers-reviews.tsx"),
+  route("fast-home-cash-offers-near-me", "routes/fast-home-cash-offers-near-me.tsx"),
+  route("fast-home-cash-offers-las-vegas", "routes/fast-home-cash-offers-las-vegas.tsx"),
+  route("fast-home-cash-offers-nevada", "routes/fast-home-cash-offers-nevada.tsx"),
+  route("fast-home-offer", "routes/fast-home-offer.tsx"),
+  route("opendoor-cash-offer", "routes/opendoor-cash-offer.tsx"),
+  route("zillow-cash-offer", "routes/zillow-cash-offer.tsx"),
   // Catch-all route for 404 errors
   route("*", "routes/404.tsx"),
 ] satisfies RouteConfig;

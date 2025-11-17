@@ -28,6 +28,30 @@ export default function Testimonials() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Customer Reviews & Testimonials | Speedy Cash Home Offers",
+            "description": "Read authentic customer reviews and testimonials from homeowners who sold their houses fast to Speedy Cash Home Offers. See why we have a 4.9-star rating.",
+            "url": "https://www.speedycashhomeoffers.com/testimonials",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Organization",
+              "name": "Speedy Cash Home Offers"
+            }
+          })
+        }}
+      />
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -200,7 +224,7 @@ export default function Testimonials() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "One of the best companies to get the job done. Dr. Duffy made selling our inherited home so easy and stress-free."
+                "One of the best companies to get the job done. Dr. Duffy made selling our <a href="/sellers" className="text-purple-600 hover:text-purple-800 underline">inherited home</a> so easy and stress-free."
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">

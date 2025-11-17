@@ -127,6 +127,18 @@ export default function RelatedPages({ currentPage, maxItems = 4, className = ""
         { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
         { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
       ],
+      investors: [
+        { path: "/buyers", title: "For Buyers", description: "Find your dream home", category: "Services" },
+        { path: "/sellers", title: "Sell Your House", description: "Sell fast for cash", category: "Services" },
+        { path: "/contact", title: "Get In Touch", description: "Start your investment journey", category: "Contact" },
+        { path: "/about", title: "About Dr. Duffy", description: "Meet our expert team", category: "About" },
+      ],
+      buyers: [
+        { path: "/investors", title: "For Investors", description: "Investment opportunities", category: "Services" },
+        { path: "/sellers", title: "Sell Your House", description: "Sell fast for cash", category: "Services" },
+        { path: "/contact", title: "Get In Touch", description: "Find your perfect home", category: "Contact" },
+        { path: "/about", title: "About Dr. Duffy", description: "Meet our expert team", category: "About" },
+      ],
     };
 
     return allPages[page] || allPages.home;

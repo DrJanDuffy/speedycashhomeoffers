@@ -8,7 +8,7 @@ import { Label } from "~/components/ui/label";
 import { submitContactForm } from "~/lib/actions";
 import { redirect } from "react-router";
 
-export const action: Route.ActionFunction = async ({ request }) => {
+export const action = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
   const result = await submitContactForm(formData);
   
@@ -54,6 +54,13 @@ export default function Contact() {
             "name": "Contact Us Today",
             "description": "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California.",
             "url": "https://www.speedycashhomeoffers.com/contact",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "potentialAction": {
               "@type": "CommunicateAction",
               "target": {
@@ -201,7 +208,7 @@ export default function Contact() {
                     <form 
                       className="space-y-6" 
                       method="POST"
-                      onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form'); }}
+                      onSubmit={() => { if (typeof window !== 'undefined' && window.trackFormSubmit) window.trackFormSubmit('contact_form', window.location.href); }}
                     >
               {/* Form data will be sent to Follow Up Boss via server action */}
               

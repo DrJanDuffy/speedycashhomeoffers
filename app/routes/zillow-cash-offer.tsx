@@ -39,10 +39,15 @@ export default function ZillowCashOffer() {
             "description": "Compare Zillow cash offer with alternative cash home buyers",
             "url": "https://www.speedycashhomeoffers.com/zillow-cash-offer",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             }
           })
         }}
@@ -83,7 +88,7 @@ export default function ZillowCashOffer() {
               When Zillow cash offer was active, it worked similarly to other iBuyer programs. Homeowners could request a Zillow cash offer through Zillow's website, receive an initial Zillow cash offer based on algorithms and data, and then have Zillow inspect the property before finalizing the Zillow cash offer. The Zillow cash offer process was designed to be quick and convenient, though it came with service fees.
             </p>
             <p className="text-gray-700 mb-6">
-              Since Zillow cash offer is no longer available, homeowners seeking quick cash sales need to look to alternative cash buyers. Companies like Speedy Cash Home Offers provide similar services to what a Zillow cash offer provided, often with better terms, lower fees, and more personalized service. Understanding the Zillow cash offer model helps homeowners evaluate these alternatives.
+              Since Zillow cash offer is no longer available, homeowners seeking quick cash sales need to look to alternative cash buyers. Companies like Speedy Cash Home Offers provide similar services to what a Zillow cash offer provided, often with better terms, lower fees, and more personalized service. Understanding the Zillow cash offer model helps homeowners evaluate these alternatives. Learn about <a href="/sellers" className="text-violet-600 hover:text-violet-800 underline">our cash buying services</a> and <a href="/process" className="text-violet-600 hover:text-violet-800 underline">our simple process</a>.
             </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">How Zillow Cash Offer Worked</h3>

@@ -29,6 +29,30 @@ export default function Investors() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Real Estate Investment Opportunities | Speedy Cash Home Offers",
+            "description": "Maximize your ROI with Las Vegas real estate investments. Dr. Janet Duffy provides expert guidance on cap rates, cash flow, and market analysis.",
+            "url": "https://www.speedycashhomeoffers.com/investors",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "name": "Real Estate Investment Services"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +124,7 @@ export default function Investors() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">Rental Properties</h3>
-              <p className="text-gray-600 mb-4">Generate consistent monthly cash flow with single-family and multi-family rental properties.</p>
+              <p className="text-gray-600 mb-4">Generate consistent monthly cash flow with single-family and multi-family rental properties. Explore <a href="/neighborhoods" className="text-purple-600 hover:text-purple-800 underline">Las Vegas neighborhoods</a> with strong rental demand.</p>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 8-12% annual returns</li>
                 <li>• Strong rental demand</li>

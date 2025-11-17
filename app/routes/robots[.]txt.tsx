@@ -1,6 +1,4 @@
-import type { Route } from "./+types/robots[.]txt";
-
-export const loader: Route.LoaderFunction = async () => {
+export const loader = async () => {
   const baseUrl = "https://www.speedycashhomeoffers.com";
   
   const robotsTxt = `User-agent: *

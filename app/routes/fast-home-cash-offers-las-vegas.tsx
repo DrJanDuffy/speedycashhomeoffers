@@ -39,10 +39,15 @@ export default function FastHomeCashOffersLasVegas() {
             "description": "Get fast home cash offers Las Vegas. Specializing in North/East Vegas cash home buying",
             "url": "https://www.speedycashhomeoffers.com/fast-home-cash-offers-las-vegas",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             },
             "spatialCoverage": {
               "@type": "City",
@@ -91,7 +96,7 @@ export default function FastHomeCashOffersLasVegas() {
               The Las Vegas market has seen significant growth and change over the years, creating opportunities for both homeowners and investors. Fast home cash offers Las Vegas capitalize on this dynamic market by providing quick solutions for homeowners who need to sell. At Speedy Cash Home Offers, we specialize in providing fast home cash offers Las Vegas, with particular expertise in North Las Vegas (89031, 89032) and East Las Vegas (89110, 89142) neighborhoods.
             </p>
             <p className="text-gray-700 mb-6">
-              When you need fast home cash offers Las Vegas, you want a company that understands the local market, knows the neighborhoods, and can provide fair offers that reflect your property's true value. Our deep knowledge of the Las Vegas market allows us to provide accurate, competitive fast home cash offers Las Vegas for properties throughout the area.
+              When you need fast home cash offers Las Vegas, you want a company that understands the local market, knows the <a href="/neighborhoods" className="text-purple-600 hover:text-purple-800 underline">neighborhoods</a>, and can provide fair offers that reflect your property's true value. Our deep knowledge of the Las Vegas market allows us to provide accurate, competitive fast home cash offers Las Vegas for properties throughout the area. Learn more about <a href="/about" className="text-purple-600 hover:text-purple-800 underline">Dr. Janet Duffy's expertise</a>.
             </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">Why Las Vegas Homeowners Choose Fast Home Cash Offers Las Vegas</h3>
@@ -131,7 +136,7 @@ export default function FastHomeCashOffersLasVegas() {
 
             <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">Initial Contact for Fast Home Cash Offers Las Vegas</h3>
             <p className="text-gray-700 mb-4">
-              The first step in getting fast home cash offers Las Vegas is contacting a cash buyer. You can call us directly at (702) 500-1981 or fill out our online form with basic property information. This initial contact is free and comes with no obligation, so you can explore fast home cash offers Las Vegas without any commitment.
+              The first step in getting fast home cash offers Las Vegas is contacting a cash buyer. You can call us directly at (702) 500-1981 or <a href="/contact" className="text-purple-600 hover:text-purple-800 underline">fill out our online form</a> with basic property information. This initial contact is free and comes with no obligation, so you can explore fast home cash offers Las Vegas without any commitment. See our complete <a href="/process" className="text-purple-600 hover:text-purple-800 underline">selling process</a>.
             </p>
             <p className="text-gray-700 mb-4">
               During this initial contact for fast home cash offers Las Vegas, we'll ask questions about your property, including its address, condition, and your situation. This information helps us understand your needs and begin the evaluation process for fast home cash offers Las Vegas. We'll respond quickly, usually within 24 hours, with fast home cash offers Las Vegas.

@@ -28,6 +28,30 @@ export default function Process() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "How It Works | Speedy Cash Home Offers",
+            "description": "Learn our simple 5-step process to sell your house fast for cash. No repairs, no fees, no waiting. Close in as little as 7 days.",
+            "url": "https://www.speedycashhomeoffers.com/process",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "name": "Cash Home Buying Process"
+            }
+          })
+        }}
+      />
       {/* FAQ Schema */}
       <script
         type="application/ld+json"
@@ -184,10 +208,10 @@ export default function Process() {
               Our Home Buying Process Consists of Five Simple Steps
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              At Speedy Cash Home Offers, we buy houses for cash throughout Las Vegas and Southern California. We buy old houses, we buy houses fast in bad shape, 
+              At Speedy Cash Home Offers, we buy houses for cash throughout <a href="/sell-my-house-fast-las-vegas" className="text-teal-600 hover:text-teal-800 underline">Las Vegas</a> and <a href="/sell-my-house-fast-southern-california" className="text-teal-600 hover:text-teal-800 underline">Southern California</a>. We buy old houses, we buy houses fast in bad shape, 
               we buy houses in need of repair. We have purchased thousands of houses and we can buy yours in just a few days. 
-              There is no obligation, so contact us today! Our streamlined process eliminates the traditional hassles of selling real estate, 
-              providing homeowners with a stress-free alternative to conventional market sales.
+              There is no obligation, so <a href="/contact" className="text-teal-600 hover:text-teal-800 underline">contact us today</a>! Our streamlined process eliminates the traditional hassles of selling real estate, 
+              providing homeowners with a stress-free alternative to conventional market sales. Learn more about <a href="/sellers" className="text-teal-600 hover:text-teal-800 underline">why homeowners choose us</a>.
             </p>
           </div>
         </div>
@@ -269,7 +293,7 @@ export default function Process() {
                     After we collect the details of your property and situation, we will schedule an on-location 
                     inspection of your home and provide you with a firm cash offer at that time. There is no obligation to accept our offer. 
                     Our team will evaluate your property's current market value, considering factors like location, condition, 
-                    and recent comparable sales in your Las Vegas or Southern California neighborhood.
+                    and recent comparable sales in your <a href="/neighborhoods" className="text-teal-600 hover:text-teal-800 underline">Las Vegas or Southern California neighborhood</a>.
                   </p>
                 </div>
               </div>
@@ -377,7 +401,7 @@ export default function Process() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2">Local Expertise</h3>
-              <p className="text-gray-600">Deep knowledge of Las Vegas and Southern California real estate markets.</p>
+              <p className="text-gray-600">Deep knowledge of <a href="/neighborhoods" className="text-teal-600 hover:text-teal-800 underline">Las Vegas and Southern California real estate markets</a>.</p>
             </div>
           </div>
         </div>

@@ -81,6 +81,34 @@ export default function Sellers() {
           })
         }}
       />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Sell Your Home Fast | Speedy Cash Home Offers",
+            "description": "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Dr. Janet Duffy helps homeowners sell quickly.",
+            "url": "https://www.speedycashhomeoffers.com/sellers",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.speedycashhomeoffers.com/images/sellers-og-image.jpg"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,13 +234,13 @@ export default function Sellers() {
               <p className="text-gray-600 mb-4">
                 When you sell your home to Speedy Cash Home Offers, you won't pay any real estate agent commissions, 
                 closing costs, or hidden fees. Traditional home sales typically cost sellers 6-10% of the home's value 
-                in commissions and fees. With our cash offer process, you keep 100% of what we agree to pay, minus any 
+                in commissions and fees. With our <a href="/process" className="text-blue-600 hover:text-blue-800 underline">cash offer process</a>, you keep 100% of what we agree to pay, minus any 
                 existing liens or mortgages you choose to pay off.
               </p>
               <p className="text-gray-600">
                 We handle all the paperwork, title searches, and closing costs. You simply receive your cash offer, 
                 accept it, and close on your timeline. No surprises, no last-minute fees, and no stress about 
-                unexpected expenses eating into your proceeds.
+                unexpected expenses eating into your proceeds. Learn more about <a href="/faqs" className="text-blue-600 hover:text-blue-800 underline">how our process works</a> and why thousands of homeowners choose us.
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
@@ -224,9 +252,9 @@ export default function Sellers() {
                 without investing time or money into improvements.
               </p>
               <p className="text-gray-600">
-                This is especially valuable if you're dealing with inherited properties, foreclosure situations, 
+                This is especially valuable if you're dealing with <a href="/contact" className="text-blue-600 hover:text-blue-800 underline">inherited properties</a>, foreclosure situations, 
                 or homes that have been damaged. We've seen it all and can make fair offers on properties that 
-                traditional buyers might walk away from.
+                traditional buyers might walk away from. Read our <a href="/testimonials" className="text-blue-600 hover:text-blue-800 underline">customer reviews</a> to see how we've helped others in similar situations.
               </p>
             </div>
           </div>
@@ -236,12 +264,12 @@ export default function Sellers() {
               <p className="text-gray-600 mb-4">
                 Traditional home sales can take 60-90 days or longer, especially if buyers need financing approval. 
                 When you sell to Speedy Cash Home Offers, you can close in as little as 7 days. We have our own funding 
-                ready, so there's no waiting for bank approvals or mortgage processing delays.
+                ready, so there's no waiting for bank approvals or mortgage processing delays. See our detailed <a href="/process" className="text-blue-600 hover:text-blue-800 underline">5-step process</a> to understand exactly how we make this happen.
               </p>
               <p className="text-gray-600">
                 This speed is crucial if you're facing foreclosure, need to relocate quickly for a job, going through 
                 a divorce, or dealing with any time-sensitive situation. You choose your closing date, and we'll work 
-                around your schedule to make the process as convenient as possible.
+                around your schedule to make the process as convenient as possible. <a href="/contact" className="text-blue-600 hover:text-blue-800 underline">Contact us today</a> to discuss your timeline.
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">

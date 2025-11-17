@@ -28,6 +28,31 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "About Dr. Janet Duffy | Speedy Cash Home Offers",
+            "description": "Learn about Dr. Janet Duffy, Las Vegas's most trusted real estate professional with over 25 years of experience. Ph.D. in Real Estate Economics, licensed broker.",
+            "url": "https://www.speedycashhomeoffers.com/about",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Person",
+              "@id": "https://www.speedycashhomeoffers.com/#founder",
+              "name": "Dr. Janet Duffy"
+            }
+          })
+        }}
+      />
       {/* Person Schema for Dr. Janet Duffy */}
       <script
         type="application/ld+json"
@@ -172,7 +197,7 @@ export default function About() {
                 Dr. Janet Duffy has been helping Las Vegas homeowners sell their properties quickly and hassle-free for over 25 years. With a Ph.D. in Real Estate Economics and extensive experience in the Las Vegas market, Dr. Duffy understands the unique challenges homeowners face when selling their properties.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Whether you're dealing with inherited property, facing foreclosure, going through a divorce, or simply need to sell quickly, Dr. Duffy provides honest, transparent service with fair cash offers and fast closings.
+                Whether you're dealing with inherited property, facing foreclosure, going through a divorce, or simply need to <a href="/sellers" className="text-indigo-600 hover:text-indigo-800 underline">sell quickly</a>, Dr. Duffy provides honest, transparent service with fair cash offers and fast closings. Learn more about <a href="/process" className="text-indigo-600 hover:text-indigo-800 underline">our simple process</a>.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">

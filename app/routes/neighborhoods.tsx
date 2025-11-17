@@ -1,4 +1,5 @@
 import type { Route } from "./+types/neighborhoods";
+import Breadcrumbs from "~/components/Breadcrumbs";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -24,6 +25,31 @@ export const meta: Route.MetaFunction = () => {
 export default function Neighborhoods() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Breadcrumbs />
+      {/* WebPage Schema with Content Freshness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Las Vegas Neighborhoods | Speedy Cash Home Offers",
+            "description": "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features in Henderson, Summerlin, and more.",
+            "url": "https://www.speedycashhomeoffers.com/neighborhoods",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
+            "about": {
+              "@type": "Place",
+              "name": "Las Vegas, Nevada"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,8 +58,8 @@ export default function Neighborhoods() {
               Discover Las Vegas Neighborhoods
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Explore the best neighborhoods in Las Vegas with Dr. Janet Duffy. 
-              Find the perfect community that matches your lifestyle and budget.
+              Explore the best neighborhoods in Las Vegas with <a href="/about" className="text-orange-200 hover:text-white underline">Dr. Janet Duffy</a>. 
+              Find the perfect community that matches your lifestyle and budget. Whether you're <a href="/buyers" className="text-orange-200 hover:text-white underline">buying a home</a> or <a href="/sellers" className="text-orange-200 hover:text-white underline">selling your property</a>, we can help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -65,7 +91,7 @@ export default function Neighborhoods() {
               <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Summerlin</h3>
-                <p className="text-gray-600 mb-4">Master-planned community with golf courses, shopping, and top-rated schools.</p>
+                <p className="text-gray-600 mb-4">Master-planned community with golf courses, shopping, and top-rated schools. Perfect for <a href="/buyers" className="text-orange-600 hover:text-orange-800 underline">home buyers</a> seeking quality living.</p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex justify-between">
                     <span>Avg Home Price:</span>
@@ -92,7 +118,7 @@ export default function Neighborhoods() {
               <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Henderson</h3>
-                <p className="text-gray-600 mb-4">Family-friendly city with parks, recreation, and excellent amenities.</p>
+                <p className="text-gray-600 mb-4">Family-friendly city with parks, recreation, and excellent amenities. Great for <a href="/investors" className="text-orange-600 hover:text-orange-800 underline">real estate investors</a> and families.</p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex justify-between">
                     <span>Avg Home Price:</span>

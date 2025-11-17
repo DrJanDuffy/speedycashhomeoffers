@@ -39,10 +39,15 @@ export default function FastHomeCashOffersNevada() {
             "description": "Get fast home cash offers Nevada. Cash home buying services throughout Nevada",
             "url": "https://www.speedycashhomeoffers.com/fast-home-cash-offers-nevada",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             },
             "spatialCoverage": {
               "@type": "State",
@@ -84,7 +89,7 @@ export default function FastHomeCashOffersNevada() {
               Nevada homeowners seeking to sell their properties quickly are increasingly turning to fast home cash offers Nevada services. The Nevada real estate market, with its unique characteristics and diverse communities, presents opportunities for homeowners who need quick sales. Fast home cash offers Nevada provide solutions that work for Nevada homeowners across the state, from Las Vegas to Reno to Henderson and beyond.
             </p>
             <p className="text-gray-700 mb-6">
-              At Speedy Cash Home Offers, we specialize in providing fast home cash offers Nevada, with particular expertise in the Las Vegas area. Our deep knowledge of the Nevada market allows us to provide accurate, competitive fast home cash offers Nevada for properties throughout the state. Whether you're in Las Vegas, North Las Vegas, Henderson, or other Nevada communities, fast home cash offers Nevada from Speedy Cash Home Offers can help you sell quickly.
+              At Speedy Cash Home Offers, we specialize in providing fast home cash offers Nevada, with particular expertise in the <a href="/sell-my-house-fast-las-vegas" className="text-rose-600 hover:text-rose-800 underline">Las Vegas area</a>. Our deep knowledge of the Nevada market allows us to provide accurate, competitive fast home cash offers Nevada for properties throughout the state. Whether you're in Las Vegas, North Las Vegas, Henderson, or other Nevada communities, fast home cash offers Nevada from Speedy Cash Home Offers can help you sell quickly. See our <a href="/process" className="text-rose-600 hover:text-rose-800 underline">5-step process</a>.
             </p>
             <p className="text-gray-700 mb-6">
               The Nevada real estate market has unique characteristics that make fast home cash offers Nevada particularly valuable. Nevada's economy, driven by tourism, gaming, and growing tech sectors, creates situations where homeowners need to sell quickly. Fast home cash offers Nevada provide the speed and convenience these homeowners need.

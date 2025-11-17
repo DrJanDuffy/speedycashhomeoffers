@@ -247,7 +247,7 @@ export default function Home() {
               <a href="/contact" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold text-center" onClick={() => { if (typeof window !== 'undefined' && window.trackCTAClick) window.trackCTAClick('Get My Free Quote', window.location.href); }}>
                 Get My Free Quote
               </a>
-              <a href="tel:(702) 500-1981" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-lg font-semibold text-center" aria-label="Call Speedy Cash Home Offers at (702) 500-1981" onClick={() => { if (typeof window !== 'undefined' && window.trackPhoneClick) window.trackPhoneClick('hero_phone'); }}>
+              <a href="tel:(702) 500-1981" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-lg font-semibold text-center" aria-label="Call Speedy Cash Home Offers at (702) 500-1981" onClick={() => { if (typeof window !== 'undefined' && window.trackPhoneClick) window.trackPhoneClick('hero_phone', window.location.href); }}>
                 Call (702) 500-1981
               </a>
             </div>

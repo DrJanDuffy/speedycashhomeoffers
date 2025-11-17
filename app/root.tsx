@@ -407,9 +407,30 @@ export function Layout({ children }: { children: React.ReactNode }) {
             `,
           }}
         />
+        {/* RealScout Web Components - Required once for all widgets */}
+        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              realscout-office-listings {
+                --rs-listing-divider-color: #0e64c8;
+                width: 100%;
+              }
+            `,
+          }}
+        />
       </head>
       <body>
         <Navigation />
+        {/* RealScout Office Listings - Below the fold on every page */}
+        <realscout-office-listings 
+          agent-encoded-id="QWdlbnQtMjI1MDUw" 
+          sort-order="NEWEST" 
+          listing-status="For Sale" 
+          property-types=",SFR,OTHER,MOBILE" 
+          price-min="200000" 
+          price-max="400000"
+        ></realscout-office-listings>
         <main>{children}</main>
         <Footer />
         <MobileCTA />
@@ -420,7 +441,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export const loader: Route.LoaderFunction = async ({ request }) => {
+export const loader = async ({ request }: { request: Request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
   
@@ -468,58 +489,13 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   // Normalize pathname for comparison (remove trailing slash)
   const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
   
-  // Check if path is invalid (old WordPress blog post) BEFORE redirects
-  // IMPORTANT: Only return 410 for paths that are NOT in validRoutes
-  const isInvalidPath = !validRoutes.some(route => {
+  // Check if path is a valid route first
+  const isValidRoute = validRoutes.some(route => {
     if (route === '/') {
       return normalizedPath === '/' || normalizedPath === '';
     }
-    // Exact match or sub-path (e.g., /sellers matches /sellers or /sellers/anything)
     return normalizedPath === route || normalizedPath.startsWith(route + '/');
   });
-  
-  // Handle WordPress cron URLs globally - return 410 Gone
-  // Check this FIRST before any other processing
-  // Valid routes with WordPress params should return 410 (they're old WordPress URLs)
-  // BUT: Double-check that the path is actually valid before returning 410 for query params
-  const hasWordPressParams = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
-  if (hasWordPressParams) {
-    // Only return 410 if it's a valid route (old WordPress URL) OR invalid path
-    // This ensures we don't accidentally return 410 for valid routes without params
-    throw new Response(null, {
-      status: 410,
-      statusText: "Gone",
-      headers: {
-        "X-Robots-Tag": "noindex, nofollow",
-        "X-WordPress-Content": "removed",
-      },
-    });
-  }
-  
-  // If path is invalid (old WordPress blog post), return 410 Gone BEFORE redirects
-  // This ensures old blog posts return 410 even if they come in as HTTP or non-www
-  // IMPORTANT: This should NEVER trigger for valid routes like /process, /sellers, /buyers, etc.
-  // Double-check: ensure the path is truly not in validRoutes
-  if (isInvalidPath) {
-    // Extra safety check: verify it's really not a valid route
-    const isReallyInvalid = !validRoutes.some(route => {
-      if (route === '/') {
-        return normalizedPath === '/' || normalizedPath === '';
-      }
-      return normalizedPath === route || normalizedPath.startsWith(route + '/');
-    });
-    
-    if (isReallyInvalid) {
-      throw new Response(null, {
-        status: 410,
-        statusText: "Gone",
-        headers: {
-          "X-Robots-Tag": "noindex, nofollow",
-          "X-WordPress-Content": "removed",
-        },
-      });
-    }
-  }
   
   // Redirect HTTP to HTTPS (only for valid routes)
   if (url.protocol === 'http:') {
@@ -543,60 +519,68 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     });
   }
   
-  // Handle old WordPress paths - return 410 Gone
-  // These paths should match the list in 404.tsx for consistency
-  const oldWordPressPaths = [
-    '/buyer-investor',
-    '/map',
-    '/writer',
-    '/author',
-    '/tag',
-    '/category',
-    '/__manifest',
-  ];
-  
-  // Check if pathname starts with any old WordPress path
-  // Use exact match or path prefix to avoid false positives
-  if (oldWordPressPaths.some(path => {
-    // Exact match
-    if (pathname === path) return true;
-    // Path prefix match (e.g., /writer/anything matches /writer)
-    if (pathname.startsWith(path + '/')) return true;
-    return false;
-  })) {
-    throw new Response(null, {
-      status: 410,
-      statusText: "Gone",
-      headers: {
-        "X-Robots-Tag": "noindex, nofollow",
-        "X-WordPress-Content": "removed",
-      },
+  // Only check for old WordPress paths if it's NOT a valid route
+  // Valid routes should always pass through to React Router
+  if (!isValidRoute) {
+    const oldWordPressPaths = [
+      '/buyer-investor',
+      '/map',
+      '/home',
+      '/for-buyers',
+      '/writer',
+      '/author',
+      '/tag',
+      '/category',
+      '/__manifest',
+    ];
+    
+    // Check if pathname starts with any old WordPress path
+    // Use exact match or path prefix to avoid false positives
+    const isOldPath = oldWordPressPaths.some(path => {
+      // Exact match
+      if (pathname === path) return true;
+      // Path prefix match (e.g., /writer/anything matches /writer)
+      if (pathname.startsWith(path + '/')) return true;
+      return false;
     });
-  }
-  
-  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
-  // BUT: If trailing slash URL has WordPress query params, return 410 Gone instead of redirecting
-  if (pathname.endsWith('/') && pathname !== '/') {
-    // If it has WordPress query params, return 410 Gone (already checked above, but double-check for trailing slash URLs)
-    if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
+    
+    if (isOldPath) {
       throw new Response(null, {
         status: 410,
         statusText: "Gone",
         headers: {
           "X-Robots-Tag": "noindex, nofollow",
+          "X-WordPress-Content": "removed",
         },
       });
     }
-    
-    // Normal trailing slash redirect - strip all query params to prevent duplicates
-    const newPath = pathname.slice(0, -1);
-    const newUrl = new URL(newPath, url.origin);
-    throw new Response(null, {
-      status: 301,
-      headers: {
-        Location: newUrl.toString(),
-      },
+  }
+  
+  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
+  // BUT: Only redirect if it's a valid route - invalid routes will hit the 404 handler
+  if (pathname.endsWith('/') && pathname !== '/') {
+    // Use the already-computed isValidRoute check, but check path without trailing slash
+    const pathWithoutSlash = pathname.slice(0, -1);
+    const isRouteWithoutSlash = validRoutes.some(route => {
+      if (route === '/') {
+        return pathWithoutSlash === '/' || pathWithoutSlash === '';
+      }
+      return pathWithoutSlash === route || pathWithoutSlash.startsWith(route + '/');
     });
+    
+    // Only redirect valid routes - let 404 handler deal with invalid paths
+    if (isRouteWithoutSlash) {
+      // Normal trailing slash redirect - strip all query params to prevent duplicates
+      const newPath = pathname.slice(0, -1);
+      const newUrl = new URL(newPath, url.origin);
+      throw new Response(null, {
+        status: 301,
+        headers: {
+          Location: newUrl.toString(),
+        },
+      });
+    }
+    // If not a valid route, let it fall through to React Router which will hit the 404 handler
   }
   
   return {};
@@ -610,13 +594,20 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
+  let statusCode: number | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404 - Page Not Found" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found. Please check the URL or return to our home page."
-        : error.statusText || details;
+    statusCode = error.status;
+    if (error.status === 410) {
+      message = "410 - Page Gone";
+      details = "This page has been permanently removed. Please check the URL or return to our home page.";
+    } else if (error.status === 404) {
+      message = "404 - Page Not Found";
+      details = "The requested page could not be found. Please check the URL or return to our home page.";
+    } else {
+      message = `Error ${error.status}`;
+      details = error.statusText || details;
+    }
   } else if (error && error instanceof Error) {
     details = error.message;
     if (import.meta.env.DEV) {
@@ -628,7 +619,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <div className="text-6xl font-bold text-blue-600 mb-4">
-          {isRouteErrorResponse(error) && error.status === 404 ? "404" : "⚠️"}
+          {statusCode === 410 ? "410" : statusCode === 404 ? "404" : "⚠️"}
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">{message}</h1>
         <p className="text-lg text-gray-600 mb-8">{details}</p>

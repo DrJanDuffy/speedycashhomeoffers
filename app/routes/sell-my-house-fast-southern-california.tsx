@@ -28,7 +28,7 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-export const loader: Route.LoaderFunction = async () => {
+export const loader = async () => {
   return {
     businessName: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
     phoneNumber: "(702) 500-1981",
@@ -135,11 +135,12 @@ export default function SellMyHouseFastSouthernCalifornia() {
             "name": "Sell My House Fast Southern California",
             "description": "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!",
             "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+            "datePublished": "2024-01-15",
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
             "isPartOf": {
               "@type": "WebSite",
-              "name": "Speedy Cash Home Offers",
-              "url": "https://www.speedycashhomeoffers.com"
+              "@id": "https://www.speedycashhomeoffers.com/#website"
             },
             "about": {
               "@type": "LocalBusiness",

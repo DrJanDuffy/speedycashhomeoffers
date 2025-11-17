@@ -1,4 +1,5 @@
 import { Cloudinary } from '@cloudinary/url-gen';
+import { scale } from '@cloudinary/url-gen/actions/resize';
 
 // Cloudinary configuration
 export const cloudinaryConfig = {
@@ -36,10 +37,10 @@ export const createOptimizedImage = (publicId: string, options?: {
   }
   
   if (options?.width || options?.height) {
-    img.resize({
-      width: options.width,
-      height: options.height
-    });
+    const resizeAction = scale();
+    if (options.width) resizeAction.width(options.width);
+    if (options.height) resizeAction.height(options.height);
+    img.resize(resizeAction);
   }
   
   return img;

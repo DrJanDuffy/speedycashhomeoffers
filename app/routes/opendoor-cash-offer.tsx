@@ -39,10 +39,15 @@ export default function OpendoorCashOffer() {
             "description": "Compare Opendoor cash offer with alternative cash home buyers",
             "url": "https://www.speedycashhomeoffers.com/opendoor-cash-offer",
             "datePublished": "2025-01-01",
-            "dateModified": new Date().toISOString().split('T')[0],
+            "dateModified": "2025-01-17",
             "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website"
+            },
             "about": {
-              "@id": "https://www.speedycashhomeoffers.com/#organization"
+              "@type": "Service",
+              "name": "Cash Home Buying Service"
             }
           })
         }}
@@ -102,7 +107,7 @@ export default function OpendoorCashOffer() {
               One important aspect of an Opendoor cash offer is the fees involved. Opendoor typically charges service fees that can range from 5% to 7% of the home's sale price. These fees are deducted from your Opendoor cash offer, meaning the net amount you receive from an Opendoor cash offer is lower than the gross Opendoor cash offer amount.
             </p>
             <p className="text-gray-700 mb-4">
-              When evaluating an Opendoor cash offer, it's crucial to understand these fees and how they compare to other options. While an Opendoor cash offer might seem attractive initially, the fees can significantly reduce the net amount you receive. Comparing an Opendoor cash offer with alternatives that have lower or no fees can help you make the best financial decision.
+              When evaluating an Opendoor cash offer, it's crucial to understand these fees and how they compare to other options. While an Opendoor cash offer might seem attractive initially, the fees can significantly reduce the net amount you receive. Comparing an Opendoor cash offer with alternatives that have lower or no fees can help you make the best financial decision. <a href="/sellers" className="text-cyan-600 hover:text-cyan-800 underline">We offer no fees</a> and <a href="/contact" className="text-cyan-600 hover:text-cyan-800 underline">fair cash offers</a>.
             </p>
             <p className="text-gray-700 mb-4">
               Additionally, an Opendoor cash offer may require you to make certain repairs or accept deductions for needed repairs. These repair requirements can further reduce the net amount you receive from an Opendoor cash offer. Understanding all costs associated with an Opendoor cash offer is essential for making informed decisions.
@@ -126,7 +131,7 @@ export default function OpendoorCashOffer() {
               One key difference between an Opendoor cash offer and alternatives is the fees involved. An Opendoor cash offer typically includes service fees of 5-7%, which are deducted from your Opendoor cash offer amount. These fees can significantly reduce the net amount you receive from an Opendoor cash offer.
             </p>
             <p className="text-gray-700 mb-4">
-              Alternative cash buyers, like Speedy Cash Home Offers, often don't charge service fees or commissions. When you receive an offer from us, there are no fees deducted—what we offer is what you receive. This can make alternatives to an Opendoor cash offer more financially attractive, even if the gross Opendoor cash offer amount seems higher initially.
+              Alternative cash buyers, like Speedy Cash Home Offers, often don't charge service fees or commissions. When you receive an offer from us, there are no fees deducted—what we offer is what you receive. This can make alternatives to an Opendoor cash offer more financially attractive, even if the gross Opendoor cash offer amount seems higher initially. Learn about <a href="/sellers" className="text-cyan-600 hover:text-cyan-800 underline">our no-fee service</a> and <a href="/process" className="text-cyan-600 hover:text-cyan-800 underline">how we compare</a>.
             </p>
             <p className="text-gray-700 mb-4">
               When comparing an Opendoor cash offer with alternatives, always consider the net amount you'll receive after fees. An Opendoor cash offer might look higher on paper, but after Opendoor's fees are deducted, alternatives may actually provide more money in your pocket.
