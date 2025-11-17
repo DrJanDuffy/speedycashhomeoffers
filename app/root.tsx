@@ -101,64 +101,10 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
   
-  // Handle WordPress cron URLs globally - return 410 Gone
-  // Check this FIRST before any other processing
-  if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
-    throw new Response(null, {
-      status: 410,
-      statusText: "Gone",
-      headers: {
-        "X-Robots-Tag": "noindex, nofollow",
-      },
-    });
-  }
-  
-  // Redirect HTTP to HTTPS
-  if (url.protocol === 'http:') {
-    url.protocol = 'https:';
-    throw new Response(null, {
-      status: 301,
-      headers: {
-        Location: url.toString(),
-      },
-    });
-  }
-  
-  // Redirect non-www to www
-  if (url.hostname === 'speedycashhomeoffers.com') {
-    url.hostname = 'www.speedycashhomeoffers.com';
-    throw new Response(null, {
-      status: 301,
-      headers: {
-        Location: url.toString(),
-      },
-    });
-  }
-  
-  // Handle old WordPress paths - return 410 Gone
+  // Get pathname early for all checks
   const pathname = url.pathname.toLowerCase();
-  const oldWordPressPaths = [
-    '/buyer-investor',
-    '/writer/',
-    '/author/',
-    '/tag/',
-    '/category/',
-    '/__manifest',
-  ];
   
-  if (oldWordPressPaths.some(path => pathname.startsWith(path))) {
-    throw new Response(null, {
-      status: 410,
-      statusText: "Gone",
-      headers: {
-        "X-Robots-Tag": "noindex, nofollow",
-      },
-    });
-  }
-  
-  // Handle old WordPress blog post URLs (any path that doesn't match our routes)
-  // These are old blog posts that should return 410 Gone
-  // Check this BEFORE trailing slash handling to catch all variations
+  // Define valid routes once for reuse
   const validRoutes = [
     '/',
     '/test',
@@ -188,7 +134,7 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   // Normalize pathname for comparison (remove trailing slash)
   const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
   
-  // If path doesn't match any valid route, return 410 Gone (old WordPress content)
+  // Check if path is invalid (old WordPress blog post) BEFORE redirects
   const isInvalidPath = !validRoutes.some(route => {
     if (route === '/') {
       return normalizedPath === '/' || normalizedPath === '';
@@ -196,17 +142,71 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     return normalizedPath === route || normalizedPath.startsWith(route + '/');
   });
   
-  if (isInvalidPath) {
-    // Double-check for WordPress query params as additional confirmation
-    const hasWordPressParams = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
-    
+  // Handle WordPress cron URLs globally - return 410 Gone
+  // Check this FIRST before any other processing
+  if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
       headers: {
         "X-Robots-Tag": "noindex, nofollow",
-        // Add additional header to confirm this is old WordPress content
-        ...(hasWordPressParams && { "X-WordPress-Content": "removed" }),
+        "X-WordPress-Content": "removed",
+      },
+    });
+  }
+  
+  // If path is invalid (old WordPress blog post), return 410 Gone BEFORE redirects
+  // This ensures old blog posts return 410 even if they come in as HTTP or non-www
+  if (isInvalidPath) {
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+        "X-WordPress-Content": "removed",
+      },
+    });
+  }
+  
+  // Redirect HTTP to HTTPS (only for valid routes)
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Redirect non-www to www (only for valid routes)
+  if (url.hostname === 'speedycashhomeoffers.com') {
+    url.hostname = 'www.speedycashhomeoffers.com';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Handle old WordPress paths - return 410 Gone
+  const oldWordPressPaths = [
+    '/buyer-investor',
+    '/writer/',
+    '/author/',
+    '/tag/',
+    '/category/',
+    '/__manifest',
+  ];
+  
+  if (oldWordPressPaths.some(path => pathname.startsWith(path))) {
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+        "X-WordPress-Content": "removed",
       },
     });
   }
