@@ -182,6 +182,13 @@ export default function Home() {
             "url": "https://www.speedycashhomeoffers.com",
             "telephone": "(702) 500-1981",
             "email": "DrDuffy@SpeedyCashHomeOffers.com",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "2775 Ariel Ocean St",
@@ -217,11 +224,6 @@ export default function Home() {
             "founder": {
               "@type": "Person",
               "name": "Dr. Janet Duffy"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "500"
             },
             "sameAs": [
               "https://www.facebook.com/speedycashhomeoffers",
