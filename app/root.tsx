@@ -14,21 +14,28 @@ import Footer from "./components/Footer";
 import MobileCTA from "./components/MobileCTA";
 
 export const links: Route.LinksFunction = () => [
+  // Preconnect to font domains early (DNS lookup optimization)
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
+  // Preload critical CSS first to reduce critical path latency
+  // This allows the browser to fetch CSS in parallel with HTML parsing
   {
     rel: "preload",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: stylesheet,
     as: "style",
   },
+  // Load Google Fonts asynchronously to prevent render blocking
+  // Using media="print" trick: browser loads it with low priority, then switches to "all"
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
+    media: "print",
+  } as any,
+  // Load main stylesheet (preloaded above, so should load faster)
   { rel: "stylesheet", href: stylesheet },
 ];
 
