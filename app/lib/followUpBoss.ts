@@ -53,7 +53,29 @@ export async function createFollowUpBossContact(contact: FollowUpBossContact): P
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
+      // Check if response is HTML (error page) instead of JSON
+      const contentType = response.headers.get('content-type');
+      let errorData: any = {};
+      
+      if (contentType && contentType.includes('application/json')) {
+        try {
+          errorData = await response.json();
+        } catch {
+          // If JSON parse fails, try to get text for error message
+          const text = await response.text().catch(() => '');
+          if (text.trim().startsWith('<!DOCTYPE') || text.trim().startsWith('<html')) {
+            throw new Error(`Follow Up Boss API returned HTML error page (${response.status})`);
+          }
+          throw new Error(`Follow Up Boss API error: ${response.status} - ${text.substring(0, 100)}`);
+        }
+      } else {
+        // Non-JSON response, get text instead
+        const text = await response.text().catch(() => '');
+        if (text.trim().startsWith('<!DOCTYPE') || text.trim().startsWith('<html')) {
+          throw new Error(`Follow Up Boss API returned HTML error page (${response.status})`);
+        }
+        throw new Error(`Follow Up Boss API error: ${response.status} - ${text.substring(0, 100)}`);
+      }
       
       // Handle 401 Unauthorized specifically
       if (response.status === 401) {
@@ -70,7 +92,19 @@ export async function createFollowUpBossContact(contact: FollowUpBossContact): P
       throw new Error(`Follow Up Boss API error: ${response.status} - ${errorData.message || 'Unknown error'}`);
     }
 
-    const data = await response.json();
+    // Check content type before parsing JSON
+    const contentType = response.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      const text = await response.text().catch(() => '');
+      if (text.trim().startsWith('<!DOCTYPE') || text.trim().startsWith('<html')) {
+        throw new Error('Follow Up Boss API returned HTML instead of JSON');
+      }
+      throw new Error('Follow Up Boss API returned non-JSON response');
+    }
+
+    const data = await response.json().catch((err) => {
+      throw new Error(`Failed to parse Follow Up Boss API response: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    });
     
     return {
       success: true,
