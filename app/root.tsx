@@ -541,7 +541,15 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     '/__manifest',
   ];
   
-  if (oldWordPressPaths.some(path => pathname.startsWith(path))) {
+  // Check if pathname starts with any old WordPress path
+  // Use exact match or path prefix to avoid false positives
+  if (oldWordPressPaths.some(path => {
+    // Exact match
+    if (pathname === path) return true;
+    // Path prefix match (e.g., /writer/anything matches /writer)
+    if (pathname.startsWith(path + '/')) return true;
+    return false;
+  })) {
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
