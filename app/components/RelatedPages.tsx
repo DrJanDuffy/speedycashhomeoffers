@@ -63,6 +63,22 @@ export default function RelatedPages({ currentPage, maxItems = 4, className = ""
         { path: "/process", title: "How It Works", description: "Understand our process", category: "Process" },
         { path: "/about", title: "About Dr. Duffy", description: "Meet our expert team", category: "About" },
       ],
+      "company-history": [
+        { path: "/about", title: "About Dr. Duffy", description: "Learn more about our founder", category: "About" },
+        { path: "/meet-the-team", title: "Meet the Team", description: "Our experienced professionals", category: "Team" },
+        { path: "/testimonials", title: "Customer Reviews", description: "See what clients say about us", category: "Trust" },
+        { path: "/contact", title: "Get in Touch", description: "Contact us today", category: "Contact" },
+      ],
+      "privacy-policy": [
+        { path: "/terms-of-service", title: "Terms of Service", description: "Read our terms and conditions", category: "Legal" },
+        { path: "/company-history", title: "Our Story", description: "Learn about our company history", category: "About" },
+        { path: "/contact", title: "Contact Us", description: "Have questions? Get in touch", category: "Contact" },
+      ],
+      "terms-of-service": [
+        { path: "/privacy-policy", title: "Privacy Policy", description: "Read our privacy policy", category: "Legal" },
+        { path: "/company-history", title: "Our Story", description: "Learn about our company history", category: "About" },
+        { path: "/contact", title: "Contact Us", description: "Have questions? Get in touch", category: "Contact" },
+      ],
     };
 
     return allPages[page] || allPages.home;
