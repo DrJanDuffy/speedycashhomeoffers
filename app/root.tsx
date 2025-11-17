@@ -252,21 +252,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
             })
           }}
         />
-        {/* Google tag (gtag.js) - Client-side only */}
+        {/* Google Analytics 4 (GA4) - Client-side only */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-G0GB8N5PZR"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               if (typeof window !== 'undefined') {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-                ga('create', 'G-G0GB8N5PZR', 'auto');
-                ga('send', 'pageview');
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-G0GB8N5PZR', {
+                  'page_path': window.location.pathname,
+                  'send_page_view': true
+                });
                 
-                // Enhanced event tracking functions
+                // Enhanced event tracking functions for GA4
                 window.trackPhoneClick = function(label) {
-                  ga('event', 'phone_click', {
+                  gtag('event', 'phone_click', {
                     'event_category': 'engagement',
                     'event_label': label || 'phone_link',
                     'value': 1
@@ -274,7 +279,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 };
                 
                 window.trackFormSubmit = function(formType) {
-                  ga('event', 'form_submit', {
+                  gtag('event', 'form_submit', {
                     'event_category': 'conversion',
                     'event_label': formType || 'contact_form',
                     'value': 1
@@ -282,7 +287,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 };
                 
                 window.trackCTAClick = function(buttonText, pageLocation) {
-                  ga('event', 'cta_click', {
+                  gtag('event', 'cta_click', {
                     'event_category': 'engagement',
                     'event_label': buttonText || 'cta_button',
                     'page_location': pageLocation || window.location.href
@@ -290,7 +295,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 };
                 
                 window.trackPageView = function(page) {
-                  ga('send', 'pageview', page);
+                  gtag('config', 'G-G0GB8N5PZR', {
+                    'page_path': page || window.location.pathname
+                  });
                 };
               }
             `,
