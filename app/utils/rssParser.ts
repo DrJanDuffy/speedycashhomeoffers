@@ -106,7 +106,10 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
 
     return { articles };
   } catch (error) {
-    console.error('RSS Feed Error:', error);
+    // Only log in development to avoid console errors in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('RSS Feed Error:', error);
+    }
     return {
       articles: [],
       error: error instanceof Error ? error.message : 'Failed to fetch RSS feed',

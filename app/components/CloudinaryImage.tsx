@@ -35,6 +35,8 @@ export const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
       cldImg={img}
       alt={alt}
       className={className}
+      width={width}
+      height={height}
     />
   );
 };
@@ -61,6 +63,8 @@ export const OptimizedImage: React.FC<CloudinaryImageProps> = ({
       cldImg={img}
       alt={alt}
       className={className}
+      width={width}
+      height={height}
     />
   );
 };

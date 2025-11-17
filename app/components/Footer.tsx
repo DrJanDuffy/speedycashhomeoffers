@@ -47,13 +47,13 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <p className="text-gray-300">
                 <span className="font-semibold">Phone:</span> 
-                <a href="tel:(702) 500-1981" className="text-blue-400 hover:text-blue-300 ml-1">
+                <a href="tel:(702) 500-1981" className="text-blue-400 hover:text-blue-300 ml-1" aria-label="Call Speedy Cash Home Offers at (702) 500-1981">
                   (702) 500-1981
                 </a>
               </p>
               <p className="text-gray-300">
                 <span className="font-semibold">Email:</span> 
-                <a href="mailto:DrDuffy@SpeedyCashHomeOffers.com" className="text-blue-400 hover:text-blue-300 ml-1">
+                <a href="mailto:DrDuffy@SpeedyCashHomeOffers.com" className="text-blue-400 hover:text-blue-300 ml-1" aria-label="Email Dr. Janet Duffy at DrDuffy@SpeedyCashHomeOffers.com">
                   DrDuffy@SpeedyCashHomeOffers.com
                 </a>
               </p>
@@ -142,7 +142,7 @@ export default function Footer() {
               <Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Terms of Service
               </Link>
-              <a href="tel:(702) 500-1981" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="tel:(702) 500-1981" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Contact Speedy Cash Home Offers by phone at (702) 500-1981">
                 Contact Us
               </a>
             </div>

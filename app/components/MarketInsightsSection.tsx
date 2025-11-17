@@ -42,7 +42,10 @@ export default function MarketInsightsSection({
           setArticles(limitedArticles);
         }
       } catch (err) {
-        console.error('Failed to load RSS articles:', err);
+        // Only log in development to avoid console errors in production
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Failed to load RSS articles:', err);
+        }
         setError('Failed to load market insights');
       } finally {
         setLoading(false);

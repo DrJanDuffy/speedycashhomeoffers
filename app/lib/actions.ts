@@ -6,7 +6,10 @@ export async function submitContactForm(formData: FormData) {
     const fubResult = await createContactFromForm(formData);
     
     if (!fubResult.success) {
-      console.error('Follow Up Boss submission failed:', fubResult.error);
+      // Only log in development to avoid console errors in production
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Follow Up Boss submission failed:', fubResult.error);
+      }
       // Continue anyway - don't fail the form submission
     }
 
@@ -19,7 +22,10 @@ export async function submitContactForm(formData: FormData) {
       fubMessage: fubResult.message,
     };
   } catch (error) {
-    console.error('Form submission error:', error);
+    // Only log in development to avoid console errors in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Form submission error:', error);
+    }
     return {
       success: false,
       message: 'There was an error submitting your form. Please try again or call us directly.',

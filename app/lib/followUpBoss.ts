@@ -65,7 +65,10 @@ export async function createFollowUpBossContact(contact: FollowUpBossContact): P
       contactId: data.id,
     };
   } catch (error) {
-    console.error('Follow Up Boss API Error:', error);
+    // Only log in development to avoid console errors in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Follow Up Boss API Error:', error);
+    }
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error occurred',
@@ -112,7 +115,10 @@ export async function testFollowUpBossConnection(): Promise<boolean> {
 
     return response.ok;
   } catch (error) {
-    console.error('Follow Up Boss connection test failed:', error);
+    // Only log in development to avoid console errors in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Follow Up Boss connection test failed:', error);
+    }
     return false;
   }
 }

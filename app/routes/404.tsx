@@ -114,8 +114,8 @@ export default function NotFound() {
             Need Help Finding Something?
           </h3>
           <p className="text-gray-600 mb-4">
-            Call us at <a href="tel:(702) 500-1981" className="text-blue-600 hover:text-blue-800 font-semibold">(702) 500-1981</a> or 
-            email us at <a href="mailto:DrDuffy@SpeedyCashHomeOffers.com" className="text-blue-600 hover:text-blue-800 font-semibold">DrDuffy@SpeedyCashHomeOffers.com</a>
+            Call us at <a href="tel:(702) 500-1981" className="text-blue-600 hover:text-blue-800 font-semibold" aria-label="Call Speedy Cash Home Offers at (702) 500-1981">(702) 500-1981</a> or 
+            email us at <a href="mailto:DrDuffy@SpeedyCashHomeOffers.com" className="text-blue-600 hover:text-blue-800 font-semibold" aria-label="Email Dr. Janet Duffy at DrDuffy@SpeedyCashHomeOffers.com">DrDuffy@SpeedyCashHomeOffers.com</a>
           </p>
           <p className="text-sm text-gray-500">
             We're here to help you sell your house fast in Las Vegas and Southern California!
