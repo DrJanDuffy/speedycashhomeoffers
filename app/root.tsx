@@ -21,8 +21,7 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
-  // Preload critical CSS first to reduce critical path latency
-  // This allows the browser to fetch CSS in parallel with HTML parsing
+  // Preload CSS as style to allow parallel fetching (non-blocking)
   {
     rel: "preload",
     href: stylesheet,
@@ -35,8 +34,7 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
     media: "print",
   } as any,
-  // Load main stylesheet (preloaded above, so should load faster)
-  { rel: "stylesheet", href: stylesheet },
+  // Note: Main stylesheet will be loaded asynchronously via script below
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
