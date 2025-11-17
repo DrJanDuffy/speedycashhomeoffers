@@ -38,6 +38,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Google Search Console Verification - Add your verification code here */}
+        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> */}
         <Meta />
         <Links />
         {/* Global Organization Schema for Grokipedia and AI Search Engines */}
@@ -157,11 +159,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     }
                   }
                 ]
-              }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "500",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "award": "A+ Better Business Bureau Rating",
+              "knowsAbout": [
+                "Cash Home Buying",
+                "Real Estate Investment",
+                "Distressed Property Sales",
+                "Las Vegas Real Estate",
+                "Southern California Real Estate",
+                "Fast Home Sales",
+                "As-Is Property Purchases"
+              ]
             })
           }}
         />
-        {/* Knowledge Graph - Person Schema for Dr. Janet Duffy */}
+        {/* Knowledge Graph - Person Schema for Dr. Janet Duffy (Enhanced for E-E-A-T) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -185,7 +204,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 "addressRegion": "NV",
                 "postalCode": "89156",
                 "addressCountry": "US"
-              }
+              },
+              "knowsAbout": [
+                "Real Estate",
+                "Cash Home Buying",
+                "Property Investment",
+                "Las Vegas Real Estate Market",
+                "Southern California Real Estate Market",
+                "Distressed Property Sales",
+                "Real Estate Transactions"
+              ],
+              "award": "A+ Better Business Bureau Rating",
+              "memberOf": [
+                "Las Vegas Chamber of Commerce",
+                "Better Business Bureau"
+              ],
+              "sameAs": [
+                "https://www.speedycashhomeoffers.com/about",
+                "https://www.speedycashhomeoffers.com/meet-the-team"
+              ]
             })
           }}
         />
