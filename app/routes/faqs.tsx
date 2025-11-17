@@ -363,6 +363,68 @@ export default function FAQs() {
         </div>
       </section>
 
+      {/* Additional Information Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Understanding the Cash Home Buying Process
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              Selling your home for cash is different from traditional real estate transactions, and we understand you may 
+              have questions about how the process works. Below, we've provided additional information to help you understand 
+              what to expect when working with Speedy Cash Home Offers.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">How Cash Offers Differ from Traditional Sales</h3>
+                <p className="text-gray-600 mb-4">
+                  Cash offers provide several advantages over traditional home sales. When you sell to a cash buyer like 
+                  Speedy Cash Home Offers, you eliminate many of the uncertainties and delays associated with traditional 
+                  sales. There's no waiting for buyer financing approval, no risk of deals falling through due to loan 
+                  issues, and no need to make repairs or stage your home for showings.
+                </p>
+                <p className="text-gray-600">
+                  Cash buyers can close quickly because they don't depend on mortgage lenders, appraisals, or inspections 
+                  that can delay traditional sales. This speed and certainty often makes cash offers attractive to sellers 
+                  who need to move quickly, whether due to financial pressures, life changes, or simply wanting to avoid 
+                  the hassle of traditional selling.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">What Makes Our Offers Fair and Competitive</h3>
+                <p className="text-gray-600 mb-4">
+                  Our cash offers are based on comprehensive market analysis, considering current property values, comparable 
+                  sales, property condition, needed repairs, and the convenience of a quick sale. We factor in all costs 
+                  associated with purchasing, renovating, and reselling properties to provide fair, transparent offers.
+                </p>
+                <p className="text-gray-600">
+                  While our offers may be lower than what you might get in a traditional sale after repairs and commissions, 
+                  they reflect the true value of your property in its current condition, minus the costs and risks we assume. 
+                  We're transparent about how we arrive at our offers, and we encourage sellers to compare our offers with 
+                  other options to make informed decisions.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">The Benefits of Working with an Experienced Team</h3>
+                <p className="text-gray-600 mb-4">
+                  Dr. Duffy and her team have completed thousands of transactions across Las Vegas and Southern California. 
+                  This extensive experience means we've encountered and successfully resolved virtually every type of situation 
+                  that can arise in real estate transactions. From probate properties to foreclosure situations, from divorce 
+                  sales to inherited properties, we have the expertise to handle complex transactions smoothly.
+                </p>
+                <p className="text-gray-600">
+                  Our experience also means we understand the local markets deeply, allowing us to provide accurate valuations 
+                  and competitive offers. We know which neighborhoods are appreciating, which areas have strong rental demand, 
+                  and which properties have the best investment potential. This market knowledge benefits our clients by ensuring 
+                  they receive fair offers based on current market conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-16 bg-teal-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -375,12 +437,19 @@ export default function FAQs() {
             There is no obligation, so contact us today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors text-center"
+              aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+            >
               Call (702) 500-1981
-            </button>
+            </a>
           </div>
         </div>
       </section>
