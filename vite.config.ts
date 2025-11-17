@@ -15,13 +15,7 @@ export default defineConfig({
     // Optimize production builds
     cssCodeSplit: true,
     minify: 'esbuild', // Use esbuild (default, faster, no extra dependencies)
-    rollupOptions: {
-      output: {
-        // Optimize chunk splitting
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router'],
-        },
-      },
-    },
+    // Note: manualChunks removed - React is external in SSR builds
+    // Vite will automatically optimize chunk splitting
   },
 });
