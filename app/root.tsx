@@ -197,10 +197,22 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   }
   
   // Handle trailing slashes - redirect to non-trailing slash for all routes except root
-  // Redirect trailing slash to non-trailing slash (except for root)
+  // BUT: If trailing slash URL has WordPress query params, return 410 Gone instead of redirecting
   if (pathname.endsWith('/') && pathname !== '/') {
+    // If it has WordPress query params, return 410 Gone (already checked above, but double-check for trailing slash URLs)
+    if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
+      throw new Response(null, {
+        status: 410,
+        statusText: "Gone",
+        headers: {
+          "X-Robots-Tag": "noindex, nofollow",
+        },
+      });
+    }
+    
+    // Normal trailing slash redirect - strip all query params to prevent duplicates
     const newPath = pathname.slice(0, -1);
-    const newUrl = new URL(newPath + url.search, url.origin);
+    const newUrl = new URL(newPath, url.origin);
     throw new Response(null, {
       status: 301,
       headers: {
