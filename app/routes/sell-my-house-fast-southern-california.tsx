@@ -19,11 +19,12 @@ export const meta: Route.MetaFunction = () => {
     { property: "og:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
     { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-og.jpg" }, // Placeholder image
     // Twitter
-    { property: "twitter:card", content: "summary_large_image" },
-    { property: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
-    { property: "twitter:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { property: "twitter:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
-    { property: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-twitter.jpg" }, // Placeholder image
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
+    { name: "twitter:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-twitter.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
   ];
 };
 
