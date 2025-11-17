@@ -7,8 +7,20 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell Your Home Fast | Speedy Cash Home Offers" },
     { name: "description", content: "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Dr. Janet Duffy helps homeowners sell quickly." },
+    { name: "keywords", content: "sell house fast Las Vegas, cash home buyers, sell house as is, no repairs needed, fast cash offer, Dr Janet Duffy" },
+    { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { name: "canonical", content: "https://www.speedycashhomeoffers.com/sellers" },
+    { property: "og:title", content: "Sell Your Home Fast | Speedy Cash Home Offers" },
+    { property: "og:description", content: "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Dr. Janet Duffy helps homeowners sell quickly." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/sellers" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/sellers-og-image.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Sell Your Home Fast | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/sellers-twitter-image.jpg" },
   ];
 };
 

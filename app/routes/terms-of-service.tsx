@@ -9,8 +9,14 @@ export const meta: Route.MetaFunction = () => {
     { name: "canonical", content: "https://www.speedycashhomeoffers.com/terms-of-service" },
     { property: "og:title", content: "Terms of Service | Speedy Cash Home Offers" },
     { property: "og:description", content: "Terms of Service for Speedy Cash Home Offers. Read our terms and conditions." },
-    { property: "og:url", content: "https://www.speedycashhomeoffers.com/terms-of-service" },
     { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/terms-of-service" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/og-image.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Terms of Service | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Terms of Service for Speedy Cash Home Offers. Read our terms and conditions." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/twitter-image.jpg" },
   ];
 };
 

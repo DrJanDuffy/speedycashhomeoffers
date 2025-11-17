@@ -4,8 +4,20 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Las Vegas Neighborhoods | Speedy Cash Home Offers" },
     { name: "description", content: "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features in Henderson, Summerlin, and more." },
+    { name: "keywords", content: "Las Vegas neighborhoods, Henderson, Summerlin, Las Vegas real estate, neighborhood guide, Las Vegas communities" },
+    { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { name: "canonical", content: "https://www.speedycashhomeoffers.com/neighborhoods" },
+    { property: "og:title", content: "Las Vegas Neighborhoods | Speedy Cash Home Offers" },
+    { property: "og:description", content: "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features in Henderson, Summerlin, and more." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/neighborhoods" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/neighborhoods-og-image.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Las Vegas Neighborhoods | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/neighborhoods-twitter-image.jpg" },
   ];
 };
 

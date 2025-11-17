@@ -8,8 +8,20 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Find Your Dream Home | Speedy Cash Home Offers" },
     { name: "description", content: "Discover your perfect Las Vegas home with Dr. Janet Duffy. Expert guidance, personalized service, and access to exclusive listings." },
+    { name: "keywords", content: "buy house Las Vegas, Las Vegas homes for sale, real estate buyers, home buying Las Vegas, Dr Janet Duffy buyers" },
+    { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { name: "canonical", content: "https://www.speedycashhomeoffers.com/buyers" },
+    { property: "og:title", content: "Find Your Dream Home | Speedy Cash Home Offers" },
+    { property: "og:description", content: "Discover your perfect Las Vegas home with Dr. Janet Duffy. Expert guidance, personalized service, and access to exclusive listings." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/buyers" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/buyers-og-image.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Find Your Dream Home | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Discover your perfect Las Vegas home with Dr. Janet Duffy. Expert guidance and personalized service." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/buyers-twitter-image.jpg" },
   ];
 };
 

@@ -8,8 +8,20 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "Real Estate Investment Opportunities | Speedy Cash Home Offers" },
     { name: "description", content: "Maximize your ROI with Las Vegas real estate investments. Dr. Janet Duffy provides expert guidance on cap rates, cash flow, and market analysis." },
+    { name: "keywords", content: "real estate investment Las Vegas, investment properties, rental properties, real estate ROI, Las Vegas investment opportunities" },
+    { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
     { name: "canonical", content: "https://www.speedycashhomeoffers.com/investors" },
+    { property: "og:title", content: "Real Estate Investment Opportunities | Speedy Cash Home Offers" },
+    { property: "og:description", content: "Maximize your ROI with Las Vegas real estate investments. Dr. Janet Duffy provides expert guidance on cap rates, cash flow, and market analysis." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/investors" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/investors-og-image.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Real Estate Investment Opportunities | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Maximize your ROI with Las Vegas real estate investments. Expert guidance on cap rates and cash flow." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/investors-twitter-image.jpg" },
   ];
 };
 
