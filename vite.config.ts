@@ -11,4 +11,22 @@ export default defineConfig({
     },
   },
   plugins: [reactRouter(), tsconfigPaths()],
+  build: {
+    // Optimize production builds
+    cssCodeSplit: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log in production
+      },
+    },
+    rollupOptions: {
+      output: {
+        // Optimize chunk splitting
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router'],
+        },
+      },
+    },
+  },
 });

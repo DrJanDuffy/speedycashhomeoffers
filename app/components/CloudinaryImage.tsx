@@ -37,6 +37,8 @@ export const CloudinaryImage: React.FC<CloudinaryImageProps> = ({
       className={className}
       width={width}
       height={height}
+      loading="lazy"
+      decoding="async"
     />
   );
 };
@@ -65,6 +67,8 @@ export const OptimizedImage: React.FC<CloudinaryImageProps> = ({
       className={className}
       width={width}
       height={height}
+      loading="lazy"
+      decoding="async"
     />
   );
 };

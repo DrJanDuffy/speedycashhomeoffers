@@ -21,6 +21,12 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
+  // Preconnect to third-party services for faster resource loading
+  { rel: "preconnect", href: "https://res.cloudinary.com" },
+  { rel: "dns-prefetch", href: "https://em.realscout.com" },
+  { rel: "dns-prefetch", href: "https://api.followupboss.com" },
+  { rel: "dns-prefetch", href: "https://www.google-analytics.com" },
+  { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
   // Preload CSS as style to allow parallel fetching (non-blocking)
   {
     rel: "preload",
