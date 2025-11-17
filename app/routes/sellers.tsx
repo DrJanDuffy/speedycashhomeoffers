@@ -10,7 +10,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "sell house fast Las Vegas, cash home buyers, sell house as is, no repairs needed, fast cash offer, Dr Janet Duffy" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/sellers" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/sellers" },
     { property: "og:title", content: "Sell Your Home Fast | Speedy Cash Home Offers" },
     { property: "og:description", content: "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Dr. Janet Duffy helps homeowners sell quickly." },
     { property: "og:type", content: "website" },
@@ -28,6 +28,59 @@ export default function Sellers() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Cash Home Buying Service for Sellers",
+            "description": "Get a fast, fair cash offer for your Las Vegas home. No repairs, no fees, no waiting. Close in as little as 7 days.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "telephone": "(702) 500-1981",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2775 Ariel Ocean St",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89156",
+                "addressCountry": "US"
+              }
+            },
+            "serviceType": "Cash Home Buying",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Las Vegas",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Nevada"
+                }
+              },
+              {
+                "@type": "State",
+                "name": "California"
+              }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "description": "Fast cash offers with no repairs needed, no fees, and closing in as little as 7 days",
+              "priceRange": "$300000-$450000"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,12 +204,22 @@ export default function Sellers() {
             Join hundreds of Las Vegas homeowners who chose the fast, fair, and simple way to sell.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="http://drjanduffy.realscout.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get Your Free Valuation
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+            </a>
+            <a 
+              href="http://drjanduffy.realscout.com/onboarding" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
+            >
               Schedule a Call
-            </button>
+            </a>
           </div>
         </div>
       </section>
