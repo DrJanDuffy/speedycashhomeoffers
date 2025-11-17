@@ -40,6 +40,181 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        {/* Global Organization Schema for Grokipedia and AI Search Engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://www.speedycashhomeoffers.com/#organization",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "alternateName": "Speedy Cash Home Offers",
+              "url": "https://www.speedycashhomeoffers.com",
+              "logo": "https://www.speedycashhomeoffers.com/images/logo.png",
+              "description": "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days. Specializing in distressed properties, foreclosures, and inherited homes.",
+              "foundingDate": "2015",
+              "founder": {
+                "@type": "Person",
+                "@id": "https://www.speedycashhomeoffers.com/#founder",
+                "name": "Dr. Janet Duffy",
+                "jobTitle": "Founder & CEO",
+                "description": "With over 25 years of real estate experience, Dr. Duffy leads our team with expertise and compassion",
+                "url": "https://www.speedycashhomeoffers.com/meet-the-team"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2775 Ariel Ocean St",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89156",
+                "addressCountry": "US"
+              },
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-702-500-1981",
+                  "contactType": "Customer Service",
+                  "areaServed": ["US"],
+                  "availableLanguage": ["English"]
+                },
+                {
+                  "@type": "ContactPoint",
+                  "email": "DrDuffy@SpeedyCashHomeOffers.com",
+                  "contactType": "Customer Service",
+                  "areaServed": ["US"],
+                  "availableLanguage": ["English"]
+                }
+              ],
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Las Vegas",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "Nevada"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Los Angeles",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "San Diego",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Orange County",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Riverside",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                },
+                {
+                  "@type": "City",
+                  "name": "Inland Empire",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                }
+              ],
+              "sameAs": [
+                "https://www.facebook.com/speedycashhomeoffers",
+                "https://www.linkedin.com/company/speedycashhomeoffers"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Cash Home Buying Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Cash Home Buying Service",
+                      "description": "We buy houses for cash in Las Vegas and Southern California",
+                      "serviceType": "Cash Home Buying",
+                      "provider": {
+                        "@id": "https://www.speedycashhomeoffers.com/#organization"
+                      }
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+        {/* Knowledge Graph - Person Schema for Dr. Janet Duffy */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://www.speedycashhomeoffers.com/#founder",
+              "name": "Dr. Janet Duffy",
+              "jobTitle": "Founder & CEO",
+              "worksFor": {
+                "@id": "https://www.speedycashhomeoffers.com/#organization"
+              },
+              "url": "https://www.speedycashhomeoffers.com/meet-the-team",
+              "description": "With over 25 years of real estate experience, Dr. Janet Duffy is the founder and CEO of Speedy Cash Home Offers, specializing in helping homeowners sell their properties quickly for cash.",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com",
+              "telephone": "+1-702-500-1981",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2775 Ariel Ocean St",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89156",
+                "addressCountry": "US"
+              }
+            })
+          }}
+        />
+        {/* Knowledge Graph - Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://www.speedycashhomeoffers.com/#website",
+              "url": "https://www.speedycashhomeoffers.com",
+              "name": "Speedy Cash Home Offers",
+              "description": "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days.",
+              "publisher": {
+                "@id": "https://www.speedycashhomeoffers.com/#organization"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.speedycashhomeoffers.com/contact?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              "inLanguage": "en-US"
+            })
+          }}
+        />
         {/* Google tag (gtag.js) - Client-side only */}
         <script
           dangerouslySetInnerHTML={{
