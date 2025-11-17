@@ -47,6 +47,54 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> */}
         <Meta />
         <Links />
+        {/* Critical CSS: Minimal above-the-fold styles to prevent FOUC */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              /* Critical above-the-fold styles */
+              html,body{background-color:#fff;margin:0;padding:0}
+              nav{background-color:#fff;box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);position:sticky;top:0;z-index:50}
+              .max-w-7xl{max-width:80rem;margin-left:auto;margin-right:auto}
+              .px-4{padding-left:1rem;padding-right:1rem}
+              .flex{display:flex}
+              .items-center{align-items:center}
+              .justify-between{justify-content:space-between}
+              .h-16{height:4rem}
+              .text-2xl{font-size:1.5rem;line-height:2rem}
+              .font-bold{font-weight:700}
+              .text-blue-600{color:#2563eb}
+            `,
+          }}
+        />
+        {/* Load CSS asynchronously to prevent render blocking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Load main CSS asynchronously
+                var cssLink = document.createElement('link');
+                cssLink.rel = 'stylesheet';
+                cssLink.href = '${stylesheet}';
+                cssLink.media = 'all';
+                document.head.appendChild(cssLink);
+                
+                // Make Google Fonts non-blocking: switch from print to all after load
+                var fontLink = document.querySelector('link[href*="fonts.googleapis.com"][media="print"]');
+                if (fontLink) {
+                  fontLink.onload = function() {
+                    this.media = 'all';
+                  };
+                  // Fallback: switch after a short delay if onload doesn't fire
+                  setTimeout(function() {
+                    if (fontLink.media === 'print') {
+                      fontLink.media = 'all';
+                    }
+                  }, 100);
+                }
+              })();
+            `,
+          }}
+        />
         {/* Global Organization Schema for Grokipedia and AI Search Engines */}
         <script
           type="application/ld+json"
