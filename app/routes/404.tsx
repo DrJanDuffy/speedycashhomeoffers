@@ -1,7 +1,8 @@
 import type { Route } from "./+types/404";
 import { Link } from "react-router";
 
-export function meta({ params }: Route.MetaArgs) {
+export function meta({ params, data }: Route.MetaArgs) {
+  // Don't add canonical tags for 404 pages - they should not be indexed
   return [
     { title: "Page Not Found - Speedy Cash Home Offers" },
     { name: "description", content: "The page you're looking for doesn't exist. Find your way back to our home page or explore our services for selling your house fast in Las Vegas and Southern California." },
@@ -15,7 +16,7 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   const pathname = url.pathname.toLowerCase();
   
   // Check for WordPress cron query parameters or old paths - return 410 Gone
-  const isWordPressCron = searchParams.has('doing_wp_cron') || searchParams.has('amp');
+  const isWordPressCron = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
   const oldWordPressPaths = [
     '/buyer-investor',
     '/map',

@@ -102,7 +102,8 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   const searchParams = url.searchParams;
   
   // Handle WordPress cron URLs globally - return 410 Gone
-  if (searchParams.has('doing_wp_cron') || searchParams.has('amp')) {
+  // Check this FIRST before any other processing
+  if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
@@ -137,6 +138,7 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   // Handle old WordPress paths - return 410 Gone
   const pathname = url.pathname.toLowerCase();
   const oldWordPressPaths = [
+    '/buyer-investor',
     '/writer/',
     '/author/',
     '/tag/',
@@ -145,6 +147,46 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   ];
   
   if (oldWordPressPaths.some(path => pathname.startsWith(path))) {
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+      },
+    });
+  }
+  
+  // Handle old WordPress blog post URLs (any path that doesn't match our routes and has query params)
+  // These are old blog posts that should return 410 Gone
+  const validRoutes = [
+    '/',
+    '/test',
+    '/process',
+    '/testimonials',
+    '/meet-the-team',
+    '/faqs',
+    '/blog',
+    '/market-insights',
+    '/sell-my-house-fast-las-vegas',
+    '/sell-my-house-fast-southern-california',
+    '/sell-my-house-fast-orange-county',
+    '/sell-my-house-fast-san-diego',
+    '/sell-my-house-fast-riverside',
+    '/sell-my-house-fast-inland-empire',
+    '/sellers',
+    '/buyers',
+    '/investors',
+    '/neighborhoods',
+    '/about',
+    '/contact',
+    '/thank-you',
+    '/robots.txt',
+    '/sitemap.xml',
+  ];
+  
+  // If path doesn't match any valid route and has WordPress query params, return 410
+  const isInvalidPath = !validRoutes.some(route => pathname === route || pathname.startsWith(route + '/'));
+  if (isInvalidPath && (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp'))) {
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
