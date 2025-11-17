@@ -118,6 +118,47 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
       priority: "0.6",
       changefreq: "monthly",
     },
+    // Keyword-targeted pages
+    {
+      url: "/fast-home-cash-offers-usa",
+      priority: "0.8",
+      changefreq: "monthly",
+    },
+    {
+      url: "/fast-home-cash-offers-reviews",
+      priority: "0.7",
+      changefreq: "monthly",
+    },
+    {
+      url: "/fast-home-cash-offers-near-me",
+      priority: "0.8",
+      changefreq: "monthly",
+    },
+    {
+      url: "/fast-home-cash-offers-las-vegas",
+      priority: "0.9",
+      changefreq: "monthly",
+    },
+    {
+      url: "/opendoor-cash-offer",
+      priority: "0.7",
+      changefreq: "monthly",
+    },
+    {
+      url: "/fast-home-offer",
+      priority: "0.8",
+      changefreq: "monthly",
+    },
+    {
+      url: "/fast-home-cash-offers-nevada",
+      priority: "0.9",
+      changefreq: "monthly",
+    },
+    {
+      url: "/zillow-cash-offer",
+      priority: "0.7",
+      changefreq: "monthly",
+    },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

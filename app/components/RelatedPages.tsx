@@ -79,6 +79,54 @@ export default function RelatedPages({ currentPage, maxItems = 4, className = ""
         { path: "/company-history", title: "Our Story", description: "Learn about our company history", category: "About" },
         { path: "/contact", title: "Contact Us", description: "Have questions? Get in touch", category: "Contact" },
       ],
+      "fast-home-cash-offers-usa": [
+        { path: "/fast-home-cash-offers-las-vegas", title: "Las Vegas Cash Offers", description: "Get cash offers in Las Vegas", category: "Location" },
+        { path: "/fast-home-cash-offers-near-me", title: "Local Cash Buyers", description: "Find cash buyers near you", category: "Location" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "fast-home-cash-offers-reviews": [
+        { path: "/testimonials", title: "Customer Testimonials", description: "Read more customer stories", category: "Trust" },
+        { path: "/fast-home-cash-offers-usa", title: "Cash Offers USA", description: "Learn about our services", category: "Services" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/about", title: "About Dr. Duffy", description: "Meet our expert team", category: "About" },
+      ],
+      "fast-home-cash-offers-near-me": [
+        { path: "/fast-home-cash-offers-las-vegas", title: "Las Vegas Cash Offers", description: "Las Vegas cash buyers", category: "Location" },
+        { path: "/fast-home-cash-offers-nevada", title: "Nevada Cash Offers", description: "Nevada-wide service", category: "Location" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "fast-home-cash-offers-las-vegas": [
+        { path: "/fast-home-cash-offers-nevada", title: "Nevada Cash Offers", description: "Nevada-wide service", category: "Location" },
+        { path: "/sell-my-house-fast-las-vegas", title: "Sell House Fast Las Vegas", description: "Las Vegas home selling", category: "Services" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "opendoor-cash-offer": [
+        { path: "/zillow-cash-offer", title: "Zillow Cash Offer", description: "Compare with Zillow", category: "Comparison" },
+        { path: "/fast-home-offer", title: "Fast Home Offer", description: "Get a fast cash offer", category: "Services" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "fast-home-offer": [
+        { path: "/fast-home-cash-offers-usa", title: "Cash Offers USA", description: "Nationwide cash offers", category: "Services" },
+        { path: "/fast-home-cash-offers-las-vegas", title: "Las Vegas Cash Offers", description: "Las Vegas cash buyers", category: "Location" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "fast-home-cash-offers-nevada": [
+        { path: "/fast-home-cash-offers-las-vegas", title: "Las Vegas Cash Offers", description: "Las Vegas cash buyers", category: "Location" },
+        { path: "/fast-home-cash-offers-near-me", title: "Local Cash Buyers", description: "Find cash buyers near you", category: "Location" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
+      "zillow-cash-offer": [
+        { path: "/opendoor-cash-offer", title: "Opendoor Cash Offer", description: "Compare with Opendoor", category: "Comparison" },
+        { path: "/fast-home-offer", title: "Fast Home Offer", description: "Get a fast cash offer", category: "Services" },
+        { path: "/contact", title: "Get Your Cash Offer", description: "Start the process today", category: "Contact" },
+        { path: "/process", title: "How It Works", description: "Our simple process", category: "Process" },
+      ],
     };
 
     return allPages[page] || allPages.home;
