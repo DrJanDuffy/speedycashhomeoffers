@@ -30,6 +30,18 @@
       "routes/neighborhoods": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/thank-you": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/privacy-policy": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/terms-of-service": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/company-history": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-cash-offers-usa": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-cash-offers-reviews": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-cash-offers-near-me": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-cash-offers-las-vegas": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-cash-offers-nevada": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/fast-home-offer": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/opendoor-cash-offer": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/zillow-cash-offer": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/404": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
@@ -219,6 +231,114 @@
           "runtime": "nodejs"
         }
       },
+      "routes/thank-you": {
+        "id": "routes/thank-you",
+        "parentId": "root",
+        "file": "app/routes/thank-you.tsx",
+        "path": "thank-you",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/privacy-policy": {
+        "id": "routes/privacy-policy",
+        "parentId": "root",
+        "file": "app/routes/privacy-policy.tsx",
+        "path": "privacy-policy",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/terms-of-service": {
+        "id": "routes/terms-of-service",
+        "parentId": "root",
+        "file": "app/routes/terms-of-service.tsx",
+        "path": "terms-of-service",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/company-history": {
+        "id": "routes/company-history",
+        "parentId": "root",
+        "file": "app/routes/company-history.tsx",
+        "path": "company-history",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-cash-offers-usa": {
+        "id": "routes/fast-home-cash-offers-usa",
+        "parentId": "root",
+        "file": "app/routes/fast-home-cash-offers-usa.tsx",
+        "path": "fast-home-cash-offers-usa",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-cash-offers-reviews": {
+        "id": "routes/fast-home-cash-offers-reviews",
+        "parentId": "root",
+        "file": "app/routes/fast-home-cash-offers-reviews.tsx",
+        "path": "fast-home-cash-offers-reviews",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-cash-offers-near-me": {
+        "id": "routes/fast-home-cash-offers-near-me",
+        "parentId": "root",
+        "file": "app/routes/fast-home-cash-offers-near-me.tsx",
+        "path": "fast-home-cash-offers-near-me",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-cash-offers-las-vegas": {
+        "id": "routes/fast-home-cash-offers-las-vegas",
+        "parentId": "root",
+        "file": "app/routes/fast-home-cash-offers-las-vegas.tsx",
+        "path": "fast-home-cash-offers-las-vegas",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-cash-offers-nevada": {
+        "id": "routes/fast-home-cash-offers-nevada",
+        "parentId": "root",
+        "file": "app/routes/fast-home-cash-offers-nevada.tsx",
+        "path": "fast-home-cash-offers-nevada",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/fast-home-offer": {
+        "id": "routes/fast-home-offer",
+        "parentId": "root",
+        "file": "app/routes/fast-home-offer.tsx",
+        "path": "fast-home-offer",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/opendoor-cash-offer": {
+        "id": "routes/opendoor-cash-offer",
+        "parentId": "root",
+        "file": "app/routes/opendoor-cash-offer.tsx",
+        "path": "opendoor-cash-offer",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/zillow-cash-offer": {
+        "id": "routes/zillow-cash-offer",
+        "parentId": "root",
+        "file": "app/routes/zillow-cash-offer.tsx",
+        "path": "zillow-cash-offer",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
       "routes/404": {
         "id": "routes/404",
         "parentId": "root",
@@ -231,9 +351,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "C:/Users/geneb/speedycashhomeoffers/app",
+    "appDirectory": "C:/Users/geneb/speedycashhomeoffers-1/app",
     "basename": "/",
-    "buildDirectory": "C:/Users/geneb/speedycashhomeoffers/build",
+    "buildDirectory": "C:/Users/geneb/speedycashhomeoffers-1/build",
     "future": {
       "v8_middleware": false,
       "unstable_optimizeDeps": false,
@@ -367,6 +487,78 @@
         "file": "routes/contact.tsx",
         "path": "contact"
       },
+      "routes/thank-you": {
+        "id": "routes/thank-you",
+        "parentId": "root",
+        "file": "routes/thank-you.tsx",
+        "path": "thank-you"
+      },
+      "routes/privacy-policy": {
+        "id": "routes/privacy-policy",
+        "parentId": "root",
+        "file": "routes/privacy-policy.tsx",
+        "path": "privacy-policy"
+      },
+      "routes/terms-of-service": {
+        "id": "routes/terms-of-service",
+        "parentId": "root",
+        "file": "routes/terms-of-service.tsx",
+        "path": "terms-of-service"
+      },
+      "routes/company-history": {
+        "id": "routes/company-history",
+        "parentId": "root",
+        "file": "routes/company-history.tsx",
+        "path": "company-history"
+      },
+      "routes/fast-home-cash-offers-usa": {
+        "id": "routes/fast-home-cash-offers-usa",
+        "parentId": "root",
+        "file": "routes/fast-home-cash-offers-usa.tsx",
+        "path": "fast-home-cash-offers-usa"
+      },
+      "routes/fast-home-cash-offers-reviews": {
+        "id": "routes/fast-home-cash-offers-reviews",
+        "parentId": "root",
+        "file": "routes/fast-home-cash-offers-reviews.tsx",
+        "path": "fast-home-cash-offers-reviews"
+      },
+      "routes/fast-home-cash-offers-near-me": {
+        "id": "routes/fast-home-cash-offers-near-me",
+        "parentId": "root",
+        "file": "routes/fast-home-cash-offers-near-me.tsx",
+        "path": "fast-home-cash-offers-near-me"
+      },
+      "routes/fast-home-cash-offers-las-vegas": {
+        "id": "routes/fast-home-cash-offers-las-vegas",
+        "parentId": "root",
+        "file": "routes/fast-home-cash-offers-las-vegas.tsx",
+        "path": "fast-home-cash-offers-las-vegas"
+      },
+      "routes/fast-home-cash-offers-nevada": {
+        "id": "routes/fast-home-cash-offers-nevada",
+        "parentId": "root",
+        "file": "routes/fast-home-cash-offers-nevada.tsx",
+        "path": "fast-home-cash-offers-nevada"
+      },
+      "routes/fast-home-offer": {
+        "id": "routes/fast-home-offer",
+        "parentId": "root",
+        "file": "routes/fast-home-offer.tsx",
+        "path": "fast-home-offer"
+      },
+      "routes/opendoor-cash-offer": {
+        "id": "routes/opendoor-cash-offer",
+        "parentId": "root",
+        "file": "routes/opendoor-cash-offer.tsx",
+        "path": "opendoor-cash-offer"
+      },
+      "routes/zillow-cash-offer": {
+        "id": "routes/zillow-cash-offer",
+        "parentId": "root",
+        "file": "routes/zillow-cash-offer.tsx",
+        "path": "zillow-cash-offer"
+      },
       "routes/404": {
         "id": "routes/404",
         "parentId": "root",
@@ -466,6 +658,54 @@
           {
             "file": "routes/contact.tsx",
             "path": "contact"
+          },
+          {
+            "file": "routes/thank-you.tsx",
+            "path": "thank-you"
+          },
+          {
+            "file": "routes/privacy-policy.tsx",
+            "path": "privacy-policy"
+          },
+          {
+            "file": "routes/terms-of-service.tsx",
+            "path": "terms-of-service"
+          },
+          {
+            "file": "routes/company-history.tsx",
+            "path": "company-history"
+          },
+          {
+            "file": "routes/fast-home-cash-offers-usa.tsx",
+            "path": "fast-home-cash-offers-usa"
+          },
+          {
+            "file": "routes/fast-home-cash-offers-reviews.tsx",
+            "path": "fast-home-cash-offers-reviews"
+          },
+          {
+            "file": "routes/fast-home-cash-offers-near-me.tsx",
+            "path": "fast-home-cash-offers-near-me"
+          },
+          {
+            "file": "routes/fast-home-cash-offers-las-vegas.tsx",
+            "path": "fast-home-cash-offers-las-vegas"
+          },
+          {
+            "file": "routes/fast-home-cash-offers-nevada.tsx",
+            "path": "fast-home-cash-offers-nevada"
+          },
+          {
+            "file": "routes/fast-home-offer.tsx",
+            "path": "fast-home-offer"
+          },
+          {
+            "file": "routes/opendoor-cash-offer.tsx",
+            "path": "opendoor-cash-offer"
+          },
+          {
+            "file": "routes/zillow-cash-offer.tsx",
+            "path": "zillow-cash-offer"
           },
           {
             "file": "routes/404.tsx",
