@@ -6,6 +6,11 @@ Disallow: /buyer-investor/
 Disallow: /map/
 Disallow: /home/
 Disallow: /for-buyers/
+Disallow: /writer/
+Disallow: /author/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /__manifest
 Disallow: /wp-*
 Disallow: /*/feed/
 Disallow: /*/feed

@@ -16,7 +16,17 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   
   // Check for WordPress cron query parameters or old paths - return 410 Gone
   const isWordPressCron = searchParams.has('doing_wp_cron') || searchParams.has('amp');
-  const oldWordPressPaths = ['/buyer-investor', '/map', '/home', '/for-buyers'];
+  const oldWordPressPaths = [
+    '/buyer-investor',
+    '/map',
+    '/home',
+    '/for-buyers',
+    '/writer',
+    '/author',
+    '/tag',
+    '/category',
+    '/__manifest',
+  ];
   const isOldPath = oldWordPressPaths.some(path => pathname.startsWith(path));
   
   if (isWordPressCron || isOldPath) {

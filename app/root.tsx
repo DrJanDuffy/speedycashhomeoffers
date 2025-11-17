@@ -134,9 +134,27 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     });
   }
   
-  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
-  const pathname = url.pathname;
+  // Handle old WordPress paths - return 410 Gone
+  const pathname = url.pathname.toLowerCase();
+  const oldWordPressPaths = [
+    '/writer/',
+    '/author/',
+    '/tag/',
+    '/category/',
+    '/__manifest',
+  ];
   
+  if (oldWordPressPaths.some(path => pathname.startsWith(path))) {
+    throw new Response(null, {
+      status: 410,
+      statusText: "Gone",
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+      },
+    });
+  }
+  
+  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
   // Redirect trailing slash to non-trailing slash (except for root)
   if (pathname.endsWith('/') && pathname !== '/') {
     const newPath = pathname.slice(0, -1);

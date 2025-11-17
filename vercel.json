@@ -21,6 +21,31 @@
       "permanent": true
     },
     {
+      "source": "/writer/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
+      "source": "/__manifest",
+      "destination": "/404",
+      "permanent": true
+    },
+    {
       "source": "/blog/",
       "destination": "/blog",
       "permanent": true
