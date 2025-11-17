@@ -303,8 +303,85 @@ export default function About() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Education and Credentials */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Education, Credentials, and Professional Excellence
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8">
+              Dr. Janet Duffy's extensive education and professional credentials set her apart in the Las Vegas real estate 
+              market. Her combination of academic achievement and practical experience provides clients with a unique advantage 
+              when buying or selling properties.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Ph.D. in Real Estate Economics</h3>
+                <p className="text-gray-600 mb-4">
+                  Dr. Duffy's doctoral degree in Real Estate Economics provides her with deep understanding of market dynamics, 
+                  property valuation methodologies, and economic factors that influence real estate markets. This academic 
+                  foundation, combined with decades of hands-on experience, allows her to analyze properties and markets with 
+                  a level of sophistication that benefits every client.
+                </p>
+                <p className="text-gray-600">
+                  Her research and academic background help her understand not just current market conditions, but also long-term 
+                  trends and factors that will influence property values in the future. This forward-thinking approach helps 
+                  clients make informed decisions that serve them well both immediately and long-term.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Licensed Real Estate Broker</h3>
+                <p className="text-gray-600 mb-4">
+                  As a licensed real estate broker in Nevada and California, Dr. Duffy has met rigorous state requirements for 
+                  education, experience, and ethical conduct. Broker licenses represent the highest level of real estate 
+                  professional certification, requiring extensive knowledge of real estate law, finance, contracts, and 
+                  professional ethics.
+                </p>
+                <p className="text-gray-600">
+                  This licensing ensures that Dr. Duffy can handle complex transactions, provide expert guidance on legal and 
+                  financial matters, and represent clients' interests with the highest level of professionalism. Her broker 
+                  license also allows her to supervise other real estate professionals, ensuring that her entire team maintains 
+                  the same high standards.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">A+ Better Business Bureau Rating</h3>
+                <p className="text-gray-600 mb-4">
+                  Speedy Cash Home Offers maintains an A+ rating with the Better Business Bureau, reflecting our commitment to 
+                  ethical business practices, customer satisfaction, and transparent operations. This rating isn't easily achieved 
+                  - it requires consistent excellent service, resolution of any customer concerns, and adherence to BBB standards 
+                  for business conduct.
+                </p>
+                <p className="text-gray-600">
+                  The A+ rating demonstrates that Dr. Duffy and her team have built a reputation for trustworthiness and 
+                  reliability in the Las Vegas community. When you work with Speedy Cash Home Offers, you're working with a 
+                  company that has proven its commitment to doing business the right way, with integrity and customer focus at 
+                  the forefront of every transaction.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Professional Memberships and Community Involvement</h3>
+                <p className="text-gray-600 mb-4">
+                  Dr. Duffy is an active member of the Las Vegas Chamber of Commerce and other professional organizations, 
+                  demonstrating her commitment to the local business community and professional development. These memberships 
+                  provide access to networking opportunities, continuing education, and industry best practices that benefit 
+                  her clients.
+                </p>
+                <p className="text-gray-600">
+                  Her involvement in professional organizations also reflects her dedication to maintaining the highest standards 
+                  in real estate practice. Through these memberships, Dr. Duffy stays current with industry trends, regulatory 
+                  changes, and best practices, ensuring that her clients receive the most up-to-date and effective service 
+                  possible.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Our Simple Process
