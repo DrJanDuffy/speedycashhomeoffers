@@ -252,53 +252,104 @@ export function Layout({ children }: { children: React.ReactNode }) {
             })
           }}
         />
-        {/* Google Analytics 4 (GA4) - Client-side only */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-G0GB8N5PZR"
-        />
+        {/* Google Analytics 4 (GA4) - Optimized for performance, deferred to prevent forced reflows */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               if (typeof window !== 'undefined') {
+                // Initialize dataLayer immediately to prevent errors
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-G0GB8N5PZR', {
-                  'page_path': window.location.pathname,
-                  'send_page_view': true
-                });
                 
-                // Enhanced event tracking functions for GA4
-                window.trackPhoneClick = function(label) {
-                  gtag('event', 'phone_click', {
-                    'event_category': 'engagement',
-                    'event_label': label || 'phone_link',
-                    'value': 1
+                // Defer GA4 loading to prevent forced reflows during initial render
+                function loadGA4() {
+                  // Load gtag.js script asynchronously
+                  var script = document.createElement('script');
+                  script.async = true;
+                  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-G0GB8N5PZR';
+                  script.onload = function() {
+                    gtag('js', new Date());
+                    gtag('config', 'G-G0GB8N5PZR', {
+                      'page_path': window.location.pathname,
+                      'send_page_view': true
+                    });
+                  };
+                  document.head.appendChild(script);
+                }
+                
+                // Use requestIdleCallback if available, otherwise defer to next tick
+                if (window.requestIdleCallback) {
+                  window.requestIdleCallback(loadGA4, { timeout: 2000 });
+                } else if (document.readyState === 'complete') {
+                  setTimeout(loadGA4, 1);
+                } else {
+                  window.addEventListener('load', function() {
+                    setTimeout(loadGA4, 100);
                   });
+                }
+                
+                // Enhanced event tracking functions for GA4 (queue events if gtag not loaded)
+                window.trackPhoneClick = function(label) {
+                  if (window.gtag) {
+                    gtag('event', 'phone_click', {
+                      'event_category': 'engagement',
+                      'event_label': label || 'phone_link',
+                      'value': 1
+                    });
+                  } else {
+                    window.dataLayer.push({
+                      'event': 'phone_click',
+                      'event_category': 'engagement',
+                      'event_label': label || 'phone_link',
+                      'value': 1
+                    });
+                  }
                 };
                 
                 window.trackFormSubmit = function(formType) {
-                  gtag('event', 'form_submit', {
-                    'event_category': 'conversion',
-                    'event_label': formType || 'contact_form',
-                    'value': 1
-                  });
+                  if (window.gtag) {
+                    gtag('event', 'form_submit', {
+                      'event_category': 'conversion',
+                      'event_label': formType || 'contact_form',
+                      'value': 1
+                    });
+                  } else {
+                    window.dataLayer.push({
+                      'event': 'form_submit',
+                      'event_category': 'conversion',
+                      'event_label': formType || 'contact_form',
+                      'value': 1
+                    });
+                  }
                 };
                 
                 window.trackCTAClick = function(buttonText, pageLocation) {
-                  gtag('event', 'cta_click', {
-                    'event_category': 'engagement',
-                    'event_label': buttonText || 'cta_button',
-                    'page_location': pageLocation || window.location.href
-                  });
+                  if (window.gtag) {
+                    gtag('event', 'cta_click', {
+                      'event_category': 'engagement',
+                      'event_label': buttonText || 'cta_button',
+                      'page_location': pageLocation || window.location.href
+                    });
+                  } else {
+                    window.dataLayer.push({
+                      'event': 'cta_click',
+                      'event_category': 'engagement',
+                      'event_label': buttonText || 'cta_button',
+                      'page_location': pageLocation || window.location.href
+                    });
+                  }
                 };
                 
                 window.trackPageView = function(page) {
-                  gtag('config', 'G-G0GB8N5PZR', {
-                    'page_path': page || window.location.pathname
-                  });
+                  if (window.gtag) {
+                    gtag('config', 'G-G0GB8N5PZR', {
+                      'page_path': page || window.location.pathname
+                    });
+                  }
                 };
+                
+                // Expose gtag globally for compatibility
+                window.gtag = gtag;
               }
             `,
           }}
