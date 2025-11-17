@@ -6,7 +6,7 @@ export const meta: Route.MetaFunction = () => {
     { title: "Terms of Service | Speedy Cash Home Offers" },
     { name: "description", content: "Terms of Service for Speedy Cash Home Offers. Read our terms and conditions for using our cash home buying services." },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/terms-of-service" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/terms-of-service" },
     { property: "og:title", content: "Terms of Service | Speedy Cash Home Offers" },
     { property: "og:description", content: "Terms of Service for Speedy Cash Home Offers. Read our terms and conditions." },
     { property: "og:type", content: "website" },

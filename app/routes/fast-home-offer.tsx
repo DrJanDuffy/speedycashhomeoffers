@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "fast home offer, quick cash offer, fast home buyers, sell house fast, cash offer 24 hours, fast home sale" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/fast-home-offer" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/fast-home-offer" },
     { property: "og:title", content: "Fast Home Offer: Get Your Cash Offer in 24 Hours" },
     { property: "og:description", content: "Get a fast home offer in 24 hours! Quick cash offers for houses. No fees, no repairs, fast closing." },
     { property: "og:type", content: "website" },

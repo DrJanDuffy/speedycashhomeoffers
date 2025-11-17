@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "zillow cash offer, zillow offers, zillow vs cash buyers, zillow fees, alternative to zillow, cash home buyers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/zillow-cash-offer" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/zillow-cash-offer" },
     { property: "og:title", content: "Zillow Cash Offer vs Speedy Cash Home Offers | Compare Options" },
     { property: "og:description", content: "Compare Zillow cash offer with alternatives. Learn about fees, process, and better options." },
     { property: "og:type", content: "website" },

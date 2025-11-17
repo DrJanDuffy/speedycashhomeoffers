@@ -158,12 +158,19 @@ export default function Process() {
               Whether your house is older, needs repairs, or is in less-than-perfect shape, we make the process quick and hassle-free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="/contact"
+                className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Get My Free Quote
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors">
+              </a>
+              <a 
+                href="tel:(702) 500-1981"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors text-center"
+                aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+              >
                 Call (702) 500-1981
-              </button>
+              </a>
             </div>
           </div>
         </div>

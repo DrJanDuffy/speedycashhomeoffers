@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "fast home cash offers reviews, cash home buyers reviews, customer reviews, testimonials, fast cash offers reviews, real estate reviews" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-reviews" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-reviews" },
     { property: "og:title", content: "Fast Home Cash Offers Reviews | Real Customer Reviews" },
     { property: "og:description", content: "Read real fast home cash offers reviews from satisfied customers. 4.9★ rating from 500+ reviews!" },
     { property: "og:type", content: "website" },

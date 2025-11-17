@@ -8,7 +8,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "real estate market insights, Las Vegas real estate market, Southern California real estate, market analysis, Dr Janet Duffy insights, real estate trends" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/market-insights" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/market-insights" },
     { property: "og:title", content: "Real Estate Market Insights | Speedy Cash Home Offers" },
     { property: "og:description", content: "Expert insights, market analysis, and professional guidance for Las Vegas and California real estate markets from Dr. Janet Duffy." },
     { property: "og:type", content: "website" },

@@ -14,7 +14,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "we buy houses cash Las Vegas, North Las Vegas cash buyers, East Vegas distressed properties, 89031 89032 89110 89142, sell house fast Las Vegas, cash home buyers Nevada, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/" },
     { property: "og:title", content: "We Buy Houses For Cash, As-Is & Now | Speedy Cash Home Offers" },
     { property: "og:description", content: "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). No showings. No agents. No repairs. No fees. Get a cash offer within 24 hours." },
     { property: "og:type", content: "website" },
@@ -714,12 +714,19 @@ export default function Home() {
             Our streamlined home-selling solution could be exactly what you need. At Speedy Cash Home Offers, we've helped thousands of Las Vegas and Southern California homeowners sell their properties quickly and hassle-free. Dr. Janet Duffy and her experienced team are ready to provide you with a fair cash offer for your home, regardless of its condition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
+              aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+            >
               Call (702) 500-1981
-            </button>
+            </a>
           </div>
         </div>
       </section>

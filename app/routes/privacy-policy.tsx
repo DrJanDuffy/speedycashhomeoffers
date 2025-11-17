@@ -6,7 +6,7 @@ export const meta: Route.MetaFunction = () => {
     { title: "Privacy Policy | Speedy Cash Home Offers" },
     { name: "description", content: "Privacy Policy for Speedy Cash Home Offers. Learn how we collect, use, and protect your personal information when you use our cash home buying services." },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/privacy-policy" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/privacy-policy" },
     { property: "og:title", content: "Privacy Policy | Speedy Cash Home Offers" },
     { property: "og:description", content: "Privacy Policy for Speedy Cash Home Offers. Learn how we collect, use, and protect your personal information." },
     { property: "og:type", content: "website" },

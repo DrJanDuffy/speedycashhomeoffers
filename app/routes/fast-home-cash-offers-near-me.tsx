@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "fast home cash offers near me, cash buyers near me, local cash home buyers, sell house fast near me, cash offers local" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-near-me" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-near-me" },
     { property: "og:title", content: "Fast Home Cash Offers Near Me | Local Cash Buyers" },
     { property: "og:description", content: "Find fast home cash offers near me. Speedy Cash Home Offers provides local cash buyers in Las Vegas and Southern California." },
     { property: "og:type", content: "website" },

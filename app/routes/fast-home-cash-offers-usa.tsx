@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "fast home cash offers usa, cash offers for houses usa, fast cash home buyers, sell house fast usa, cash home offers nationwide, quick cash offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-usa" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-usa" },
     { property: "og:title", content: "Fast Home Cash Offers USA | Speedy Cash Home Offers" },
     { property: "og:description", content: "Get fast home cash offers USA-wide. Speedy Cash Home Offers provides quick cash offers for houses across America. No repairs, no fees, fast closing." },
     { property: "og:type", content: "website" },

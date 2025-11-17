@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "opendoor cash offer, opendoor vs cash buyers, opendoor fees, opendoor reviews, alternative to opendoor, cash home buyers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/opendoor-cash-offer" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/opendoor-cash-offer" },
     { property: "og:title", content: "Opendoor Cash Offer vs Speedy Cash Home Offers | Compare Options" },
     { property: "og:description", content: "Compare Opendoor cash offer with Speedy Cash Home Offers. Learn about fees, process, and alternatives." },
     { property: "og:type", content: "website" },

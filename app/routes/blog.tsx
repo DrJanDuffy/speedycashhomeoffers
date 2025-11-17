@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "real estate blog, home selling tips, sell house fast Las Vegas, cash home buyers blog, Dr Janet Duffy blog, real estate advice" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/blog" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/blog" },
     { property: "og:title", content: "Real Estate Blog | Speedy Cash Home Offers" },
     { property: "og:description", content: "Read our blog for home selling tips and real estate insights. Learn how to sell your house fast for cash with Dr. Janet Duffy's expert advice." },
     { property: "og:type", content: "website" },

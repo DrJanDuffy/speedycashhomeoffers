@@ -7,7 +7,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "Las Vegas neighborhoods, Henderson, Summerlin, Las Vegas real estate, neighborhood guide, Las Vegas communities" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/neighborhoods" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/neighborhoods" },
     { property: "og:title", content: "Las Vegas Neighborhoods | Speedy Cash Home Offers" },
     { property: "og:description", content: "Discover Las Vegas neighborhoods with Dr. Janet Duffy. Explore lifestyle amenities, schools, and community features in Henderson, Summerlin, and more." },
     { property: "og:type", content: "website" },

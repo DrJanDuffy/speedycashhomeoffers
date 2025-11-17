@@ -11,7 +11,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "buy house Las Vegas, Las Vegas homes for sale, real estate buyers, home buying Las Vegas, Dr Janet Duffy buyers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/buyers" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/buyers" },
     { property: "og:title", content: "Find Your Dream Home | Speedy Cash Home Offers" },
     { property: "og:description", content: "Discover your perfect Las Vegas home with Dr. Janet Duffy. Expert guidance, personalized service, and access to exclusive listings." },
     { property: "og:type", content: "website" },

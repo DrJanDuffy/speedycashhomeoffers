@@ -8,7 +8,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "meet the team, Dr Janet Duffy, real estate team, cash home buyers team, Las Vegas real estate professionals, Southern California home buyers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/meet-the-team" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/meet-the-team" },
     { property: "og:title", content: "Meet The Team | Speedy Cash Home Offers" },
     { property: "og:description", content: "Meet the experienced team at Speedy Cash Home Offers, led by Dr. Janet Duffy. Our dedicated professionals are here to help you sell your house fast for cash." },
     { property: "og:type", content: "website" },

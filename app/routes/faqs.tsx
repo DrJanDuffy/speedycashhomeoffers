@@ -10,7 +10,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "FAQ, frequently asked questions, sell house fast Las Vegas, cash home buyers questions, Dr Janet Duffy FAQ, real estate questions" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/faqs" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/faqs" },
     { property: "og:title", content: "Frequently Asked Questions | Speedy Cash Home Offers" },
     { property: "og:description", content: "Get answers to common questions about selling your house fast for cash. Dr. Janet Duffy and her team are here to help you understand our process." },
     { property: "og:type", content: "website" },

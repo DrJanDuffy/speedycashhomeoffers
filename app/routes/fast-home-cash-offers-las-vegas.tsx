@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "fast home cash offers las vegas, cash buyers Las Vegas, sell house fast Las Vegas, cash offers Las Vegas, Las Vegas cash home buyers, North Las Vegas cash offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-las-vegas" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/fast-home-cash-offers-las-vegas" },
     { property: "og:title", content: "Fast Home Cash Offers Las Vegas | Speedy Cash Home Offers" },
     { property: "og:description", content: "Get fast home cash offers Las Vegas. Specializing in North/East Vegas. No fees, no repairs, fast closing." },
     { property: "og:type", content: "website" },

@@ -9,7 +9,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "Speedy Cash Home Offers history, company story, Dr Janet Duffy founded, Las Vegas cash home buyers history" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/company-history" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/company-history" },
     { property: "og:title", content: "Company History | Speedy Cash Home Offers" },
     { property: "og:description", content: "Learn about the history of Speedy Cash Home Offers, founded by Dr. Janet Duffy in 2015. Discover our journey from startup to Las Vegas's most trusted cash home buyers." },
     { property: "og:type", content: "website" },
