@@ -55,6 +55,11 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
 
     const xmlText = await response.text();
     
+    // Check if we got HTML instead of XML (common when getting error pages)
+    if (xmlText.trim().startsWith('<!DOCTYPE') || xmlText.trim().startsWith('<html')) {
+      throw new Error('Received HTML instead of XML - likely an error page');
+    }
+    
     // Parse XML using fast-xml-parser (works in both browser and Node.js)
     const parser = new XMLParser({
       ignoreAttributes: false,
