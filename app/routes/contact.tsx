@@ -26,7 +26,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "contact Speedy Cash Home Offers, sell house fast Las Vegas, cash offer Las Vegas, Dr Janet Duffy contact, real estate inquiry Las Vegas, sell house Southern California" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/contact" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/contact" },
     { property: "og:title", content: "Contact Us Today | Speedy Cash Home Offers" },
     { property: "og:description", content: "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California." },
     { property: "og:type", content: "website" },
@@ -131,12 +131,16 @@ export default function Contact() {
                 </svg>
                 <span>2775 Ariel Ocean St, Las Vegas, NV 89156</span>
               </div>
-              <div className="flex items-center">
+              <a 
+                href="tel:(702) 500-1981"
+                className="flex items-center hover:underline"
+                aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+              >
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>(702) 500-1981</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -173,7 +177,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="contact-form" className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">
@@ -427,7 +431,13 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">(702) 500-1981</p>
+                    <a 
+                      href="tel:(702) 500-1981"
+                      className="text-gray-600 hover:text-emerald-600"
+                      aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+                    >
+                      (702) 500-1981
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -436,7 +446,13 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">DrDuffy@SpeedyCashHomeOffers.com</p>
+                    <a 
+                      href="mailto:DrDuffy@SpeedyCashHomeOffers.com"
+                      className="text-gray-600 hover:text-emerald-600"
+                      aria-label="Email Dr. Janet Duffy at DrDuffy@SpeedyCashHomeOffers.com"
+                    >
+                      DrDuffy@SpeedyCashHomeOffers.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -510,12 +526,19 @@ export default function Contact() {
             easy it can be to sell your home without the traditional hassles.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="#contact-form"
+              className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-emerald-600 transition-colors text-center"
+              aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+            >
               Call (702) 500-1981
-            </button>
+            </a>
           </div>
         </div>
       </section>
