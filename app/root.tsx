@@ -611,8 +611,17 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   } else if (error && error instanceof Error) {
     // Check for JSON parsing errors specifically
     const errorMessage = error.message || '';
-    if (errorMessage.includes('Unexpected token') && errorMessage.includes('DOCTYPE') || 
-        errorMessage.includes('JSON') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE'))) {
+    const errorStack = error.stack || '';
+    
+    // Check for RealScout/web component errors
+    if (errorMessage.includes('realscout') || errorMessage.includes('RealScout') || 
+        errorStack.includes('realscout') || errorStack.includes('RealScout')) {
+      message = "Property Search Temporarily Unavailable";
+      details = "The property search tool is temporarily unavailable. The rest of the page is still accessible. Please try refreshing or contact us directly for assistance.";
+    }
+    // Check for JSON/HTML parsing errors
+    else if ((errorMessage.includes('Unexpected token') && errorMessage.includes('DOCTYPE')) || 
+             (errorMessage.includes('JSON') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE')))) {
       message = "Content Loading Error";
       details = "We encountered an issue loading content from an external source. Please try refreshing the page or contact us if the problem persists.";
     } else {
