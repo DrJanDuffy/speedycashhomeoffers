@@ -179,7 +179,7 @@ export default function Home() {
             "@type": "LocalBusiness",
             "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
             "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K). We buy houses for cash, as-is, with no repairs needed.",
-            "url": "https://speedycashhomeoffers.com",
+            "url": "https://www.speedycashhomeoffers.com",
             "telephone": "(702) 500-1981",
             "email": "DrDuffy@SpeedyCashHomeOffers.com",
             "address": {

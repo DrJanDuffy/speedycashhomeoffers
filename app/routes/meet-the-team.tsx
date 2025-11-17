@@ -8,17 +8,17 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "meet the team, Dr Janet Duffy, real estate team, cash home buyers team, Las Vegas real estate professionals, Southern California home buyers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/meet-the-team" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/meet-the-team" },
     { property: "og:title", content: "Meet The Team | Speedy Cash Home Offers" },
     { property: "og:description", content: "Meet the experienced team at Speedy Cash Home Offers, led by Dr. Janet Duffy. Our dedicated professionals are here to help you sell your house fast for cash." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/meet-the-team" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/team-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/meet-the-team" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/team-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Meet The Team | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Meet the experienced team at Speedy Cash Home Offers, led by Dr. Janet Duffy. Our dedicated professionals are here to help you sell your house fast for cash." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/team-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/team-twitter-image.jpg" },
   ];
 };
 
@@ -35,7 +35,7 @@ export default function MeetTheTeam() {
             "@type": "Organization",
             "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
             "description": "Las Vegas and Southern California's most trusted home buyers, led by Dr. Janet Duffy",
-            "url": "https://speedycashhomeoffers.com",
+            "url": "https://www.speedycashhomeoffers.com",
             "founder": {
               "@type": "Person",
               "name": "Dr. Janet Duffy",

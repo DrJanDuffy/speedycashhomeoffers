@@ -8,17 +8,17 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "real estate market insights, Las Vegas real estate market, Southern California real estate, market analysis, Dr Janet Duffy insights, real estate trends" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/market-insights" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/market-insights" },
     { property: "og:title", content: "Real Estate Market Insights | Speedy Cash Home Offers" },
     { property: "og:description", content: "Expert insights, market analysis, and professional guidance for Las Vegas and California real estate markets from Dr. Janet Duffy." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/market-insights" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/market-insights-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/market-insights" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/market-insights-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Real Estate Market Insights | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Expert insights, market analysis, and professional guidance for Las Vegas and California real estate markets from Dr. Janet Duffy." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/market-insights-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/market-insights-twitter-image.jpg" },
   ];
 };
 
@@ -35,7 +35,7 @@ export default function MarketInsights() {
             "@type": "WebPage",
             "name": "Real Estate Market Insights",
             "description": "Expert real estate market insights and analysis for Las Vegas and Southern California markets",
-            "url": "https://speedycashhomeoffers.com/market-insights",
+            "url": "https://www.speedycashhomeoffers.com/market-insights",
             "mainEntity": {
               "@type": "Dataset",
               "name": "Real Estate Market Data",

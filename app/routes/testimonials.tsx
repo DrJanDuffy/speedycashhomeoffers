@@ -10,17 +10,17 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "customer reviews, testimonials, sell house fast Las Vegas, cash home buyers reviews, Dr Janet Duffy reviews, Speedy Cash Home Offers testimonials" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/testimonials" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/testimonials" },
     { property: "og:title", content: "Customer Reviews and Testimonials | Speedy Cash Home Offers" },
     { property: "og:description", content: "Read real customer reviews and testimonials from homeowners who sold their houses fast with Dr. Janet Duffy. 4.9 star rating from 500+ happy customers." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/testimonials" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/testimonials-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/testimonials" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/testimonials-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Customer Reviews and Testimonials | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Read real customer reviews and testimonials from homeowners who sold their houses fast with Dr. Janet Duffy. 4.9 star rating from 500+ happy customers." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/testimonials-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/testimonials-twitter-image.jpg" },
   ];
 };
 

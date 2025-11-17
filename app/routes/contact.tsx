@@ -29,13 +29,13 @@ export const meta: Route.MetaFunction = () => {
     { property: "og:title", content: "Contact Us Today | Speedy Cash Home Offers" },
     { property: "og:description", content: "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/contact" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/contact-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/contact" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/contact-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Contact Us Today | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/contact-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/contact-twitter-image.jpg" },
   ];
 };
 
@@ -52,7 +52,7 @@ export default function Contact() {
             "@type": "ContactPage",
             "name": "Contact Us Today",
             "description": "Contact Dr. Janet Duffy at Speedy Cash Home Offers for a free cash offer. We buy houses fast in Las Vegas and Southern California.",
-            "url": "https://speedycashhomeoffers.com/contact",
+            "url": "https://www.speedycashhomeoffers.com/contact",
             "potentialAction": {
               "@type": "CommunicateAction",
               "target": {
@@ -66,7 +66,7 @@ export default function Contact() {
               },
               "handler": {
                 "@type": "HttpActionHandler",
-                "url": "https://speedycashhomeoffers.com/contact"
+                "url": "https://www.speedycashhomeoffers.com/contact"
               }
             },
             "mainEntity": {

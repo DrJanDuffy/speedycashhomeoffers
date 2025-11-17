@@ -10,17 +10,17 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "FAQ, frequently asked questions, sell house fast Las Vegas, cash home buyers questions, Dr Janet Duffy FAQ, real estate questions" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://speedycashhomeoffers.com/faqs" },
+    { name: "canonical", content: "https://www.speedycashhomeoffers.com/faqs" },
     { property: "og:title", content: "Frequently Asked Questions | Speedy Cash Home Offers" },
     { property: "og:description", content: "Get answers to common questions about selling your house fast for cash. Dr. Janet Duffy and her team are here to help you understand our process." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://speedycashhomeoffers.com/faqs" },
-    { property: "og:image", content: "https://speedycashhomeoffers.com/images/faq-og-image.jpg" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/faqs" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/faq-og-image.jpg" },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Frequently Asked Questions | Speedy Cash Home Offers" },
     { name: "twitter:description", content: "Get answers to common questions about selling your house fast for cash. Dr. Janet Duffy and her team are here to help you understand our process." },
-    { name: "twitter:image", content: "https://speedycashhomeoffers.com/images/faq-twitter-image.jpg" },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/faq-twitter-image.jpg" },
   ];
 };
 
