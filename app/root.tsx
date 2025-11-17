@@ -156,8 +156,9 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     });
   }
   
-  // Handle old WordPress blog post URLs (any path that doesn't match our routes and has query params)
+  // Handle old WordPress blog post URLs (any path that doesn't match our routes)
   // These are old blog posts that should return 410 Gone
+  // Check this BEFORE trailing slash handling to catch all variations
   const validRoutes = [
     '/',
     '/test',
@@ -184,9 +185,18 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
     '/sitemap.xml',
   ];
   
-  // If path doesn't match any valid route and has WordPress query params, return 410
-  const isInvalidPath = !validRoutes.some(route => pathname === route || pathname.startsWith(route + '/'));
-  if (isInvalidPath && (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp'))) {
+  // Normalize pathname for comparison (remove trailing slash)
+  const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
+  
+  // If path doesn't match any valid route, return 410 Gone (old WordPress content)
+  const isInvalidPath = !validRoutes.some(route => {
+    if (route === '/') {
+      return normalizedPath === '/' || normalizedPath === '';
+    }
+    return normalizedPath === route || normalizedPath.startsWith(route + '/');
+  });
+  
+  if (isInvalidPath) {
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
