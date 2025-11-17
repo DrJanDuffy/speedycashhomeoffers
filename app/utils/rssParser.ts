@@ -37,6 +37,19 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
     clearTimeout(timeoutId);
 
     if (!response.ok) {
+      // Handle 401 Unauthorized specifically
+      if (response.status === 401) {
+        // Only log in development to avoid console errors in production
+        if (process.env.NODE_ENV === 'development') {
+          console.error('RSS Feed: 401 Unauthorized - Feed may require authentication');
+        }
+        // Return empty articles array instead of throwing
+        return {
+          articles: [],
+          error: 'RSS feed authentication failed',
+        };
+      }
+      
       throw new Error(`Failed to fetch RSS feed: ${response.status} ${response.statusText}`);
     }
 

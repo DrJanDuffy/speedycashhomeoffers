@@ -131,12 +131,19 @@ export default function Testimonials() {
               There is no obligation, so contact us today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="/contact"
+                className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Get My Free Quote
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors">
+              </a>
+              <a 
+                href="tel:(702) 500-1981"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors text-center"
+                aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+              >
                 Call (702) 500-1981
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -474,12 +481,19 @@ export default function Testimonials() {
             hundreds of 5-star reviews from homeowners across Las Vegas and Southern California.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors text-center"
+              aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+            >
               Call (702) 500-1981
-            </button>
+            </a>
           </div>
         </div>
       </section>
