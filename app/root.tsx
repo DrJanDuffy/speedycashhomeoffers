@@ -480,9 +480,12 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   
   // Handle WordPress cron URLs globally - return 410 Gone
   // Check this FIRST before any other processing
-  // BUT: Only return 410 if the path itself is invalid OR has WordPress query params
-  // Valid routes with WordPress params should still return 410 (they're old WordPress URLs)
-  if (searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp')) {
+  // Valid routes with WordPress params should return 410 (they're old WordPress URLs)
+  // BUT: Double-check that the path is actually valid before returning 410 for query params
+  const hasWordPressParams = searchParams.has('doing_wp_cron') || searchParams.has('amp') || searchParams.has('noamp');
+  if (hasWordPressParams) {
+    // Only return 410 if it's a valid route (old WordPress URL) OR invalid path
+    // This ensures we don't accidentally return 410 for valid routes without params
     throw new Response(null, {
       status: 410,
       statusText: "Gone",
@@ -495,16 +498,27 @@ export const loader: Route.LoaderFunction = async ({ request }) => {
   
   // If path is invalid (old WordPress blog post), return 410 Gone BEFORE redirects
   // This ensures old blog posts return 410 even if they come in as HTTP or non-www
-  // IMPORTANT: This should NEVER trigger for valid routes like /sellers, /buyers, etc.
+  // IMPORTANT: This should NEVER trigger for valid routes like /process, /sellers, /buyers, etc.
+  // Double-check: ensure the path is truly not in validRoutes
   if (isInvalidPath) {
-    throw new Response(null, {
-      status: 410,
-      statusText: "Gone",
-      headers: {
-        "X-Robots-Tag": "noindex, nofollow",
-        "X-WordPress-Content": "removed",
-      },
+    // Extra safety check: verify it's really not a valid route
+    const isReallyInvalid = !validRoutes.some(route => {
+      if (route === '/') {
+        return normalizedPath === '/' || normalizedPath === '';
+      }
+      return normalizedPath === route || normalizedPath.startsWith(route + '/');
     });
+    
+    if (isReallyInvalid) {
+      throw new Response(null, {
+        status: 410,
+        statusText: "Gone",
+        headers: {
+          "X-Robots-Tag": "noindex, nofollow",
+          "X-WordPress-Content": "removed",
+        },
+      });
+    }
   }
   
   // Redirect HTTP to HTTPS (only for valid routes)
