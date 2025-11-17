@@ -7,8 +7,20 @@ export const meta: Route.MetaFunction = () => {
   return [
     { title: "About Dr. Janet Duffy | Speedy Cash Home Offers" },
     { name: "description", content: "Meet Dr. Janet Duffy, Las Vegas's most trusted real estate professional. 25+ years of experience helping homeowners sell fast and get fair cash offers." },
+    { name: "keywords", content: "Dr Janet Duffy, Las Vegas real estate professional, cash home buyers Las Vegas, Ph.D. Real Estate Economics, licensed real estate broker, Speedy Cash Home Offers" },
+    { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/about" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/about" },
+    { property: "og:title", content: "About Dr. Janet Duffy | Speedy Cash Home Offers" },
+    { property: "og:description", content: "Meet Dr. Janet Duffy, Las Vegas's most trusted real estate professional. 25+ years of experience helping homeowners sell fast and get fair cash offers." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://www.speedycashhomeoffers.com/about" },
+    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/dr-janet-duffy-og.jpg" },
+    { property: "og:site_name", content: "Speedy Cash Home Offers" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "About Dr. Janet Duffy | Speedy Cash Home Offers" },
+    { name: "twitter:description", content: "Meet Dr. Janet Duffy, Las Vegas's most trusted real estate professional. 25+ years of experience helping homeowners sell fast." },
+    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/dr-janet-duffy-twitter.jpg" },
   ];
 };
 
@@ -16,6 +28,86 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Breadcrumbs />
+      {/* Person Schema for Dr. Janet Duffy */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://www.speedycashhomeoffers.com/#founder",
+            "name": "Dr. Janet Duffy",
+            "alternateName": "Dr. Jan Duffy",
+            "jobTitle": "Founder & CEO",
+            "worksFor": {
+              "@type": "Organization",
+              "@id": "https://www.speedycashhomeoffers.com/#organization",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+            },
+            "url": "https://www.speedycashhomeoffers.com/about",
+            "description": "Las Vegas's most trusted real estate professional with over 25 years of experience. Ph.D. in Real Estate Economics, licensed real estate broker, helping homeowners sell properties quickly and hassle-free.",
+            "email": "DrDuffy@SpeedyCashHomeOffers.com",
+            "telephone": "(702) 500-1981",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2775 Ariel Ocean St",
+              "addressLocality": "Las Vegas",
+              "addressRegion": "NV",
+              "postalCode": "89156",
+              "addressCountry": "US"
+            },
+            "knowsAbout": [
+              "Real Estate Economics",
+              "Cash Home Buying",
+              "Las Vegas Real Estate Market",
+              "Southern California Real Estate Market",
+              "Distressed Property Sales",
+              "Foreclosure Prevention",
+              "Property Valuation",
+              "Real Estate Investment"
+            ],
+            "award": "A+ Better Business Bureau Rating",
+            "memberOf": [
+              "Las Vegas Chamber of Commerce",
+              "Better Business Bureau"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/speedycashhomeoffers",
+              "https://www.linkedin.com/company/speedycashhomeoffers"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          })
+        }}
+      />
+      {/* AboutPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Dr. Janet Duffy",
+            "description": "Learn about Dr. Janet Duffy, Las Vegas's most trusted real estate professional with 25+ years of experience helping homeowners sell properties fast for cash.",
+            "url": "https://www.speedycashhomeoffers.com/about",
+            "mainEntity": {
+              "@type": "Person",
+              "@id": "https://www.speedycashhomeoffers.com/#founder",
+              "name": "Dr. Janet Duffy"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "@id": "https://www.speedycashhomeoffers.com/#organization",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,12 +119,19 @@ export default function About() {
               Las Vegas's Most Trusted Real Estate Professional
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="/contact"
+                className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Get Free Quote
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
+              </a>
+              <a 
+                href="tel:(702) 500-1981"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors text-center"
+                aria-label="Call Dr. Janet Duffy at (702) 500-1981"
+              >
                 Call (702) 500-1981
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -246,12 +345,19 @@ export default function About() {
             Join hundreds of Las Vegas homeowners who chose the fast, fair, and simple way to sell.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get Your Free Quote
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors">
+            </a>
+            <a 
+              href="tel:(702) 500-1981"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors text-center"
+              aria-label="Call Dr. Janet Duffy at (702) 500-1981"
+            >
               Call (702) 500-1981
-            </button>
+            </a>
           </div>
         </div>
       </section>
