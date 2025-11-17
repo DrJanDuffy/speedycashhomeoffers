@@ -66,10 +66,44 @@ export default function SellMyHouseFastSouthernCalifornia() {
       "postalCode": address.postalCode,
       "addressCountry": address.addressCountry,
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "California"
-    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "California"
+      },
+      {
+        "@type": "City",
+        "name": "Los Angeles",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "California"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Riverside",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "California"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "San Bernardino",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "California"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Orange County",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "California"
+        }
+      }
+    ],
     "serviceType": "Cash Home Buying",
     "priceRange": "$$",
     "aggregateRating": {
@@ -91,6 +125,33 @@ export default function SellMyHouseFastSouthernCalifornia() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* WebPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Sell My House Fast Southern California",
+            "description": "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!",
+            "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Speedy Cash Home Offers",
+              "url": "https://www.speedycashhomeoffers.com"
+            },
+            "about": {
+              "@type": "LocalBusiness",
+              "name": businessName
+            },
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": businessName
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,10 +164,17 @@ export default function SellMyHouseFastSouthernCalifornia() {
               We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a 
+                href="/contact"
+                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+              >
                 Get My Free Quote
-              </button>
-              <a href={`tel:${phoneNumber}`} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors">
+              </a>
+              <a 
+                href={`tel:${phoneNumber}`} 
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
+                aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+              >
                 Call {phoneNumber}
               </a>
             </div>
@@ -448,10 +516,17 @@ export default function SellMyHouseFastSouthernCalifornia() {
             Find out how much money you can get today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <a 
+              href="/contact"
+              className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Get My Free Quote
-            </button>
-            <a href={`tel:${phoneNumber}`} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors">
+            </a>
+            <a 
+              href={`tel:${phoneNumber}`} 
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
+              aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+            >
               Call {phoneNumber}
             </a>
           </div>
