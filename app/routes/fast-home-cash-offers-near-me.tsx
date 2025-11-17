@@ -47,7 +47,148 @@ export default function FastHomeCashOffersNearMe() {
             },
             "about": {
               "@type": "Service",
-              "name": "Cash Home Buying Service"
+              "name": "Cash Home Buying Service",
+              "serviceType": "Cash Home Buying",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+                "description": "Las Vegas and Southern California's most trusted cash home buyers. We specialize in buying houses for cash with no fees, no repairs needed, and fast closing in 7 days.",
+                "url": "https://www.speedycashhomeoffers.com",
+                "telephone": "(702) 500-1981",
+                "email": "DrDuffy@SpeedyCashHomeOffers.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2775 Ariel Ocean St",
+                  "addressLocality": "Las Vegas",
+                  "addressRegion": "NV",
+                  "postalCode": "89156",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "36.1699",
+                  "longitude": "-115.1398"
+                },
+                "areaServed": [
+                  {
+                    "@type": "City",
+                    "name": "Las Vegas",
+                    "containedInPlace": {
+                      "@type": "State",
+                      "name": "Nevada"
+                    }
+                  },
+                  {
+                    "@type": "State",
+                    "name": "California"
+                  }
+                ],
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "500",
+                  "bestRating": "5",
+                  "worstRating": "1"
+                },
+                "priceRange": "$$",
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "07:00",
+                  "closes": "20:00"
+                }
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Las Vegas",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "Nevada"
+                  }
+                },
+                {
+                  "@type": "State",
+                  "name": "California"
+                }
+              ]
+            },
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "description": "Local cash home buyers providing fast home cash offers near me in Las Vegas and Southern California",
+              "url": "https://www.speedycashhomeoffers.com",
+              "telephone": "(702) 500-1981",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2775 Ariel Ocean St",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89156",
+                "addressCountry": "US"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Las Vegas",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "Nevada"
+                  }
+                },
+                {
+                  "@type": "State",
+                  "name": "California"
+                }
+              ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "500"
+              }
+            }
+          })
+        }}
+      />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Fast Home Cash Offers Near Me",
+            "description": "Get fast home cash offers near me from local cash buyers in Las Vegas and Southern California. No fees, no repairs, fast closing in 7 days.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Las Vegas",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Nevada"
+                }
+              },
+              {
+                "@type": "State",
+                "name": "California"
+              }
+            ],
+            "serviceType": "Cash Home Buying",
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "200000-400000",
+                "priceCurrency": "USD",
+                "description": "Cash offers for homes in Las Vegas and Southern California"
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2025-01-01"
             }
           })
         }}

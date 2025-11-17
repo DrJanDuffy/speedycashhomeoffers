@@ -47,13 +47,96 @@ export default function FastHomeCashOffersUSA() {
             },
             "about": {
               "@type": "Service",
-              "name": "Cash Home Buying Service"
+              "name": "Cash Home Buying Service USA",
+              "serviceType": "Cash Home Buying",
+              "provider": {
+                "@type": "Organization",
+                "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+                "description": "USA-wide cash home buyers providing fast home cash offers for houses across America.",
+                "url": "https://www.speedycashhomeoffers.com",
+                "telephone": "(702) 500-1981",
+                "email": "DrDuffy@SpeedyCashHomeOffers.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2775 Ariel Ocean St",
+                  "addressLocality": "Las Vegas",
+                  "addressRegion": "NV",
+                  "postalCode": "89156",
+                  "addressCountry": "US"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "United States"
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "500"
+                }
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              }
             },
             "author": {
               "@id": "https://www.speedycashhomeoffers.com/#founder"
             },
             "publisher": {
               "@id": "https://www.speedycashhomeoffers.com/#organization"
+            },
+            "mainEntity": {
+              "@type": "Service",
+              "name": "Fast Home Cash Offers USA",
+              "description": "Get fast home cash offers USA-wide from trusted cash buyers. No fees, no repairs, fast closing in 7 days.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              },
+              "serviceType": "Cash Home Buying",
+              "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2025-01-01"
+              }
+            }
+          })
+        }}
+      />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Fast Home Cash Offers USA",
+            "description": "Get fast home cash offers USA-wide from trusted cash buyers. Speedy Cash Home Offers provides quick cash offers for houses across America. No fees, no repairs, fast closing.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "url": "https://www.speedycashhomeoffers.com",
+              "telephone": "(702) 500-1981",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            },
+            "serviceType": "Cash Home Buying",
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD",
+                "description": "Cash offers for houses across the United States"
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2025-01-01"
             }
           })
         }}

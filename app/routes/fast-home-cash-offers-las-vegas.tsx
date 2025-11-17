@@ -47,7 +47,50 @@ export default function FastHomeCashOffersLasVegas() {
             },
             "about": {
               "@type": "Service",
-              "name": "Cash Home Buying Service"
+              "name": "Cash Home Buying Service Las Vegas",
+              "serviceType": "Cash Home Buying",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+                "description": "Las Vegas's most trusted cash home buyers. We specialize in North/East Vegas distressed properties ($300-450K).",
+                "url": "https://www.speedycashhomeoffers.com",
+                "telephone": "(702) 500-1981",
+                "email": "DrDuffy@SpeedyCashHomeOffers.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2775 Ariel Ocean St",
+                  "addressLocality": "Las Vegas",
+                  "addressRegion": "NV",
+                  "postalCode": "89156",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "36.1699",
+                  "longitude": "-115.1398"
+                },
+                "areaServed": {
+                  "@type": "City",
+                  "name": "Las Vegas",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "Nevada"
+                  }
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "500"
+                }
+              },
+              "areaServed": {
+                "@type": "City",
+                "name": "Las Vegas",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Nevada"
+                }
+              }
             },
             "spatialCoverage": {
               "@type": "City",
@@ -56,6 +99,72 @@ export default function FastHomeCashOffersLasVegas() {
                 "@type": "State",
                 "name": "Nevada"
               }
+            },
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              "description": "Las Vegas cash home buyers providing fast home cash offers. Specializing in North/East Vegas (89031, 89032, 89110, 89142).",
+              "url": "https://www.speedycashhomeoffers.com/fast-home-cash-offers-las-vegas",
+              "telephone": "(702) 500-1981",
+              "email": "DrDuffy@SpeedyCashHomeOffers.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2775 Ariel Ocean St",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89156",
+                "addressCountry": "US"
+              },
+              "areaServed": {
+                "@type": "City",
+                "name": "Las Vegas",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Nevada"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "500"
+              },
+              "priceRange": "$$"
+            }
+          })
+        }}
+      />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Fast Home Cash Offers Las Vegas",
+            "description": "Get fast home cash offers Las Vegas. Specializing in North/East Vegas (89031, 89032, 89110, 89142). No fees, no repairs, fast closing.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Las Vegas",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Nevada"
+              }
+            },
+            "serviceType": "Cash Home Buying",
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "300000-450000",
+                "priceCurrency": "USD",
+                "description": "Cash offers for distressed properties in North/East Las Vegas"
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2025-01-01"
             }
           })
         }}
