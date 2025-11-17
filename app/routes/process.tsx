@@ -10,7 +10,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "home buying process, sell house fast Las Vegas, cash home buying process, sell house as is, Dr Janet Duffy, Speedy Cash Home Offers" },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { name: "canonical", content: "https://www.speedycashhomeoffers.com/process" },
+    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/process" },
     { property: "og:title", content: "Our 5-Step Home Buying Process | Speedy Cash Home Offers" },
     { property: "og:description", content: "Learn about our simple 5-step process to sell your Las Vegas and Southern California home fast for cash. No repairs, no fees, no hassle." },
     { property: "og:type", content: "website" },
