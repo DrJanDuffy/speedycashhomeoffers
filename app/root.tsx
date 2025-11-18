@@ -53,7 +53,6 @@ export const loader = async ({ request }: { request: Request }) => {
   // Define valid routes once for reuse
   const validRoutes = [
     "/",
-    "/test",
     "/process",
     "/testimonials",
     "/meet-the-team",
@@ -187,6 +186,13 @@ export const loader = async ({ request }: { request: Request }) => {
   }
 
   return {};
+};
+
+// Set cache headers for HTML pages to prevent stale content
+export const headers: Route.HeadersFunction = () => {
+  return {
+    "Cache-Control": "public, max-age=0, must-revalidate, s-maxage=0",
+  };
 };
 
 export default function App() {
