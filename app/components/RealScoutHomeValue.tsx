@@ -12,23 +12,63 @@ export default function RealScoutHomeValue({
   const [scriptError, setScriptError] = useState(false);
 
   useEffect(() => {
-    // Load RealScout script asynchronously after page load to improve initial render
+    // Check if script is already loaded globally (from root.tsx)
+    const existingScript = document.querySelector('script[src*="realscout-web-components"]');
+    
+    // If script already exists, wait a bit for it to initialize, then check if component is ready
+    if (existingScript) {
+      // Wait for web component to be defined
+      const checkComponent = () => {
+        try {
+          // Check if custom element is defined
+          if (customElements.get('realscout-home-value')) {
+            setScriptError(false);
+            return;
+          }
+          // If not defined yet, wait a bit longer (up to 5 seconds)
+          let attempts = 0;
+          const maxAttempts = 50; // 5 seconds max wait
+          const interval = setInterval(() => {
+            attempts++;
+            if (customElements.get('realscout-home-value')) {
+              clearInterval(interval);
+              setScriptError(false);
+            } else if (attempts >= maxAttempts) {
+              clearInterval(interval);
+              // Component didn't load, but don't show error - let it render anyway
+              setScriptError(false);
+            }
+          }, 100);
+        } catch (error) {
+          // Non-critical error, continue rendering
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('RealScout component check error:', error);
+          }
+          setScriptError(false);
+        }
+      };
+      
+      // Wait for page to be fully loaded before checking
+      if (document.readyState === 'complete') {
+        setTimeout(checkComponent, 500);
+      } else {
+        window.addEventListener('load', () => {
+          setTimeout(checkComponent, 500);
+        });
+      }
+      return;
+    }
+    
+    // If script doesn't exist, load it (fallback for pages without global script)
     const loadRealScout = () => {
       try {
-        // Check if script already exists
-        if (document.querySelector('script[src*="realscout-web-components"]')) {
-          return;
-        }
-
         const script = document.createElement('script');
         script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
         script.type = 'module';
         script.async = true;
         script.defer = true;
         
-        // Add error handling for script loading
         script.onerror = () => {
-          // Only log in development to avoid console errors in production
           if (process.env.NODE_ENV === 'development') {
             console.warn('RealScout script failed to load - widget may not display');
           }
@@ -41,7 +81,6 @@ export default function RealScoutHomeValue({
         
         document.head.appendChild(script);
       } catch (error) {
-        // Only log in development to avoid console errors in production
         if (process.env.NODE_ENV === 'development') {
           console.warn('RealScout script loading error:', error);
         }
@@ -49,21 +88,20 @@ export default function RealScoutHomeValue({
       }
     };
     
-    // Defer loading until after initial render
+    // Defer loading until after page load
     try {
       if (document.readyState === 'complete') {
-        setTimeout(loadRealScout, 100);
+        setTimeout(loadRealScout, 1000);
       } else {
         window.addEventListener('load', () => {
-          setTimeout(loadRealScout, 100);
+          setTimeout(loadRealScout, 1000);
         });
       }
     } catch (error) {
-      // Only log in development to avoid console errors in production
       if (process.env.NODE_ENV === 'development') {
         console.warn('RealScout initialization error:', error);
       }
-      setScriptError(true);
+      setScriptError(false); // Don't block page render on error
     }
   }, []);
 
@@ -99,6 +137,7 @@ export default function RealScoutHomeValue({
           --rs-hvw-widget-width: auto;
         }
       `}</style>
+      {/* Render component - if it fails to load, it won't break the page */}
       <realscout-home-value agent-encoded-id={agentId}></realscout-home-value>
     </div>
   );
