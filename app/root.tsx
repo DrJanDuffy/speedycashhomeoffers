@@ -567,7 +567,10 @@ export default function App() {
       </head>
       <body>
         <Navigation />
-        {/* RealScout Office Listings - Below the fold on every page */}
+        <main>
+          <Outlet />
+        </main>
+        {/* RealScout Office Listings - Below the fold on every page (after main content) */}
         <realscout-office-listings 
           agent-encoded-id="QWdlbnQtMjI1MDUw" 
           sort-order="NEWEST" 
@@ -576,9 +579,6 @@ export default function App() {
           price-min="200000" 
           price-max="400000"
         ></realscout-office-listings>
-        <main>
-          <Outlet />
-        </main>
         <Footer />
         <MobileCTA />
         <ScrollRestoration />
@@ -607,26 +607,47 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       details = error.statusText || details;
     }
   } else if (error && error instanceof Error) {
-    // Check for JSON parsing errors specifically
+    // Check for JSON parsing errors specifically - be more precise
     const errorMessage = error.message || '';
     const errorStack = error.stack || '';
     
+    // Log full error in development for debugging
+    if (import.meta.env.DEV) {
+      console.error('ErrorBoundary caught error:', {
+        message: errorMessage,
+        stack: errorStack,
+        error
+      });
+      stack = error.stack;
+    }
+    
     // Check for RealScout/web component errors
-    if (errorMessage.includes('realscout') || errorMessage.includes('RealScout') || 
-        errorStack.includes('realscout') || errorStack.includes('RealScout')) {
+    if (errorMessage.toLowerCase().includes('realscout') || 
+        errorStack.toLowerCase().includes('realscout')) {
       message = "Property Search Temporarily Unavailable";
       details = "The property search tool is temporarily unavailable. The rest of the page is still accessible. Please try refreshing or contact us directly for assistance.";
     }
-    // Check for JSON/HTML parsing errors
-    else if ((errorMessage.includes('Unexpected token') && errorMessage.includes('DOCTYPE')) || 
-             (errorMessage.includes('JSON') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE')))) {
+    // Check for JSON/HTML parsing errors - more specific pattern
+    else if (
+      // Pattern 1: "Unexpected token '<', "<!DOCTYPE"..." or similar
+      (errorMessage.includes('Unexpected token') && (errorMessage.includes('DOCTYPE') || errorMessage.includes('<html') || errorMessage.includes('<!doctype'))) ||
+      // Pattern 2: JSON parse error mentioning HTML/DOCTYPE
+      (errorMessage.includes('JSON') && errorMessage.includes('parse') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE'))) ||
+      // Pattern 3: SyntaxError related to JSON parsing
+      (errorMessage.includes('SyntaxError') && errorMessage.includes('JSON'))
+    ) {
       message = "Content Loading Error";
       details = "We encountered an issue loading content from an external source. Please try refreshing the page or contact us if the problem persists.";
+      // In development, show more details
+      if (import.meta.env.DEV) {
+        details += ` (${errorMessage.substring(0, 100)})`;
+      }
     } else {
-      details = error.message;
-    }
-    if (import.meta.env.DEV) {
-      stack = error.stack;
+      // For other errors, show the message but keep it user-friendly
+      details = import.meta.env.DEV ? error.message : "An unexpected error occurred. Please try refreshing the page.";
+      if (import.meta.env.DEV) {
+        stack = error.stack;
+      }
     }
   }
 
