@@ -101,6 +101,7 @@ export default function Navigation() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -162,7 +163,7 @@ export default function Navigation() {
               className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
               aria-label="Open main menu"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

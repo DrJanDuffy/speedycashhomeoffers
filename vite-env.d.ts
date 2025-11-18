@@ -14,7 +14,9 @@ declare module "*.svg?url" {
 // ImportMeta.env type extensions
 // Note: Vite provides DEV, PROD, SSR, MODE by default
 // Only add custom env variables here
-type ImportMetaEnv = {};
+interface ImportMetaEnv {
+  readonly [key: string]: string | boolean | undefined;
+}
 
 interface ImportMeta {
   readonly env: ImportMetaEnv;
