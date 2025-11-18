@@ -5,9 +5,9 @@ interface RealScoutHomeValueProps {
   className?: string;
 }
 
-export default function RealScoutHomeValue({ 
+export default function RealScoutHomeValue({
   agentId = "QWdlbnQtMjI1MDUw",
-  className = "" 
+  className = "",
 }: RealScoutHomeValueProps) {
   const [scriptError, setScriptError] = useState(false);
   const [componentError, setComponentError] = useState(false);
@@ -16,12 +16,14 @@ export default function RealScoutHomeValue({
     // Set up global error handler to catch RealScout web component errors
     const handleError = (event: ErrorEvent) => {
       // Check if error is related to RealScout
-      const errorMessage = event.message || '';
-      const errorSource = event.filename || '';
-      
-      if (errorMessage.toLowerCase().includes('realscout') || 
-          errorSource.includes('realscout') ||
-          errorMessage.includes('JSON') && errorMessage.includes('parse')) {
+      const errorMessage = event.message || "";
+      const errorSource = event.filename || "";
+
+      if (
+        errorMessage.toLowerCase().includes("realscout") ||
+        errorSource.includes("realscout") ||
+        (errorMessage.includes("JSON") && errorMessage.includes("parse"))
+      ) {
         // Prevent error from bubbling up to main error boundary
         event.preventDefault();
         setComponentError(true);
@@ -32,22 +34,24 @@ export default function RealScoutHomeValue({
 
     // Set up unhandled promise rejection handler
     const handleRejection = (event: PromiseRejectionEvent) => {
-      const reason = event.reason?.toString() || '';
-      if (reason.toLowerCase().includes('realscout') || 
-          (reason.includes('JSON') && reason.includes('parse'))) {
+      const reason = event.reason?.toString() || "";
+      if (
+        reason.toLowerCase().includes("realscout") ||
+        (reason.includes("JSON") && reason.includes("parse"))
+      ) {
         event.preventDefault();
         setComponentError(true);
         setScriptError(true);
       }
     };
 
-    window.addEventListener('error', handleError);
-    window.addEventListener('unhandledrejection', handleRejection);
+    window.addEventListener("error", handleError);
+    window.addEventListener("unhandledrejection", handleRejection);
 
     // Cleanup
     return () => {
-      window.removeEventListener('error', handleError);
-      window.removeEventListener('unhandledrejection', handleRejection);
+      window.removeEventListener("error", handleError);
+      window.removeEventListener("unhandledrejection", handleRejection);
     };
   }, []);
 
@@ -58,20 +62,20 @@ export default function RealScoutHomeValue({
     }
     // Check if script is already loaded globally (from root.tsx)
     const existingScript = document.querySelector('script[src*="realscout-web-components"]');
-    
+
     let intervalId: ReturnType<typeof setInterval> | null = null;
     let timeoutId1: ReturnType<typeof setTimeout> | null = null;
     let timeoutId2: ReturnType<typeof setTimeout> | null = null;
     let loadHandler1: (() => void) | null = null;
     let loadHandler2: (() => void) | null = null;
-    
+
     // If script already exists, wait a bit for it to initialize, then check if component is ready
     if (existingScript) {
       // Wait for web component to be defined
       const checkComponent = () => {
         try {
           // Check if custom element is defined
-          if (customElements.get('realscout-home-value')) {
+          if (customElements.get("realscout-home-value")) {
             setScriptError(false);
             return;
           }
@@ -80,7 +84,7 @@ export default function RealScoutHomeValue({
           const maxAttempts = 50; // 5 seconds max wait
           intervalId = setInterval(() => {
             attempts++;
-            if (customElements.get('realscout-home-value')) {
+            if (customElements.get("realscout-home-value")) {
               if (intervalId) clearInterval(intervalId);
               setScriptError(false);
             } else if (attempts >= maxAttempts) {
@@ -92,34 +96,34 @@ export default function RealScoutHomeValue({
         } catch (error) {
           // Non-critical error, continue rendering
           if (import.meta.env.DEV) {
-            console.warn('RealScout component check error:', error);
+            console.warn("RealScout component check error:", error);
           }
           setScriptError(false);
         }
       };
-      
+
       // Wait for page to be fully loaded before checking
-      if (document.readyState === 'complete') {
+      if (document.readyState === "complete") {
         timeoutId1 = setTimeout(checkComponent, 500);
       } else {
         loadHandler1 = () => {
           timeoutId1 = setTimeout(checkComponent, 500);
         };
-        window.addEventListener('load', loadHandler1);
+        window.addEventListener("load", loadHandler1);
       }
     } else {
       // If script doesn't exist, load it (fallback for pages without global script)
       const loadRealScout = () => {
         try {
-          const script = document.createElement('script');
-          script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-          script.type = 'module';
+          const script = document.createElement("script");
+          script.src = "https://em.realscout.com/widgets/realscout-web-components.umd.js";
+          script.type = "module";
           script.async = true;
           script.defer = true;
-          
+
           script.onerror = () => {
             if (import.meta.env.DEV) {
-              console.warn('RealScout script failed to load - widget may not display');
+              console.warn("RealScout script failed to load - widget may not display");
             }
             setScriptError(true);
           };
@@ -127,29 +131,29 @@ export default function RealScoutHomeValue({
           script.onload = () => {
             setScriptError(false);
           };
-          
+
           document.head.appendChild(script);
         } catch (error) {
           if (import.meta.env.DEV) {
-            console.warn('RealScout script loading error:', error);
+            console.warn("RealScout script loading error:", error);
           }
           setScriptError(true);
         }
       };
-      
+
       // Defer loading until after page load
       try {
-        if (document.readyState === 'complete') {
+        if (document.readyState === "complete") {
           timeoutId2 = setTimeout(loadRealScout, 1000);
         } else {
           loadHandler2 = () => {
             timeoutId2 = setTimeout(loadRealScout, 1000);
           };
-          window.addEventListener('load', loadHandler2);
+          window.addEventListener("load", loadHandler2);
         }
       } catch (error) {
         if (import.meta.env.DEV) {
-          console.warn('RealScout initialization error:', error);
+          console.warn("RealScout initialization error:", error);
         }
         setScriptError(false); // Don't block page render on error
       }
@@ -161,10 +165,10 @@ export default function RealScoutHomeValue({
       if (timeoutId1) clearTimeout(timeoutId1);
       if (timeoutId2) clearTimeout(timeoutId2);
       if (loadHandler1) {
-        window.removeEventListener('load', loadHandler1);
+        window.removeEventListener("load", loadHandler1);
       }
       if (loadHandler2) {
-        window.removeEventListener('load', loadHandler2);
+        window.removeEventListener("load", loadHandler2);
       }
     };
   }, [componentError, scriptError]);
@@ -175,9 +179,12 @@ export default function RealScoutHomeValue({
       <div className={className}>
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Home Value Estimate</h3>
-          <p className="text-gray-600 mb-4">Value estimate tool is temporarily unavailable. Contact us for a free property evaluation.</p>
-          <a 
-            href="/contact" 
+          <p className="text-gray-600 mb-4">
+            Value estimate tool is temporarily unavailable. Contact us for a free property
+            evaluation.
+          </p>
+          <a
+            href="/contact"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Get Free Property Evaluation

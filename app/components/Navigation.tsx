@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
-import { useState, useEffect } from "react";
 
 export default function Navigation() {
   const location = useLocation();
@@ -9,7 +9,7 @@ export default function Navigation() {
   useEffect(() => {
     setIsClient(true);
   }, []);
-  
+
   // Main navigation grouped by user intent and journey
   const primaryNavItems = [
     { path: "/", label: "Home" },
@@ -29,12 +29,36 @@ export default function Navigation() {
   ];
 
   const locationPages = [
-    { path: "/sell-my-house-fast-las-vegas", label: "Las Vegas", description: "North/East Vegas (89031, 89032, 89110, 89142)" },
-    { path: "/sell-my-house-fast-southern-california", label: "Southern California", description: "Los Angeles, Orange County, Riverside" },
-    { path: "/sell-my-house-fast-orange-county", label: "Orange County", description: "Anaheim, Irvine, Santa Ana" },
-    { path: "/sell-my-house-fast-san-diego", label: "San Diego", description: "San Diego, Chula Vista, Oceanside" },
-    { path: "/sell-my-house-fast-riverside", label: "Riverside", description: "Riverside, Moreno Valley, Corona" },
-    { path: "/sell-my-house-fast-inland-empire", label: "Inland Empire", description: "San Bernardino, Riverside, Fontana" },
+    {
+      path: "/sell-my-house-fast-las-vegas",
+      label: "Las Vegas",
+      description: "North/East Vegas (89031, 89032, 89110, 89142)",
+    },
+    {
+      path: "/sell-my-house-fast-southern-california",
+      label: "Southern California",
+      description: "Los Angeles, Orange County, Riverside",
+    },
+    {
+      path: "/sell-my-house-fast-orange-county",
+      label: "Orange County",
+      description: "Anaheim, Irvine, Santa Ana",
+    },
+    {
+      path: "/sell-my-house-fast-san-diego",
+      label: "San Diego",
+      description: "San Diego, Chula Vista, Oceanside",
+    },
+    {
+      path: "/sell-my-house-fast-riverside",
+      label: "Riverside",
+      description: "Riverside, Moreno Valley, Corona",
+    },
+    {
+      path: "/sell-my-house-fast-inland-empire",
+      label: "Inland Empire",
+      description: "San Bernardino, Riverside, Fontana",
+    },
   ];
 
   return (
@@ -43,12 +67,10 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600">
-                Speedy Cash Home Offers
-              </span>
+              <span className="text-2xl font-bold text-blue-600">Speedy Cash Home Offers</span>
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
             {/* Primary Navigation - Core User Journey */}
             {primaryNavItems.map((item) => (
@@ -64,28 +86,42 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
-            
+
             {/* Secondary Navigation Dropdown */}
             <div className="relative">
               <button
+                type="button"
                 onMouseEnter={() => setIsLocationDropdownOpen(true)}
                 onMouseLeave={() => setIsLocationDropdownOpen(false)}
                 className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
               >
                 More
-                <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <svg
+                  className="w-4 h-4 inline-block ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
-              
+
               {isClient && isLocationDropdownOpen && (
-                <div 
+                <div
+                  role="menu"
                   className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
                   onMouseEnter={() => setIsLocationDropdownOpen(true)}
                   onMouseLeave={() => setIsLocationDropdownOpen(false)}
                 >
                   <div className="p-4">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Additional Services</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                      Additional Services
+                    </h3>
                     <div className="grid grid-cols-1 gap-2 mb-4">
                       {secondaryNavItems.map((page) => (
                         <Link
@@ -97,7 +133,7 @@ export default function Navigation() {
                         </Link>
                       ))}
                     </div>
-                    
+
                     <div className="border-t pt-4">
                       <h4 className="text-sm font-semibold text-gray-900 mb-3">Areas We Serve</h4>
                       <div className="grid grid-cols-1 gap-2">
@@ -118,7 +154,7 @@ export default function Navigation() {
               )}
             </div>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -127,7 +163,12 @@ export default function Navigation() {
               aria-label="Open main menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>

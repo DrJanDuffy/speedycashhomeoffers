@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     // Optimize production builds
     cssCodeSplit: true,
-    minify: 'esbuild', // Use esbuild (default, faster, no extra dependencies)
+    minify: "esbuild", // Use esbuild (default, faster, no extra dependencies)
     // Note: manualChunks removed - React is external in SSR builds
     // Vite will automatically optimize chunk splitting
   },

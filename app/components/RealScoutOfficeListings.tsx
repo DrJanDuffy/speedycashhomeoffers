@@ -17,7 +17,7 @@ export default function RealScoutOfficeListings({
   propertyTypes = ",SFR,OTHER,MOBILE",
   priceMin = "200000",
   priceMax = "400000",
-  className = ""
+  className = "",
 }: RealScoutOfficeListingsProps) {
   const [isClient, setIsClient] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -31,12 +31,14 @@ export default function RealScoutOfficeListings({
     // Set up global error handler to catch RealScout web component errors
     const handleError = (event: ErrorEvent) => {
       // Check if error is related to RealScout
-      const errorMessage = event.message || '';
-      const errorSource = event.filename || '';
-      
-      if (errorMessage.toLowerCase().includes('realscout') || 
-          errorSource.includes('realscout') ||
-          errorMessage.includes('JSON') && errorMessage.includes('parse')) {
+      const errorMessage = event.message || "";
+      const errorSource = event.filename || "";
+
+      if (
+        errorMessage.toLowerCase().includes("realscout") ||
+        errorSource.includes("realscout") ||
+        (errorMessage.includes("JSON") && errorMessage.includes("parse"))
+      ) {
         // Prevent error from bubbling up to main error boundary
         event.preventDefault();
         setComponentError(true);
@@ -47,22 +49,24 @@ export default function RealScoutOfficeListings({
 
     // Set up unhandled promise rejection handler
     const handleRejection = (event: PromiseRejectionEvent) => {
-      const reason = event.reason?.toString() || '';
-      if (reason.toLowerCase().includes('realscout') || 
-          (reason.includes('JSON') && reason.includes('parse'))) {
+      const reason = event.reason?.toString() || "";
+      if (
+        reason.toLowerCase().includes("realscout") ||
+        (reason.includes("JSON") && reason.includes("parse"))
+      ) {
         event.preventDefault();
         setComponentError(true);
         setScriptError(true);
       }
     };
 
-    window.addEventListener('error', handleError);
-    window.addEventListener('unhandledrejection', handleRejection);
+    window.addEventListener("error", handleError);
+    window.addEventListener("unhandledrejection", handleRejection);
 
     // Cleanup
     return () => {
-      window.removeEventListener('error', handleError);
-      window.removeEventListener('unhandledrejection', handleRejection);
+      window.removeEventListener("error", handleError);
+      window.removeEventListener("unhandledrejection", handleRejection);
     };
   }, []);
 
@@ -83,7 +87,7 @@ export default function RealScoutOfficeListings({
     const checkComponent = () => {
       try {
         // Check if custom element is defined
-        if (customElements.get('realscout-office-listings')) {
+        if (customElements.get("realscout-office-listings")) {
           setIsReady(true);
           setScriptError(false);
           return;
@@ -94,7 +98,7 @@ export default function RealScoutOfficeListings({
         const maxAttempts = 100; // 10 seconds max wait
         intervalId = setInterval(() => {
           attempts++;
-          if (customElements.get('realscout-office-listings')) {
+          if (customElements.get("realscout-office-listings")) {
             if (intervalId) clearInterval(intervalId);
             setIsReady(true);
             setScriptError(false);
@@ -107,7 +111,7 @@ export default function RealScoutOfficeListings({
       } catch (error) {
         // Non-critical error
         if (import.meta.env.DEV) {
-          console.warn('RealScout component check error:', error);
+          console.warn("RealScout component check error:", error);
         }
         setScriptError(true);
       }
@@ -116,13 +120,13 @@ export default function RealScoutOfficeListings({
     // If script exists, check for component readiness
     if (existingScript) {
       // Wait for page to be fully loaded before checking
-      if (document.readyState === 'complete') {
+      if (document.readyState === "complete") {
         timeoutId = setTimeout(checkComponent, 1000);
       } else {
         loadHandler = () => {
           timeoutId = setTimeout(checkComponent, 1000);
         };
-        window.addEventListener('load', loadHandler);
+        window.addEventListener("load", loadHandler);
       }
     } else {
       // Script doesn't exist (should not happen if loaded in root.tsx)
@@ -134,7 +138,7 @@ export default function RealScoutOfficeListings({
       if (intervalId) clearInterval(intervalId);
       if (timeoutId) clearTimeout(timeoutId);
       if (loadHandler) {
-        window.removeEventListener('load', loadHandler);
+        window.removeEventListener("load", loadHandler);
       }
     };
   }, [componentError, scriptError]);
@@ -164,7 +168,10 @@ export default function RealScoutOfficeListings({
       <div className={className}>
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Listings</h3>
-          <p className="text-gray-600 mb-4">Featured listings are temporarily unavailable. Please contact us to view available properties.</p>
+          <p className="text-gray-600 mb-4">
+            Featured listings are temporarily unavailable. Please contact us to view available
+            properties.
+          </p>
           <a
             href="/contact"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"

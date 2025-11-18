@@ -1,30 +1,65 @@
-import type { Route } from "./+types/sell-my-house-fast-orange-county";
 import { useLoaderData } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RelatedPages from "~/components/RelatedPages";
-import RealScoutListings from "~/components/RealScoutListings";
 import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
+import RealScoutListings from "~/components/RealScoutListings";
+import RelatedPages from "~/components/RelatedPages";
+import type { Route } from "./+types/sell-my-house-fast-orange-county";
 
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Orange County | Speedy Cash Home Offers" },
-    { name: "description", content: "Sell house fast Orange County! Dr. Janet Duffy pays cash for homes in Anaheim, Irvine, Santa Ana. No fees, no repairs, fast closing. Get offer today!" },
-    { name: "keywords", content: "sell house fast Orange County, cash home buyers Orange County, Dr. Janet Duffy Orange County, sell house as is Orange County, cash offer Orange County California, we buy houses Orange County" },
+    {
+      name: "description",
+      content:
+        "Sell house fast Orange County! Dr. Janet Duffy pays cash for homes in Anaheim, Irvine, Santa Ana. No fees, no repairs, fast closing. Get offer today!",
+    },
+    {
+      name: "keywords",
+      content:
+        "sell house fast Orange County, cash home buyers Orange County, Dr. Janet Duffy Orange County, sell house as is Orange County, cash offer Orange County California, we buy houses Orange County",
+    },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county" },
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
+    },
     // Open Graph / Facebook
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county" },
+    {
+      property: "og:url",
+      content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
+    },
     { property: "og:title", content: "Sell My House Fast Orange County | Speedy Cash Home Offers" },
-    { property: "og:description", content: "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!" },
-    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/orange-county-og.jpg" }, // Placeholder image
+    {
+      property: "og:description",
+      content:
+        "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!",
+    },
+    {
+      property: "og:image",
+      content: "https://www.speedycashhomeoffers.com/images/orange-county-og.jpg",
+    }, // Placeholder image
     // Twitter
     { property: "twitter:card", content: "summary_large_image" },
-    { property: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county" },
-    { property: "twitter:title", content: "Sell My House Fast Orange County | Speedy Cash Home Offers" },
-    { property: "twitter:description", content: "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!" },
-    { property: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/orange-county-twitter.jpg" }, // Placeholder image
+    {
+      property: "twitter:url",
+      content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
+    },
+    {
+      property: "twitter:title",
+      content: "Sell My House Fast Orange County | Speedy Cash Home Offers",
+    },
+    {
+      property: "twitter:description",
+      content:
+        "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!",
+    },
+    {
+      property: "twitter:image",
+      content: "https://www.speedycashhomeoffers.com/images/orange-county-twitter.jpg",
+    }, // Placeholder image
   ];
 };
 
@@ -53,35 +88,36 @@ export default function SellMyHouseFastOrangeCounty() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": businessName,
-    "description": "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!",
-    "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
-    "telephone": phoneNumber,
-    "email": email,
-    "address": {
+    name: businessName,
+    description:
+      "Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. Find out how much money you can get today!",
+    url: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
+    telephone: phoneNumber,
+    email: email,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": address.streetAddress,
-      "addressLocality": address.addressLocality,
-      "addressRegion": address.addressRegion,
-      "postalCode": address.postalCode,
-      "addressCountry": address.addressCountry,
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Orange County",
-      "containedInPlace": {
+      name: "Orange County",
+      containedInPlace: {
         "@type": "State",
-        "name": "California"
-      }
+        name: "California",
+      },
     },
-    "serviceType": "Cash Home Buying",
-    "priceRange": "$$",
-    "aggregateRating": {
+    serviceType: "Cash Home Buying",
+    priceRange: "$$",
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": rating.ratingValue,
-      "reviewCount": rating.reviewCount,
+      ratingValue: rating.ratingValue,
+      reviewCount: rating.reviewCount,
     },
-    "sameAs": [
+    sameAs: [
       "https://www.facebook.com/speedycashhomeoffers", // Placeholder social links
       "https://twitter.com/speedycashhome",
       "https://www.linkedin.com/company/speedycashhomeoffers",
@@ -98,29 +134,30 @@ export default function SellMyHouseFastOrangeCounty() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Sell My House Fast Orange County | Speedy Cash Home Offers",
-            "description": "Sell house fast Orange County! Dr. Janet Duffy pays cash for homes in Anaheim, Irvine, Santa Ana. No fees, no repairs, fast closing. Get offer today!",
-            "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
-            "datePublished": "2024-01-15",
-            "dateModified": "2025-01-17",
-            "inLanguage": "en-US",
-            "isPartOf": {
+            name: "Sell My House Fast Orange County | Speedy Cash Home Offers",
+            description:
+              "Sell house fast Orange County! Dr. Janet Duffy pays cash for homes in Anaheim, Irvine, Santa Ana. No fees, no repairs, fast closing. Get offer today!",
+            url: "https://www.speedycashhomeoffers.com/sell-my-house-fast-orange-county",
+            datePublished: "2024-01-15",
+            dateModified: "2025-01-17",
+            inLanguage: "en-US",
+            isPartOf: {
               "@type": "WebSite",
-              "@id": "https://www.speedycashhomeoffers.com/#website"
+              "@id": "https://www.speedycashhomeoffers.com/#website",
             },
-            "about": {
+            about: {
               "@type": "LocalBusiness",
-              "name": businessName
+              name: businessName,
             },
-            "spatialCoverage": {
+            spatialCoverage: {
               "@type": "AdministrativeArea",
-              "name": "Orange County",
-              "containedInPlace": {
+              name: "Orange County",
+              containedInPlace: {
                 "@type": "State",
-                "name": "California"
-              }
-            }
-          })
+                name: "California",
+              },
+            },
+          }),
         }}
       />
       <script
@@ -135,18 +172,18 @@ export default function SellMyHouseFastOrangeCounty() {
               Sell My House Fast Orange County
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. 
-              Find out how much money you can get today!
+              Dr. Janet Duffy has purchased thousands of homes in Orange County California and we
+              pay cash fast. Find out how much money you can get today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="/contact"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
               >
                 Get My Free Quote
               </a>
-              <a 
-                href={`tel:${phoneNumber}`} 
+              <a
+                href={`tel:${phoneNumber}`}
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
                 aria-label={`Call ${businessName} at ${phoneNumber}`}
               >
@@ -164,7 +201,9 @@ export default function SellMyHouseFastOrangeCounty() {
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">4.9</div>
               <p className="text-gray-600">Star Rating</p>
-              <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
+              <p className="text-sm text-gray-500">
+                From 500+ happy reviews on BBB, Google, and Yelp
+              </p>
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
@@ -174,7 +213,9 @@ export default function SellMyHouseFastOrangeCounty() {
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">$20K</div>
               <p className="text-gray-600">Cash Advance</p>
-              <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
+              <p className="text-sm text-gray-500">
+                Receive your cash upfront and close confidently
+              </p>
             </div>
           </div>
         </div>
@@ -188,33 +229,74 @@ export default function SellMyHouseFastOrangeCounty() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Orange County Market Overview</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">
+                Orange County Market Overview
+              </h3>
               <ul className="space-y-3 text-gray-600">
                 <li>• Orange County has a population of approximately 3.2 million people.</li>
-                <li>• The current median house price in Orange County is approximately $1.1 million.</li>
-                <li>• Major cities include Anaheim, Santa Ana, Irvine, Huntington Beach, and Costa Mesa.</li>
+                <li>
+                  • The current median house price in Orange County is approximately $1.1 million.
+                </li>
+                <li>
+                  • Major cities include Anaheim, Santa Ana, Irvine, Huntington Beach, and Costa
+                  Mesa.
+                </li>
                 <li>• The county is home to Disneyland Resort and Knott's Berry Farm.</li>
                 <li>• Orange County has a strong technology sector, particularly in Irvine.</li>
                 <li>• The median household income is around $95,000.</li>
                 <li>• Orange County offers 42 miles of coastline with beautiful beaches.</li>
                 <li>• The county has excellent schools and universities including UC Irvine.</li>
                 <li>• Major employers include Disney, Boeing, and various tech companies.</li>
-                <li>• Orange County has a diverse economy including tourism, technology, and healthcare.</li>
+                <li>
+                  • Orange County has a diverse economy including tourism, technology, and
+                  healthcare.
+                </li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Why Orange County is Great for Real Estate</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">
+                Why Orange County is Great for Real Estate
+              </h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• <strong>Beach Access:</strong> 42 miles of pristine coastline from Seal Beach to San Clemente.</li>
-                <li>• <strong>Entertainment:</strong> Disneyland, Knott's Berry Farm, and numerous attractions.</li>
-                <li>• <strong>Technology Hub:</strong> Strong tech sector with companies like Broadcom and Blizzard.</li>
-                <li>• <strong>Excellent Schools:</strong> Top-rated public and private schools throughout the county.</li>
-                <li>• <strong>Year-Round Weather:</strong> Mediterranean climate with mild temperatures.</li>
-                <li>• <strong>Outdoor Recreation:</strong> Beaches, mountains, and parks for all activities.</li>
-                <li>• <strong>Cultural Attractions:</strong> Museums, theaters, and cultural centers.</li>
-                <li>• <strong>Job Market:</strong> Strong employment opportunities across multiple industries.</li>
-                <li>• <strong>Master-Planned Communities:</strong> Well-designed neighborhoods and communities.</li>
-                <li>• <strong>Investment Potential:</strong> Strong rental market and appreciation potential.</li>
+                <li>
+                  • <strong>Beach Access:</strong> 42 miles of pristine coastline from Seal Beach to
+                  San Clemente.
+                </li>
+                <li>
+                  • <strong>Entertainment:</strong> Disneyland, Knott's Berry Farm, and numerous
+                  attractions.
+                </li>
+                <li>
+                  • <strong>Technology Hub:</strong> Strong tech sector with companies like Broadcom
+                  and Blizzard.
+                </li>
+                <li>
+                  • <strong>Excellent Schools:</strong> Top-rated public and private schools
+                  throughout the county.
+                </li>
+                <li>
+                  • <strong>Year-Round Weather:</strong> Mediterranean climate with mild
+                  temperatures.
+                </li>
+                <li>
+                  • <strong>Outdoor Recreation:</strong> Beaches, mountains, and parks for all
+                  activities.
+                </li>
+                <li>
+                  • <strong>Cultural Attractions:</strong> Museums, theaters, and cultural centers.
+                </li>
+                <li>
+                  • <strong>Job Market:</strong> Strong employment opportunities across multiple
+                  industries.
+                </li>
+                <li>
+                  • <strong>Master-Planned Communities:</strong> Well-designed neighborhoods and
+                  communities.
+                </li>
+                <li>
+                  • <strong>Investment Potential:</strong> Strong rental market and appreciation
+                  potential.
+                </li>
               </ul>
             </div>
           </div>
@@ -278,60 +360,138 @@ export default function SellMyHouseFastOrangeCounty() {
             We Buy Houses As-Is in Orange County
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            We buy houses in Orange County in Any Condition As-Is and fast for cash! Some of the ways we help you are:
+            We buy houses in Orange County in Any Condition As-Is and fast for cash! Some of the
+            ways we help you are:
           </p>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Local Market Expertise</h3>
-              <p className="text-gray-600">We leverage our local Orange County real estate expertise that understands the market.</p>
+              <p className="text-gray-600">
+                We leverage our local Orange County real estate expertise that understands the
+                market.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Instant Cash Offers</h3>
-              <p className="text-gray-600">Receive an almost instant cash home buyer offer that's better than any other company.</p>
+              <p className="text-gray-600">
+                Receive an almost instant cash home buyer offer that's better than any other
+                company.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Showings</h3>
-              <p className="text-gray-600">Forget having strange people moving through your home at inconvenient times.</p>
+              <p className="text-gray-600">
+                Forget having strange people moving through your home at inconvenient times.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Repairs Needed</h3>
-              <p className="text-gray-600">Forget about expensive repairs, unrealistic buyers, or bothersome inspections.</p>
+              <p className="text-gray-600">
+                Forget about expensive repairs, unrealistic buyers, or bothersome inspections.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Contractor Issues</h3>
-              <p className="text-gray-600">Skip fixing up any repairs or dealing with predatory contractors.</p>
+              <p className="text-gray-600">
+                Skip fixing up any repairs or dealing with predatory contractors.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Choose Your Timeline</h3>
@@ -365,7 +525,8 @@ export default function SellMyHouseFastOrangeCounty() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "One of the best companies to get the job done. Dr. Duffy made selling our inherited home in Irvine so easy and stress-free."
+                "One of the best companies to get the job done. Dr. Duffy made selling our inherited
+                home in Irvine so easy and stress-free."
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
@@ -385,7 +546,8 @@ export default function SellMyHouseFastOrangeCounty() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "I found the company is true to their words regarding helping you with your property. The process was smooth and transparent."
+                "I found the company is true to their words regarding helping you with your
+                property. The process was smooth and transparent."
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
@@ -405,7 +567,8 @@ export default function SellMyHouseFastOrangeCounty() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly, and helpful. I highly recommend them."
+                "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly,
+                and helpful. I highly recommend them."
               </p>
             </div>
           </div>
@@ -415,18 +578,19 @@ export default function SellMyHouseFastOrangeCounty() {
       {/* Final CTA */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Sell Your Orange County Home Fast?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Sell Your Orange County Home Fast?</h2>
           <p className="text-xl mb-8">
-            Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay cash fast. 
-            Find out how much money you can get today!
+            Dr. Janet Duffy has purchased thousands of homes in Orange County California and we pay
+            cash fast. Find out how much money you can get today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
               Get My Free Quote
             </button>
-            <a href={`tel:${phoneNumber}`} className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+            <a
+              href={`tel:${phoneNumber}`}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+            >
               Call {phoneNumber}
             </a>
           </div>

@@ -5,9 +5,9 @@ interface RealScoutSearchProps {
   className?: string;
 }
 
-export default function RealScoutSearch({ 
+export default function RealScoutSearch({
   agentId = "QWdlbnQtMjI1MDUw",
-  className = "" 
+  className = "",
 }: RealScoutSearchProps) {
   const [scriptError, setScriptError] = useState(false);
   const [componentError, setComponentError] = useState(false);
@@ -16,12 +16,14 @@ export default function RealScoutSearch({
     // Set up global error handler to catch RealScout web component errors
     const handleError = (event: ErrorEvent) => {
       // Check if error is related to RealScout
-      const errorMessage = event.message || '';
-      const errorSource = event.filename || '';
-      
-      if (errorMessage.toLowerCase().includes('realscout') || 
-          errorSource.includes('realscout') ||
-          errorMessage.includes('JSON') && errorMessage.includes('parse')) {
+      const errorMessage = event.message || "";
+      const errorSource = event.filename || "";
+
+      if (
+        errorMessage.toLowerCase().includes("realscout") ||
+        errorSource.includes("realscout") ||
+        (errorMessage.includes("JSON") && errorMessage.includes("parse"))
+      ) {
         // Prevent error from bubbling up to main error boundary
         event.preventDefault();
         setComponentError(true);
@@ -32,22 +34,24 @@ export default function RealScoutSearch({
 
     // Set up unhandled promise rejection handler
     const handleRejection = (event: PromiseRejectionEvent) => {
-      const reason = event.reason?.toString() || '';
-      if (reason.toLowerCase().includes('realscout') || 
-          (reason.includes('JSON') && reason.includes('parse'))) {
+      const reason = event.reason?.toString() || "";
+      if (
+        reason.toLowerCase().includes("realscout") ||
+        (reason.includes("JSON") && reason.includes("parse"))
+      ) {
         event.preventDefault();
         setComponentError(true);
         setScriptError(true);
       }
     };
 
-    window.addEventListener('error', handleError);
-    window.addEventListener('unhandledrejection', handleRejection);
+    window.addEventListener("error", handleError);
+    window.addEventListener("unhandledrejection", handleRejection);
 
     // Cleanup
     return () => {
-      window.removeEventListener('error', handleError);
-      window.removeEventListener('unhandledrejection', handleRejection);
+      window.removeEventListener("error", handleError);
+      window.removeEventListener("unhandledrejection", handleRejection);
     };
   }, []);
 
@@ -64,17 +68,17 @@ export default function RealScoutSearch({
           return;
         }
 
-        const script = document.createElement('script');
-        script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-        script.type = 'module';
+        const script = document.createElement("script");
+        script.src = "https://em.realscout.com/widgets/realscout-web-components.umd.js";
+        script.type = "module";
         script.async = true;
         script.defer = true;
-        
+
         // Add error handling for script loading
         script.onerror = () => {
           // Only log in development to avoid console errors in production
           if (import.meta.env.DEV) {
-            console.warn('RealScout script failed to load - widget may not display');
+            console.warn("RealScout script failed to load - widget may not display");
           }
           setScriptError(true);
         };
@@ -82,34 +86,34 @@ export default function RealScoutSearch({
         script.onload = () => {
           setScriptError(false);
         };
-        
+
         document.head.appendChild(script);
       } catch (error) {
         // Only log in development to avoid console errors in production
         if (import.meta.env.DEV) {
-          console.warn('RealScout script loading error:', error);
+          console.warn("RealScout script loading error:", error);
         }
         setScriptError(true);
       }
     };
-    
+
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let loadHandler: (() => void) | null = null;
-    
+
     // Defer loading until after initial render
     try {
-      if (document.readyState === 'complete') {
+      if (document.readyState === "complete") {
         timeoutId = setTimeout(loadRealScout, 100);
       } else {
         loadHandler = () => {
           timeoutId = setTimeout(loadRealScout, 100);
         };
-        window.addEventListener('load', loadHandler);
+        window.addEventListener("load", loadHandler);
       }
     } catch (error) {
       // Only log in development to avoid console errors in production
       if (import.meta.env.DEV) {
-        console.warn('RealScout initialization error:', error);
+        console.warn("RealScout initialization error:", error);
       }
       setScriptError(true);
     }
@@ -118,7 +122,7 @@ export default function RealScoutSearch({
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
       if (loadHandler) {
-        window.removeEventListener('load', loadHandler);
+        window.removeEventListener("load", loadHandler);
       }
     };
   }, [componentError, scriptError]);
@@ -129,9 +133,11 @@ export default function RealScoutSearch({
       <div className={className}>
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Search</h3>
-          <p className="text-gray-600 mb-4">Search functionality is temporarily unavailable. Please contact us directly.</p>
-          <a 
-            href="/contact" 
+          <p className="text-gray-600 mb-4">
+            Search functionality is temporarily unavailable. Please contact us directly.
+          </p>
+          <a
+            href="/contact"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Contact Us for Property Search
@@ -155,4 +161,3 @@ export default function RealScoutSearch({
     </div>
   );
 }
-

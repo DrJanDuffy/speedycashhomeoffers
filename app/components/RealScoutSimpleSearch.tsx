@@ -7,7 +7,7 @@ interface RealScoutSimpleSearchProps {
 
 export default function RealScoutSimpleSearch({
   agentId = "QWdlbnQtMjI1MDUw",
-  className = ""
+  className = "",
 }: RealScoutSimpleSearchProps) {
   const [isClient, setIsClient] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -21,12 +21,14 @@ export default function RealScoutSimpleSearch({
     // Set up global error handler to catch RealScout web component errors
     const handleError = (event: ErrorEvent) => {
       // Check if error is related to RealScout
-      const errorMessage = event.message || '';
-      const errorSource = event.filename || '';
-      
-      if (errorMessage.toLowerCase().includes('realscout') || 
-          errorSource.includes('realscout') ||
-          errorMessage.includes('JSON') && errorMessage.includes('parse')) {
+      const errorMessage = event.message || "";
+      const errorSource = event.filename || "";
+
+      if (
+        errorMessage.toLowerCase().includes("realscout") ||
+        errorSource.includes("realscout") ||
+        (errorMessage.includes("JSON") && errorMessage.includes("parse"))
+      ) {
         // Prevent error from bubbling up to main error boundary
         event.preventDefault();
         setComponentError(true);
@@ -37,22 +39,24 @@ export default function RealScoutSimpleSearch({
 
     // Set up unhandled promise rejection handler
     const handleRejection = (event: PromiseRejectionEvent) => {
-      const reason = event.reason?.toString() || '';
-      if (reason.toLowerCase().includes('realscout') || 
-          (reason.includes('JSON') && reason.includes('parse'))) {
+      const reason = event.reason?.toString() || "";
+      if (
+        reason.toLowerCase().includes("realscout") ||
+        (reason.includes("JSON") && reason.includes("parse"))
+      ) {
         event.preventDefault();
         setComponentError(true);
         setScriptError(true);
       }
     };
 
-    window.addEventListener('error', handleError);
-    window.addEventListener('unhandledrejection', handleRejection);
+    window.addEventListener("error", handleError);
+    window.addEventListener("unhandledrejection", handleRejection);
 
     // Cleanup
     return () => {
-      window.removeEventListener('error', handleError);
-      window.removeEventListener('unhandledrejection', handleRejection);
+      window.removeEventListener("error", handleError);
+      window.removeEventListener("unhandledrejection", handleRejection);
     };
   }, []);
 
@@ -73,7 +77,7 @@ export default function RealScoutSimpleSearch({
     const checkComponent = () => {
       try {
         // Check if custom element is defined
-        if (customElements.get('realscout-simple-search')) {
+        if (customElements.get("realscout-simple-search")) {
           setIsReady(true);
           setScriptError(false);
           return;
@@ -84,7 +88,7 @@ export default function RealScoutSimpleSearch({
         const maxAttempts = 100; // 10 seconds max wait
         intervalId = setInterval(() => {
           attempts++;
-          if (customElements.get('realscout-simple-search')) {
+          if (customElements.get("realscout-simple-search")) {
             if (intervalId) clearInterval(intervalId);
             setIsReady(true);
             setScriptError(false);
@@ -97,7 +101,7 @@ export default function RealScoutSimpleSearch({
       } catch (error) {
         // Non-critical error
         if (import.meta.env.DEV) {
-          console.warn('RealScout component check error:', error);
+          console.warn("RealScout component check error:", error);
         }
         setScriptError(true);
       }
@@ -106,13 +110,13 @@ export default function RealScoutSimpleSearch({
     // If script exists, check for component readiness
     if (existingScript) {
       // Wait for page to be fully loaded before checking
-      if (document.readyState === 'complete') {
+      if (document.readyState === "complete") {
         timeoutId = setTimeout(checkComponent, 1000);
       } else {
         loadHandler = () => {
           timeoutId = setTimeout(checkComponent, 1000);
         };
-        window.addEventListener('load', loadHandler);
+        window.addEventListener("load", loadHandler);
       }
     } else {
       // Script doesn't exist (should not happen if loaded in root.tsx)
@@ -124,7 +128,7 @@ export default function RealScoutSimpleSearch({
       if (intervalId) clearInterval(intervalId);
       if (timeoutId) clearTimeout(timeoutId);
       if (loadHandler) {
-        window.removeEventListener('load', loadHandler);
+        window.removeEventListener("load", loadHandler);
       }
     };
   }, [componentError, scriptError]);
@@ -154,7 +158,10 @@ export default function RealScoutSimpleSearch({
       <div className={className}>
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Search</h3>
-          <p className="text-gray-600 mb-4">Property search is temporarily unavailable. Please contact us to find your perfect property.</p>
+          <p className="text-gray-600 mb-4">
+            Property search is temporarily unavailable. Please contact us to find your perfect
+            property.
+          </p>
           <a
             href="/contact"
             className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"

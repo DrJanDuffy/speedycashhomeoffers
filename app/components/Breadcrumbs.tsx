@@ -11,55 +11,53 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const location = useLocation();
-  
+
   // Generate breadcrumbs based on current path if not provided
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: "Home", path: "/" }
-    ];
-    
+    const pathSegments = location.pathname.split("/").filter(Boolean);
+    const breadcrumbs: BreadcrumbItem[] = [{ label: "Home", path: "/" }];
+
     let currentPath = "";
-    pathSegments.forEach((segment, index) => {
+    pathSegments.forEach((segment) => {
       currentPath += `/${segment}`;
       const label = segment
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-      
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
       breadcrumbs.push({
         label: label,
-        path: currentPath
+        path: currentPath,
       });
     });
-    
+
     return breadcrumbs;
   };
-  
+
   const breadcrumbItems = items || generateBreadcrumbs();
-  
+
   // Generate Schema.org BreadcrumbList structured data
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbItems.map((item, index) => ({
+    itemListElement: breadcrumbItems.map((item, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "name": item.label,
-      "item": `https://www.speedycashhomeoffers.com${item.path}`
-    }))
+      position: index + 1,
+      name: item.label,
+      item: `https://www.speedycashhomeoffers.com${item.path}`,
+    })),
   };
-  
+
   return (
     <>
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema)
+          __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-      
+
       {/* Visual breadcrumb navigation */}
       <nav aria-label="Breadcrumb" className="bg-gray-50 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

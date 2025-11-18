@@ -1,6 +1,6 @@
 export const loader = async () => {
   const baseUrl = "https://www.speedycashhomeoffers.com";
-  
+
   const robotsTxt = `User-agent: *
 Allow: /
 

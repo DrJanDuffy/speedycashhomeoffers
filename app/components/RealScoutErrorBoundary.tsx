@@ -22,7 +22,7 @@ export default class RealScoutErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: { componentStack: string }) {
     // Log error in development only
     if (import.meta.env.DEV) {
-      console.warn('RealScout component error caught:', error, errorInfo);
+      console.warn("RealScout component error caught:", error, errorInfo);
     }
   }
 
@@ -31,12 +31,13 @@ export default class RealScoutErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) {
         return this.props.fallback;
       }
-      
+
       return (
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Search</h3>
           <p className="text-gray-600 mb-4">
-            Property search is temporarily unavailable. Please contact us to find your perfect property.
+            Property search is temporarily unavailable. Please contact us to find your perfect
+            property.
           </p>
           <a
             href="/contact"
@@ -51,4 +52,3 @@ export default class RealScoutErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-

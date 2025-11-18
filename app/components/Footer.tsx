@@ -41,24 +41,33 @@ export default function Footer() {
               Speedy Cash Home Offers
             </Link>
             <p className="text-gray-300 mb-4">
-              Las Vegas's most trusted cash home buyers. We specialize in distressed properties 
-              and help homeowners sell quickly without the traditional hassles.
+              Las Vegas's most trusted cash home buyers. We specialize in distressed properties and
+              help homeowners sell quickly without the traditional hassles.
             </p>
             <div className="space-y-2 text-sm">
               <p className="text-gray-300">
-                <span className="font-semibold">Phone:</span> 
-                <a href="tel:(702) 500-1981" className="text-blue-400 hover:text-blue-300 ml-1" aria-label="Call Speedy Cash Home Offers at (702) 500-1981">
+                <span className="font-semibold">Phone:</span>
+                <a
+                  href="tel:(702) 500-1981"
+                  className="text-blue-400 hover:text-blue-300 ml-1"
+                  aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
+                >
                   (702) 500-1981
                 </a>
               </p>
               <p className="text-gray-300">
-                <span className="font-semibold">Email:</span> 
-                <a href="mailto:DrDuffy@SpeedyCashHomeOffers.com" className="text-blue-400 hover:text-blue-300 ml-1" aria-label="Email Dr. Janet Duffy at DrDuffy@SpeedyCashHomeOffers.com">
+                <span className="font-semibold">Email:</span>
+                <a
+                  href="mailto:DrDuffy@SpeedyCashHomeOffers.com"
+                  className="text-blue-400 hover:text-blue-300 ml-1"
+                  aria-label="Email Dr. Janet Duffy at DrDuffy@SpeedyCashHomeOffers.com"
+                >
                   DrDuffy@SpeedyCashHomeOffers.com
                 </a>
               </p>
               <p className="text-gray-300">
-                <span className="font-semibold">Address:</span> 2775 Ariel Ocean St, Las Vegas, NV 89156
+                <span className="font-semibold">Address:</span> 2775 Ariel Ocean St, Las Vegas, NV
+                89156
               </p>
             </div>
           </div>
@@ -69,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-gray-300 hover:text-blue-400 transition-colors"
                   >
@@ -86,7 +95,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {areaLinks.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-gray-300 hover:text-blue-400 transition-colors"
                   >
@@ -103,7 +112,7 @@ export default function Footer() {
             <ul className="space-y-2 mb-6">
               {resourceLinks.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-gray-300 hover:text-blue-400 transition-colors"
                   >
@@ -112,12 +121,12 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            
+
             <h4 className="text-md font-semibold mb-3">Additional Services</h4>
             <ul className="space-y-2">
               {additionalLinks.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-gray-300 hover:text-blue-400 transition-colors"
                   >
@@ -136,25 +145,40 @@ export default function Footer() {
               © {currentYear} Speedy Cash Home Offers | Homes by Dr. Jan Duffy. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link
+                to="/privacy-policy"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms-of-service" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link
+                to="/terms-of-service"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link to="/company-history" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link
+                to="/company-history"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 Our Story
               </Link>
-              <a href="tel:(702) 500-1981" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Contact Speedy Cash Home Offers by phone at (702) 500-1981">
+              <a
+                href="tel:(702) 500-1981"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+                aria-label="Contact Speedy Cash Home Offers by phone at (702) 500-1981"
+              >
                 Contact Us
               </a>
             </div>
           </div>
-          
+
           {/* Trust Badges */}
           <div className="mt-6 flex flex-wrap justify-center md:justify-start items-center space-x-6 text-sm text-gray-400">
             <div className="flex items-center">
-              <span className="bg-yellow-500 text-yellow-900 px-2 py-1 rounded text-xs font-bold mr-2">A+</span>
+              <span className="bg-yellow-500 text-yellow-900 px-2 py-1 rounded text-xs font-bold mr-2">
+                A+
+              </span>
               <span>Better Business Bureau</span>
             </div>
             <div className="flex items-center">
@@ -162,7 +186,9 @@ export default function Footer() {
               <span>4.9/5 Rating</span>
             </div>
             <div className="flex items-center">
-              <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold mr-2">25+</span>
+              <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold mr-2">
+                25+
+              </span>
               <span>Years Experience</span>
             </div>
           </div>

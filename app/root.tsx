@@ -9,11 +9,11 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
-import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import MobileCTA from "./components/MobileCTA";
-import RealScoutOfficeListings from "./components/RealScoutOfficeListings";
+import Navigation from "./components/Navigation";
 import RealScoutErrorBoundary from "./components/RealScoutErrorBoundary";
+import RealScoutOfficeListings from "./components/RealScoutOfficeListings";
 
 export const links: Route.LinksFunction = () => [
   // Preconnect to font domains early (DNS lookup optimization)
@@ -49,62 +49,63 @@ export const links: Route.LinksFunction = () => [
 export const loader = async ({ request }: { request: Request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
-  
+
   // Get pathname early for all checks
   const pathname = url.pathname.toLowerCase();
-  
+
   // Define valid routes once for reuse
   const validRoutes = [
-    '/',
-    '/test',
-    '/process',
-    '/testimonials',
-    '/meet-the-team',
-    '/faqs',
-    '/blog',
-    '/market-insights',
-    '/sell-my-house-fast-las-vegas',
-    '/sell-my-house-fast-southern-california',
-    '/sell-my-house-fast-orange-county',
-    '/sell-my-house-fast-san-diego',
-    '/sell-my-house-fast-riverside',
-    '/sell-my-house-fast-inland-empire',
-    '/sellers',
-    '/buyers',
-    '/investors',
-    '/neighborhoods',
-    '/about',
-    '/contact',
-    '/thank-you',
-    '/privacy-policy',
-    '/terms-of-service',
-    '/company-history',
-    '/fast-home-cash-offers-usa',
-    '/fast-home-cash-offers-reviews',
-    '/fast-home-cash-offers-near-me',
-    '/fast-home-cash-offers-las-vegas',
-    '/opendoor-cash-offer',
-    '/fast-home-offer',
-    '/fast-home-cash-offers-nevada',
-    '/zillow-cash-offer',
-    '/robots.txt',
-    '/sitemap.xml',
+    "/",
+    "/test",
+    "/process",
+    "/testimonials",
+    "/meet-the-team",
+    "/faqs",
+    "/blog",
+    "/market-insights",
+    "/sell-my-house-fast-las-vegas",
+    "/sell-my-house-fast-southern-california",
+    "/sell-my-house-fast-orange-county",
+    "/sell-my-house-fast-san-diego",
+    "/sell-my-house-fast-riverside",
+    "/sell-my-house-fast-inland-empire",
+    "/sellers",
+    "/buyers",
+    "/investors",
+    "/neighborhoods",
+    "/about",
+    "/contact",
+    "/thank-you",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/company-history",
+    "/fast-home-cash-offers-usa",
+    "/fast-home-cash-offers-reviews",
+    "/fast-home-cash-offers-near-me",
+    "/fast-home-cash-offers-las-vegas",
+    "/opendoor-cash-offer",
+    "/fast-home-offer",
+    "/fast-home-cash-offers-nevada",
+    "/zillow-cash-offer",
+    "/robots.txt",
+    "/sitemap.xml",
   ];
-  
+
   // Normalize pathname for comparison (remove trailing slash)
-  const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
-  
+  const normalizedPath =
+    pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+
   // Check if path is a valid route first
-  const isValidRoute = validRoutes.some(route => {
-    if (route === '/') {
-      return normalizedPath === '/' || normalizedPath === '';
+  const isValidRoute = validRoutes.some((route) => {
+    if (route === "/") {
+      return normalizedPath === "/" || normalizedPath === "";
     }
-    return normalizedPath === route || normalizedPath.startsWith(route + '/');
+    return normalizedPath === route || normalizedPath.startsWith(route + "/");
   });
-  
+
   // Redirect HTTP to HTTPS (only for valid routes)
-  if (url.protocol === 'http:') {
-    url.protocol = 'https:';
+  if (url.protocol === "http:") {
+    url.protocol = "https:";
     throw new Response(null, {
       status: 301,
       headers: {
@@ -112,10 +113,10 @@ export const loader = async ({ request }: { request: Request }) => {
       },
     });
   }
-  
+
   // Redirect non-www to www (only for valid routes)
-  if (url.hostname === 'speedycashhomeoffers.com') {
-    url.hostname = 'www.speedycashhomeoffers.com';
+  if (url.hostname === "speedycashhomeoffers.com") {
+    url.hostname = "www.speedycashhomeoffers.com";
     throw new Response(null, {
       status: 301,
       headers: {
@@ -123,32 +124,32 @@ export const loader = async ({ request }: { request: Request }) => {
       },
     });
   }
-  
+
   // Only check for old WordPress paths if it's NOT a valid route
   // Valid routes should always pass through to React Router
   if (!isValidRoute) {
     const oldWordPressPaths = [
-      '/buyer-investor',
-      '/map',
-      '/home',
-      '/for-buyers',
-      '/writer',
-      '/author',
-      '/tag',
-      '/category',
-      '/__manifest',
+      "/buyer-investor",
+      "/map",
+      "/home",
+      "/for-buyers",
+      "/writer",
+      "/author",
+      "/tag",
+      "/category",
+      "/__manifest",
     ];
-    
+
     // Check if pathname starts with any old WordPress path
     // Use exact match or path prefix to avoid false positives
-    const isOldPath = oldWordPressPaths.some(path => {
+    const isOldPath = oldWordPressPaths.some((path) => {
       // Exact match
       if (pathname === path) return true;
       // Path prefix match (e.g., /writer/anything matches /writer)
-      if (pathname.startsWith(path + '/')) return true;
+      if (pathname.startsWith(path + "/")) return true;
       return false;
     });
-    
+
     if (isOldPath) {
       throw new Response(null, {
         status: 410,
@@ -160,19 +161,19 @@ export const loader = async ({ request }: { request: Request }) => {
       });
     }
   }
-  
+
   // Handle trailing slashes - redirect to non-trailing slash for all routes except root
   // BUT: Only redirect if it's a valid route - invalid routes will hit the 404 handler
-  if (pathname.endsWith('/') && pathname !== '/') {
+  if (pathname.endsWith("/") && pathname !== "/") {
     // Use the already-computed isValidRoute check, but check path without trailing slash
     const pathWithoutSlash = pathname.slice(0, -1);
-    const isRouteWithoutSlash = validRoutes.some(route => {
-      if (route === '/') {
-        return pathWithoutSlash === '/' || pathWithoutSlash === '';
+    const isRouteWithoutSlash = validRoutes.some((route) => {
+      if (route === "/") {
+        return pathWithoutSlash === "/" || pathWithoutSlash === "";
       }
-      return pathWithoutSlash === route || pathWithoutSlash.startsWith(route + '/');
+      return pathWithoutSlash === route || pathWithoutSlash.startsWith(route + "/");
     });
-    
+
     // Only redirect valid routes - let 404 handler deal with invalid paths
     if (isRouteWithoutSlash) {
       // Normal trailing slash redirect - strip all query params to prevent duplicates
@@ -187,7 +188,7 @@ export const loader = async ({ request }: { request: Request }) => {
     }
     // If not a valid route, let it fall through to React Router which will hit the 404 handler
   }
-  
+
   return {};
 };
 
@@ -250,134 +251,136 @@ export default function App() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "@id": "https://www.speedycashhomeoffers.com/#organization",
-              "name": "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
-              "alternateName": "Speedy Cash Home Offers",
-              "url": "https://www.speedycashhomeoffers.com",
-              "logo": "https://www.speedycashhomeoffers.com/images/logo.png",
-              "description": "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days. Specializing in distressed properties, foreclosures, and inherited homes.",
-              "foundingDate": "2015",
-              "founder": {
+              name: "Speedy Cash Home Offers | Homes by Dr. Jan Duffy",
+              alternateName: "Speedy Cash Home Offers",
+              url: "https://www.speedycashhomeoffers.com",
+              logo: "https://www.speedycashhomeoffers.com/images/logo.png",
+              description:
+                "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days. Specializing in distressed properties, foreclosures, and inherited homes.",
+              foundingDate: "2015",
+              founder: {
                 "@type": "Person",
                 "@id": "https://www.speedycashhomeoffers.com/#founder",
-                "name": "Dr. Janet Duffy",
-                "jobTitle": "Founder & CEO",
-                "description": "With over 25 years of real estate experience, Dr. Duffy leads our team with expertise and compassion",
-                "url": "https://www.speedycashhomeoffers.com/meet-the-team"
+                name: "Dr. Janet Duffy",
+                jobTitle: "Founder & CEO",
+                description:
+                  "With over 25 years of real estate experience, Dr. Duffy leads our team with expertise and compassion",
+                url: "https://www.speedycashhomeoffers.com/meet-the-team",
               },
-              "address": {
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "2775 Ariel Ocean St",
-                "addressLocality": "Las Vegas",
-                "addressRegion": "NV",
-                "postalCode": "89156",
-                "addressCountry": "US"
+                streetAddress: "2775 Ariel Ocean St",
+                addressLocality: "Las Vegas",
+                addressRegion: "NV",
+                postalCode: "89156",
+                addressCountry: "US",
               },
-              "contactPoint": [
+              contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  "telephone": "+1-702-500-1981",
-                  "contactType": "Customer Service",
-                  "areaServed": ["US"],
-                  "availableLanguage": ["English"]
+                  telephone: "+1-702-500-1981",
+                  contactType: "Customer Service",
+                  areaServed: ["US"],
+                  availableLanguage: ["English"],
                 },
                 {
                   "@type": "ContactPoint",
-                  "email": "DrDuffy@SpeedyCashHomeOffers.com",
-                  "contactType": "Customer Service",
-                  "areaServed": ["US"],
-                  "availableLanguage": ["English"]
-                }
+                  email: "DrDuffy@SpeedyCashHomeOffers.com",
+                  contactType: "Customer Service",
+                  areaServed: ["US"],
+                  availableLanguage: ["English"],
+                },
               ],
-              "areaServed": [
+              areaServed: [
                 {
                   "@type": "City",
-                  "name": "Las Vegas",
-                  "containedInPlace": {
+                  name: "Las Vegas",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "Nevada"
-                  }
+                    name: "Nevada",
+                  },
                 },
                 {
                   "@type": "City",
-                  "name": "Los Angeles",
-                  "containedInPlace": {
+                  name: "Los Angeles",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "California"
-                  }
+                    name: "California",
+                  },
                 },
                 {
                   "@type": "City",
-                  "name": "San Diego",
-                  "containedInPlace": {
+                  name: "San Diego",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "California"
-                  }
+                    name: "California",
+                  },
                 },
                 {
                   "@type": "City",
-                  "name": "Orange County",
-                  "containedInPlace": {
+                  name: "Orange County",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "California"
-                  }
+                    name: "California",
+                  },
                 },
                 {
                   "@type": "City",
-                  "name": "Riverside",
-                  "containedInPlace": {
+                  name: "Riverside",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "California"
-                  }
+                    name: "California",
+                  },
                 },
                 {
                   "@type": "City",
-                  "name": "Inland Empire",
-                  "containedInPlace": {
+                  name: "Inland Empire",
+                  containedInPlace: {
                     "@type": "State",
-                    "name": "California"
-                  }
-                }
+                    name: "California",
+                  },
+                },
               ],
-              "sameAs": [
+              sameAs: [
                 "https://www.facebook.com/speedycashhomeoffers",
-                "https://www.linkedin.com/company/speedycashhomeoffers"
+                "https://www.linkedin.com/company/speedycashhomeoffers",
               ],
-              "hasOfferCatalog": {
+              hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                "name": "Cash Home Buying Services",
-                "itemListElement": [
+                name: "Cash Home Buying Services",
+                itemListElement: [
                   {
                     "@type": "Offer",
-                    "itemOffered": {
+                    itemOffered: {
                       "@type": "Service",
-                      "name": "Cash Home Buying Service",
-                      "description": "We buy houses for cash in Las Vegas and Southern California",
-                      "serviceType": "Cash Home Buying",
-                      "provider": {
-                        "@id": "https://www.speedycashhomeoffers.com/#organization"
-                      }
-                    }
-                  }
-                ]
+                      name: "Cash Home Buying Service",
+                      description: "We buy houses for cash in Las Vegas and Southern California",
+                      serviceType: "Cash Home Buying",
+                      provider: {
+                        "@id": "https://www.speedycashhomeoffers.com/#organization",
+                      },
+                    },
+                  },
+                ],
               },
-              "aggregateRating": {
+              aggregateRating: {
                 "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "500",
-                "bestRating": "5",
-                "worstRating": "1"
+                ratingValue: "4.9",
+                reviewCount: "500",
+                bestRating: "5",
+                worstRating: "1",
               },
-              "award": "A+ Better Business Bureau Rating",
-              "knowsAbout": [
+              award: "A+ Better Business Bureau Rating",
+              knowsAbout: [
                 "Cash Home Buying",
                 "Real Estate Investment",
                 "Distressed Property Sales",
                 "Las Vegas Real Estate",
                 "Southern California Real Estate",
                 "Fast Home Sales",
-                "As-Is Property Purchases"
-              ]
-            })
+                "As-Is Property Purchases",
+              ],
+            }),
           }}
         />
         {/* Knowledge Graph - Person Schema for Dr. Janet Duffy (Enhanced for E-E-A-T) */}
@@ -388,42 +391,40 @@ export default function App() {
               "@context": "https://schema.org",
               "@type": "Person",
               "@id": "https://www.speedycashhomeoffers.com/#founder",
-              "name": "Dr. Janet Duffy",
-              "jobTitle": "Founder & CEO",
-              "worksFor": {
-                "@id": "https://www.speedycashhomeoffers.com/#organization"
+              name: "Dr. Janet Duffy",
+              jobTitle: "Founder & CEO",
+              worksFor: {
+                "@id": "https://www.speedycashhomeoffers.com/#organization",
               },
-              "url": "https://www.speedycashhomeoffers.com/meet-the-team",
-              "description": "With over 25 years of real estate experience, Dr. Janet Duffy is the founder and CEO of Speedy Cash Home Offers, specializing in helping homeowners sell their properties quickly for cash.",
-              "email": "DrDuffy@SpeedyCashHomeOffers.com",
-              "telephone": "+1-702-500-1981",
-              "address": {
+              url: "https://www.speedycashhomeoffers.com/meet-the-team",
+              description:
+                "With over 25 years of real estate experience, Dr. Janet Duffy is the founder and CEO of Speedy Cash Home Offers, specializing in helping homeowners sell their properties quickly for cash.",
+              email: "DrDuffy@SpeedyCashHomeOffers.com",
+              telephone: "+1-702-500-1981",
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "2775 Ariel Ocean St",
-                "addressLocality": "Las Vegas",
-                "addressRegion": "NV",
-                "postalCode": "89156",
-                "addressCountry": "US"
+                streetAddress: "2775 Ariel Ocean St",
+                addressLocality: "Las Vegas",
+                addressRegion: "NV",
+                postalCode: "89156",
+                addressCountry: "US",
               },
-              "knowsAbout": [
+              knowsAbout: [
                 "Real Estate",
                 "Cash Home Buying",
                 "Property Investment",
                 "Las Vegas Real Estate Market",
                 "Southern California Real Estate Market",
                 "Distressed Property Sales",
-                "Real Estate Transactions"
+                "Real Estate Transactions",
               ],
-              "award": "A+ Better Business Bureau Rating",
-              "memberOf": [
-                "Las Vegas Chamber of Commerce",
-                "Better Business Bureau"
-              ],
-              "sameAs": [
+              award: "A+ Better Business Bureau Rating",
+              memberOf: ["Las Vegas Chamber of Commerce", "Better Business Bureau"],
+              sameAs: [
                 "https://www.speedycashhomeoffers.com/about",
-                "https://www.speedycashhomeoffers.com/meet-the-team"
-              ]
-            })
+                "https://www.speedycashhomeoffers.com/meet-the-team",
+              ],
+            }),
           }}
         />
         {/* Knowledge Graph - Website Schema */}
@@ -434,22 +435,24 @@ export default function App() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "@id": "https://www.speedycashhomeoffers.com/#website",
-              "url": "https://www.speedycashhomeoffers.com",
-              "name": "Speedy Cash Home Offers",
-              "description": "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days.",
-              "publisher": {
-                "@id": "https://www.speedycashhomeoffers.com/#organization"
+              url: "https://www.speedycashhomeoffers.com",
+              name: "Speedy Cash Home Offers",
+              description:
+                "Las Vegas and Southern California's most trusted cash home buyers. We buy houses for cash with no fees, no repairs needed, and fast closing in 7 days.",
+              publisher: {
+                "@id": "https://www.speedycashhomeoffers.com/#organization",
               },
-              "potentialAction": {
+              potentialAction: {
                 "@type": "SearchAction",
-                "target": {
+                target: {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://www.speedycashhomeoffers.com/contact?q={search_term_string}"
+                  urlTemplate:
+                    "https://www.speedycashhomeoffers.com/contact?q={search_term_string}",
                 },
-                "query-input": "required name=search_term_string"
+                "query-input": "required name=search_term_string",
               },
-              "inLanguage": "en-US"
-            })
+              inLanguage: "en-US",
+            }),
           }}
         />
         {/* Google Analytics 4 (GA4) - Optimized for performance, deferred to prevent forced reflows */}
@@ -555,7 +558,10 @@ export default function App() {
           }}
         />
         {/* RealScout Web Components - Required once for all widgets */}
-        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+        ></script>
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -602,53 +608,66 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     statusCode = error.status;
     if (error.status === 410) {
       message = "410 - Page Gone";
-      details = "This page has been permanently removed. Please check the URL or return to our home page.";
+      details =
+        "This page has been permanently removed. Please check the URL or return to our home page.";
     } else if (error.status === 404) {
       message = "404 - Page Not Found";
-      details = "The requested page could not be found. Please check the URL or return to our home page.";
+      details =
+        "The requested page could not be found. Please check the URL or return to our home page.";
     } else {
       message = `Error ${error.status}`;
       details = error.statusText || details;
     }
   } else if (error && error instanceof Error) {
     // Check for JSON parsing errors specifically - be more precise
-    const errorMessage = error.message || '';
-    const errorStack = error.stack || '';
-    
+    const errorMessage = error.message || "";
+    const errorStack = error.stack || "";
+
     // Log full error in development for debugging
     if (import.meta.env.DEV) {
-      console.error('ErrorBoundary caught error:', {
+      console.error("ErrorBoundary caught error:", {
         message: errorMessage,
         stack: errorStack,
-        error
+        error,
       });
       stack = error.stack;
     }
-    
+
     // Check for RealScout/web component errors
-    if (errorMessage.toLowerCase().includes('realscout') || 
-        errorStack.toLowerCase().includes('realscout')) {
+    if (
+      errorMessage.toLowerCase().includes("realscout") ||
+      errorStack.toLowerCase().includes("realscout")
+    ) {
       message = "Property Search Temporarily Unavailable";
-      details = "The property search tool is temporarily unavailable. The rest of the page is still accessible. Please try refreshing or contact us directly for assistance.";
+      details =
+        "The property search tool is temporarily unavailable. The rest of the page is still accessible. Please try refreshing or contact us directly for assistance.";
     }
     // Check for JSON/HTML parsing errors - more specific pattern
     else if (
       // Pattern 1: "Unexpected token '<', "<!DOCTYPE"..." or similar
-      (errorMessage.includes('Unexpected token') && (errorMessage.includes('DOCTYPE') || errorMessage.includes('<html') || errorMessage.includes('<!doctype'))) ||
+      (errorMessage.includes("Unexpected token") &&
+        (errorMessage.includes("DOCTYPE") ||
+          errorMessage.includes("<html") ||
+          errorMessage.includes("<!doctype"))) ||
       // Pattern 2: JSON parse error mentioning HTML/DOCTYPE
-      (errorMessage.includes('JSON') && errorMessage.includes('parse') && (errorMessage.includes('HTML') || errorMessage.includes('DOCTYPE'))) ||
+      (errorMessage.includes("JSON") &&
+        errorMessage.includes("parse") &&
+        (errorMessage.includes("HTML") || errorMessage.includes("DOCTYPE"))) ||
       // Pattern 3: SyntaxError related to JSON parsing
-      (errorMessage.includes('SyntaxError') && errorMessage.includes('JSON'))
+      (errorMessage.includes("SyntaxError") && errorMessage.includes("JSON"))
     ) {
       message = "Content Loading Error";
-      details = "We encountered an issue loading content from an external source. Please try refreshing the page or contact us if the problem persists.";
+      details =
+        "We encountered an issue loading content from an external source. Please try refreshing the page or contact us if the problem persists.";
       // In development, show more details
       if (import.meta.env.DEV) {
         details += ` (${errorMessage.substring(0, 100)})`;
       }
     } else {
       // For other errors, show the message but keep it user-friendly
-      details = import.meta.env.DEV ? error.message : "An unexpected error occurred. Please try refreshing the page.";
+      details = import.meta.env.DEV
+        ? error.message
+        : "An unexpected error occurred. Please try refreshing the page.";
       if (import.meta.env.DEV) {
         stack = error.stack;
       }
@@ -663,22 +682,22 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">{message}</h1>
         <p className="text-lg text-gray-600 mb-8">{details}</p>
-        
+
         <div className="space-y-4">
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Go Home
           </a>
-          <a 
-            href="/contact" 
+          <a
+            href="/contact"
             className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors ml-4"
           >
             Contact Us
           </a>
         </div>
-        
+
         {stack && (
           <details className="mt-8 text-left">
             <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700">

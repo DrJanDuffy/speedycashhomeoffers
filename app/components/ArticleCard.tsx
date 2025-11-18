@@ -1,4 +1,4 @@
-import type { RSSArticle } from '~/utils/rssParser';
+import type { RSSArticle } from "~/utils/rssParser";
 
 interface ArticleCardProps {
   article: RSSArticle;
@@ -17,18 +17,18 @@ function formatDateForDisplay(dateString: string): string {
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - date.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     // Show relative time for recent articles (better for engagement)
-    if (diffDays === 0) return 'Today';
-    if (diffDays === 1) return 'Yesterday';
+    if (diffDays === 0) return "Today";
+    if (diffDays === 1) return "Yesterday";
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
-    
+
     // For older articles, show full date for SEO
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   } catch {
     return dateString;
@@ -40,7 +40,9 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   const formattedDate = formatDateForDisplay(article.pubDate);
   const shareUrl = encodeURIComponent(article.link);
   const shareTitle = encodeURIComponent(article.title);
-  const shareText = encodeURIComponent(`${article.title} - ${article.description.substring(0, 100)}...`);
+  const shareText = encodeURIComponent(
+    `${article.title} - ${article.description.substring(0, 100)}...`
+  );
 
   return (
     <>
@@ -51,38 +53,39 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": article.title,
-            "description": article.description,
-            "url": article.link,
-            "datePublished": article.pubDate,
-            "author": {
+            headline: article.title,
+            description: article.description,
+            url: article.link,
+            datePublished: article.pubDate,
+            author: {
               "@type": "Person",
-              "name": "Dr. Janet Duffy",
-              "jobTitle": "Founder & CEO",
-              "worksFor": {
+              name: "Dr. Janet Duffy",
+              jobTitle: "Founder & CEO",
+              worksFor: {
                 "@type": "Organization",
-                "name": "Speedy Cash Home Offers"
-              }
+                name: "Speedy Cash Home Offers",
+              },
             },
-            "publisher": {
+            publisher: {
               "@type": "Organization",
-              "name": "Speedy Cash Home Offers",
-              "logo": {
+              name: "Speedy Cash Home Offers",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://www.speedycashhomeoffers.com/images/logo.png"
-              }
+                url: "https://www.speedycashhomeoffers.com/images/logo.png",
+              },
             },
-            "mainEntityOfPage": {
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": article.link
+              "@id": article.link,
             },
-            ...(article.categories && article.categories.length > 0 && {
-              "keywords": article.categories.join(", ")
-            })
-          })
+            ...(article.categories &&
+              article.categories.length > 0 && {
+                keywords: article.categories.join(", "),
+              }),
+          }),
         }}
       />
-      
+
       <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
         <div className="p-6 flex flex-col flex-grow">
           {/* Category Badge */}
@@ -96,10 +99,10 @@ export default function ArticleCard({ article }: ArticleCardProps) {
               </span>
             )}
           </div>
-          
+
           {/* Title with SEO-optimized heading */}
           <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2 flex-grow">
-            <a 
+            <a
               href={article.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -109,30 +112,50 @@ export default function ArticleCard({ article }: ArticleCardProps) {
               {article.title}
             </a>
           </h3>
-          
+
           {/* Description/Excerpt */}
-          <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
-            {article.description}
-          </p>
-          
+          <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">{article.description}</p>
+
           {/* Meta Information */}
           <div className="flex items-center justify-between text-sm text-gray-500 mb-4 flex-wrap gap-2">
             <div className="flex items-center gap-3">
               <time dateTime={article.pubDate} className="flex items-center">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
                 </svg>
                 {formattedDate}
               </time>
               <span className="flex items-center">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
                 {readingTime} min read
               </span>
             </div>
           </div>
-          
+
           {/* Actions */}
           <div className="flex items-center justify-between pt-4 border-t border-gray-100">
             <a
@@ -143,11 +166,22 @@ export default function ArticleCard({ article }: ArticleCardProps) {
               aria-label={`Read full article: ${article.title}`}
             >
               Read Full Article
-              <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <svg
+                className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
               </svg>
             </a>
-            
+
             {/* Social Sharing Buttons */}
             <div className="flex items-center gap-2">
               <a
@@ -158,17 +192,21 @@ export default function ArticleCard({ article }: ArticleCardProps) {
                 aria-label="Share on Facebook"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'share', {
-                      'method': 'Facebook',
-                      'content_type': 'article',
-                      'item_id': article.link
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag("event", "share", {
+                      method: "Facebook",
+                      content_type: "article",
+                      item_id: article.link,
                     });
                   }
                 }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </a>
               <a
@@ -179,11 +217,11 @@ export default function ArticleCard({ article }: ArticleCardProps) {
                 aria-label="Share on Twitter"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'share', {
-                      'method': 'Twitter',
-                      'content_type': 'article',
-                      'item_id': article.link
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag("event", "share", {
+                      method: "Twitter",
+                      content_type: "article",
+                      item_id: article.link,
                     });
                   }
                 }}
@@ -198,29 +236,48 @@ export default function ArticleCard({ article }: ArticleCardProps) {
                 aria-label="Share via Email"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'share', {
-                      'method': 'Email',
-                      'content_type': 'article',
-                      'item_id': article.link
+                  if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag("event", "share", {
+                      method: "Email",
+                      content_type: "article",
+                      item_id: article.link,
                     });
                   }
                 }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               </a>
             </div>
           </div>
-          
+
           {/* Author Attribution */}
           <div className="mt-4 pt-4 border-t border-gray-100">
             <div className="flex items-center text-xs text-gray-500">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
               </svg>
-              <span>By <strong className="text-gray-700">Dr. Janet Duffy</strong> - Speedy Cash Home Offers</span>
+              <span>
+                By <strong className="text-gray-700">Dr. Janet Duffy</strong> - Speedy Cash Home
+                Offers
+              </span>
             </div>
           </div>
         </div>

@@ -1,30 +1,68 @@
-import type { Route } from "./+types/sell-my-house-fast-southern-california";
 import { useLoaderData } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RelatedPages from "~/components/RelatedPages";
-import RealScoutListings from "~/components/RealScoutListings";
 import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
+import RealScoutListings from "~/components/RealScoutListings";
+import RelatedPages from "~/components/RelatedPages";
+import type { Route } from "./+types/sell-my-house-fast-southern-california";
 
 export const meta: Route.MetaFunction = () => {
   return [
     { title: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { name: "description", content: "Sell house fast Southern California! Dr. Janet Duffy helps CA sellers relocate to Vegas. Riverside/San Bernardino bridge market. Cash offers, no fees!" },
-    { name: "keywords", content: "sell house fast Southern California, California to Las Vegas relocation, Riverside San Bernardino cash buyers, Dr. Janet Duffy California, bridge market California, relocate to Vegas, cash offer Southern California, we buy houses Southern California" },
+    {
+      name: "description",
+      content:
+        "Sell house fast Southern California! Dr. Janet Duffy helps CA sellers relocate to Vegas. Riverside/San Bernardino bridge market. Cash offers, no fees!",
+    },
+    {
+      name: "keywords",
+      content:
+        "sell house fast Southern California, California to Las Vegas relocation, Riverside San Bernardino cash buyers, Dr. Janet Duffy California, bridge market California, relocate to Vegas, cash offer Southern California, we buy houses Southern California",
+    },
     { name: "author", content: "Dr. Janet Duffy" },
     { name: "robots", content: "index, follow" },
-    { tagName: "link", rel: "canonical", href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+    },
     // Open Graph / Facebook
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
-    { property: "og:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { property: "og:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
-    { property: "og:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-og.jpg" }, // Placeholder image
+    {
+      property: "og:url",
+      content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+    },
+    {
+      property: "og:title",
+      content: "Sell My House Fast Southern California | Speedy Cash Home Offers",
+    },
+    {
+      property: "og:description",
+      content:
+        "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!",
+    },
+    {
+      property: "og:image",
+      content: "https://www.speedycashhomeoffers.com/images/southern-california-og.jpg",
+    }, // Placeholder image
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:url", content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california" },
-    { name: "twitter:title", content: "Sell My House Fast Southern California | Speedy Cash Home Offers" },
-    { name: "twitter:description", content: "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!" },
-    { name: "twitter:image", content: "https://www.speedycashhomeoffers.com/images/southern-california-twitter.jpg" },
+    {
+      name: "twitter:url",
+      content: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+    },
+    {
+      name: "twitter:title",
+      content: "Sell My House Fast Southern California | Speedy Cash Home Offers",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas. Get cash fast for your California home!",
+    },
+    {
+      name: "twitter:image",
+      content: "https://www.speedycashhomeoffers.com/images/southern-california-twitter.jpg",
+    },
     { property: "og:site_name", content: "Speedy Cash Home Offers" },
   ];
 };
@@ -54,65 +92,66 @@ export default function SellMyHouseFastSouthernCalifornia() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": businessName,
-    "description": "Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. Find out how much money you can get today!",
-    "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
-    "telephone": phoneNumber,
-    "email": email,
-    "address": {
+    name: businessName,
+    description:
+      "Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. Find out how much money you can get today!",
+    url: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+    telephone: phoneNumber,
+    email: email,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": address.streetAddress,
-      "addressLocality": address.addressLocality,
-      "addressRegion": address.addressRegion,
-      "postalCode": address.postalCode,
-      "addressCountry": address.addressCountry,
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
     },
-    "areaServed": [
+    areaServed: [
       {
         "@type": "State",
-        "name": "California"
+        name: "California",
       },
       {
         "@type": "City",
-        "name": "Los Angeles",
-        "containedInPlace": {
+        name: "Los Angeles",
+        containedInPlace: {
           "@type": "State",
-          "name": "California"
-        }
+          name: "California",
+        },
       },
       {
         "@type": "City",
-        "name": "Riverside",
-        "containedInPlace": {
+        name: "Riverside",
+        containedInPlace: {
           "@type": "State",
-          "name": "California"
-        }
+          name: "California",
+        },
       },
       {
         "@type": "City",
-        "name": "San Bernardino",
-        "containedInPlace": {
+        name: "San Bernardino",
+        containedInPlace: {
           "@type": "State",
-          "name": "California"
-        }
+          name: "California",
+        },
       },
       {
         "@type": "City",
-        "name": "Orange County",
-        "containedInPlace": {
+        name: "Orange County",
+        containedInPlace: {
           "@type": "State",
-          "name": "California"
-        }
-      }
+          name: "California",
+        },
+      },
     ],
-    "serviceType": "Cash Home Buying",
-    "priceRange": "$$",
-    "aggregateRating": {
+    serviceType: "Cash Home Buying",
+    priceRange: "$$",
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": rating.ratingValue,
-      "reviewCount": rating.reviewCount,
+      ratingValue: rating.ratingValue,
+      reviewCount: rating.reviewCount,
     },
-    "sameAs": [
+    sameAs: [
       "https://www.facebook.com/speedycashhomeoffers", // Placeholder social links
       "https://twitter.com/speedycashhome",
       "https://www.linkedin.com/company/speedycashhomeoffers",
@@ -133,25 +172,26 @@ export default function SellMyHouseFastSouthernCalifornia() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Sell My House Fast Southern California",
-            "description": "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!",
-            "url": "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
-            "datePublished": "2024-01-15",
-            "dateModified": "2025-01-17",
-            "inLanguage": "en-US",
-            "isPartOf": {
+            name: "Sell My House Fast Southern California",
+            description:
+              "Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!",
+            url: "https://www.speedycashhomeoffers.com/sell-my-house-fast-southern-california",
+            datePublished: "2024-01-15",
+            dateModified: "2025-01-17",
+            inLanguage: "en-US",
+            isPartOf: {
               "@type": "WebSite",
-              "@id": "https://www.speedycashhomeoffers.com/#website"
+              "@id": "https://www.speedycashhomeoffers.com/#website",
             },
-            "about": {
+            about: {
               "@type": "LocalBusiness",
-              "name": businessName
+              name: businessName,
             },
-            "mainEntity": {
+            mainEntity: {
               "@type": "LocalBusiness",
-              "name": businessName
-            }
-          })
+              name: businessName,
+            },
+          }),
         }}
       />
       {/* Hero Section */}
@@ -162,18 +202,19 @@ export default function SellMyHouseFastSouthernCalifornia() {
               Sell My House Fast Southern California
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers. 
-              We specialize in Riverside/San Bernardino areas as a bridge market to help you move to Vegas!
+              Dr. Janet Duffy helps California sellers relocate to Las Vegas with quick cash offers.
+              We specialize in Riverside/San Bernardino areas as a bridge market to help you move to
+              Vegas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="/contact"
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
               >
                 Get My Free Quote
               </a>
-              <a 
-                href={`tel:${phoneNumber}`} 
+              <a
+                href={`tel:${phoneNumber}`}
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
                 aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
               >
@@ -191,7 +232,9 @@ export default function SellMyHouseFastSouthernCalifornia() {
             <div>
               <div className="text-4xl font-bold text-orange-600 mb-2">4.9</div>
               <p className="text-gray-600">Star Rating</p>
-              <p className="text-sm text-gray-500">From 500+ happy reviews on BBB, Google, and Yelp</p>
+              <p className="text-sm text-gray-500">
+                From 500+ happy reviews on BBB, Google, and Yelp
+              </p>
             </div>
             <div>
               <div className="text-4xl font-bold text-orange-600 mb-2">25+</div>
@@ -201,7 +244,9 @@ export default function SellMyHouseFastSouthernCalifornia() {
             <div>
               <div className="text-4xl font-bold text-orange-600 mb-2">$20K</div>
               <p className="text-gray-600">Cash Advance</p>
-              <p className="text-sm text-gray-500">Receive your cash upfront and close confidently</p>
+              <p className="text-sm text-gray-500">
+                Receive your cash upfront and close confidently
+              </p>
             </div>
           </div>
         </div>
@@ -215,45 +260,86 @@ export default function SellMyHouseFastSouthernCalifornia() {
               California to Las Vegas Bridge Market
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              We specialize in helping California sellers relocate to Las Vegas by providing quick cash offers for their California homes. 
-              Our bridge market strategy focuses on Riverside/San Bernardino areas where we can help you liquidate your California property 
-              and transition smoothly to Las Vegas living.
+              We specialize in helping California sellers relocate to Las Vegas by providing quick
+              cash offers for their California homes. Our bridge market strategy focuses on
+              Riverside/San Bernardino areas where we can help you liquidate your California
+              property and transition smoothly to Las Vegas living.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-orange-600">Why California Sellers Choose Us</h3>
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">
+                Why California Sellers Choose Us
+              </h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• <strong>Quick Cash:</strong> Get cash fast for your California home to fund your Vegas move</li>
-                <li>• <strong>No Repairs:</strong> We buy your house as-is, no matter the condition</li>
-                <li>• <strong>Relocation Support:</strong> We understand the challenges of moving from California to Vegas</li>
-                <li>• <strong>Bridge Market:</strong> We help you transition from California to Las Vegas seamlessly</li>
-                <li>• <strong>Double-End Deals:</strong> We can help you buy in Vegas while selling in California</li>
-                <li>• <strong>Local Expertise:</strong> Dr. Janet Duffy knows both California and Vegas markets</li>
+                <li>
+                  • <strong>Quick Cash:</strong> Get cash fast for your California home to fund your
+                  Vegas move
+                </li>
+                <li>
+                  • <strong>No Repairs:</strong> We buy your house as-is, no matter the condition
+                </li>
+                <li>
+                  • <strong>Relocation Support:</strong> We understand the challenges of moving from
+                  California to Vegas
+                </li>
+                <li>
+                  • <strong>Bridge Market:</strong> We help you transition from California to Las
+                  Vegas seamlessly
+                </li>
+                <li>
+                  • <strong>Double-End Deals:</strong> We can help you buy in Vegas while selling in
+                  California
+                </li>
+                <li>
+                  • <strong>Local Expertise:</strong> Dr. Janet Duffy knows both California and
+                  Vegas markets
+                </li>
               </ul>
             </div>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-orange-600">Riverside/San Bernardino Focus</h3>
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">
+                Riverside/San Bernardino Focus
+              </h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• <strong>Riverside County:</strong> Prime area for California sellers relocating to Vegas</li>
-                <li>• <strong>San Bernardino County:</strong> Strong bridge market for Vegas relocation</li>
-                <li>• <strong>Quick Liquidation:</strong> Fast cash offers for California properties</li>
-                <li>• <strong>Relocation Assistance:</strong> Help with the transition to Las Vegas</li>
-                <li>• <strong>Market Knowledge:</strong> Understanding of both California and Vegas markets</li>
-                <li>• <strong>Seamless Process:</strong> Streamlined selling process for California homeowners</li>
+                <li>
+                  • <strong>Riverside County:</strong> Prime area for California sellers relocating
+                  to Vegas
+                </li>
+                <li>
+                  • <strong>San Bernardino County:</strong> Strong bridge market for Vegas
+                  relocation
+                </li>
+                <li>
+                  • <strong>Quick Liquidation:</strong> Fast cash offers for California properties
+                </li>
+                <li>
+                  • <strong>Relocation Assistance:</strong> Help with the transition to Las Vegas
+                </li>
+                <li>
+                  • <strong>Market Knowledge:</strong> Understanding of both California and Vegas
+                  markets
+                </li>
+                <li>
+                  • <strong>Seamless Process:</strong> Streamlined selling process for California
+                  homeowners
+                </li>
               </ul>
             </div>
           </div>
-          
+
           <div className="mt-8 text-center">
             <div className="bg-orange-100 rounded-lg p-6 max-w-4xl mx-auto">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Ready to Relocate to Las Vegas?</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                Ready to Relocate to Las Vegas?
+              </h3>
               <p className="text-gray-700">
-                If you're a California homeowner looking to relocate to Las Vegas, we can help you sell your California home fast 
-                and get the cash you need for your Vegas move. Our bridge market strategy is designed specifically for California 
-                sellers who want to transition to Las Vegas living. Contact us today to get started!
+                If you're a California homeowner looking to relocate to Las Vegas, we can help you
+                sell your California home fast and get the cash you need for your Vegas move. Our
+                bridge market strategy is designed specifically for California sellers who want to
+                transition to Las Vegas living. Contact us today to get started!
               </p>
             </div>
           </div>
@@ -268,61 +354,139 @@ export default function SellMyHouseFastSouthernCalifornia() {
               We Buy Houses As-Is in Southern California
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              We buy houses in Southern California in Any Condition As-Is and fast for cash! Some of the ways we help you are:
+              We buy houses in Southern California in Any Condition As-Is and fast for cash! Some of
+              the ways we help you are:
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Local Market Expertise</h3>
-              <p className="text-gray-600">We leverage our local Southern California real estate expertise that understands the market.</p>
+              <p className="text-gray-600">
+                We leverage our local Southern California real estate expertise that understands the
+                market.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Instant Cash Offers</h3>
-              <p className="text-gray-600">Receive an almost instant cash home buyer offer that's better than any other company.</p>
+              <p className="text-gray-600">
+                Receive an almost instant cash home buyer offer that's better than any other
+                company.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Showings</h3>
-              <p className="text-gray-600">Forget having strange people moving through your home at inconvenient times.</p>
+              <p className="text-gray-600">
+                Forget having strange people moving through your home at inconvenient times.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Repairs Needed</h3>
-              <p className="text-gray-600">Forget about expensive repairs, unrealistic buyers, or bothersome inspections.</p>
+              <p className="text-gray-600">
+                Forget about expensive repairs, unrealistic buyers, or bothersome inspections.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">No Contractor Issues</h3>
-              <p className="text-gray-600">Skip fixing up any repairs or dealing with predatory contractors.</p>
+              <p className="text-gray-600">
+                Skip fixing up any repairs or dealing with predatory contractors.
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg
+                  className="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Choose Your Timeline</h3>
@@ -340,33 +504,76 @@ export default function SellMyHouseFastSouthernCalifornia() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-orange-600">Southern California Market Overview</h3>
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">
+                Southern California Market Overview
+              </h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• Southern California includes Los Angeles, Orange County, Riverside, San Bernardino, and Ventura counties.</li>
-                <li>• The current median house price in Los Angeles County is approximately $900,000.</li>
+                <li>
+                  • Southern California includes Los Angeles, Orange County, Riverside, San
+                  Bernardino, and Ventura counties.
+                </li>
+                <li>
+                  • The current median house price in Los Angeles County is approximately $900,000.
+                </li>
                 <li>• Orange County median home price is around $1.1 million.</li>
                 <li>• Riverside County median home price is approximately $650,000.</li>
                 <li>• San Bernardino County median home price is around $550,000.</li>
                 <li>• The region has a population of over 23 million people.</li>
-                <li>• Southern California has diverse economies including entertainment, technology, aerospace, and manufacturing.</li>
+                <li>
+                  • Southern California has diverse economies including entertainment, technology,
+                  aerospace, and manufacturing.
+                </li>
                 <li>• The region offers world-class beaches, mountains, and desert landscapes.</li>
-                <li>• Major cities include Los Angeles, Anaheim, Riverside, San Bernardino, and Santa Ana.</li>
+                <li>
+                  • Major cities include Los Angeles, Anaheim, Riverside, San Bernardino, and Santa
+                  Ana.
+                </li>
                 <li>• The area has excellent universities including UCLA, USC, and UC Irvine.</li>
               </ul>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-orange-600">Why Southern California is Great for Real Estate</h3>
+              <h3 className="text-xl font-semibold mb-4 text-orange-600">
+                Why Southern California is Great for Real Estate
+              </h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• <strong>Diverse Economy:</strong> Entertainment, tech, aerospace, and manufacturing industries.</li>
-                <li>• <strong>Year-Round Weather:</strong> Mediterranean climate with mild winters and warm summers.</li>
-                <li>• <strong>Beach Access:</strong> Miles of coastline from Malibu to San Diego.</li>
-                <li>• <strong>Cultural Attractions:</strong> Hollywood, Disneyland, museums, and entertainment venues.</li>
-                <li>• <strong>Outdoor Recreation:</strong> Mountains, deserts, and ocean activities.</li>
-                <li>• <strong>Major Airports:</strong> LAX, Burbank, John Wayne, and Ontario International.</li>
-                <li>• <strong>Educational Opportunities:</strong> Top universities and research institutions.</li>
-                <li>• <strong>Job Market:</strong> Strong employment opportunities across multiple industries.</li>
-                <li>• <strong>Entertainment Capital:</strong> Hollywood and major studios provide unique opportunities.</li>
-                <li>• <strong>Investment Potential:</strong> Strong rental market and appreciation potential.</li>
+                <li>
+                  • <strong>Diverse Economy:</strong> Entertainment, tech, aerospace, and
+                  manufacturing industries.
+                </li>
+                <li>
+                  • <strong>Year-Round Weather:</strong> Mediterranean climate with mild winters and
+                  warm summers.
+                </li>
+                <li>
+                  • <strong>Beach Access:</strong> Miles of coastline from Malibu to San Diego.
+                </li>
+                <li>
+                  • <strong>Cultural Attractions:</strong> Hollywood, Disneyland, museums, and
+                  entertainment venues.
+                </li>
+                <li>
+                  • <strong>Outdoor Recreation:</strong> Mountains, deserts, and ocean activities.
+                </li>
+                <li>
+                  • <strong>Major Airports:</strong> LAX, Burbank, John Wayne, and Ontario
+                  International.
+                </li>
+                <li>
+                  • <strong>Educational Opportunities:</strong> Top universities and research
+                  institutions.
+                </li>
+                <li>
+                  • <strong>Job Market:</strong> Strong employment opportunities across multiple
+                  industries.
+                </li>
+                <li>
+                  • <strong>Entertainment Capital:</strong> Hollywood and major studios provide
+                  unique opportunities.
+                </li>
+                <li>
+                  • <strong>Investment Potential:</strong> Strong rental market and appreciation
+                  potential.
+                </li>
               </ul>
             </div>
           </div>
@@ -460,7 +667,8 @@ export default function SellMyHouseFastSouthernCalifornia() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "One of the best companies to get the job done. Dr. Duffy made selling our inherited home in Los Angeles so easy and stress-free."
+                "One of the best companies to get the job done. Dr. Duffy made selling our inherited
+                home in Los Angeles so easy and stress-free."
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
@@ -480,7 +688,8 @@ export default function SellMyHouseFastSouthernCalifornia() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "I found the company is true to their words regarding helping you with your property. The process was smooth and transparent."
+                "I found the company is true to their words regarding helping you with your
+                property. The process was smooth and transparent."
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-6">
@@ -500,7 +709,8 @@ export default function SellMyHouseFastSouthernCalifornia() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly, and helpful. I highly recommend them."
+                "Dr. Duffy's team was absolutely amazing throughout, always professional, friendly,
+                and helpful. I highly recommend them."
               </p>
             </div>
           </div>
@@ -514,18 +724,18 @@ export default function SellMyHouseFastSouthernCalifornia() {
             Ready to Sell Your Southern California Home Fast?
           </h2>
           <p className="text-xl mb-8">
-            Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash fast. 
-            Find out how much money you can get today!
+            Dr. Janet Duffy has purchased thousands of homes in Southern California and we pay cash
+            fast. Find out how much money you can get today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="/contact"
               className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
             >
               Get My Free Quote
             </a>
-            <a 
-              href={`tel:${phoneNumber}`} 
+            <a
+              href={`tel:${phoneNumber}`}
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors text-center"
               aria-label="Call Speedy Cash Home Offers at (702) 500-1981"
             >

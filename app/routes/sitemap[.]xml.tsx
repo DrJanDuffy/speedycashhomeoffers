@@ -1,6 +1,6 @@
 export const loader = async ({ request }: { request: Request }) => {
   const baseUrl = "https://www.speedycashhomeoffers.com";
-  const currentDate = new Date().toISOString().split('T')[0];
+  const currentDate = new Date().toISOString().split("T")[0];
   // Use recent date for recently updated pages, older dates for stable pages
   const recentUpdate = currentDate; // Pages updated in this audit
   const stableDate = "2025-01-15"; // For pages that haven't changed recently
