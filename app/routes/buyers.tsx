@@ -3,6 +3,7 @@ import Breadcrumbs from "~/components/Breadcrumbs";
 import RelatedPages from "~/components/RelatedPages";
 import RealScoutSearch from "~/components/RealScoutSearch";
 import RealScoutListings from "~/components/RealScoutListings";
+import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -93,7 +94,9 @@ export default function Buyers() {
             Search Available Properties
           </h2>
           <div className="max-w-4xl mx-auto">
-            <RealScoutSearch />
+            <RealScoutErrorBoundary>
+              <RealScoutSearch />
+            </RealScoutErrorBoundary>
           </div>
         </div>
       </section>
@@ -155,7 +158,9 @@ export default function Buyers() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Available Homes for Sale
           </h2>
-          <RealScoutListings />
+          <RealScoutErrorBoundary>
+            <RealScoutListings />
+          </RealScoutErrorBoundary>
         </div>
       </section>
 

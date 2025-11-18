@@ -43,7 +43,7 @@ export default function MarketInsightsSection({
         }
       } catch (err) {
         // Only log in development to avoid console errors in production
-        if (process.env.NODE_ENV === 'development') {
+        if (import.meta.env.DEV) {
           console.error('Failed to load RSS articles:', err);
         }
         setError('Failed to load market insights');

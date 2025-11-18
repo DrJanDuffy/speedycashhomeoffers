@@ -5,6 +5,7 @@ import MarketInsightsSection from "~/components/MarketInsightsSection";
 import TrustBadges from "~/components/TrustBadges";
 import RelatedPages from "~/components/RelatedPages";
 import RealScoutListings from "~/components/RealScoutListings";
+import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
 import { CloudinarySample } from "~/components/CloudinaryImage";
 
 export const meta: Route.MetaFunction = () => {
@@ -681,7 +682,9 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Featured Properties
           </h2>
-          <RealScoutListings />
+          <RealScoutErrorBoundary>
+            <RealScoutListings />
+          </RealScoutErrorBoundary>
         </div>
       </section>
 

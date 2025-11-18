@@ -2,6 +2,7 @@ import type { Route } from "./+types/process";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import RelatedPages from "~/components/RelatedPages";
 import RealScoutSimpleSearch from "~/components/RealScoutSimpleSearch";
+import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -739,7 +740,11 @@ export default function Process() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Search Properties
           </h2>
-          <RealScoutSimpleSearch />
+          <div className="min-h-[200px]">
+            <RealScoutErrorBoundary>
+              <RealScoutSimpleSearch />
+            </RealScoutErrorBoundary>
+          </div>
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import Breadcrumbs from "~/components/Breadcrumbs";
 import TrustBadges from "~/components/TrustBadges";
 import RelatedPages from "~/components/RelatedPages";
 import RealScoutHomeValue from "~/components/RealScoutHomeValue";
+import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
 import { Label } from "~/components/ui/label";
 import { submitContactForm } from "~/lib/actions";
 import { redirect } from "react-router";
@@ -182,7 +183,11 @@ export default function Contact() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Discover What Your Home is Worth
           </h2>
-          <RealScoutHomeValue />
+          <div className="min-h-[200px]">
+            <RealScoutErrorBoundary>
+              <RealScoutHomeValue />
+            </RealScoutErrorBoundary>
+          </div>
         </div>
       </section>
 

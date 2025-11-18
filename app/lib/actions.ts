@@ -7,7 +7,7 @@ export async function submitContactForm(formData: FormData) {
     
     if (!fubResult.success) {
       // Only log in development to avoid console errors in production
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.error('Follow Up Boss submission failed:', fubResult.error);
       }
       // Continue anyway - don't fail the form submission
@@ -23,7 +23,7 @@ export async function submitContactForm(formData: FormData) {
     };
   } catch (error) {
     // Only log in development to avoid console errors in production
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Form submission error:', error);
     }
     return {

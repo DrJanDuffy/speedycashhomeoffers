@@ -40,7 +40,7 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
       // Handle 401 Unauthorized specifically
       if (response.status === 401) {
         // Only log in development to avoid console errors in production
-        if (process.env.NODE_ENV === 'development') {
+        if (import.meta.env.DEV) {
           console.error('RSS Feed: 401 Unauthorized - Feed may require authentication');
         }
         // Return empty articles array instead of throwing
@@ -170,7 +170,7 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
     return { articles };
   } catch (error) {
     // Only log in development to avoid console errors in production
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('RSS Feed Error:', error);
     }
     return {

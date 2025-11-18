@@ -10,10 +10,60 @@ export default function RealScoutHomeValue({
   className = "" 
 }: RealScoutHomeValueProps) {
   const [scriptError, setScriptError] = useState(false);
+  const [componentError, setComponentError] = useState(false);
 
   useEffect(() => {
+    // Set up global error handler to catch RealScout web component errors
+    const handleError = (event: ErrorEvent) => {
+      // Check if error is related to RealScout
+      const errorMessage = event.message || '';
+      const errorSource = event.filename || '';
+      
+      if (errorMessage.toLowerCase().includes('realscout') || 
+          errorSource.includes('realscout') ||
+          errorMessage.includes('JSON') && errorMessage.includes('parse')) {
+        // Prevent error from bubbling up to main error boundary
+        event.preventDefault();
+        setComponentError(true);
+        setScriptError(true);
+        return false;
+      }
+    };
+
+    // Set up unhandled promise rejection handler
+    const handleRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason?.toString() || '';
+      if (reason.toLowerCase().includes('realscout') || 
+          (reason.includes('JSON') && reason.includes('parse'))) {
+        event.preventDefault();
+        setComponentError(true);
+        setScriptError(true);
+      }
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleRejection);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleRejection);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Skip if we already have an error
+    if (componentError || scriptError) {
+      return;
+    }
     // Check if script is already loaded globally (from root.tsx)
     const existingScript = document.querySelector('script[src*="realscout-web-components"]');
+    
+    let intervalId: ReturnType<typeof setInterval> | null = null;
+    let timeoutId1: ReturnType<typeof setTimeout> | null = null;
+    let timeoutId2: ReturnType<typeof setTimeout> | null = null;
+    let loadHandler1: (() => void) | null = null;
+    let loadHandler2: (() => void) | null = null;
     
     // If script already exists, wait a bit for it to initialize, then check if component is ready
     if (existingScript) {
@@ -28,20 +78,20 @@ export default function RealScoutHomeValue({
           // If not defined yet, wait a bit longer (up to 5 seconds)
           let attempts = 0;
           const maxAttempts = 50; // 5 seconds max wait
-          const interval = setInterval(() => {
+          intervalId = setInterval(() => {
             attempts++;
             if (customElements.get('realscout-home-value')) {
-              clearInterval(interval);
+              if (intervalId) clearInterval(intervalId);
               setScriptError(false);
             } else if (attempts >= maxAttempts) {
-              clearInterval(interval);
+              if (intervalId) clearInterval(intervalId);
               // Component didn't load, but don't show error - let it render anyway
               setScriptError(false);
             }
           }, 100);
         } catch (error) {
           // Non-critical error, continue rendering
-          if (process.env.NODE_ENV === 'development') {
+          if (import.meta.env.DEV) {
             console.warn('RealScout component check error:', error);
           }
           setScriptError(false);
@@ -50,63 +100,77 @@ export default function RealScoutHomeValue({
       
       // Wait for page to be fully loaded before checking
       if (document.readyState === 'complete') {
-        setTimeout(checkComponent, 500);
+        timeoutId1 = setTimeout(checkComponent, 500);
       } else {
-        window.addEventListener('load', () => {
-          setTimeout(checkComponent, 500);
-        });
+        loadHandler1 = () => {
+          timeoutId1 = setTimeout(checkComponent, 500);
+        };
+        window.addEventListener('load', loadHandler1);
       }
-      return;
-    }
-    
-    // If script doesn't exist, load it (fallback for pages without global script)
-    const loadRealScout = () => {
-      try {
-        const script = document.createElement('script');
-        script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-        script.type = 'module';
-        script.async = true;
-        script.defer = true;
-        
-        script.onerror = () => {
-          if (process.env.NODE_ENV === 'development') {
-            console.warn('RealScout script failed to load - widget may not display');
+    } else {
+      // If script doesn't exist, load it (fallback for pages without global script)
+      const loadRealScout = () => {
+        try {
+          const script = document.createElement('script');
+          script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+          script.type = 'module';
+          script.async = true;
+          script.defer = true;
+          
+          script.onerror = () => {
+            if (import.meta.env.DEV) {
+              console.warn('RealScout script failed to load - widget may not display');
+            }
+            setScriptError(true);
+          };
+
+          script.onload = () => {
+            setScriptError(false);
+          };
+          
+          document.head.appendChild(script);
+        } catch (error) {
+          if (import.meta.env.DEV) {
+            console.warn('RealScout script loading error:', error);
           }
           setScriptError(true);
-        };
-
-        script.onload = () => {
-          setScriptError(false);
-        };
-        
-        document.head.appendChild(script);
-      } catch (error) {
-        if (process.env.NODE_ENV === 'development') {
-          console.warn('RealScout script loading error:', error);
         }
-        setScriptError(true);
+      };
+      
+      // Defer loading until after page load
+      try {
+        if (document.readyState === 'complete') {
+          timeoutId2 = setTimeout(loadRealScout, 1000);
+        } else {
+          loadHandler2 = () => {
+            timeoutId2 = setTimeout(loadRealScout, 1000);
+          };
+          window.addEventListener('load', loadHandler2);
+        }
+      } catch (error) {
+        if (import.meta.env.DEV) {
+          console.warn('RealScout initialization error:', error);
+        }
+        setScriptError(false); // Don't block page render on error
+      }
+    }
+
+    // Cleanup function
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+      if (timeoutId1) clearTimeout(timeoutId1);
+      if (timeoutId2) clearTimeout(timeoutId2);
+      if (loadHandler1) {
+        window.removeEventListener('load', loadHandler1);
+      }
+      if (loadHandler2) {
+        window.removeEventListener('load', loadHandler2);
       }
     };
-    
-    // Defer loading until after page load
-    try {
-      if (document.readyState === 'complete') {
-        setTimeout(loadRealScout, 1000);
-      } else {
-        window.addEventListener('load', () => {
-          setTimeout(loadRealScout, 1000);
-        });
-      }
-    } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('RealScout initialization error:', error);
-      }
-      setScriptError(false); // Don't block page render on error
-    }
-  }, []);
+  }, [componentError, scriptError]);
 
-  // If script failed to load, show fallback instead of breaking the page
-  if (scriptError) {
+  // If script failed to load or component errored, show fallback instead of breaking the page
+  if (scriptError || componentError) {
     return (
       <div className={className}>
         <div className="bg-white rounded-lg shadow-md p-8 text-center">

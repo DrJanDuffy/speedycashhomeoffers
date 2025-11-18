@@ -80,7 +80,7 @@ export async function createFollowUpBossContact(contact: FollowUpBossContact): P
       // Handle 401 Unauthorized specifically
       if (response.status === 401) {
         // Only log in development to avoid console errors in production
-        if (process.env.NODE_ENV === 'development') {
+        if (import.meta.env.DEV) {
           console.error('Follow Up Boss API: 401 Unauthorized - API key may be invalid or expired');
         }
         return {
@@ -112,7 +112,7 @@ export async function createFollowUpBossContact(contact: FollowUpBossContact): P
     };
   } catch (error) {
     // Only log in development to avoid console errors in production
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Follow Up Boss API Error:', error);
     }
     return {
@@ -162,7 +162,7 @@ export async function testFollowUpBossConnection(): Promise<boolean> {
     return response.ok;
   } catch (error) {
     // Only log in development to avoid console errors in production
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Follow Up Boss connection test failed:', error);
     }
     return false;
