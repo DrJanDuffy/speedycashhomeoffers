@@ -44,7 +44,152 @@ export const links: Route.LinksFunction = () => [
   } as any,
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const loader = async ({ request }: { request: Request }) => {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+  
+  // Get pathname early for all checks
+  const pathname = url.pathname.toLowerCase();
+  
+  // Define valid routes once for reuse
+  const validRoutes = [
+    '/',
+    '/test',
+    '/process',
+    '/testimonials',
+    '/meet-the-team',
+    '/faqs',
+    '/blog',
+    '/market-insights',
+    '/sell-my-house-fast-las-vegas',
+    '/sell-my-house-fast-southern-california',
+    '/sell-my-house-fast-orange-county',
+    '/sell-my-house-fast-san-diego',
+    '/sell-my-house-fast-riverside',
+    '/sell-my-house-fast-inland-empire',
+    '/sellers',
+    '/buyers',
+    '/investors',
+    '/neighborhoods',
+    '/about',
+    '/contact',
+    '/thank-you',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/company-history',
+    '/fast-home-cash-offers-usa',
+    '/fast-home-cash-offers-reviews',
+    '/fast-home-cash-offers-near-me',
+    '/fast-home-cash-offers-las-vegas',
+    '/opendoor-cash-offer',
+    '/fast-home-offer',
+    '/fast-home-cash-offers-nevada',
+    '/zillow-cash-offer',
+    '/robots.txt',
+    '/sitemap.xml',
+  ];
+  
+  // Normalize pathname for comparison (remove trailing slash)
+  const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
+  
+  // Check if path is a valid route first
+  const isValidRoute = validRoutes.some(route => {
+    if (route === '/') {
+      return normalizedPath === '/' || normalizedPath === '';
+    }
+    return normalizedPath === route || normalizedPath.startsWith(route + '/');
+  });
+  
+  // Redirect HTTP to HTTPS (only for valid routes)
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Redirect non-www to www (only for valid routes)
+  if (url.hostname === 'speedycashhomeoffers.com') {
+    url.hostname = 'www.speedycashhomeoffers.com';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+      },
+    });
+  }
+  
+  // Only check for old WordPress paths if it's NOT a valid route
+  // Valid routes should always pass through to React Router
+  if (!isValidRoute) {
+    const oldWordPressPaths = [
+      '/buyer-investor',
+      '/map',
+      '/home',
+      '/for-buyers',
+      '/writer',
+      '/author',
+      '/tag',
+      '/category',
+      '/__manifest',
+    ];
+    
+    // Check if pathname starts with any old WordPress path
+    // Use exact match or path prefix to avoid false positives
+    const isOldPath = oldWordPressPaths.some(path => {
+      // Exact match
+      if (pathname === path) return true;
+      // Path prefix match (e.g., /writer/anything matches /writer)
+      if (pathname.startsWith(path + '/')) return true;
+      return false;
+    });
+    
+    if (isOldPath) {
+      throw new Response(null, {
+        status: 410,
+        statusText: "Gone",
+        headers: {
+          "X-Robots-Tag": "noindex, nofollow",
+          "X-WordPress-Content": "removed",
+        },
+      });
+    }
+  }
+  
+  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
+  // BUT: Only redirect if it's a valid route - invalid routes will hit the 404 handler
+  if (pathname.endsWith('/') && pathname !== '/') {
+    // Use the already-computed isValidRoute check, but check path without trailing slash
+    const pathWithoutSlash = pathname.slice(0, -1);
+    const isRouteWithoutSlash = validRoutes.some(route => {
+      if (route === '/') {
+        return pathWithoutSlash === '/' || pathWithoutSlash === '';
+      }
+      return pathWithoutSlash === route || pathWithoutSlash.startsWith(route + '/');
+    });
+    
+    // Only redirect valid routes - let 404 handler deal with invalid paths
+    if (isRouteWithoutSlash) {
+      // Normal trailing slash redirect - strip all query params to prevent duplicates
+      const newPath = pathname.slice(0, -1);
+      const newUrl = new URL(newPath, url.origin);
+      throw new Response(null, {
+        status: 301,
+        headers: {
+          Location: newUrl.toString(),
+        },
+      });
+    }
+    // If not a valid route, let it fall through to React Router which will hit the 404 handler
+  }
+  
+  return {};
+};
+
+export default function App() {
   return (
     <html lang="en">
       <head>
@@ -431,7 +576,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
           price-min="200000" 
           price-max="400000"
         ></realscout-office-listings>
-        <main>{children}</main>
+        <main>
+          <Outlet />
+        </main>
         <Footer />
         <MobileCTA />
         <ScrollRestoration />
@@ -439,155 +586,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
-
-export const loader = async ({ request }: { request: Request }) => {
-  const url = new URL(request.url);
-  const searchParams = url.searchParams;
-  
-  // Get pathname early for all checks
-  const pathname = url.pathname.toLowerCase();
-  
-  // Define valid routes once for reuse
-  const validRoutes = [
-    '/',
-    '/test',
-    '/process',
-    '/testimonials',
-    '/meet-the-team',
-    '/faqs',
-    '/blog',
-    '/market-insights',
-    '/sell-my-house-fast-las-vegas',
-    '/sell-my-house-fast-southern-california',
-    '/sell-my-house-fast-orange-county',
-    '/sell-my-house-fast-san-diego',
-    '/sell-my-house-fast-riverside',
-    '/sell-my-house-fast-inland-empire',
-    '/sellers',
-    '/buyers',
-    '/investors',
-    '/neighborhoods',
-    '/about',
-    '/contact',
-    '/thank-you',
-    '/privacy-policy',
-    '/terms-of-service',
-    '/company-history',
-    '/fast-home-cash-offers-usa',
-    '/fast-home-cash-offers-reviews',
-    '/fast-home-cash-offers-near-me',
-    '/fast-home-cash-offers-las-vegas',
-    '/opendoor-cash-offer',
-    '/fast-home-offer',
-    '/fast-home-cash-offers-nevada',
-    '/zillow-cash-offer',
-    '/robots.txt',
-    '/sitemap.xml',
-  ];
-  
-  // Normalize pathname for comparison (remove trailing slash)
-  const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
-  
-  // Check if path is a valid route first
-  const isValidRoute = validRoutes.some(route => {
-    if (route === '/') {
-      return normalizedPath === '/' || normalizedPath === '';
-    }
-    return normalizedPath === route || normalizedPath.startsWith(route + '/');
-  });
-  
-  // Redirect HTTP to HTTPS (only for valid routes)
-  if (url.protocol === 'http:') {
-    url.protocol = 'https:';
-    throw new Response(null, {
-      status: 301,
-      headers: {
-        Location: url.toString(),
-      },
-    });
-  }
-  
-  // Redirect non-www to www (only for valid routes)
-  if (url.hostname === 'speedycashhomeoffers.com') {
-    url.hostname = 'www.speedycashhomeoffers.com';
-    throw new Response(null, {
-      status: 301,
-      headers: {
-        Location: url.toString(),
-      },
-    });
-  }
-  
-  // Only check for old WordPress paths if it's NOT a valid route
-  // Valid routes should always pass through to React Router
-  if (!isValidRoute) {
-    const oldWordPressPaths = [
-      '/buyer-investor',
-      '/map',
-      '/home',
-      '/for-buyers',
-      '/writer',
-      '/author',
-      '/tag',
-      '/category',
-      '/__manifest',
-    ];
-    
-    // Check if pathname starts with any old WordPress path
-    // Use exact match or path prefix to avoid false positives
-    const isOldPath = oldWordPressPaths.some(path => {
-      // Exact match
-      if (pathname === path) return true;
-      // Path prefix match (e.g., /writer/anything matches /writer)
-      if (pathname.startsWith(path + '/')) return true;
-      return false;
-    });
-    
-    if (isOldPath) {
-      throw new Response(null, {
-        status: 410,
-        statusText: "Gone",
-        headers: {
-          "X-Robots-Tag": "noindex, nofollow",
-          "X-WordPress-Content": "removed",
-        },
-      });
-    }
-  }
-  
-  // Handle trailing slashes - redirect to non-trailing slash for all routes except root
-  // BUT: Only redirect if it's a valid route - invalid routes will hit the 404 handler
-  if (pathname.endsWith('/') && pathname !== '/') {
-    // Use the already-computed isValidRoute check, but check path without trailing slash
-    const pathWithoutSlash = pathname.slice(0, -1);
-    const isRouteWithoutSlash = validRoutes.some(route => {
-      if (route === '/') {
-        return pathWithoutSlash === '/' || pathWithoutSlash === '';
-      }
-      return pathWithoutSlash === route || pathWithoutSlash.startsWith(route + '/');
-    });
-    
-    // Only redirect valid routes - let 404 handler deal with invalid paths
-    if (isRouteWithoutSlash) {
-      // Normal trailing slash redirect - strip all query params to prevent duplicates
-      const newPath = pathname.slice(0, -1);
-      const newUrl = new URL(newPath, url.origin);
-      throw new Response(null, {
-        status: 301,
-        headers: {
-          Location: newUrl.toString(),
-        },
-      });
-    }
-    // If not a valid route, let it fall through to React Router which will hit the 404 handler
-  }
-  
-  return {};
-};
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
