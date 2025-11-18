@@ -351,9 +351,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "C:/Users/geneb/speedycashhomeoffers-1/app",
+    "appDirectory": "/home/user/speedycashhomeoffers/app",
     "basename": "/",
-    "buildDirectory": "C:/Users/geneb/speedycashhomeoffers-1/build",
+    "buildDirectory": "/home/user/speedycashhomeoffers/build",
     "future": {
       "v8_middleware": false,
       "unstable_optimizeDeps": false,
