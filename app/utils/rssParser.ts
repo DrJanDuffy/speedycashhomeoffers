@@ -83,7 +83,6 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed> {
         textNodeName: "#text",
         parseAttributeValue: true,
         parseTagValue: true,
-        arrayMode: false,
         stopNodes: ["*.pre", "*.script"],
         processEntities: true,
         htmlEntities: true
