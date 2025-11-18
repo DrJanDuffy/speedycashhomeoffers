@@ -12,6 +12,7 @@ import stylesheet from "./app.css?url";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import MobileCTA from "./components/MobileCTA";
+import RealScoutOfficeListings from "./components/RealScoutOfficeListings";
 
 export const links: Route.LinksFunction = () => [
   // Preconnect to font domains early (DNS lookup optimization)
@@ -571,14 +572,14 @@ export default function App() {
           <Outlet />
         </main>
         {/* RealScout Office Listings - Below the fold on every page (after main content) */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="NEWEST" 
-          listing-status="For Sale" 
-          property-types=",SFR,OTHER,MOBILE" 
-          price-min="200000" 
-          price-max="400000"
-        ></realscout-office-listings>
+        <RealScoutOfficeListings
+          agentId="QWdlbnQtMjI1MDUw"
+          sortOrder="NEWEST"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,OTHER,MOBILE"
+          priceMin="200000"
+          priceMax="400000"
+        />
         <Footer />
         <MobileCTA />
         <ScrollRestoration />
