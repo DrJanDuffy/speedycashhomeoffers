@@ -1,4 +1,0 @@
-<!-- Placeholder for Dr. Janet Duffy photo -->
-<!-- This should be replaced with the actual optimized photo -->
-<!-- Recommended specs: 400x400px, WebP format, compressed -->
-<!-- File should be saved as: public/images/dr-janet-duffy.webp -->

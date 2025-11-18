@@ -1,6 +1,5 @@
 import AuthorBio from "~/components/AuthorBio";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import { CloudinarySample } from "~/components/CloudinaryImage";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
 import RelatedPages from "~/components/RelatedPages";
 import TrustBadges from "~/components/TrustBadges";
@@ -1151,14 +1150,6 @@ export default function Home() {
         title="Latest Real Estate Market Insights"
         className="bg-gray-50"
       />
-
-
-      {/* Cloudinary Integration Demo */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CloudinarySample />
-        </div>
-      </section>
 
       {/* Why Trust Us - E-E-A-T Section */}
       <section className="py-16 bg-white">
