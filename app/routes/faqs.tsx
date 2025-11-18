@@ -1,6 +1,4 @@
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutSimpleSearch from "~/components/RealScoutSimpleSearch";
 import RelatedPages from "~/components/RelatedPages";
 import type { Route } from "./+types/faqs";
 
@@ -602,10 +600,16 @@ export default function FAQs() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Search Properties
           </h2>
-          <div className="min-h-[200px]">
-            <RealScoutErrorBoundary>
-              <RealScoutSimpleSearch />
-            </RealScoutErrorBoundary>
+          <div className="text-center">
+            <p className="text-gray-600 mb-6">
+              Contact us to search for properties or get answers to your questions.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
+              Contact Us to Search Properties
+            </a>
           </div>
         </div>
       </section>

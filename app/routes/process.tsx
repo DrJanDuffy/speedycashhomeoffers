@@ -1,6 +1,4 @@
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutSimpleSearch from "~/components/RealScoutSimpleSearch";
 import RelatedPages from "~/components/RelatedPages";
 import type { Route } from "./+types/process";
 
@@ -986,22 +984,6 @@ export default function Process() {
         </div>
       </section>
 
-      {/* Property Search */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
-            Find Your Perfect Property
-          </h1>
-          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
-            Search Properties
-          </h2>
-          <div className="min-h-[200px]">
-            <RealScoutErrorBoundary>
-              <RealScoutSimpleSearch />
-            </RealScoutErrorBoundary>
-          </div>
-        </div>
-      </section>
 
       {/* Related Pages */}
       <RelatedPages currentPage="process" />

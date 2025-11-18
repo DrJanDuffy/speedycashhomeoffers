@@ -1,6 +1,4 @@
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutHomeValue from "~/components/RealScoutHomeValue";
 import RelatedPages from "~/components/RelatedPages";
 import type { Route } from "./+types/sellers";
 
@@ -146,17 +144,13 @@ export default function Sellers() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="http://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
               >
                 Get Free Valuation
               </a>
               <a
-                href="http://drjanduffy.realscout.com/onboarding"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
               >
                 Schedule a Call
@@ -166,22 +160,6 @@ export default function Sellers() {
         </div>
       </section>
 
-      {/* Home Value Widget */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
-            Get Your Instant Home Value
-          </h1>
-          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
-            Discover What Your Home is Worth
-          </h2>
-          <div className="min-h-[200px]">
-            <RealScoutErrorBoundary>
-              <RealScoutHomeValue />
-            </RealScoutErrorBoundary>
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Section */}
       <section className="py-16 bg-white">
@@ -570,17 +548,13 @@ export default function Sellers() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="http://drjanduffy.realscout.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors text-center"
             >
               Get Your Free Valuation
             </a>
             <a
-              href="http://drjanduffy.realscout.com/onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
             >
               Schedule a Call

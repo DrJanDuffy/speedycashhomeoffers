@@ -1,7 +1,5 @@
 import { useLoaderData } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutListings from "~/components/RealScoutListings";
 import RelatedPages from "~/components/RelatedPages";
 import type { Route } from "./+types/sell-my-house-fast-san-diego";
 
@@ -602,9 +600,17 @@ export default function SellMyHouseFastSanDiego() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Featured Properties in San Diego
           </h2>
-          <RealScoutErrorBoundary>
-            <RealScoutListings />
-          </RealScoutErrorBoundary>
+          <div className="text-center">
+            <p className="text-gray-600 mb-6">
+              Browse our available properties in San Diego or contact us for personalized property search assistance.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
+              View Available Properties
+            </a>
+          </div>
         </div>
       </section>
 

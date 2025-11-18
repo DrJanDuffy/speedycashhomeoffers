@@ -2,8 +2,6 @@ import AuthorBio from "~/components/AuthorBio";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import { CloudinarySample } from "~/components/CloudinaryImage";
 import MarketInsightsSection from "~/components/MarketInsightsSection";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutListings from "~/components/RealScoutListings";
 import RelatedPages from "~/components/RelatedPages";
 import TrustBadges from "~/components/TrustBadges";
 import type { Route } from "./+types/home";
@@ -1154,20 +1152,6 @@ export default function Home() {
         className="bg-gray-50"
       />
 
-      {/* Featured Properties */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
-            Find Your Perfect Property
-          </h1>
-          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
-            Featured Properties
-          </h2>
-          <RealScoutErrorBoundary>
-            <RealScoutListings />
-          </RealScoutErrorBoundary>
-        </div>
-      </section>
 
       {/* Cloudinary Integration Demo */}
       <section className="py-16 bg-white">

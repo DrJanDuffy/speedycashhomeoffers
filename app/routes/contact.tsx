@@ -1,7 +1,5 @@
 import { Link, redirect } from "react-router";
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutHomeValue from "~/components/RealScoutHomeValue";
 import RelatedPages from "~/components/RelatedPages";
 import TrustBadges from "~/components/TrustBadges";
 import { Label } from "~/components/ui/label";
@@ -212,22 +210,6 @@ export default function Contact() {
       {/* Trust Badges */}
       <TrustBadges />
 
-      {/* Home Value Widget */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
-            Get Your Instant Home Value
-          </h1>
-          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
-            Discover What Your Home is Worth
-          </h2>
-          <div className="min-h-[200px]">
-            <RealScoutErrorBoundary>
-              <RealScoutHomeValue />
-            </RealScoutErrorBoundary>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-gray-50">

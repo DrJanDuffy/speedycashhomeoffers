@@ -1,7 +1,4 @@
 import Breadcrumbs from "~/components/Breadcrumbs";
-import RealScoutErrorBoundary from "~/components/RealScoutErrorBoundary";
-import RealScoutListings from "~/components/RealScoutListings";
-import RealScoutSearch from "~/components/RealScoutSearch";
 import RelatedPages from "~/components/RelatedPages";
 import type { Route } from "./+types/investors";
 
@@ -244,10 +241,16 @@ export default function Investors() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Search for Investment Opportunities
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <RealScoutErrorBoundary>
-              <RealScoutSearch />
-            </RealScoutErrorBoundary>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-gray-600 mb-6">
+              Contact us to explore investment opportunities in your area.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
+              Contact Us for Investment Opportunities
+            </a>
           </div>
         </div>
       </section>
@@ -261,9 +264,17 @@ export default function Investors() {
           <h2 className="text-2xl font-semibold text-center mb-12 text-gray-700">
             Featured Investment Properties
           </h2>
-          <RealScoutErrorBoundary>
-            <RealScoutListings />
-          </RealScoutErrorBoundary>
+          <div className="text-center">
+            <p className="text-gray-600 mb-6">
+              Browse our current investment opportunities or contact us for personalized investment property search.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
+              View Investment Properties
+            </a>
+          </div>
         </div>
       </section>
 

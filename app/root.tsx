@@ -12,8 +12,6 @@ import stylesheet from "./app.css?url";
 import Footer from "./components/Footer";
 import MobileCTA from "./components/MobileCTA";
 import Navigation from "./components/Navigation";
-import RealScoutErrorBoundary from "./components/RealScoutErrorBoundary";
-import RealScoutOfficeListings from "./components/RealScoutOfficeListings";
 
 export const links: Route.LinksFunction = () => [
   // Preconnect to font domains early (DNS lookup optimization)
@@ -25,7 +23,6 @@ export const links: Route.LinksFunction = () => [
   },
   // Preconnect to third-party services for faster resource loading
   { rel: "preconnect", href: "https://res.cloudinary.com" },
-  { rel: "dns-prefetch", href: "https://em.realscout.com" },
   { rel: "dns-prefetch", href: "https://api.followupboss.com" },
   { rel: "dns-prefetch", href: "https://www.google-analytics.com" },
   { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
@@ -198,8 +195,8 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Google Search Console Verification - Add your verification code here */}
-        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> */}
+        {/* Google Search Console Verification - Replace YOUR_VERIFICATION_CODE_HERE with code from Search Console */}
+        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
         <Meta />
         <Links />
         {/* Critical CSS: Minimal above-the-fold styles to prevent FOUC */}
@@ -557,38 +554,12 @@ export default function App() {
             `,
           }}
         />
-        {/* RealScout Web Components - Required once for all widgets */}
-        <script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-        ></script>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              realscout-office-listings {
-                --rs-listing-divider-color: #0e64c8;
-                width: 100%;
-              }
-            `,
-          }}
-        />
       </head>
       <body>
         <Navigation />
         <main>
           <Outlet />
         </main>
-        {/* RealScout Office Listings - Below the fold on every page (after main content) */}
-        <RealScoutErrorBoundary>
-          <RealScoutOfficeListings
-            agentId="QWdlbnQtMjI1MDUw"
-            sortOrder="NEWEST"
-            listingStatus="For Sale"
-            propertyTypes=",SFR,OTHER,MOBILE"
-            priceMin="200000"
-            priceMax="400000"
-          />
-        </RealScoutErrorBoundary>
         <Footer />
         <MobileCTA />
         <ScrollRestoration />
@@ -633,15 +604,6 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       stack = error.stack;
     }
 
-    // Check for RealScout/web component errors
-    if (
-      errorMessage.toLowerCase().includes("realscout") ||
-      errorStack.toLowerCase().includes("realscout")
-    ) {
-      message = "Property Search Temporarily Unavailable";
-      details =
-        "The property search tool is temporarily unavailable. The rest of the page is still accessible. Please try refreshing or contact us directly for assistance.";
-    }
     // Check for JSON/HTML parsing errors - more specific pattern
     else if (
       // Pattern 1: "Unexpected token '<', "<!DOCTYPE"..." or similar

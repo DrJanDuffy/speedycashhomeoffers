@@ -9,32 +9,6 @@ declare global {
     gtag?: (...args: unknown[]) => void;
   }
 
-  // RealScout custom web components
-  // Using Record<string, string | undefined> to allow any attribute
-  namespace JSX {
-    interface IntrinsicElements {
-      "realscout-home-value": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > &
-        Record<string, string | undefined>;
-      "realscout-office-listings": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > &
-        Record<string, string | undefined>;
-      "realscout-advanced-search": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > &
-        Record<string, string | undefined>;
-      "realscout-simple-search": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > &
-        Record<string, string | undefined>;
-    }
-  }
 }
 
 export {};
